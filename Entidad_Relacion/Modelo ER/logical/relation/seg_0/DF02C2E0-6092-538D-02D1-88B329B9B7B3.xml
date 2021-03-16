@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Grupo_AsignaturaMatricula" directorySegmentName="seg_0" id="DF02C2E0-6092-538D-02D1-88B329B9B7B3">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:37:56 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<sourcePk>FB87D0E2-9608-421A-1224-C179D04A1AD4</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>8A767585-FD77-ED6C-2D27-C43C462C3653</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>E6E8E23F-E82C-805B-F1FE-069929421968</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

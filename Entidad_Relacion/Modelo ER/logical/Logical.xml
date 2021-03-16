@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="4A98947B-CB28-848B-FE63-880F4748B990" mainViewID="AF8598F4-39C3-475C-816B-A668002FCE60">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 10:52:59 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

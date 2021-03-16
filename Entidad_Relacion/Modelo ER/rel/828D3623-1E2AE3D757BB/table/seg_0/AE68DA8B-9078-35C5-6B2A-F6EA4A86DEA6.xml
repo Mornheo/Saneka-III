@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AE68DA8B-9078-35C5-6B2A-F6EA4A86DEA6" name="CENTRO">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:42:07 UTC</createdTime>
+<generatorID>2D241447-D7BB-46CD-F8A8-F2DE1D391F69</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="6248DB5A-49AC-2D58-5D6D-BFBB3C8314E1">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:42:07 UTC</createdTime>
+<generatorID>F4D4BE4E-55A7-1374-7432-C7D605AD161B</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nombre" id="0B67FDEC-E4BA-1ABB-0D34-BDAB142F1748">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:42:07 UTC</createdTime>
+<generatorID>B899A901-4CFE-69CE-D7E2-E18B7A825E79</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Dirección" id="AB09374F-A24F-B57B-29CE-8947E82B95EB">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:42:07 UTC</createdTime>
+<generatorID>2006D447-90F9-7148-E984-4C6C724BA869</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TLF_Conserjería" id="4FD44A29-9A35-ED9E-6760-2821DD8FC79D">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:42:07 UTC</createdTime>
+<generatorID>A66AD497-F131-D9B1-3307-92B949B26413</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4B2EA04B-A87D-ADA1-0E0F-226083318E70" name="CENTRO_PK">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:42:07 UTC</createdTime>
+<generatorID>1A074389-3679-2038-38A9-8CCDA06F1181</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6248DB5A-49AC-2D58-5D6D-BFBB3C8314E1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="898D0C04-BB70-68BD-6DCB-E5DC77F70266" name="CENTRO_Nombre_UN">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:42:07 UTC</createdTime>
+<generatorID>086B73DC-5941-7819-B0F2-3A21FE99FC5A</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0B67FDEC-E4BA-1ABB-0D34-BDAB142F1748"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

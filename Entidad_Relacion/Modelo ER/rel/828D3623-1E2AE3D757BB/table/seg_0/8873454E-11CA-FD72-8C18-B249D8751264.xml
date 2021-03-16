@@ -1,0 +1,123 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8873454E-11CA-FD72-8C18-B249D8751264" name="Asignaturas_Matrícula">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:42:07 UTC</createdTime>
+<generatorID>E6E8E23F-E82C-805B-F1FE-069929421968</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="MATRÍCULA_Curso_académico" id="321FBDA9-300F-66E0-FE08-2E25BF2E5B81">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:42:07 UTC</createdTime>
+<generatorID>18841E0B-E931-D938-DA7A-EAC8039770AC</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5FE78A21-2465-5D56-96DD-F1E34D3158F0" referredColumn="48015490-DA24-7F9B-61E8-01BF5F5A169F"/>
+</associations>
+</Column>
+<Column name="MATRÍCULA_EXPEDIENTES_Num_Expediente" id="C354AD42-1B52-7D40-13B2-364EB53ECEA2">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:42:07 UTC</createdTime>
+<generatorID>E9FDAA06-8514-F4E6-FC2D-EB7F70D43776</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5FE78A21-2465-5D56-96DD-F1E34D3158F0" referredColumn="1920F215-14A1-08F6-7D48-DEDE801B2DF1"/>
+</associations>
+</Column>
+<Column name="ASIGNATURA_Referencia" id="8A515B84-28E9-95CC-4489-903A5D99A109">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:42:07 UTC</createdTime>
+<generatorID>B37F9969-27FF-9610-9987-7A06793B66D8</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="762D69E3-DEEE-BE13-3362-2C54C39F91D0" referredColumn="2468415A-DCFB-6F14-7293-8237184FE8DF"/>
+</associations>
+</Column>
+<Column name="GRUPO_ID" id="EE9477E3-CFE6-9DEC-CA78-1B0D30D49810">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:42:07 UTC</createdTime>
+<generatorID>F1C403A9-32C2-5FD9-0D8C-9E7EF6736978</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D67277AB-5C92-4EFA-C86D-DCB013BB3D86" referredColumn="21091D25-9701-811B-0B91-C9BFA974BA60"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6B0A066E-8321-F39D-F4BC-349897FE5607" name="Asignaturas_Matrícula_PK">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:42:07 UTC</createdTime>
+<generatorID>A36B50F9-B571-CD64-C5E5-3E191B60405D</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="321FBDA9-300F-66E0-FE08-2E25BF2E5B81"/>
+<colUsage columnID="C354AD42-1B52-7D40-13B2-364EB53ECEA2"/>
+<colUsage columnID="8A515B84-28E9-95CC-4489-903A5D99A109"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="89C5AE11-BFCA-F063-B8EA-4BF1223584F7" name="Asignaturas_Matrícula_ASIGNATURA_FK">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:42:07 UTC</createdTime>
+<generatorID>18F7856C-D18A-4B40-AD6D-265206E43708</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8A515B84-28E9-95CC-4489-903A5D99A109"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1958D3EE-688F-72A1-1502-09A70AE09B06" name="Asignaturas_Matrícula_GRUPO_FK">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:42:07 UTC</createdTime>
+<generatorID>DF02C2E0-6092-538D-02D1-88B329B9B7B3</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EE9477E3-CFE6-9DEC-CA78-1B0D30D49810"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BD9AAB66-8B52-6DE0-418E-6615B2902684" name="Asignaturas_Matrícula_MATRÍCULA_FK">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:42:07 UTC</createdTime>
+<generatorID>82960B47-729C-FA69-8601-8FA192F60C70</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="321FBDA9-300F-66E0-FE08-2E25BF2E5B81"/>
+<colUsage columnID="C354AD42-1B52-7D40-13B2-364EB53ECEA2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

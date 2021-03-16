@@ -1,0 +1,179 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="8A767585-FD77-ED6C-2D27-C43C462C3653" name="GRUPO">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:18:58 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID" id="CA350D13-916B-6EF1-851B-FA549CF84608">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:19:02 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Curso" id="93D3FB36-AECD-16FF-B713-85955019D6FD">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:19:02 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Letra" id="D73853AD-D001-00C5-0794-0F41B2017663">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:19:03 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Turno_Mañana_Tarde" id="2D4BC215-5E37-B11D-E699-D7575A09BD72">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:19:03 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Inglés" id="9B9431D2-D860-6FEE-957B-F828B22D94FD">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:19:03 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Visible" id="A961099C-7348-4ED2-850D-C8E9EC68C1B3">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:19:03 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Asignar" id="C45AA441-868A-940F-604F-1FD0F8A981BE">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:20:50 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Plazas" id="9925D86D-9A16-0F40-C3DC-5E1F883805B5">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:20:50 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Código" id="882AF774-0C49-C4D0-7636-9801EED90CD5">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:36:30 UTC</createdTime>
+<generatorID>64E6025A-EB2F-1158-828E-067BA01B342B</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<referedAttribute>FB31A13C-448A-17D3-98FC-8112408E11AD</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID1" id="AACAF621-5FAD-FF31-554F-EE5502E044EB">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:38:24 UTC</createdTime>
+<generatorID>2C13F057-4E27-BC4B-524D-19BDBA24325A</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>CA350D13-916B-6EF1-851B-FA549CF84608</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="FB87D0E2-9608-421A-1224-C179D04A1AD4" name="GRUPO PK">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:19:11 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>CA350D13-916B-6EF1-851B-FA549CF84608</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="7F3BB37A-8EDC-B081-C426-C74268AA88A6" name="Curso_Letra_U">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:19:43 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<newElementsIDs>93D3FB36-AECD-16FF-B713-85955019D6FD,D73853AD-D001-00C5-0794-0F41B2017663</newElementsIDs>
+<usedAttributes>
+<attributeRef>93D3FB36-AECD-16FF-B713-85955019D6FD</attributeRef>
+<attributeRef>D73853AD-D001-00C5-0794-0F41B2017663</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F1E90428-073D-EEEF-ED6F-53498232A172" name="CLASE">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:17:46 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Día" id="70664585-AC73-3524-AEA1-CEB14B8F058B">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:17:50 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Hora inicio" id="FE0009EB-D6E6-0C1E-12ED-200C86D2F713">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:17:51 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Hora fin" id="BAF18002-5DEE-CBAD-4C06-7EBE8F6023B7">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:17:52 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Referencia" id="FC7DA877-501B-1970-F488-B6D432E6227E">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:35:21 UTC</createdTime>
+<generatorID>22FA14AF-4AA9-ACFE-B799-2E41682F828E</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<referedAttribute>0DD81814-9E2E-8CE4-E0C3-B1BB71E338E7</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID" id="CA4DC6A2-0F26-C018-3D27-CB4DBAF3F567">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:35:50 UTC</createdTime>
+<generatorID>6B7593A9-B358-C998-8023-797F1EB14A22</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<referedAttribute>CA350D13-916B-6EF1-851B-FA549CF84608</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="49EF94F3-EAA5-B8D6-882F-65C1A505CAE5" name="CLASE PK">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:17:56 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>70664585-AC73-3524-AEA1-CEB14B8F058B</attributeRef>
+<attributeRef>FE0009EB-D6E6-0C1E-12ED-200C86D2F713</attributeRef>
+<attributeRef>CA4DC6A2-0F26-C018-3D27-CB4DBAF3F567</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

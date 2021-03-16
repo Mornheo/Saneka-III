@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Expedientes_Alumno" directorySegmentName="seg_0" id="3C2C1A7F-BDC9-FCA7-8073-11C0EF29B37D">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:32:09 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<sourcePk>649DCEF9-4720-BBA1-19A0-4A6701B200E9</sourcePk>
+<targetPk>A4187CD3-17A3-631F-B352-450904FBDD9C</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>4D7D5061-6CCF-165C-B147-5CE70C15FB04</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>C50CECD8-145D-BC52-D7FC-406508D12B30</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

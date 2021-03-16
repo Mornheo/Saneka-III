@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="1400EE23-AD90-3B68-2050-124C38F97522" containerWithKeyObject="1E905E33-3FC7-A03D-1305-B2723EB1C9C3" localFKIndex="50E65942-DDFB-B389-9B66-51F16C1F7DC1" name="ENCUESTA_EXPEDIENTES_FK">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:42:07 UTC</createdTime>
+<generatorID>01A73196-161F-25AB-1F23-A424D7857135</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<referredTableLongName>EXPEDIENTES</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>3B919D9E-E75E-5FCE-22A8-09893317B227</referredTableID>
+<keyObject>5CC0B570-F91B-B38B-3DFB-099B3CC30F04</keyObject>
+<referredKeyID>5CC0B570-F91B-B38B-3DFB-099B3CC30F04</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Num_Expediente</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
