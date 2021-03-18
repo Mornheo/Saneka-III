@@ -1,0 +1,90 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="C2148A0E-FB0F-456B-DEFD-0B5856C5D28F" name="GRUPOS POR ASIGNATURA">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:14:08 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Curso_academico" id="F824E1C1-A448-0C65-D5E6-79E02EF69008">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:14:22 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Oferta" id="7C17E2A3-D37D-1D3D-DAE1-810C011361A4">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:14:22 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Referencia" id="ED038CB0-DECC-215D-B7B8-DA8385203403">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:32:49 UTC</createdTime>
+<generatorID>D05CC7C2-9F25-65F6-EBA3-185246FB8055</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<referedAttribute>0DD81814-9E2E-8CE4-E0C3-B1BB71E338E7</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID" id="72FB0C31-D985-1B5E-1A90-58CAE245D96C">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:36:05 UTC</createdTime>
+<generatorID>6FC1628D-24E1-A065-923B-CD3FC8A106BE</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<referedAttribute>CA350D13-916B-6EF1-851B-FA549CF84608</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="5110FAE6-3DCC-A8D8-0DE1-C16D6BDB80DC" name="GRUPOS POR ASIGNATURA PK">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:14:52 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>F824E1C1-A448-0C65-D5E6-79E02EF69008</attributeRef>
+<attributeRef>ED038CB0-DECC-215D-B7B8-DA8385203403</attributeRef>
+<attributeRef>72FB0C31-D985-1B5E-1A90-58CAE245D96C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

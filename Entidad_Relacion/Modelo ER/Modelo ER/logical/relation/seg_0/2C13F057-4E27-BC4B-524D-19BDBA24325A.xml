@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Grupo_Grupo" directorySegmentName="seg_0" id="2C13F057-4E27-BC4B-524D-19BDBA24325A">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:38:24 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<targetPk>FB87D0E2-9608-421A-1224-C179D04A1AD4</targetPk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>8A767585-FD77-ED6C-2D27-C43C462C3653</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>8A767585-FD77-ED6C-2D27-C43C462C3653</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

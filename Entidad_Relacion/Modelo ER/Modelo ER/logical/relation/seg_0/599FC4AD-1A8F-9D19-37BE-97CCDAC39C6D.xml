@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Expediente_Matrícula" directorySegmentName="seg_0" id="599FC4AD-1A8F-9D19-37BE-97CCDAC39C6D">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:31:11 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<sourcePk>649DCEF9-4720-BBA1-19A0-4A6701B200E9</sourcePk>
+<identifying>true</identifying>
+<nameOnSource>realiza</nameOnSource>
+<nameOnTarget>pertenece</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>4D7D5061-6CCF-165C-B147-5CE70C15FB04</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>C0471E8C-BC0A-C61C-11B4-1CCA4044452B</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

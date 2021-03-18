@@ -1,0 +1,206 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1976288F-E65F-7E08-3766-7CE3546114C6" name="ASIGNATURA">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:01:46 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Referencia" id="0DD81814-9E2E-8CE4-E0C3-B1BB71E338E7">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:01:57 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Ofertada" id="F6A44878-550B-DDF5-6DA1-42614BCD708C">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:02:19 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Codigo_1" id="A8B4A12A-2CE0-A4FE-F8F7-EF044F6EB6D2">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:02:09 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Asignatura" id="AD4DBC7D-7527-515D-218B-04E8D6866938">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-18 11:55:23 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Curso" id="CC0C290D-4B3A-8A2C-2B67-62B0C0E67DCC">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:02:27 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Creditos_teoria" id="E1E5CC61-F4F2-B035-3391-83015E40F7DF">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:02:15 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Creditos_practica" id="9F31F586-EAF6-669E-B858-0DE1C23F7584">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-18 11:56:49 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Total_creditos" id="37C9A7DA-7202-7AE7-2DC5-4298A7DA1CA4">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-18 11:58:02 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Caracter" id="CDCA91C1-FE16-1D65-373F-50B4D5767FAF">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:02:35 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Duracion" id="B8B85FC1-27D0-5B8D-51CE-8994594CFA41">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:02:42 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Plazas" id="805AFED1-D572-BBAA-5A49-3653B3643274">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-18 12:03:03 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Otro_idioma" id="AA403068-BA1D-F22F-2970-860A0F219CFE">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:02:58 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Codigo" id="EB61C646-0B3F-0017-5070-8A7AEFBDF42E">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:27:47 UTC</createdTime>
+<generatorID>91CE72F0-9792-0F7E-AD53-AFB82AD1A986</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<referedAttribute>FB31A13C-448A-17D3-98FC-8112408E11AD</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="2EDE1135-76E3-DD13-4226-323072201B13" name="ASIGNATURA PK">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:02:05 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>0DD81814-9E2E-8CE4-E0C3-B1BB71E338E7</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
