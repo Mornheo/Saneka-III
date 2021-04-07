@@ -51,6 +51,12 @@ public class Alumno implements Serializable {
 	@OneToMany(targetEntity=Expedientes.class,mappedBy="alumno")
 	private List<Expedientes> expedientes;
 	
+	public List<Expedientes> getExpedientes() {
+		return expedientes;
+	}
+	public void setExpedientes(List<Expedientes> expedientes) {
+		this.expedientes = expedientes;
+	}
 	public Alumno() {
 		super();
 	}   
