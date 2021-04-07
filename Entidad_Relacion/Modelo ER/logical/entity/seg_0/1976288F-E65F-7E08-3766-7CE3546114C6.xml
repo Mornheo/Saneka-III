@@ -27,30 +27,6 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Código" id="A8B4A12A-2CE0-A4FE-F8F7-EF044F6EB6D2">
-<createdBy>alvar</createdBy>
-<createdTime>2021-03-16 11:02:09 UTC</createdTime>
-<ownerDesignName>Modelo ER</ownerDesignName>
-<engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="Créditos" id="E1E5CC61-F4F2-B035-3391-83015E40F7DF">
-<createdBy>alvar</createdBy>
-<createdTime>2021-03-16 11:02:15 UTC</createdTime>
-<ownerDesignName>Modelo ER</ownerDesignName>
-<engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="Ofertada" id="F6A44878-550B-DDF5-6DA1-42614BCD708C">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:02:19 UTC</createdTime>
@@ -64,18 +40,31 @@
 <dataTypeSize>1 BYTE</dataTypeSize>
 <ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Nombre" id="3C4DDB54-91F7-B342-F339-B233FD7D2DB6">
+<Attribute name="Codigo_1" id="A8B4A12A-2CE0-A4FE-F8F7-EF044F6EB6D2">
 <createdBy>alvar</createdBy>
-<createdTime>2021-03-16 11:02:22 UTC</createdTime>
+<createdTime>2021-03-16 11:02:09 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
 <item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Asignatura" id="AD4DBC7D-7527-515D-218B-04E8D6866938">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-18 11:55:23 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20 CHAR</dataTypeSize>
-<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="Curso" id="CC0C290D-4B3A-8A2C-2B67-62B0C0E67DCC">
 <createdBy>alvar</createdBy>
@@ -90,7 +79,45 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Carácter" id="CDCA91C1-FE16-1D65-373F-50B4D5767FAF">
+<Attribute name="Creditos_teoria" id="E1E5CC61-F4F2-B035-3391-83015E40F7DF">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-16 11:02:15 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Creditos_practica" id="9F31F586-EAF6-669E-B858-0DE1C23F7584">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-18 11:56:49 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Total_creditos" id="37C9A7DA-7202-7AE7-2DC5-4298A7DA1CA4">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-18 11:58:02 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<engineerTo>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Caracter" id="CDCA91C1-FE16-1D65-373F-50B4D5767FAF">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:02:35 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
@@ -104,7 +131,7 @@
 <dataTypeSize>20 CHAR</dataTypeSize>
 <ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Duración" id="B8B85FC1-27D0-5B8D-51CE-8994594CFA41">
+<Attribute name="Duracion" id="B8B85FC1-27D0-5B8D-51CE-8994594CFA41">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:02:42 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
@@ -114,12 +141,13 @@
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Unidad temporal (Cuatrimestre)" id="36A0A457-E50B-41A9-680F-9FF027C19B0A">
+<Attribute name="Plazas" id="805AFED1-D572-BBAA-5A49-3653B3643274">
 <createdBy>alvar</createdBy>
-<createdTime>2021-03-16 11:02:46 UTC</createdTime>
+<createdTime>2021-03-18 12:03:03 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
 <item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
@@ -127,10 +155,11 @@
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Idiomas de impartición" id="AA403068-BA1D-F22F-2970-860A0F219CFE">
+<Attribute name="Otro_idioma" id="AA403068-BA1D-F22F-2970-860A0F219CFE">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:02:58 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
@@ -144,7 +173,7 @@
 <dataTypeSize>20 CHAR</dataTypeSize>
 <ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Código1" id="EB61C646-0B3F-0017-5070-8A7AEFBDF42E">
+<Attribute name="Codigo" id="EB61C646-0B3F-0017-5070-8A7AEFBDF42E">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:27:47 UTC</createdTime>
 <generatorID>91CE72F0-9792-0F7E-AD53-AFB82AD1A986</generatorID>
@@ -164,8 +193,9 @@
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:02:05 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

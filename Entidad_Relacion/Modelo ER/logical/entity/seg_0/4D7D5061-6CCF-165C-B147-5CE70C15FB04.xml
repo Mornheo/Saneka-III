@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="Num_Expediente" id="05CB2A29-F558-BA0B-6C72-0E581A0FF5D0">
+<Attribute name="Num_expediente" id="05CB2A29-F558-BA0B-6C72-0E581A0FF5D0">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:05:59 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
@@ -41,7 +41,7 @@
 <dataTypeSize>1</dataTypeSize>
 <ownDataTypeParameters>1,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Nota_Media_Provisional" id="9FC902D5-62BD-C238-A315-92286E1BF6CD">
+<Attribute name="Nota_media_provisional" id="9FC902D5-62BD-C238-A315-92286E1BF6CD">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:06:26 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
@@ -54,7 +54,7 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Código" id="E0955A66-FFDD-AB8F-9F69-8F7FDED5542A">
+<Attribute name="Codigo" id="E0955A66-FFDD-AB8F-9F69-8F7FDED5542A">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:30:19 UTC</createdTime>
 <generatorID>5EB0631D-F725-518D-D017-4CFE1E90CE05</generatorID>
@@ -88,8 +88,9 @@
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:06:14 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

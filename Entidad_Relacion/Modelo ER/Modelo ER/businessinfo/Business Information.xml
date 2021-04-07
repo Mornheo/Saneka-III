@@ -1,7 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<BusinessInfoDesign class="oracle.dbtools.crest.model.businessinfo.BusinessInfoDesign" name="Business Information" id="030FD78F-EA50-4D0E-2020-780470BC115A">
-<createdBy>alvar</createdBy>
-<createdTime>2021-03-16 10:52:59 UTC</createdTime>
-<ownerDesignName>Modelo ER</ownerDesignName>
-<shouldBeOpen>false</shouldBeOpen>
-</BusinessInfoDesign>

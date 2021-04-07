@@ -42,7 +42,7 @@
 <ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Turno_Mañana_Tarde" id="7A9B8267-723D-2781-4484-014154926098">
+<Column name="Turno_mañana_tarde" id="7A9B8267-723D-2781-4484-014154926098">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:42:07 UTC</createdTime>
 <generatorID>2D4BC215-5E37-B11D-E699-D7575A09BD72</generatorID>
@@ -54,7 +54,7 @@
 <ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Inglés" id="D0775D23-2824-A603-7577-2F610E273862">
+<Column name="Ingles" id="D0775D23-2824-A603-7577-2F610E273862">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:42:07 UTC</createdTime>
 <generatorID>9B9431D2-D860-6FEE-957B-F828B22D94FD</generatorID>

@@ -33,7 +33,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Mención" id="81606BED-4934-6746-FCAF-B57EBC65ECBE">
+<Column name="Mencion" id="81606BED-4934-6746-FCAF-B57EBC65ECBE">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:42:07 UTC</createdTime>
 <generatorID>9D320D4A-A7D4-FE78-78DB-34B8488322E2</generatorID>
