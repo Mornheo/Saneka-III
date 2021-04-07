@@ -25,6 +25,14 @@ public class Matricula implements Serializable {
 	@ManyToOne()
 	private Expedientes expedientes;
 	
+	public Expedientes getExpedientes() {
+		return expedientes;
+	}
+	
+	public void setExpedientes(Expedientes expedientes) {
+		this.expedientes = expedientes;
+	}
+	
 	public Matricula() {
 		super();
 	}   
