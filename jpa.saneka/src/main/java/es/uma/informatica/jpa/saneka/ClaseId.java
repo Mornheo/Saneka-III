@@ -7,14 +7,13 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class ClaseId implements Serializable{
 	
-		private int Dia;
+		private Integer Dia;
 		private Date hora_inicio;
 		private static final long serialVersionUID = 1L;
-
-		public int getDia() {
+		public Integer getDia() {
 			return Dia;
 		}
-		public void setDia(int dia) {
+		public void setDia(Integer dia) {
 			Dia = dia;
 		}
 		public Date getHora_inicio() {
@@ -23,12 +22,11 @@ public class ClaseId implements Serializable{
 		public void setHora_inicio(Date hora_inicio) {
 			this.hora_inicio = hora_inicio;
 		}
-		
 		@Override
 		public int hashCode() {
 			final int prime = 31;
 			int result = 1;
-			result = prime * result + Dia;
+			result = prime * result + ((Dia == null) ? 0 : Dia.hashCode());
 			result = prime * result + ((hora_inicio == null) ? 0 : hora_inicio.hashCode());
 			return result;
 		}
@@ -41,7 +39,10 @@ public class ClaseId implements Serializable{
 			if (getClass() != obj.getClass())
 				return false;
 			ClaseId other = (ClaseId) obj;
-			if (Dia != other.Dia)
+			if (Dia == null) {
+				if (other.Dia != null)
+					return false;
+			} else if (!Dia.equals(other.Dia))
 				return false;
 			if (hora_inicio == null) {
 				if (other.hora_inicio != null)
@@ -52,8 +53,7 @@ public class ClaseId implements Serializable{
 		}
 		@Override
 		public String toString() {
-			return "newId [Dia=" + Dia + ", hora_inicio=" + hora_inicio + "]";
+			return "ClaseId [Dia=" + Dia + ", hora_inicio=" + hora_inicio + "]";
 		}
-		
 
 }

@@ -3,15 +3,15 @@ import javax.persistence.*;
 @Entity
 public class Centro {
 	@Id@GeneratedValue
-	private int id;
+	private Integer id;
 	private String nombre;
 	private String direccion;
 	private String TLF_consejeria;
 	
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getNombre() {
@@ -32,15 +32,11 @@ public class Centro {
 	public void setTLF_consejeria(String tLF_consejeria) {
 		TLF_consejeria = tLF_consejeria;
 	}
-	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((TLF_consejeria == null) ? 0 : TLF_consejeria.hashCode());
-		result = prime * result + ((direccion == null) ? 0 : direccion.hashCode());
-		result = prime * result + id;
-		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
 	@Override
@@ -52,22 +48,10 @@ public class Centro {
 		if (getClass() != obj.getClass())
 			return false;
 		Centro other = (Centro) obj;
-		if (TLF_consejeria == null) {
-			if (other.TLF_consejeria != null)
+		if (id == null) {
+			if (other.id != null)
 				return false;
-		} else if (!TLF_consejeria.equals(other.TLF_consejeria))
-			return false;
-		if (direccion == null) {
-			if (other.direccion != null)
-				return false;
-		} else if (!direccion.equals(other.direccion))
-			return false;
-		if (id != other.id)
-			return false;
-		if (nombre == null) {
-			if (other.nombre != null)
-				return false;
-		} else if (!nombre.equals(other.nombre))
+		} else if (!id.equals(other.id))
 			return false;
 		return true;
 	}
@@ -76,6 +60,8 @@ public class Centro {
 		return "Centro [id=" + id + ", nombre=" + nombre + ", direccion=" + direccion + ", TLF_consejeria="
 				+ TLF_consejeria + "]";
 	}
+	
+	
 	
 	
 }
