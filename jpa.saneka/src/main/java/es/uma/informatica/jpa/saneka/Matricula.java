@@ -9,7 +9,7 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@IdClass(Matricula.matriculaID.class)
 public class Matricula implements Serializable {
 	   
 	@Id
@@ -23,7 +23,55 @@ public class Matricula implements Serializable {
 	private String Listado_asignaturas;
 	private static final long serialVersionUID = 1L;
 	@ManyToOne()
+	@Id
 	private Expedientes expedientes;
+	
+	public static class matriculaID implements Serializable {
+		private int expedientes;
+		private String Curso_academico;
+		public int getExpedientes() {
+			return expedientes;
+		}
+		public void setExpedientes(int expedientes) {
+			this.expedientes = expedientes;
+		}
+		public String getCurso_academico() {
+			return Curso_academico;
+		}
+		public void setCurso_academico(String curso_academico) {
+			Curso_academico = curso_academico;
+		}
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result + ((Curso_academico == null) ? 0 : Curso_academico.hashCode());
+			result = prime * result + expedientes;
+			return result;
+		}
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			matriculaID other = (matriculaID) obj;
+			if (Curso_academico == null) {
+				if (other.Curso_academico != null)
+					return false;
+			} else if (!Curso_academico.equals(other.Curso_academico))
+				return false;
+			if (expedientes != other.expedientes)
+				return false;
+			return true;
+		}
+		
+		
+	}
+	
+	
 	
 	public Expedientes getExpedientes() {
 		return expedientes;
