@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -31,6 +33,17 @@ public class Asignatura implements Serializable {
 	private String Duracion;
 	private String Plazas;
 	private String Otro_idioma;
+	
+	@Column (nullable = false)
+	@ManyToOne
+	private Titulacion titulacion;
+	@OneToMany(mappedBy = "asignatura")
+	private List<Clase> clases;
+	@OneToMany(mappedBy = "asignatura")
+	private List<Grupos_por_asignaturas> grupos;
+	@OneToMany(mappedBy ="asignatura")
+	private List<Asignaturas_matricula> asignaturas_matricula;
+	
 	private static final long serialVersionUID = 1L;
 
 	public Asignatura() {

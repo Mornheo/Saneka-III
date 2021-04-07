@@ -3,6 +3,8 @@ package es.uma.informatica.jpa.saneka;
 import java.io.Serializable;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -18,6 +20,17 @@ public class Titulacion implements Serializable {
 	private Integer Codigo;
 	private String Nombre;
 	private Integer Creditos;
+	
+	@OneToMany(mappedBy = "titulacion")
+	private List<Grupo> grupos;
+	@OneToMany(mappedBy = "titulacion")
+	private List<Expedientes> expedientes;
+	@Column(nullable = false)
+	@ManyToMany(mappedBy = "titulaciones")
+	private List<Centro> centros;
+	
+	@OneToMany(mappedBy = "titulacion")
+	private List<Asignatura> asignaturas;
 	private static final long serialVersionUID = 1L;
 
 	public Titulacion() {
