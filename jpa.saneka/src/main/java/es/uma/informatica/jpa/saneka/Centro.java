@@ -3,28 +3,29 @@ import javax.persistence.*;
 @Entity
 public class Centro {
 	@Id@GeneratedValue
-	private Integer id;
-	private String nombre;
-	private String direccion;
+	private Integer ID;
+	@Column(unique=true,nullable=false)
+	private String Nombre;
+	@Column(nullable=false)
+	private String Direccion;
 	private String TLF_consejeria;
-	
-	public Integer getId() {
-		return id;
+	public Integer getID() {
+		return ID;
 	}
-	public void setId(Integer id) {
-		this.id = id;
+	public void setID(Integer iD) {
+		ID = iD;
 	}
 	public String getNombre() {
-		return nombre;
+		return Nombre;
 	}
 	public void setNombre(String nombre) {
-		this.nombre = nombre;
+		Nombre = nombre;
 	}
 	public String getDireccion() {
-		return direccion;
+		return Direccion;
 	}
 	public void setDireccion(String direccion) {
-		this.direccion = direccion;
+		Direccion = direccion;
 	}
 	public String getTLF_consejeria() {
 		return TLF_consejeria;
@@ -36,7 +37,7 @@ public class Centro {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((ID == null) ? 0 : ID.hashCode());
 		return result;
 	}
 	@Override
@@ -48,20 +49,18 @@ public class Centro {
 		if (getClass() != obj.getClass())
 			return false;
 		Centro other = (Centro) obj;
-		if (id == null) {
-			if (other.id != null)
+		if (ID == null) {
+			if (other.ID != null)
 				return false;
-		} else if (!id.equals(other.id))
+		} else if (!ID.equals(other.ID))
 			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
-		return "Centro [id=" + id + ", nombre=" + nombre + ", direccion=" + direccion + ", TLF_consejeria="
+		return "Centro [ID=" + ID + ", Nombre=" + Nombre + ", Direccion=" + Direccion + ", TLF_consejeria="
 				+ TLF_consejeria + "]";
 	}
-	
-	
 	
 	
 }

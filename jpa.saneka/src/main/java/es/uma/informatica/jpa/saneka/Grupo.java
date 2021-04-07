@@ -5,64 +5,91 @@ import javax.persistence.*;
 @Entity
 public class Grupo {
 	@Id @GeneratedValue
-	private Integer id;
-	private Integer curso;
-	private String letra;
-	private String turno;
-	private boolean ingle;
-	private boolean visible;
-	private String asignar;
+	private Integer ID;
+	@Column(unique=true,nullable=false)
+	private Integer Curso;
+	@Column(unique=true,nullable=false)
+	private String Letra;
+	@Column(nullable=false)
+	private String Turno;
+	@Column(nullable=false)
+	private boolean Ingles;
+	private boolean Visible;
+	private String Asignar;
+	private Integer Plazas;
 	
-	public Integer getId() {
-		return id;
+	public Integer getID() {
+		return ID;
 	}
-	public void setId(Integer id) {
-		this.id = id;
+
+	public void setID(Integer iD) {
+		ID = iD;
 	}
+
 	public Integer getCurso() {
-		return curso;
+		return Curso;
 	}
+
 	public void setCurso(Integer curso) {
-		this.curso = curso;
+		Curso = curso;
 	}
+
 	public String getLetra() {
-		return letra;
+		return Letra;
 	}
+
 	public void setLetra(String letra) {
-		this.letra = letra;
+		Letra = letra;
 	}
+
 	public String getTurno() {
-		return turno;
+		return Turno;
 	}
+
 	public void setTurno(String turno) {
-		this.turno = turno;
+		Turno = turno;
 	}
-	public boolean isIngle() {
-		return ingle;
+
+	public boolean isIngles() {
+		return Ingles;
 	}
-	public void setIngle(boolean ingle) {
-		this.ingle = ingle;
+
+	public void setIngles(boolean ingles) {
+		Ingles = ingles;
 	}
+
 	public boolean isVisible() {
-		return visible;
+		return Visible;
 	}
+
 	public void setVisible(boolean visible) {
-		this.visible = visible;
+		Visible = visible;
 	}
+
 	public String getAsignar() {
-		return asignar;
+		return Asignar;
 	}
+
 	public void setAsignar(String asignar) {
-		this.asignar = asignar;
+		Asignar = asignar;
+	}
+
+	public Integer getPlazas() {
+		return Plazas;
+	}
+
+	public void setPlazas(Integer plazas) {
+		Plazas = plazas;
 	}
 	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((ID == null) ? 0 : ID.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -72,17 +99,20 @@ public class Grupo {
 		if (getClass() != obj.getClass())
 			return false;
 		Grupo other = (Grupo) obj;
-		if (id == null) {
-			if (other.id != null)
+		if (ID == null) {
+			if (other.ID != null)
 				return false;
-		} else if (!id.equals(other.id))
+		} else if (!ID.equals(other.ID))
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
-		return "Grupo [id=" + id + ", curso=" + curso + ", letra=" + letra + ", turno=" + turno + ", ingle=" + ingle
-				+ ", visible=" + visible + ", asignar=" + asignar + "]";
+		return "Grupo [ID=" + ID + ", Curso=" + Curso + ", Letra=" + Letra + ", Turno=" + Turno + ", Ingles=" + Ingles
+				+ ", Visible=" + Visible + ", Asignar=" + Asignar + ", Plazas=" + Plazas + "]";
 	}
+
+	
 	
 }
