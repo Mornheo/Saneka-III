@@ -1,10 +1,15 @@
 package es.uma.informatica.jpa.saneka;
 
+import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
-public class Grupo {
-	@Id @GeneratedValue
+public class Grupo implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+	@Id 
 	private Integer ID;
 	@Column(unique=true,nullable=false)
 	private Integer Curso;
@@ -17,6 +22,15 @@ public class Grupo {
 	private boolean Visible;
 	private String Asignar;
 	private Integer Plazas;
+	@ManyToOne
+	private Titulacion titulacion;
+	@OneToMany
+	private List<Grupo> grupos;
+	@OneToMany
+	private List<Clase> clases;
+	@OneToMany
+	private List<Grupos_por_asignatura> grupos_asignatura;
+	
 	
 	public Integer getID() {
 		return ID;
@@ -82,6 +96,38 @@ public class Grupo {
 		Plazas = plazas;
 	}
 	
+	public Titulacion getTitulacion() {
+		return titulacion;
+	}
+
+	public void setTitulacion(Titulacion titulacion) {
+		this.titulacion = titulacion;
+	}
+
+	public List<Grupo> getGrupos() {
+		return grupos;
+	}
+
+	public void setGrupos(List<Grupo> grupos) {
+		this.grupos = grupos;
+	}
+
+	public List<Clase> getClases() {
+		return clases;
+	}
+
+	public void setClases(List<Clase> clases) {
+		this.clases = clases;
+	}
+
+	public List<Grupos_por_asignatura> getGrupos_asignatura() {
+		return grupos_asignatura;
+	}
+
+	public void setGrupos_asignatura(List<Grupos_por_asignatura> grupos_asignatura) {
+		this.grupos_asignatura = grupos_asignatura;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

@@ -1,14 +1,26 @@
 package es.uma.informatica.jpa.saneka;
+import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.*;
 @Entity
-public class Centro {
-	@Id@GeneratedValue
+public class Centro implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+	@Id
 	private Integer ID;
 	@Column(unique=true,nullable=false)
 	private String Nombre;
 	@Column(nullable=false)
 	private String Direccion;
 	private String TLF_consejeria;
+	@ManyToMany
+	@Column(nullable=false)
+	@JoinTable(name = "centro_titulacion",
+	joinColumns = @JoinColumn(name= "centro_id"),
+	inverseJoinColumns = @JoinColumn(name= "titulacion_id"))
+	private List<Titulacion> titulaciones;
+	
 	public Integer getID() {
 		return ID;
 	}
@@ -32,6 +44,13 @@ public class Centro {
 	}
 	public void setTLF_consejeria(String tLF_consejeria) {
 		TLF_consejeria = tLF_consejeria;
+	}
+	
+	public List<Titulacion> getTitulaciones() {
+		return titulaciones;
+	}
+	public void setTitulaciones(List<Titulacion> titulaciones) {
+		this.titulaciones = titulaciones;
 	}
 	@Override
 	public int hashCode() {
