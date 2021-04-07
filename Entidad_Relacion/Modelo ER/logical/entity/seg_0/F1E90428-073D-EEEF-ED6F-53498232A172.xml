@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="Día" id="70664585-AC73-3524-AEA1-CEB14B8F058B">
+<Attribute name="Dia" id="70664585-AC73-3524-AEA1-CEB14B8F058B">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:17:50 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
@@ -27,7 +27,7 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Hora inicio" id="FE0009EB-D6E6-0C1E-12ED-200C86D2F713">
+<Attribute name="Hora_inicio" id="FE0009EB-D6E6-0C1E-12ED-200C86D2F713">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:17:51 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
@@ -39,7 +39,7 @@
 <logicalDatatype>LOGDT008</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Hora fin" id="BAF18002-5DEE-CBAD-4C06-7EBE8F6023B7">
+<Attribute name="Hora _fin" id="BAF18002-5DEE-CBAD-4C06-7EBE8F6023B7">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:17:52 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
@@ -86,8 +86,9 @@
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:17:56 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

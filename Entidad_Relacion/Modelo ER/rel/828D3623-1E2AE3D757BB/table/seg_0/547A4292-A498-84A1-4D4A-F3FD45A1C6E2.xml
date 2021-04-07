@@ -8,7 +8,7 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Curso_académico" id="48015490-DA24-7F9B-61E8-01BF5F5A169F">
+<Column name="Curso_academico" id="48015490-DA24-7F9B-61E8-01BF5F5A169F">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:42:07 UTC</createdTime>
 <generatorID>4F0C75F3-41FE-E3F9-39FC-8778B1990EE5</generatorID>
@@ -32,7 +32,7 @@
 <ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Num_Archivo" id="BF953A2B-46FB-03A9-7F5A-A58F5CE67FA3">
+<Column name="Num_archivo" id="BF953A2B-46FB-03A9-7F5A-A58F5CE67FA3">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:42:07 UTC</createdTime>
 <generatorID>1536D758-DF7C-9581-42EF-9934915C3B76</generatorID>
@@ -57,7 +57,7 @@
 <ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Fecha_matrícula" id="E26FF6E8-48AE-C49C-7124-36CD7E375D54">
+<Column name="Fecha_matricula" id="E26FF6E8-48AE-C49C-7124-36CD7E375D54">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:42:07 UTC</createdTime>
 <generatorID>2621BF85-0AB5-4887-5D21-E0C86B348EAE</generatorID>
