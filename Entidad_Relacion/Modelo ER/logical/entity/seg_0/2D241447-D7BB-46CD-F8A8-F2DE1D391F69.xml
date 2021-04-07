@@ -40,7 +40,7 @@
 <dataTypeSize>20 CHAR</dataTypeSize>
 <ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Dirección" id="2006D447-90F9-7148-E984-4C6C724BA869">
+<Attribute name="Direccion" id="2006D447-90F9-7148-E984-4C6C724BA869">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:07:06 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
@@ -53,7 +53,7 @@
 <dataTypeSize>20 CHAR</dataTypeSize>
 <ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="TLF_Conserjería" id="A66AD497-F131-D9B1-3307-92B949B26413">
+<Attribute name="TLF_conserjeria" id="A66AD497-F131-D9B1-3307-92B949B26413">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:08:01 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
@@ -73,8 +73,9 @@
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:07:16 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
@@ -85,8 +86,9 @@
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:08:32 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="false"/>
 </engineerTo>
 <newElementsIDs>B899A901-4CFE-69CE-D7E2-E18B7A825E79</newElementsIDs>
 <usedAttributes>

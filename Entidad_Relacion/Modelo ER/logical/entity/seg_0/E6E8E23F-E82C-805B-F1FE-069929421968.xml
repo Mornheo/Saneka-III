@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="Curso_académico" id="18841E0B-E931-D938-DA7A-EAC8039770AC">
+<Attribute name="Curso_academico" id="18841E0B-E931-D938-DA7A-EAC8039770AC">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:33:59 UTC</createdTime>
 <generatorID>82960B47-729C-FA69-8601-8FA192F60C70</generatorID>
@@ -29,7 +29,7 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Num_Expediente" id="E9FDAA06-8514-F4E6-FC2D-EB7F70D43776">
+<Attribute name="Num_expediente" id="E9FDAA06-8514-F4E6-FC2D-EB7F70D43776">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:33:59 UTC</createdTime>
 <generatorID>82960B47-729C-FA69-8601-8FA192F60C70</generatorID>
@@ -78,8 +78,9 @@
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:34:24 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

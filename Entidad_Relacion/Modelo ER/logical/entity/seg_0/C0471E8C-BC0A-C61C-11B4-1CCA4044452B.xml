@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="Curso_académico" id="4F0C75F3-41FE-E3F9-39FC-8778B1990EE5">
+<Attribute name="Curso_academico" id="4F0C75F3-41FE-E3F9-39FC-8778B1990EE5">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:15:27 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
@@ -41,7 +41,7 @@
 <dataTypeSize>20 CHAR</dataTypeSize>
 <ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Num_Archivo" id="1536D758-DF7C-9581-42EF-9934915C3B76">
+<Attribute name="Num_archivo" id="1536D758-DF7C-9581-42EF-9934915C3B76">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:15:28 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
@@ -68,7 +68,7 @@
 <dataTypeSize>20 CHAR</dataTypeSize>
 <ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Fecha_matrícula" id="2621BF85-0AB5-4887-5D21-E0C86B348EAE">
+<Attribute name="Fecha_matricula" id="2621BF85-0AB5-4887-5D21-E0C86B348EAE">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:16:44 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
@@ -108,7 +108,7 @@
 <dataTypeSize>50 CHAR</dataTypeSize>
 <ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Num_Expediente" id="5A5E4D02-D1CC-787F-31B4-E5C591065C30">
+<Attribute name="Num_expediente" id="5A5E4D02-D1CC-787F-31B4-E5C591065C30">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:31:11 UTC</createdTime>
 <generatorID>599FC4AD-1A8F-9D19-37BE-97CCDAC39C6D</generatorID>
@@ -128,8 +128,9 @@
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:15:52 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

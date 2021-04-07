@@ -19,7 +19,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Código" id="F5567674-4D35-0ECB-4A4C-DBFC3B920529">
+<Column name="Codigo_1" id="F5567674-4D35-0ECB-4A4C-DBFC3B920529">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:42:07 UTC</createdTime>
 <generatorID>A8B4A12A-2CE0-A4FE-F8F7-EF044F6EB6D2</generatorID>
@@ -30,7 +30,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Créditos" id="EC582304-CE00-EC2F-0F90-8EB9818FBED1">
+<Column name="Creditos_teoria" id="EC582304-CE00-EC2F-0F90-8EB9818FBED1">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:42:07 UTC</createdTime>
 <generatorID>E1E5CC61-F4F2-B035-3391-83015E40F7DF</generatorID>
@@ -77,7 +77,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Carácter" id="D8CCDCDB-CEC3-170C-F852-CD3B6E7FEFBD">
+<Column name="Caracter" id="D8CCDCDB-CEC3-170C-F852-CD3B6E7FEFBD">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:42:07 UTC</createdTime>
 <generatorID>CDCA91C1-FE16-1D65-373F-50B4D5767FAF</generatorID>
@@ -90,7 +90,7 @@
 <ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Duración" id="002875C9-A0FC-F0B2-2A69-101D768E35FE">
+<Column name="Duracion" id="002875C9-A0FC-F0B2-2A69-101D768E35FE">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:42:07 UTC</createdTime>
 <generatorID>B8B85FC1-27D0-5B8D-51CE-8994594CFA41</generatorID>
@@ -98,8 +98,9 @@
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="Unidad_temporal_(Cuatrimestre)" id="8D8E03E8-DDA9-2F27-9C0D-AE3D68176D13">
@@ -114,7 +115,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Idiomas_de_impartición" id="D96CF1EA-5AFF-E0B2-C60B-B41260134E97">
+<Column name="Otro_idioma" id="D96CF1EA-5AFF-E0B2-C60B-B41260134E97">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:42:07 UTC</createdTime>
 <generatorID>AA403068-BA1D-F22F-2970-860A0F219CFE</generatorID>
@@ -141,6 +142,56 @@
 <associations>
 <colAssociation fkAssociation="DFA580F9-D11A-F8F3-7CA0-FAE2AE937B1B" referredColumn="14069268-7EC0-33C1-C211-5729FD4958A0"/>
 </associations>
+</Column>
+<Column name="Asignatura" id="AA486DDE-D179-5E40-35D2-B07BEC57F17B">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-18 12:18:39 UTC</createdTime>
+<generatorID>AD4DBC7D-7527-515D-218B-04E8D6866938</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Creditos_practica" id="F3173AF4-46D0-4FE1-0F19-7F35617375DE">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-18 12:18:39 UTC</createdTime>
+<generatorID>9F31F586-EAF6-669E-B858-0DE1C23F7584</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Total_creditos" id="B7192A8F-AF51-6F47-E384-BAA18580EA50">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-18 12:18:39 UTC</createdTime>
+<generatorID>37C9A7DA-7202-7AE7-2DC5-4298A7DA1CA4</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Plazas" id="E9C0DA0A-D511-66F7-0356-4C4160D1A2AC">
+<createdBy>alvar</createdBy>
+<createdTime>2021-03-18 12:18:39 UTC</createdTime>
+<generatorID>805AFED1-D572-BBAA-5A49-3653B3643274</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">

@@ -8,7 +8,7 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Num_Expediente" id="37FF3E98-A6F0-6283-9DD4-0C3956637C3C">
+<Column name="Num_expediente" id="37FF3E98-A6F0-6283-9DD4-0C3956637C3C">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:42:07 UTC</createdTime>
 <generatorID>05CB2A29-F558-BA0B-6C72-0E581A0FF5D0</generatorID>
@@ -32,7 +32,7 @@
 <ownDataTypeParameters>1,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Nota_Media_Provisional" id="FCB3A7D3-5314-C66E-CDA5-1E729F43FEF0">
+<Column name="Nota_media_provisional" id="FCB3A7D3-5314-C66E-CDA5-1E729F43FEF0">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:42:07 UTC</createdTime>
 <generatorID>9FC902D5-62BD-C238-A315-92286E1BF6CD</generatorID>

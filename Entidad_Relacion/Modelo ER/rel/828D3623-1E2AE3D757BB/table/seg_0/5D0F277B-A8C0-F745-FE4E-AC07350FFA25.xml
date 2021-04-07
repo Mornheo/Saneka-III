@@ -8,7 +8,7 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Día" id="7A823A96-AA34-60F8-5B2A-BD5A530AF341">
+<Column name="Dia" id="7A823A96-AA34-60F8-5B2A-BD5A530AF341">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:42:07 UTC</createdTime>
 <generatorID>70664585-AC73-3524-AEA1-CEB14B8F058B</generatorID>
@@ -30,7 +30,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Hora_fin" id="68146AAC-C764-5AD5-1189-7ECA3765485D">
+<Column name="Hora__fin" id="68146AAC-C764-5AD5-1189-7ECA3765485D">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:42:07 UTC</createdTime>
 <generatorID>BAF18002-5DEE-CBAD-4C06-7EBE8F6023B7</generatorID>

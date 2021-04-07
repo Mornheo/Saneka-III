@@ -3,6 +3,8 @@ package es.uma.informatica.jpa.saneka;
 import java.io.Serializable;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -14,10 +16,21 @@ import javax.persistence.*;
 public class Titulacion implements Serializable {
 
 	   
-	@Id
+	@Id @Column(nullable = false)
 	private Integer Codigo;
 	private String Nombre;
 	private Integer Creditos;
+	
+	@OneToMany(mappedBy = "titulacion")
+	private List<Grupo> grupos;
+	@OneToMany(mappedBy = "titulacion")
+	private List<Expedientes> expedientes;
+	@Column(nullable = false)
+	@ManyToMany(mappedBy = "titulaciones")
+	private List<Centro> centros;
+	
+	@OneToMany(mappedBy = "titulacion")
+	private List<Asignatura> asignaturas;
 	private static final long serialVersionUID = 1L;
 
 	public Titulacion() {
@@ -43,6 +56,33 @@ public class Titulacion implements Serializable {
 
 	public void setCreditos(Integer Creditos) {
 		this.Creditos = Creditos;
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((Codigo == null) ? 0 : Codigo.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Titulacion other = (Titulacion) obj;
+		if (Codigo == null) {
+			if (other.Codigo != null)
+				return false;
+		} else if (!Codigo.equals(other.Codigo))
+			return false;
+		return true;
+	}
+	@Override
+	public String toString() {
+		return "Titulacion [Codigo=" + Codigo + ", Nombre=" + Nombre + ", Creditos=" + Creditos + "]";
 	}
    
 }

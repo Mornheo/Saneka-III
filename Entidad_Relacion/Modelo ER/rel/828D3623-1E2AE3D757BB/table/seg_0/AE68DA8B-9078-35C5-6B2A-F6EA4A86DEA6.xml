@@ -31,7 +31,7 @@
 <ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Dirección" id="AB09374F-A24F-B57B-29CE-8947E82B95EB">
+<Column name="Direccion" id="AB09374F-A24F-B57B-29CE-8947E82B95EB">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:42:07 UTC</createdTime>
 <generatorID>2006D447-90F9-7148-E984-4C6C724BA869</generatorID>
@@ -43,7 +43,7 @@
 <ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="TLF_Conserjería" id="4FD44A29-9A35-ED9E-6760-2821DD8FC79D">
+<Column name="TLF_conserjeria" id="4FD44A29-9A35-ED9E-6760-2821DD8FC79D">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:42:07 UTC</createdTime>
 <generatorID>A66AD497-F131-D9B1-3307-92B949B26413</generatorID>
