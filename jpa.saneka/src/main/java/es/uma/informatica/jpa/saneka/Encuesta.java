@@ -2,6 +2,8 @@ package es.uma.informatica.jpa.saneka;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -16,7 +18,14 @@ public class Encuesta implements Serializable {
 	@Id
 	private Date Fecha_de_envio;
 	private static final long serialVersionUID = 1L;
-
+	@ManyToOne
+	private Expediente expediente;
+	@ManyToMany
+	@JoinTable(name = "Join_enc_gpa",
+			joinColumns = @JoinColumn(name = "encuesta_fk"),
+			inverseJoinColumns = @JoinColumn(name = "gpa_fk"))
+	private List<Grupos_por_asignatura> gpas;
+	
 	public Encuesta() {
 		super();
 	}   

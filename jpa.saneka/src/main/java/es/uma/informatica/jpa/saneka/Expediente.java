@@ -2,6 +2,8 @@ package es.uma.informatica.jpa.saneka;
 
 import java.io.Serializable;
 import java.lang.Integer;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -13,12 +15,20 @@ import javax.persistence.*;
 public class Expediente implements Serializable {
 
 	   
-	@Id
+	@Id @GeneratedValue //(strategy = GenerationType.SEQUENCE)
 	private Integer Num_expediente;
-	private boolean Activo;
+	private Boolean Activo;
 	private long Nota_media_provisional;
 	private static final long serialVersionUID = 1L;
-
+	@ManyToOne
+	private Alumno alumno;
+	@ManyToOne
+	private Titulacion titulacion;
+	@OneToMany (mappedBy="expediente")
+	private List<Encuesta> encuestas;
+	@OneToMany (mappedBy="expediente")
+	private List<Matricula> matriculas;
+	
 	public Expediente() {
 		super();
 	}   
