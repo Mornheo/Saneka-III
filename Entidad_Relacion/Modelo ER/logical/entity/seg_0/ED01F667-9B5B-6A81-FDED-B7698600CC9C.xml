@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="Código" id="FB31A13C-448A-17D3-98FC-8112408E11AD">
+<Attribute name="Codigo" id="FB31A13C-448A-17D3-98FC-8112408E11AD">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 10:59:45 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
@@ -41,7 +41,7 @@
 <dataTypeSize>20 CHAR</dataTypeSize>
 <ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Créditos" id="8C0C2A1C-31D2-9ED9-47F0-59CAC5261A2D">
+<Attribute name="Creditos" id="8C0C2A1C-31D2-9ED9-47F0-59CAC5261A2D">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 10:59:57 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
@@ -60,8 +60,9 @@
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:00:40 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

@@ -52,7 +52,7 @@
 <dataTypeSize>20 CHAR</dataTypeSize>
 <ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Turno_Mañana_Tarde" id="2D4BC215-5E37-B11D-E699-D7575A09BD72">
+<Attribute name="Turno_mañana_tarde" id="2D4BC215-5E37-B11D-E699-D7575A09BD72">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:19:03 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
@@ -65,7 +65,7 @@
 <dataTypeSize>20 CHAR</dataTypeSize>
 <ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Inglés" id="9B9431D2-D860-6FEE-957B-F828B22D94FD">
+<Attribute name="Ingles" id="9B9431D2-D860-6FEE-957B-F828B22D94FD">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:19:03 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
@@ -119,7 +119,7 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Código" id="882AF774-0C49-C4D0-7636-9801EED90CD5">
+<Attribute name="Codigo" id="882AF774-0C49-C4D0-7636-9801EED90CD5">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:36:30 UTC</createdTime>
 <generatorID>64E6025A-EB2F-1158-828E-067BA01B342B</generatorID>
@@ -154,8 +154,9 @@
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:19:11 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
@@ -166,8 +167,9 @@
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:19:43 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="false"/>
 </engineerTo>
 <newElementsIDs>93D3FB36-AECD-16FF-B713-85955019D6FD,D73853AD-D001-00C5-0794-0F41B2017663</newElementsIDs>
 <usedAttributes>
