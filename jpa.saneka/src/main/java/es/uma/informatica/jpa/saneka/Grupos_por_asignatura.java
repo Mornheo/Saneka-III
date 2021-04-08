@@ -19,8 +19,8 @@ public class Grupos_por_asignatura implements Serializable {
 	private Integer Curso_academico;
 	private Boolean Oferta;
 	private static final long serialVersionUID = 1L;
-	@ManyToMany (mappedBy = "gpas")
-	private List<Encuesta> encuestas;
+	//@ManyToMany (mappedBy = "gpas")
+	//private List<Encuesta> encuestas;
 	
 	@Id
 	@ManyToOne

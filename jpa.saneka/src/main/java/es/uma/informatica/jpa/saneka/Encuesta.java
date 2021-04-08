@@ -20,11 +20,11 @@ public class Encuesta implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@ManyToOne
 	private Expediente expediente;
-	@ManyToMany
-	@JoinTable(name = "Join_enc_gpa",
-			joinColumns = @JoinColumn(name = "encuesta_fk"),
-			inverseJoinColumns = @JoinColumn(name = "gpa_fk"))
-	private List<Grupos_por_asignatura> gpas;
+	//@ManyToMany
+	//@JoinTable(name = "Join_enc_gpa",
+	//		joinColumns = @JoinColumn(name = "encuesta_fk"),
+	//		inverseJoinColumns = { @JoinColumn(name = "curso_fk"), @JoinColumn(name = "asig_fk"), @JoinColumn(name = "grupo_fk")})
+	//private List<Grupos_por_asignatura> gpas;
 	
 	public Encuesta() {
 		super();
