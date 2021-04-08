@@ -24,9 +24,10 @@ public class Titulacion implements Serializable {
 	@OneToMany(mappedBy = "titulacion")
 	private List<Grupo> grupos;
 	@OneToMany(mappedBy = "titulacion")
-	private List<Expedientes> expedientes;
-	@Column(nullable = false)
+	private List<Expediente> expedientes;
+	
 	@ManyToMany(mappedBy = "titulaciones")
+	@JoinColumn(nullable = false)
 	private List<Centro> centros;
 	
 	@OneToMany(mappedBy = "titulacion")

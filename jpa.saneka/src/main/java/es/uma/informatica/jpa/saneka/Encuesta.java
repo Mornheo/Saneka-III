@@ -1,29 +1,25 @@
 package es.uma.informatica.jpa.saneka;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.*;
 
-/**
- * Entity implementation class for Entity: Encuesta
- *
- */
 @Entity
 
 public class Encuesta implements Serializable {
 
 	   
 	@Id
+	@Temporal(TemporalType.DATE)
 	private Date Fecha_de_envio;
 	private static final long serialVersionUID = 1L;
 	@ManyToOne
 	private Expediente expediente;
+	
 	@ManyToMany
-	@JoinTable(name = "Join_enc_gpa",
-			joinColumns = @JoinColumn(name = "encuesta_fk"),
-			inverseJoinColumns = @JoinColumn(name = "gpa_fk"))
+	@JoinTable
 	private List<Grupos_por_asignatura> gpas;
 	
 	public Encuesta() {
