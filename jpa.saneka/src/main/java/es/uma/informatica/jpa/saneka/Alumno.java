@@ -48,13 +48,13 @@ public class Alumno implements Serializable {
 	private Integer Creditos_PE;
 	private Integer Creditos_TF;
 	private static final long serialVersionUID = 1L;
-	@OneToMany(targetEntity=Expedientes.class,mappedBy="alumno")
-	private List<Expedientes> expedientes;
+	@OneToMany(targetEntity=Expediente.class,mappedBy="alumno")
+	private List<Expediente> expedientes;
 	
-	public List<Expedientes> getExpedientes() {
+	public List<Expediente> getExpedientes() {
 		return expedientes;
 	}
-	public void setExpedientes(List<Expedientes> expedientes) {
+	public void setExpedientes(List<Expediente> expedientes) {
 		this.expedientes = expedientes;
 	}
 	public Alumno() {
