@@ -69,12 +69,16 @@ public class Clase implements Serializable {
 	@Id
 	private int Dia;
 	@Id
+	@Temporal(TemporalType.DATE)
 	private Date Hora_inicio;
 	@Id
 	@ManyToOne
+	@JoinColumn(nullable=false)
 	private Grupo grupo;
+	@Temporal(TemporalType.DATE)
 	private Date Hora_fin;
 	@ManyToOne
+	@JoinColumn(nullable=false)
 	private Asignatura asignatura;
 	private static final long serialVersionUID = 1L;
 	public int getDia() {

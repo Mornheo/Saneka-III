@@ -18,11 +18,12 @@ public class Grupo implements Serializable{
 	@Column(nullable=false)
 	private String Turno;
 	@Column(nullable=false)
-	private boolean Ingles;
-	private boolean Visible;
+	private Boolean Ingles;
+	private Boolean Visible;
 	private String Asignar;
 	private Integer Plazas;
 	@ManyToOne
+	@JoinColumn(nullable=false)
 	private Titulacion titulacion;
 	@OneToMany
 	private List<Grupo> grupos;
@@ -30,7 +31,8 @@ public class Grupo implements Serializable{
 	private List<Clase> clases;
 	@OneToMany
 	private List<Grupos_por_asignatura> grupos_asignatura;
-	
+	@OneToMany
+	private List<Asignaturas_matricula> asignaturas_matricula;
 	
 	public Integer getID() {
 		return ID;
@@ -63,20 +65,19 @@ public class Grupo implements Serializable{
 	public void setTurno(String turno) {
 		Turno = turno;
 	}
-
-	public boolean isIngles() {
+	public Boolean getIngles() {
 		return Ingles;
 	}
 
-	public void setIngles(boolean ingles) {
+	public void setIngles(Boolean ingles) {
 		Ingles = ingles;
 	}
 
-	public boolean isVisible() {
+	public Boolean getVisible() {
 		return Visible;
 	}
 
-	public void setVisible(boolean visible) {
+	public void setVisible(Boolean visible) {
 		Visible = visible;
 	}
 
@@ -126,6 +127,15 @@ public class Grupo implements Serializable{
 
 	public void setGrupos_asignatura(List<Grupos_por_asignatura> grupos_asignatura) {
 		this.grupos_asignatura = grupos_asignatura;
+	}
+	
+
+	public List<Asignaturas_matricula> getAsignaturas_matricula() {
+		return asignaturas_matricula;
+	}
+
+	public void setAsignaturas_matricula(List<Asignaturas_matricula> asignaturas_matricula) {
+		this.asignaturas_matricula = asignaturas_matricula;
 	}
 
 	@Override

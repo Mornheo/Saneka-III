@@ -3,6 +3,8 @@ package es.uma.informatica.jpa.saneka;
 import java.io.Serializable;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
+
 import javax.persistence.*;
 /**
  * Entity implementation class for Entity: Matricula
@@ -24,9 +26,14 @@ public class Matricula implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@ManyToOne
+	@JoinColumn(nullable=false)
 	private Expediente expediente;
+	@OneToMany(mappedBy = "matricula")
+	@JoinColumn(nullable=false)
+	private List<Asignaturas_matricula> asignaturas_matriculas;
 	
 	public static class MatriculaId implements Serializable {
+		private static final long serialVersionUID = 1L;
 		private int expediente;
 		private String Curso_academico;
 		

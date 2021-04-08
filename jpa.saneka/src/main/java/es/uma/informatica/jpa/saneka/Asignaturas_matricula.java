@@ -24,6 +24,8 @@ public class Asignaturas_matricula implements Serializable {
 	private Grupo grupo;
 	
 	public static class Asignaturas_matriculaId implements Serializable {
+
+		private static final long serialVersionUID = 1L;
 		private int asignatura;
 		private MatriculaId matricula;
 		

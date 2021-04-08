@@ -36,7 +36,7 @@ public class Asignatura implements Serializable {
 	
 	
 	@ManyToOne
-	@JoinColumn (name = "titulacion_id",nullable = false)
+	@JoinColumn (nullable = false)
 	private Titulacion titulacion;
 	@OneToMany(mappedBy = "asignatura")
 	private List<Clase> clases;
