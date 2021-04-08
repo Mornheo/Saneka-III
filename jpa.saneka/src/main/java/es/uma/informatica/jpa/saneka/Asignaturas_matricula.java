@@ -3,12 +3,14 @@ package es.uma.informatica.jpa.saneka;
 import java.io.Serializable;
 import javax.persistence.*;
 
+import es.uma.informatica.jpa.saneka.Matricula.MatriculaId;
+
 /**
  * Entity implementation class for Entity: Asignaturas_matricula
  *
  */
 @Entity
-
+@IdClass(Asignaturas_matricula.Asignaturas_matriculaId.class)
 public class Asignaturas_matricula implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -22,18 +24,21 @@ public class Asignaturas_matricula implements Serializable {
 	private Grupo grupo;
 	
 	public static class Asignaturas_matriculaId implements Serializable {
+
+		private static final long serialVersionUID = 1L;
 		private int asignatura;
-		private String matricula;
+		private MatriculaId matricula;
+		
 		public int getAsignatura() {
 			return asignatura;
 		}
 		public void setAsignatura(int asignatura) {
 			this.asignatura = asignatura;
 		}
-		public String getMatricula() {
+		public MatriculaId getMatricula() {
 			return matricula;
 		}
-		public void setMatricula(String matricula) {
+		public void setMatricula(MatriculaId matricula) {
 			this.matricula = matricula;
 		}
 		@Override

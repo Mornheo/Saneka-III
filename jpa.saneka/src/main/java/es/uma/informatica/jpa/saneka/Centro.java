@@ -15,10 +15,8 @@ public class Centro implements Serializable{
 	private String Direccion;
 	private String TLF_consejeria;
 	@ManyToMany
-	@Column(nullable=false)
-	@JoinTable(name = "centro_titulacion",
-	joinColumns = @JoinColumn(name= "centro_id"),
-	inverseJoinColumns = @JoinColumn(name= "titulacion_id"))
+	//@JoinTable(name="Centro_Titulacion", joinColumns={ @JoinColumn(name="centro_id") }, inverseJoinColumns={ @JoinColumn(name="titulacion_id") })
+	@JoinTable
 	private List<Titulacion> titulaciones;
 	
 	public Integer getID() {
