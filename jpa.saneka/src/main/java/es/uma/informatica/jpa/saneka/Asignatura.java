@@ -17,7 +17,7 @@ import javax.persistence.*;
 public class Asignatura implements Serializable {
 
 	   
-	@Id @Column(nullable = false)
+	@Id 
 	private Integer Referencia;
 	@Column(nullable = false)
 	private Boolean Ofertada;
@@ -40,7 +40,7 @@ public class Asignatura implements Serializable {
 	@OneToMany(mappedBy = "asignatura")
 	private List<Clase> clases;
 	@OneToMany(mappedBy = "asignatura")
-	private List<Grupos_por_asignaturas> grupos;
+	private List<Grupos_por_asignatura> grupos;
 	@OneToMany(mappedBy ="asignatura")
 	private List<Asignaturas_matricula> asignaturas_matricula;
 	
