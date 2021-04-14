@@ -4,7 +4,7 @@
 <createdTime>2021-03-16 11:01:46 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="A98A2335-726F-06DB-F240-8D1A037749B8" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -14,13 +14,14 @@
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
+<preferredAbbreviation>ASIG</preferredAbbreviation>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
 <Attribute name="Referencia" id="0DD81814-9E2E-8CE4-E0C3-B1BB71E338E7">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:01:57 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="A98A2335-726F-06DB-F240-8D1A037749B8" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -32,7 +33,7 @@
 <createdTime>2021-03-16 11:02:19 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="A98A2335-726F-06DB-F240-8D1A037749B8" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -45,7 +46,7 @@
 <createdTime>2021-03-16 11:02:09 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="A98A2335-726F-06DB-F240-8D1A037749B8" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -57,7 +58,7 @@
 <createdTime>2021-03-18 11:55:23 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="A98A2335-726F-06DB-F240-8D1A037749B8" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -71,7 +72,7 @@
 <createdTime>2021-03-16 11:02:27 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="A98A2335-726F-06DB-F240-8D1A037749B8" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -84,7 +85,7 @@
 <createdTime>2021-03-16 11:02:15 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="A98A2335-726F-06DB-F240-8D1A037749B8" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -96,7 +97,7 @@
 <createdTime>2021-03-18 11:56:49 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="A98A2335-726F-06DB-F240-8D1A037749B8" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -109,7 +110,7 @@
 <createdTime>2021-03-18 11:58:02 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="A98A2335-726F-06DB-F240-8D1A037749B8" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -122,7 +123,7 @@
 <createdTime>2021-03-16 11:02:35 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="A98A2335-726F-06DB-F240-8D1A037749B8" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -136,7 +137,7 @@
 <createdTime>2021-03-16 11:02:42 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="A98A2335-726F-06DB-F240-8D1A037749B8" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -150,7 +151,7 @@
 <createdTime>2021-03-18 12:03:03 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="A98A2335-726F-06DB-F240-8D1A037749B8" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -164,7 +165,7 @@
 <createdTime>2021-03-16 11:02:58 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="A98A2335-726F-06DB-F240-8D1A037749B8" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -179,7 +180,7 @@
 <generatorID>91CE72F0-9792-0F7E-AD53-AFB82AD1A986</generatorID>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="A98A2335-726F-06DB-F240-8D1A037749B8" value="true"/>
 </engineerTo>
 <referedAttribute>FB31A13C-448A-17D3-98FC-8112408E11AD</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
@@ -193,11 +194,11 @@
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:02:05 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="false"/>
+<item key="A98A2335-726F-06DB-F240-8D1A037749B8" value="true"/>
 </engineerTo>
 <pk>true</pk>
+<newElementsIDs>0DD81814-9E2E-8CE4-E0C3-B1BB71E338E7</newElementsIDs>
 <usedAttributes>
 <attributeRef>0DD81814-9E2E-8CE4-E0C3-B1BB71E338E7</attributeRef>
 </usedAttributes>

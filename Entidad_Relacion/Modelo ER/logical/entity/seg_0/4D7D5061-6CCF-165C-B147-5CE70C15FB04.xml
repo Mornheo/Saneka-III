@@ -1,10 +1,10 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4D7D5061-6CCF-165C-B147-5CE70C15FB04" name="EXPEDIENTES">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4D7D5061-6CCF-165C-B147-5CE70C15FB04" name="EXPEDIENTE">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:05:52 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="A98A2335-726F-06DB-F240-8D1A037749B8" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -14,13 +14,14 @@
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
+<preferredAbbreviation>EXP</preferredAbbreviation>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="Num_expediente" id="05CB2A29-F558-BA0B-6C72-0E581A0FF5D0">
+<Attribute name="Num" id="05CB2A29-F558-BA0B-6C72-0E581A0FF5D0">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:05:59 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="A98A2335-726F-06DB-F240-8D1A037749B8" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -32,7 +33,7 @@
 <createdTime>2021-03-16 11:06:16 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="A98A2335-726F-06DB-F240-8D1A037749B8" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -41,12 +42,12 @@
 <dataTypeSize>1</dataTypeSize>
 <ownDataTypeParameters>1,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Nota_media_provisional" id="9FC902D5-62BD-C238-A315-92286E1BF6CD">
+<Attribute name="Nota_media" id="9FC902D5-62BD-C238-A315-92286E1BF6CD">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:06:26 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="A98A2335-726F-06DB-F240-8D1A037749B8" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -60,7 +61,7 @@
 <generatorID>5EB0631D-F725-518D-D017-4CFE1E90CE05</generatorID>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="A98A2335-726F-06DB-F240-8D1A037749B8" value="true"/>
 </engineerTo>
 <referedAttribute>FB31A13C-448A-17D3-98FC-8112408E11AD</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
@@ -74,7 +75,7 @@
 <generatorID>3C2C1A7F-BDC9-FCA7-8073-11C0EF29B37D</generatorID>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="A98A2335-726F-06DB-F240-8D1A037749B8" value="true"/>
 </engineerTo>
 <referedAttribute>E88E5119-02DA-4D91-270F-A69E54810D90</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
@@ -88,9 +89,8 @@
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:06:14 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="false"/>
+<item key="A98A2335-726F-06DB-F240-8D1A037749B8" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

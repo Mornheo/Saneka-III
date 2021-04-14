@@ -1,10 +1,10 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Titulación_centro" directorySegmentName="seg_0" id="36B99867-FEF4-DBEE-3F31-167F0F4E9EAC">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="TITU_CENTRO" directorySegmentName="seg_0" id="36B99867-FEF4-DBEE-3F31-167F0F4E9EAC">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:29:39 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="A98A2335-726F-06DB-F240-8D1A037749B8" value="true"/>
 </engineerTo>
 <sourcePk>F15C25C7-2099-0292-9253-708B023A9BE6</sourcePk>
 <identifying>false</identifying>
