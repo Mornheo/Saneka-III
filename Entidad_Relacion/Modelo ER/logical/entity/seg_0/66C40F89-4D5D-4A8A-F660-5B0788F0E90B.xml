@@ -4,7 +4,7 @@
 <createdTime>2021-03-16 11:21:26 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="A98A2335-726F-06DB-F240-8D1A037749B8" value="true"/>
+<item key="F517675C-101C-55FE-50A5-FCBE7DA1FDC2" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -22,14 +22,14 @@
 <createdTime>2021-03-16 11:21:34 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="A98A2335-726F-06DB-F240-8D1A037749B8" value="true"/>
+<item key="F517675C-101C-55FE-50A5-FCBE7DA1FDC2" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20 CHAR</dataTypeSize>
-<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 </Entity>

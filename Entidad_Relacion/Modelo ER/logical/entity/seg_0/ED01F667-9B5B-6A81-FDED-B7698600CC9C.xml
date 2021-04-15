@@ -4,7 +4,7 @@
 <createdTime>2021-03-16 10:59:05 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="A98A2335-726F-06DB-F240-8D1A037749B8" value="true"/>
+<item key="F517675C-101C-55FE-50A5-FCBE7DA1FDC2" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -21,7 +21,7 @@
 <createdTime>2021-03-16 10:59:45 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="A98A2335-726F-06DB-F240-8D1A037749B8" value="true"/>
+<item key="F517675C-101C-55FE-50A5-FCBE7DA1FDC2" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -33,21 +33,21 @@
 <createdTime>2021-03-16 10:59:53 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="A98A2335-726F-06DB-F240-8D1A037749B8" value="true"/>
+<item key="F517675C-101C-55FE-50A5-FCBE7DA1FDC2" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20 CHAR</dataTypeSize>
-<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="Creditos" id="8C0C2A1C-31D2-9ED9-47F0-59CAC5261A2D">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 10:59:57 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="A98A2335-726F-06DB-F240-8D1A037749B8" value="true"/>
+<item key="F517675C-101C-55FE-50A5-FCBE7DA1FDC2" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -62,7 +62,7 @@
 <createdTime>2021-03-16 11:00:40 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="A98A2335-726F-06DB-F240-8D1A037749B8" value="true"/>
+<item key="F517675C-101C-55FE-50A5-FCBE7DA1FDC2" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <newElementsIDs>FB31A13C-448A-17D3-98FC-8112408E11AD</newElementsIDs>

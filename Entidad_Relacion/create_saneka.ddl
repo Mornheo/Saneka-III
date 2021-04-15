@@ -1,5 +1,5 @@
 -- Generado por Oracle SQL Developer Data Modeler 20.4.1.406.0906
---   en:        2021-04-14 17:03:49 CEST
+--   en:        2021-04-15 20:22:19 CEST
 --   sitio:      Oracle Database 11g
 --   tipo:      Oracle Database 11g
 
@@ -10,23 +10,22 @@
 -- predefined type, no DDL - XMLTYPE
 
 CREATE TABLE alumno (
-    id                      INTEGER NOT NULL,
-    dni                     VARCHAR2(20 CHAR) NOT NULL,
-    nombre                  VARCHAR2(20 CHAR) NOT NULL,
+    dni                     VARCHAR2(50 CHAR) NOT NULL,
+    nombre                  VARCHAR2(50 CHAR) NOT NULL,
     apellido1               VARCHAR2(50 CHAR) NOT NULL,
     apellido2               VARCHAR2(50 CHAR),
     num_expediente          INTEGER,
     num_archivo             VARCHAR2(50 CHAR),
-    email_institucional     VARCHAR2(20 CHAR) NOT NULL,
-    email_personal          VARCHAR2(20 CHAR),
+    email_institucional     VARCHAR2(100 CHAR) NOT NULL,
+    email_personal          VARCHAR2(100 CHAR),
     telefono                VARCHAR2(20 CHAR),
     movil                   VARCHAR2(20 CHAR),
     direccion_notificacion  VARCHAR2(50 CHAR),
     localidad_notificacion  VARCHAR2(50 CHAR),
     provincia_notificacion  VARCHAR2(50 CHAR),
     cp_notificacion         INTEGER,
-    fecha_matricula         DATE,
-    turno_preferente        INTEGER,
+    fecha_matricula         VARCHAR2(100 CHAR),
+    turno_preferente        VARCHAR2(100 CHAR),
     grupos_asignados        VARCHAR2(255 CHAR),
     nota_media              INTEGER,
     creditos_superados      INTEGER,
@@ -38,18 +37,13 @@ CREATE TABLE alumno (
     creditos_tf             INTEGER
 );
 
-ALTER TABLE alumno ADD CONSTRAINT alumno_pk PRIMARY KEY ( id );
-
-ALTER TABLE alumno ADD CONSTRAINT alumno_dni_un UNIQUE ( dni );
-
-ALTER TABLE alumno ADD CONSTRAINT alumno_nombre_apellido1_un UNIQUE ( nombre,
-                                                                      apellido1 );
+ALTER TABLE alumno ADD CONSTRAINT alumno_pk PRIMARY KEY ( dni );
 
 CREATE TABLE asig (
     referencia         INTEGER NOT NULL,
-    ofertada           CHAR(1) NOT NULL,
+    ofertada           VARCHAR2(20) NOT NULL,
     codigo_1           INTEGER NOT NULL,
-    asignatura         VARCHAR2(50 CHAR),
+    asignatura         VARCHAR2(100 CHAR),
     curso              INTEGER,
     creditos_teoria    INTEGER NOT NULL,
     creditos_practica  INTEGER,
@@ -114,17 +108,17 @@ CREATE TABLE encuesta_gpa (
 );
 
 ALTER TABLE encuesta_gpa
-    ADD CONSTRAINT encuesta_grupos_pk PRIMARY KEY ( encuesta_fecha_de_envio,
-                                                    gpa_c,
-                                                    gpa_asig_referencia,
-                                                    gpa_id );
+    ADD CONSTRAINT encuesta_gpa_pk PRIMARY KEY ( encuesta_fecha_de_envio,
+                                                 gpa_c,
+                                                 gpa_asig_referencia,
+                                                 gpa_id );
 
 CREATE TABLE exp (
     num          INTEGER NOT NULL,
     activo       CHAR(1),
     nota_media   INTEGER,
     titu_codigo  INTEGER NOT NULL,
-    alumno_id    INTEGER NOT NULL
+    alumno_dni   VARCHAR2(50 CHAR) NOT NULL
 );
 
 ALTER TABLE exp ADD CONSTRAINT exp_pk PRIMARY KEY ( num );
@@ -175,14 +169,14 @@ ALTER TABLE matr ADD CONSTRAINT matr_pk PRIMARY KEY ( curso,
 
 CREATE TABLE opt (
     referencia  INTEGER NOT NULL,
-    mencion     VARCHAR2(20 CHAR)
+    mencion     VARCHAR2(50 CHAR)
 );
 
 ALTER TABLE opt ADD CONSTRAINT opt_pk PRIMARY KEY ( referencia );
 
 CREATE TABLE titu (
     codigo    INTEGER NOT NULL,
-    nombre    VARCHAR2(20 CHAR),
+    nombre    VARCHAR2(100 CHAR),
     creditos  INTEGER
 );
 
@@ -195,6 +189,14 @@ CREATE TABLE titu_centro (
 
 ALTER TABLE titu_centro ADD CONSTRAINT titu_centro_pk PRIMARY KEY ( titu_codigo,
                                                                     centro_id );
+
+CREATE TABLE titu_opt (
+    titu_codigo     INTEGER NOT NULL,
+    opt_referencia  INTEGER NOT NULL
+);
+
+ALTER TABLE titu_opt ADD CONSTRAINT titu_opt_pk PRIMARY KEY ( titu_codigo,
+                                                              opt_referencia );
 
 ALTER TABLE asig_matr
     ADD CONSTRAINT asig_matr_asig_fk FOREIGN KEY ( asig_referencia )
@@ -227,20 +229,20 @@ ALTER TABLE encuesta
         REFERENCES exp ( num );
 
 ALTER TABLE encuesta_gpa
-    ADD CONSTRAINT encuesta_grupos_encuesta_fk FOREIGN KEY ( encuesta_fecha_de_envio )
+    ADD CONSTRAINT encuesta_gpa_encuesta_fk FOREIGN KEY ( encuesta_fecha_de_envio )
         REFERENCES encuesta ( fecha_de_envio );
 
 ALTER TABLE encuesta_gpa
-    ADD CONSTRAINT encuesta_grupos_gpa_fk FOREIGN KEY ( gpa_c,
-                                                        gpa_asig_referencia,
-                                                        gpa_id )
+    ADD CONSTRAINT encuesta_gpa_gpa_fk FOREIGN KEY ( gpa_c,
+                                                     gpa_asig_referencia,
+                                                     gpa_id )
         REFERENCES gpa ( c,
                          asig_referencia,
                          grupo_id );
 
 ALTER TABLE exp
-    ADD CONSTRAINT exp_alumno_fk FOREIGN KEY ( alumno_id )
-        REFERENCES alumno ( id );
+    ADD CONSTRAINT exp_alumno_fk FOREIGN KEY ( alumno_dni )
+        REFERENCES alumno ( dni );
 
 ALTER TABLE exp
     ADD CONSTRAINT exp_titu_fk FOREIGN KEY ( titu_codigo )
@@ -278,13 +280,21 @@ ALTER TABLE titu_centro
     ADD CONSTRAINT titu_centro_titu_fk FOREIGN KEY ( titu_codigo )
         REFERENCES titu ( codigo );
 
+ALTER TABLE titu_opt
+    ADD CONSTRAINT titu_opt_opt_fk FOREIGN KEY ( opt_referencia )
+        REFERENCES opt ( referencia );
+
+ALTER TABLE titu_opt
+    ADD CONSTRAINT titu_opt_titu_fk FOREIGN KEY ( titu_codigo )
+        REFERENCES titu ( codigo );
+
 
 
 -- Informe de Resumen de Oracle SQL Developer Data Modeler: 
 -- 
--- CREATE TABLE                            14
+-- CREATE TABLE                            15
 -- CREATE INDEX                             0
--- ALTER TABLE                             37
+-- ALTER TABLE                             38
 -- CREATE VIEW                              0
 -- ALTER VIEW                               0
 -- CREATE PACKAGE                           0
