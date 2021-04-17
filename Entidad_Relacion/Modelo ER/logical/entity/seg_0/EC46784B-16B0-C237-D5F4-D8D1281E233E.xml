@@ -4,7 +4,7 @@
 <createdTime>2021-03-16 11:13:27 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="414E280E-DE20-6630-7CC7-D2E1CDAF8A7B" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -15,25 +15,25 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="Fecha de envío" id="B0EFA306-E4FF-31FC-6097-AE4E3F2C9AAA">
+<Attribute name="Fecha_de_envio" id="B0EFA306-E4FF-31FC-6097-AE4E3F2C9AAA">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:13:34 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="414E280E-DE20-6630-7CC7-D2E1CDAF8A7B" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Num_Expediente" id="3A29C64C-B80A-218E-D38C-0E1E8059D17B">
+<Attribute name="Num" id="3A29C64C-B80A-218E-D38C-0E1E8059D17B">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:30:53 UTC</createdTime>
 <generatorID>01A73196-161F-25AB-1F23-A424D7857135</generatorID>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="414E280E-DE20-6630-7CC7-D2E1CDAF8A7B" value="true"/>
 </engineerTo>
 <referedAttribute>05CB2A29-F558-BA0B-6C72-0E581A0FF5D0</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
@@ -47,8 +47,9 @@
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:13:39 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="414E280E-DE20-6630-7CC7-D2E1CDAF8A7B" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

@@ -3,13 +3,15 @@ package es.uma.informatica.jpa.saneka;
 import java.io.Serializable;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
+
 import javax.persistence.*;
 /**
  * Entity implementation class for Entity: Matricula
  *
  */
 @Entity
-
+@IdClass(Matricula.MatriculaId.class)
 public class Matricula implements Serializable {
 	   
 	@Id
@@ -22,15 +24,69 @@ public class Matricula implements Serializable {
 	private boolean Nuevo_ingreso;
 	private String Listado_asignaturas;
 	private static final long serialVersionUID = 1L;
-	@ManyToOne()
-	private Expedientes expedientes;
+	@Id
+	@ManyToOne
+	@JoinColumn(nullable=false)
+	private Expediente expediente;
+	@OneToMany(mappedBy = "matricula")
+	@JoinColumn(nullable=false)
+	private List<Asignaturas_matricula> asignaturas_matriculas;
 	
-	public Expedientes getExpedientes() {
-		return expedientes;
+	public static class MatriculaId implements Serializable {
+		private static final long serialVersionUID = 1L;
+		private int expediente;
+		private String Curso_academico;
+		
+		public int getExpediente() {
+			return expediente;
+		}
+		public void setExpediente(int expediente) {
+			this.expediente = expediente;
+		}
+		public String getCurso_academico() {
+			return Curso_academico;
+		}
+		public void setCurso_academico(String curso_academico) {
+			Curso_academico = curso_academico;
+		}
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result + ((Curso_academico == null) ? 0 : Curso_academico.hashCode());
+			result = prime * result + expediente;
+			return result;
+		}
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			MatriculaId other = (MatriculaId) obj;
+			if (Curso_academico == null) {
+				if (other.Curso_academico != null)
+					return false;
+			} else if (!Curso_academico.equals(other.Curso_academico))
+				return false;
+			if (expediente != other.expediente)
+				return false;
+			return true;
+		}
+		
+		
 	}
 	
-	public void setExpedientes(Expedientes expedientes) {
-		this.expedientes = expedientes;
+	
+	
+	public Expediente getExpedientes() {
+		return expediente;
+	}
+	
+	public void setExpedientes(Expediente expedientes) {
+		this.expediente = expedientes;
 	}
 	
 	public Matricula() {

@@ -1,10 +1,10 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Encuesta_Grupos" directorySegmentName="seg_0" id="DCEC1A42-20F7-81BE-AB55-69F0AACC9BAF">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="ENCUESTA_GPA" directorySegmentName="seg_0" id="DCEC1A42-20F7-81BE-AB55-69F0AACC9BAF">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:31:30 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="414E280E-DE20-6630-7CC7-D2E1CDAF8A7B" value="true"/>
 </engineerTo>
 <sourcePk>46A4D0EB-AB58-8B98-F2DB-3C4650B1A859</sourcePk>
 <identifying>false</identifying>
