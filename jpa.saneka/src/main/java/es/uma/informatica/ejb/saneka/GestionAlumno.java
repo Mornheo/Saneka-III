@@ -8,7 +8,7 @@ import es.uma.informatica.jpa.saneka.Alumno;
 @Local
 public interface GestionAlumno {
 
-	void insertarAlumno(String dni) throws AlumnoYaExistente;
+	void insertarAlumno(Alumno alumno) throws AlumnoYaExistente;
 
 	void modificarAlumno(Alumno alumno) throws AlumnoNoEncontrado;
 

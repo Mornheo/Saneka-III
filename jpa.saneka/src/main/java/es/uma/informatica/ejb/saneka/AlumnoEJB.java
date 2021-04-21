@@ -11,19 +11,17 @@ import es.uma.informatica.jpa.saneka.*;
 @Stateless
 public class AlumnoEJB implements GestionAlumno{
 
-	@PersistenceContext(name="Alumno")
+	@PersistenceContext(name="jpa.saneka")
 	private EntityManager em;
 	
 	@Override
-	public void insertarAlumno(String dni) throws AlumnoYaExistente{
+	public void insertarAlumno(Alumno alumno) throws AlumnoYaExistente{
 		// TODO Auto-generated method stub
-		Alumno al=em.find(Alumno.class,dni);
+		Alumno al=em.find(Alumno.class,alumno.getDNI());
 		if(al!=null) {
 			throw new AlumnoYaExistente();
 		}
-		Alumno a=new Alumno();
-		a.setDNI(dni);
-		em.persist(a);
+		em.persist(alumno);
 	}
 
 	@Override
