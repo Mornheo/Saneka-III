@@ -1,5 +1,6 @@
 package es.uma.informatica.ejb.exceptions;
 
-public class AlumnoNoEncontrado {
+public class AlumnoNoEncontrado extends SanekaException {
 
+	
 }
