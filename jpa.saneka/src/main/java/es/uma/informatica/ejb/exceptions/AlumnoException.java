@@ -1,5 +1,5 @@
 package es.uma.informatica.ejb.exceptions;
 
-public class illo {
+public class AlumnoException {
 
 }
