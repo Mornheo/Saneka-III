@@ -242,6 +242,10 @@ public class Alumno implements Serializable {
 	public void setCreditos_TF(Integer Creditos_TF) {
 		this.Creditos_TF = Creditos_TF;
 	}
+	
+	public Alumno(Alumno a) {
+		this.expedientes = a.getExpedientes();
+	}
 
 	@Override
 	public int hashCode() {
