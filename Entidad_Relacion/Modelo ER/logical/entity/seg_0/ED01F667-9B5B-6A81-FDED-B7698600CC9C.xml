@@ -1,10 +1,10 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="ED01F667-9B5B-6A81-FDED-B7698600CC9C" name="TITULACIÓN">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="ED01F667-9B5B-6A81-FDED-B7698600CC9C" name="TITULACION">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 10:59:05 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="F517675C-101C-55FE-50A5-FCBE7DA1FDC2" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -14,13 +14,14 @@
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
+<preferredAbbreviation>TITU</preferredAbbreviation>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
 <Attribute name="Codigo" id="FB31A13C-448A-17D3-98FC-8112408E11AD">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 10:59:45 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="F517675C-101C-55FE-50A5-FCBE7DA1FDC2" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -32,21 +33,21 @@
 <createdTime>2021-03-16 10:59:53 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="F517675C-101C-55FE-50A5-FCBE7DA1FDC2" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20 CHAR</dataTypeSize>
-<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="Creditos" id="8C0C2A1C-31D2-9ED9-47F0-59CAC5261A2D">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 10:59:57 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="F517675C-101C-55FE-50A5-FCBE7DA1FDC2" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -56,15 +57,15 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="F15C25C7-2099-0292-9253-708B023A9BE6" name="TITULACIÓN PK">
+<identifier id="F15C25C7-2099-0292-9253-708B023A9BE6" name="TITULACION PK">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:00:40 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="false"/>
+<item key="F517675C-101C-55FE-50A5-FCBE7DA1FDC2" value="true"/>
 </engineerTo>
 <pk>true</pk>
+<newElementsIDs>FB31A13C-448A-17D3-98FC-8112408E11AD</newElementsIDs>
 <usedAttributes>
 <attributeRef>FB31A13C-448A-17D3-98FC-8112408E11AD</attributeRef>
 </usedAttributes>
