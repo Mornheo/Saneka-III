@@ -3,6 +3,8 @@ package es.uma.informatica.jpa.saneka;
 import es.uma.informatica.jpa.saneka.Asignatura;
 import java.io.Serializable;
 import java.lang.String;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -16,6 +18,10 @@ public class Optativa extends Asignatura implements Serializable {
 	
 	private String Mencion;
 	private static final long serialVersionUID = 1L;
+	
+	@ManyToMany
+	private List<Titulacion> titulaciones;
+	
 
 	public Optativa() {
 		super();
