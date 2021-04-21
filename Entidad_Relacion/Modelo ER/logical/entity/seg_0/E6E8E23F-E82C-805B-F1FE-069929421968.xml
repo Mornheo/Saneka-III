@@ -1,10 +1,10 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E6E8E23F-E82C-805B-F1FE-069929421968" name="Asignaturas_Matrícula">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E6E8E23F-E82C-805B-F1FE-069929421968" name="ASIGNATURA_MATRICULA">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:25:19 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="414E280E-DE20-6630-7CC7-D2E1CDAF8A7B" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -14,14 +14,15 @@
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
+<preferredAbbreviation>ASIG_MATR</preferredAbbreviation>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="Curso_academico" id="18841E0B-E931-D938-DA7A-EAC8039770AC">
+<Attribute name="Curso" id="18841E0B-E931-D938-DA7A-EAC8039770AC">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:33:59 UTC</createdTime>
 <generatorID>82960B47-729C-FA69-8601-8FA192F60C70</generatorID>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="414E280E-DE20-6630-7CC7-D2E1CDAF8A7B" value="true"/>
 </engineerTo>
 <referedAttribute>4F0C75F3-41FE-E3F9-39FC-8778B1990EE5</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
@@ -29,13 +30,13 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Num_expediente" id="E9FDAA06-8514-F4E6-FC2D-EB7F70D43776">
+<Attribute name="Num" id="E9FDAA06-8514-F4E6-FC2D-EB7F70D43776">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:33:59 UTC</createdTime>
 <generatorID>82960B47-729C-FA69-8601-8FA192F60C70</generatorID>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="414E280E-DE20-6630-7CC7-D2E1CDAF8A7B" value="true"/>
 </engineerTo>
 <referedAttribute>5A5E4D02-D1CC-787F-31B4-E5C591065C30</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
@@ -49,7 +50,7 @@
 <generatorID>18F7856C-D18A-4B40-AD6D-265206E43708</generatorID>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="414E280E-DE20-6630-7CC7-D2E1CDAF8A7B" value="true"/>
 </engineerTo>
 <referedAttribute>0DD81814-9E2E-8CE4-E0C3-B1BB71E338E7</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
@@ -63,7 +64,7 @@
 <generatorID>DF02C2E0-6092-538D-02D1-88B329B9B7B3</generatorID>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="true"/>
+<item key="414E280E-DE20-6630-7CC7-D2E1CDAF8A7B" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <referedAttribute>CA350D13-916B-6EF1-851B-FA549CF84608</referedAttribute>
@@ -74,15 +75,16 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="A36B50F9-B571-CD64-C5E5-3E191B60405D" name="Asignaturas_Matrícula PK">
+<identifier id="A36B50F9-B571-CD64-C5E5-3E191B60405D" name="Asig_Matri PK">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:34:24 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="828D3623-53B3-296B-CD14-1E2AE3D757BB" value="false"/>
+<item key="414E280E-DE20-6630-7CC7-D2E1CDAF8A7B" value="false"/>
 </engineerTo>
 <pk>true</pk>
+<newElementsIDs>82960B47-729C-FA69-8601-8FA192F60C70,18F7856C-D18A-4B40-AD6D-265206E43708</newElementsIDs>
 <usedAttributes>
 <attributeRef>18841E0B-E931-D938-DA7A-EAC8039770AC</attributeRef>
 <attributeRef>E9FDAA06-8514-F4E6-FC2D-EB7F70D43776</attributeRef>

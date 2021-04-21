@@ -1,1 +1,1 @@
-![ER_saneka](https://user-images.githubusercontent.com/62030156/114021693-3f8f1480-9871-11eb-9ac2-8d328c551a70.png)
+![ER_saneka](https://user-images.githubusercontent.com/62030156/114919650-cf603000-9e28-11eb-8c96-f6886f69eeba.png)
