@@ -4,6 +4,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import es.uma.informatica.ejb.exceptions.ExpedienteNoEncontrado;
 import es.uma.informatica.ejb.exceptions.MatriculaExistente;
 import es.uma.informatica.ejb.exceptions.MatriculaNoExistente;
 import es.uma.informatica.jpa.saneka.Expediente;
@@ -22,7 +23,7 @@ public class MatriculaEJB implements GestionMatricula{
 		if (ex == null) {
 			throw new ExpedienteNoEncontrado();
 		}
-		Matricula mat=em.find(Matricula.class,matricula.getNum_archivo())
+		Matricula mat=em.find(Matricula.class,matricula.getNum_archivo());
 			if(mat!=null) {
 				throw new MatriculaExistente();
 			}
