@@ -5,23 +5,30 @@ import static org.junit.Assert.*;
 import java.util.Properties;
 
 import javax.ejb.embeddable.EJBContainer;
+import javax.naming.Context;
 
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import es.uma.informatica.sii.ejb.practica.BaseDatos;
-import es.uma.informatica.sii.ejb.practica.ejb.GestionLotes;
-import es.uma.informatica.sii.ejb.practica.ejb.GestionProductos;
+import es.uma.informatica.ejb.saneka.GestionExpediente;
 
 public class ExpedienteTest {
 
-	private static final String PRODUCTOS_EJB = "java:global/classes/ProductosEJB";
 	private static final String GLASSFISH_CONFIGI_FILE_PROPERTY = "org.glassfish.ejb.embedded.glassfish.configuration.file";
 	private static final String CONFIG_FILE = "target/test-classes/META-INF/domain.xml";
-	private static final String LOTES_EJB = "java:global/classes/LotesEJB";
-	private static final String UNIDAD_PERSITENCIA_PRUEBAS = "TrazabilidadTest";
+	private static final String UNIDAD_PERSITENCIA_PRUEBAS = "SanekaTest";
+	
+	//Path a las entidades que se usaran en los test ~/classes/{MiClaseEJB}
+	private static final String EXPEDIENTE_EJB = "java:global/classes/ExpedienteEJB";
+	
+	private static EJBContainer ejbContainer;
+	private static Context ctx;
+	
+	//Declaramos las entidades a usar en los test
+	private GestionExpediente gestionExpediente;
+	
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -40,8 +47,8 @@ public class ExpedienteTest {
 
 	@Before
 	public void setUp() throws Exception {
-		gestionLotes = (GestionLotes) ctx.lookup(LOTES_EJB);
-		gestionProductos = (GestionProductos) ctx.lookup(PRODUCTOS_EJB);
+		//Inicializamos las clases y la base de datos
+		gestionExpediente = (GestionExpediente) ctx.lookup(EXPEDIENTE_EJB);
 		BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
 
