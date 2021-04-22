@@ -3,6 +3,7 @@ package es.uma.informatica.saneka;
 import static org.junit.Assert.*;
 
 import java.util.Properties;
+import java.util.logging.Logger;
 
 import javax.ejb.embeddable.EJBContainer;
 import javax.naming.Context;
@@ -16,6 +17,8 @@ import es.uma.informatica.ejb.saneka.GestionExpediente;
 
 public class ExpedienteTest {
 
+	private static final Logger LOG = Logger.getLogger(ExpedienteTest.class.getCanonicalName());
+	
 	private static final String GLASSFISH_CONFIGI_FILE_PROPERTY = "org.glassfish.ejb.embedded.glassfish.configuration.file";
 	private static final String CONFIG_FILE = "target/test-classes/META-INF/domain.xml";
 	private static final String UNIDAD_PERSITENCIA_PRUEBAS = "SanekaTest";

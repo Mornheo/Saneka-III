@@ -29,14 +29,13 @@ public class AlumnoEJB implements GestionAlumno{
 		// De alumno se puede cambiar el nombre, los apellidos,email-personal,
 		// telefono,direccion notificacion, localidad notificacion, provincia
 		// notificacion, cp.
-		Alumno al=em.find(Alumno.class,dni);
+		Alumno al=em.find(Alumno.class,"tal");
 		if(al==null) {
 			
 		}
 		al.setApellido1(alumno.getApellido1());
 		al.setApellido2(alumno.getApellido2());
 		al.setCP_notificacion(alumno.getCP_notificacion());
-		al.setDireccion_notificacion(alumno.getDireccion_notificacion();
 		
 	}
 
@@ -48,12 +47,6 @@ public class AlumnoEJB implements GestionAlumno{
 
 	@Override
 	public void eliminarAlumno() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void insertarAlumno() {
 		// TODO Auto-generated method stub
 		
 	}
