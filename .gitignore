@@ -1,10 +1,5 @@
-# Maven
-jpa.saneka/target/*
-*.xml
-
 # Java
 *.jar
-*.log
 
 # Eclipse
 .metadata
