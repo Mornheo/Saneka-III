@@ -1,10 +1,14 @@
 package es.uma.informatica.saneka;
 
+import java.math.BigDecimal;
+import java.sql.Date;
+import java.util.HashMap;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-
-import es.uma.informatica.jpa.saneka.Alumno;
 
 public class BaseDatos {
 	public static void inicializaBaseDatos(String nombreUnidadPersistencia) {
@@ -12,16 +16,10 @@ public class BaseDatos {
 		EntityManager em = emf.createEntityManager();
 		
 		em.getTransaction().begin();
+		//Rellenar con la base de datos para los test
+		em.getTransaction().commit();
 		
-		Alumno diego =new Alumno();
-		diego.setDNI("090");
-		
-		Alumno bezoya =new Alumno();
-		bezoya.setDNI("010");
-		
-		for (Alumno alumno: new Alumno [] {diego, bezoya}) {
-			em.persist(alumno);
-		}
-		
+		em.close();
+		emf.close();
 	}
 }
