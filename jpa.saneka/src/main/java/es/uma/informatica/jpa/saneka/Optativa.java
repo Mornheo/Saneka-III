@@ -19,7 +19,10 @@ public class Optativa extends Asignatura implements Serializable {
 
 	public Optativa() {
 		super();
-	}   
+	} 
+	public Optativa(Integer ref, Boolean ofe, Integer cod, Integer credT, Titulacion titu) {
+		super(ref, ofe, cod, credT, titu);
+	}  
 	public String getMencion() {
 		return this.Mencion;
 	}

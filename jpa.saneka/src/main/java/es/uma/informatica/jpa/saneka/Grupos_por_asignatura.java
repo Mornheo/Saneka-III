@@ -84,6 +84,11 @@ public class Grupos_por_asignatura implements Serializable {
 
 	public Grupos_por_asignatura() {
 		super();
+	}  
+	public Grupos_por_asignatura(Integer curso, Asignatura asig, Grupo grupo) {
+		this.Curso_academico=curso;
+		this.asignatura=asig;
+		this.grupo=grupo;
 	}   
 	public Integer getCurso_academico() {
 		return this.Curso_academico;

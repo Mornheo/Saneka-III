@@ -21,8 +21,10 @@ public class Expediente implements Serializable {
 	private long Nota_media_provisional;
 	private static final long serialVersionUID = 1L;
 	@ManyToOne
+	@Column(nullable=false)
 	private Alumno alumno;
 	@ManyToOne
+	@Column(nullable=false)
 	private Titulacion titulacion;
 	@OneToMany (mappedBy="expediente")
 	private List<Encuesta> encuestas;
@@ -32,8 +34,10 @@ public class Expediente implements Serializable {
 	public Expediente() {
 		super();
 	}   
-	public Expediente(Integer num) {
+	public Expediente(Integer num, Titulacion titu, Alumno al) {
 		this.Num_expediente = num;
+		this.titulacion=titu;
+		this.alumno=al;
 	}   
 	public Expediente(Integer num, Boolean active, long nota) {
 		this.Activo = active;
