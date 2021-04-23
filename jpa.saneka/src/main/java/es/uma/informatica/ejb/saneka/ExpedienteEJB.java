@@ -18,7 +18,7 @@ public class ExpedienteEJB implements GestionExpediente{
 	public void insertarExpediente(Expediente exp) throws ExpedienteExistenteException {
 		Expediente expEntity = em.find(Expediente.class, exp);
 		
-		if(expEntity == null) {
+		if(expEntity != null) {
 			throw new ExpedienteExistenteException();
 		}
 		

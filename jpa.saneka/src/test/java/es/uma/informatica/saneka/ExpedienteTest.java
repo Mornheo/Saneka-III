@@ -13,7 +13,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import es.uma.informatica.ejb.exceptions.ExpedienteExistenteException;
+import es.uma.informatica.ejb.exceptions.SanekaException;
 import es.uma.informatica.ejb.saneka.GestionExpediente;
+import es.uma.informatica.jpa.saneka.Expediente;
 
 public class ExpedienteTest {
 
@@ -56,8 +59,23 @@ public class ExpedienteTest {
 	}
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testInsertarExpediente() {
+		try {
+			Expediente exp = new Expediente();
+			try {
+				gestionExpediente.insertarExpediente(exp);
+			} catch (ExpedienteExistenteException e) {
+				fail("El expediente ya existe");
+			}
+		}catch (SanekaException e) {
+			throw new RuntimeException(e);
+		}
+		
+	}
+	
+	@Test
+	public void testPrueba() {
+		
 	}
 
 }
