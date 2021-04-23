@@ -18,11 +18,13 @@ public class Centro implements Serializable{
 	//@JoinTable(name="Centro_Titulacion", joinColumns={ @JoinColumn(name="centro_id") }, inverseJoinColumns={ @JoinColumn(name="titulacion_id") })
 	@JoinTable
 	private List<Titulacion> titulaciones;
-	public Centro(Integer id,String nombre,String direccion) {
-		ID = id;
-		Nombre = nombre;
-		Direccion = direccion;
+
+	public Centro (Integer id, String nombre, String dir) {
+		ID=id;
+		Nombre=nombre;
+		Direccion=dir;
 	}
+
 	public Centro(Integer id,String nombre,String direccion,String telefono, List<Titulacion> titu) {
 		ID = id;
 		Nombre = nombre;

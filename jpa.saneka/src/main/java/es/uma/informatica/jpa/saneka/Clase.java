@@ -1,6 +1,6 @@
 package es.uma.informatica.jpa.saneka;
+
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.*;
 
 @Entity
@@ -8,9 +8,9 @@ import javax.persistence.*;
 public class Clase implements Serializable {
 	public static class ClaseId implements Serializable {
 		private static final long serialVersionUID = 1L;
-		private Integer Dia;
+		private int Dia;
 		private String Hora_inicio;
-		private Integer grupo;
+		private int grupo;
 		public ClaseId() {}
 		public ClaseId(Integer dia,String hora,Integer grupo) {
 			super();
@@ -25,7 +25,6 @@ public class Clase implements Serializable {
 		public void setDia(Integer dia) {
 			Dia = dia;
 		}
-		
 		public String getHora_inicio() {
 			return Hora_inicio;
 		}
@@ -42,9 +41,9 @@ public class Clase implements Serializable {
 		public int hashCode() {
 			final int prime = 31;
 			int result = 1;
-			result = prime * result + ((Dia == null) ? 0 : Dia.hashCode());
+			result = prime * result + Dia;
 			result = prime * result + ((Hora_inicio == null) ? 0 : Hora_inicio.hashCode());
-			result = prime * result + ((grupo == null) ? 0 : grupo.hashCode());
+			result = prime * result + grupo;
 			return result;
 		}
 		@Override
@@ -56,25 +55,17 @@ public class Clase implements Serializable {
 			if (getClass() != obj.getClass())
 				return false;
 			ClaseId other = (ClaseId) obj;
-			if (Dia == null) {
-				if (other.Dia != null)
-					return false;
-			} else if (!Dia.equals(other.Dia))
+			if (Dia != other.Dia)
 				return false;
 			if (Hora_inicio == null) {
 				if (other.Hora_inicio != null)
 					return false;
 			} else if (!Hora_inicio.equals(other.Hora_inicio))
 				return false;
-			if (grupo == null) {
-				if (other.grupo != null)
-					return false;
-			} else if (!grupo.equals(other.grupo))
+			if (grupo != other.grupo)
 				return false;
 			return true;
 		}
-		
-		
 	}
 	@Id
 	private int Dia;
@@ -89,11 +80,11 @@ public class Clase implements Serializable {
 	@JoinColumn(nullable=false)
 	private Asignatura asignatura;
 	private static final long serialVersionUID = 1L;
-	public Clase(Integer dia,String hora_ini, Grupo grupo,Asignatura asig) {
-		Dia = dia;
-		Hora_inicio = hora_ini;
-		this.grupo = grupo;
-		asignatura = asig;
+	public Clase(Integer dia, String hora, Asignatura asig, Grupo grupo) {
+		this.Dia=dia;
+		this.Hora_inicio=hora;
+		this.asignatura=asig;
+		this.grupo=grupo;
 	}
 	public int getDia() {
 		return Dia;
@@ -101,15 +92,12 @@ public class Clase implements Serializable {
 	public void setDia(int dia) {
 		Dia = dia;
 	}
-
 	public Grupo getGrupo() {
 		return grupo;
 	}
 	public void setGrupo(Grupo grupo) {
 		this.grupo = grupo;
 	}
-	
-	
 	public String getHora_inicio() {
 		return Hora_inicio;
 	}

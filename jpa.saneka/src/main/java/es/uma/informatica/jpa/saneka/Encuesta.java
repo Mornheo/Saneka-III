@@ -12,10 +12,10 @@ public class Encuesta implements Serializable {
 
 	   
 	@Id
-	@Temporal(TemporalType.DATE)
-	private Date Fecha_de_envio;
+	private String Fecha_de_envio;
 	private static final long serialVersionUID = 1L;
 	@ManyToOne
+	@Column (nullable=false)
 	private Expediente expediente;
 	
 	@ManyToMany
@@ -24,12 +24,16 @@ public class Encuesta implements Serializable {
 	
 	public Encuesta() {
 		super();
+	}  
+	public Encuesta(String fecha, Expediente exp) {
+		this.Fecha_de_envio=fecha;
+		this.expediente=exp;
 	}   
-	public Date getFecha_de_envio() {
+	public String getFecha_de_envio() {
 		return this.Fecha_de_envio;
 	}
 
-	public void setFecha_de_envio(Date Fecha_de_envio) {
+	public void setFecha_de_envio(String Fecha_de_envio) {
 		this.Fecha_de_envio = Fecha_de_envio;
 	}
 	@Override

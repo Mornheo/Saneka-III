@@ -1,27 +1,16 @@
 package es.uma.informatica.saneka;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
-import java.math.BigDecimal;
-import java.sql.Date;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Properties;
 import java.util.logging.Logger;
 
-import javax.ejb.embeddable.EJBContainer;
-import javax.naming.Context;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import es.uma.informatica.ejb.exceptions.CentroExistenteException;
-import es.uma.informatica.ejb.exceptions.SanekaException;
 import es.uma.informatica.ejb.saneka.GestionCentros;
-import es.uma.informatica.ejb.saneka.GestionExpediente;
 import es.uma.informatica.jpa.saneka.Centro;
-import es.uma.informatica.jpa.saneka.Titulacion;
+
 
 
 public class CentroT {

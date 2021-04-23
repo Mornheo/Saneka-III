@@ -49,6 +49,13 @@ public class Asignatura implements Serializable {
 
 	public Asignatura() {
 		super();
+	}  
+	public Asignatura(Integer ref, Boolean ofe, Integer cod, Integer credT, Titulacion titu) {
+		this.Referencia=ref;
+		this.Ofertada=ofe;
+		this.Codigo_1=cod;
+		this.Creditos_teoria=credT;
+		this.titulacion=titu;		
 	}   
 	public Integer getReferencia() {
 		return this.Referencia;
