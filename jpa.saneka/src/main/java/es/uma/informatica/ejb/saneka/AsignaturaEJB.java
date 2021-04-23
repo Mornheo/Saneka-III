@@ -16,7 +16,7 @@ public class AsignaturaEJB implements GestionAsignatura{
 		
 		
 	@Override
-	public String mostrarAsignatura(Asignatura asignatura) {
+	public String mostrarAsignatura(Asignatura asignatura) throws AsignaturaNoExistenteException {
 		Asignatura existente = em.find(Asignatura.class, asignatura.getReferencia());
 		if (existente==null) {
 			throw new AsignaturaNoExistenteException();
@@ -27,7 +27,7 @@ public class AsignaturaEJB implements GestionAsignatura{
 	}
 
 	@Override
-	public void eliminarAsignatura(Asignatura asignatura) {
+	public void eliminarAsignatura(Asignatura asignatura) throws AsignaturaNoExistenteException {
 		Asignatura existente = em.find(Asignatura.class, asignatura.getReferencia());
 		if(existente==null) {
 			throw new AsignaturaNoExistenteException();
@@ -36,7 +36,7 @@ public class AsignaturaEJB implements GestionAsignatura{
 	}
 
 	@Override
-	public void insertarAsignatura(Asignatura asignatura) {
+	public void insertarAsignatura(Asignatura asignatura) throws AsignaturaExistenteException {
 		Asignatura existente = em.find(Asignatura.class, asignatura.getReferencia());
 		if (existente!=null){
 			throw new AsignaturaExistenteException();
@@ -45,7 +45,7 @@ public class AsignaturaEJB implements GestionAsignatura{
 	}
 
 	@Override
-	public void modificarAsignatura(Asignatura asignatura) {
+	public void modificarAsignatura(Asignatura asignatura) throws AsignaturaNoExistenteException {
 		Asignatura existente = em.find(Asignatura.class, asignatura.getReferencia());
 		if (existente==null) {
 			throw new AsignaturaNoExistenteException();

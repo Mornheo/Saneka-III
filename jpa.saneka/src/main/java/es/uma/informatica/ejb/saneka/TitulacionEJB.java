@@ -18,7 +18,7 @@ public class TitulacionEJB implements GestionTitulacion{
 	private EntityManager em;
 	
 	@Override
-	public String mostrarTitulacion(Titulacion titulacion) {
+	public String mostrarTitulacion(Titulacion titulacion) throws TitulacionNoExistenteException {
 		Titulacion existente = em.find(Titulacion.class, titulacion.getCodigo());
 		if (existente==null) {
 			throw new TitulacionNoExistenteException();
@@ -30,7 +30,7 @@ public class TitulacionEJB implements GestionTitulacion{
 	}
 
 	@Override
-	public void eliminarTitulacion(Titulacion titulacion) {
+	public void eliminarTitulacion(Titulacion titulacion) throws TitulacionNoExistenteException {
 		Titulacion existente = em.find(Titulacion.class, titulacion.getCodigo());
 		if(existente==null) {
 			throw new TitulacionNoExistenteException();
@@ -41,7 +41,7 @@ public class TitulacionEJB implements GestionTitulacion{
 	}
 
 	@Override
-	public void insertarTitulacion(Titulacion titulacion) {
+	public void insertarTitulacion(Titulacion titulacion) throws TitulacionExistenteException {
 		Titulacion existente = em.find(Titulacion.class, titulacion.getCodigo());
 		if (existente!=null){
 			throw new TitulacionExistenteException();
@@ -51,7 +51,7 @@ public class TitulacionEJB implements GestionTitulacion{
 	}
 
 	@Override
-	public void modificarTitulacion(Titulacion titulacion) {
+	public void modificarTitulacion(Titulacion titulacion) throws TitulacionNoExistenteException {
 		Titulacion existente = em.find(Titulacion.class, titulacion.getCodigo());
 		if (existente==null) {
 			throw new TitulacionNoExistenteException();

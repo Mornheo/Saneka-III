@@ -18,7 +18,7 @@ public class OptativaEJB implements GestionOptativa{
 	private EntityManager em;
 	
 	@Override
-	public String mostrarOptativa(Optativa optativa) {
+	public String mostrarOptativa(Optativa optativa) throws OptativaNoExistenteException {
 		Optativa existente = em.find(Optativa.class, optativa.getReferencia());
 		if (existente==null) {
 			throw new OptativaNoExistenteException();
@@ -29,7 +29,7 @@ public class OptativaEJB implements GestionOptativa{
 	}
 
 	@Override
-	public void eliminarOptativa(Optativa optativa) {
+	public void eliminarOptativa(Optativa optativa) throws OptativaNoExistenteException {
 		Optativa existente = em.find(Optativa.class, optativa.getReferencia());
 		if(existente==null) {
 			throw new OptativaNoExistenteException();
@@ -39,7 +39,7 @@ public class OptativaEJB implements GestionOptativa{
 	}
 
 	@Override
-	public void insertarOptativa(Optativa optativa) {
+	public void insertarOptativa(Optativa optativa) throws OptativaExistenteException {
 		Optativa existente = em.find(Optativa.class, optativa.getReferencia());
 		if (existente!=null){
 			throw new OptativaExistenteException();
@@ -49,7 +49,7 @@ public class OptativaEJB implements GestionOptativa{
 	}
 
 	@Override
-	public void modificarOptativa(Optativa optativa) {
+	public void modificarOptativa(Optativa optativa) throws OptativaNoExistenteException {
 		Optativa existente = em.find(Optativa.class, optativa.getReferencia());
 		if (existente==null) {
 			throw new OptativaNoExistenteException();
