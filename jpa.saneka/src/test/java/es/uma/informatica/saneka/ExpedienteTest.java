@@ -38,7 +38,7 @@ public class ExpedienteTest {
 	
 	
 	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
+	public static void setUpBeforeClass() throws Exception{
 		Properties properties = new Properties();
 		properties.setProperty(GLASSFISH_CONFIGI_FILE_PROPERTY, CONFIG_FILE);
 		ejbContainer = EJBContainer.createEJBContainer(properties);
