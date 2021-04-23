@@ -20,9 +20,10 @@ public interface GestionExpediente {
 	public void insertarExpediente(Integer num, Expediente exp) throws SanekaException;
 	
 	/*
-	 * 
+	 * Eliminara el expediente de la base de datos.
+	 * @Param num PK del expediente a eliminar.
 	 */
-	public void eliminarExpediente(Expediente exp) throws SanekaException;
+	public void eliminarExpediente(Integer num) throws SanekaException;
 	
 	/*
 	 * Se modificará su estado Activo y la nota_media.
@@ -31,5 +32,16 @@ public interface GestionExpediente {
 	 * datos.
 	 */
 	public void modificarExpediente(Integer num, Expediente exp) throws SanekaException;
-	public void mostrarExpediente(Expediente exp) throws SanekaException;
+	
+	/*
+	 * Muestra un toString() el expediente.
+	 * @Param num PK del expediente a mostrar.
+	 */
+	public String mostrarExpediente(Integer num) throws SanekaException;
+	
+	/*
+	 * Devuelve el expediente relacionado con el parametro.
+	 * @Param num PK del expediente a devolver.
+	 */
+	public Expediente devolverExpediente(Integer num) throws SanekaException;
 }
