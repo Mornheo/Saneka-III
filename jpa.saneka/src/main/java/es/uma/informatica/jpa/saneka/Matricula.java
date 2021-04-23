@@ -37,6 +37,7 @@ public class Matricula implements Serializable {
 		private int expediente;
 		private String Curso_academico;
 		
+		
 		public int getExpediente() {
 			return expediente;
 		}
@@ -92,6 +93,13 @@ public class Matricula implements Serializable {
 	public Matricula() {
 		super();
 	}   
+	
+	public Matricula(String curso, String fecha, Expediente exp) {
+		this.Curso_academico=curso;
+		this.Fecha_matricula=fecha;
+		this.expediente=exp;
+	} 
+	
 	public String getCurso_academico() {
 		return this.Curso_academico;
 	}
