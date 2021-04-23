@@ -49,6 +49,8 @@ public class CentroTest {
 	}
 
 	@Test
+	public void test() {
+		
 	public void testIntertarCentro() {
 		//List<Titulacion> titulaciones = new ArrayList<>();
 		Centro centro = new Centro(123,"informatica","avenida de andalucia nº 11 ","0894343");
