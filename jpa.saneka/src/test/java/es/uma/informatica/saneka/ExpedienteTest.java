@@ -14,6 +14,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import es.uma.informatica.ejb.exceptions.ExpedienteExistenteException;
+import es.uma.informatica.ejb.exceptions.ExpedienteNoEncontradoException;
 import es.uma.informatica.ejb.exceptions.SanekaException;
 import es.uma.informatica.ejb.saneka.GestionExpediente;
 import es.uma.informatica.jpa.saneka.Expediente;
@@ -57,13 +58,13 @@ public class ExpedienteTest {
 		gestionExpediente = (GestionExpediente) ctx.lookup(EXPEDIENTE_EJB);
 		BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
-
+	
 	@Test
 	public void testInsertarExpediente() {
 		try {
-			Expediente exp = new Expediente();
+			Expediente exp = new Expediente(1);
 			try {
-				gestionExpediente.insertarExpediente(exp);
+				gestionExpediente.insertarExpediente(1, exp);
 			} catch (ExpedienteExistenteException e) {
 				fail("El expediente ya existe");
 			}
@@ -74,8 +75,19 @@ public class ExpedienteTest {
 	}
 	
 	@Test
-	public void testPrueba() {
+	public void testModificarExpediente() {
 		
+		try {
+			Expediente exp = new Expediente(1, true, 5);
+			try {
+				gestionExpediente.modificarExpediente(1, exp);
+			} catch (ExpedienteNoEncontradoException e) {
+				fail("Expediente no encontrado");
+			}	
+		} catch (SanekaException e) {
+			throw new RuntimeException(e);
+			
+		}
 	}
 
 }

@@ -17,8 +17,8 @@ public interface GestionExpediente {
 	 * lanzará una excepción ExpedienteExistenteException si 
 	 * ya se encuentra dentro.
 	 */
-	public void insertarExpediente(Expediente exp) throws SanekaException;
+	public void insertarExpediente(Integer num, Expediente exp) throws SanekaException;
 	public void eliminarExpediente(Expediente exp) throws SanekaException;
-	public void modificarExpediente(Expediente exp) throws SanekaException;
+	public void modificarExpediente(Integer num, Expediente exp) throws SanekaException;
 	public void mostrarExpediente(Expediente exp) throws SanekaException;
 }
