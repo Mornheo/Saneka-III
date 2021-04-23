@@ -19,43 +19,22 @@ import es.uma.informatica.ejb.exceptions.SanekaException;
 import es.uma.informatica.ejb.saneka.GestionExpediente;
 import es.uma.informatica.jpa.saneka.Expediente;
 
-public class ExpedienteTest {
+public class ExpedienteT {
 
-	private static final Logger LOG = Logger.getLogger(ExpedienteTest.class.getCanonicalName());
+	private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonicalName());
 	
-	private static final String GLASSFISH_CONFIGI_FILE_PROPERTY = "org.glassfish.ejb.embedded.glassfish.configuration.file";
-	private static final String CONFIG_FILE = "target/test-classes/META-INF/domain.xml";
 	private static final String UNIDAD_PERSITENCIA_PRUEBAS = "SanekaTest";
 	
 	//Path a las entidades que se usaran en los test ~/classes/{MiClaseEJB}
 	private static final String EXPEDIENTE_EJB = "java:global/classes/ExpedienteEJB";
 	
-	private static EJBContainer ejbContainer;
-	private static Context ctx;
-	
 	//Declaramos las entidades a usar en los test
 	private GestionExpediente gestionExpediente;
-	
-	
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception{
-		Properties properties = new Properties();
-		properties.setProperty(GLASSFISH_CONFIGI_FILE_PROPERTY, CONFIG_FILE);
-		ejbContainer = EJBContainer.createEJBContainer(properties);
-		ctx = ejbContainer.getContext();
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-		if (ejbContainer != null) {
-			ejbContainer.close();
-		}
-	}
 
 	@Before
 	public void setUp() throws Exception {
 		//Inicializamos las clases y la base de datos
-		gestionExpediente = (GestionExpediente) ctx.lookup(EXPEDIENTE_EJB);
+		gestionExpediente = (GestionExpediente) SuiteTest.ctx.lookup(EXPEDIENTE_EJB);
 		BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
 	
