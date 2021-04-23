@@ -10,13 +10,23 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import es.uma.informatica.jpa.saneka.Alumno;
+
 public class BaseDatos {
 	public static void inicializaBaseDatos(String nombreUnidadPersistencia) {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory(nombreUnidadPersistencia);
 		EntityManager em = emf.createEntityManager();
 		
 		em.getTransaction().begin();
-		//Rellenar con la base de datos para los test
+		
+		Alumno a=new Alumno();
+		a.setDNI("090");
+		a.setNombre("Diego");
+		a.setApellido1("Centeno");
+		a.setApellido2("Linares");
+		
+		em.persist(a);
+		
 		em.getTransaction().commit();
 		
 		em.close();

@@ -23,7 +23,6 @@ public class MatriculaTest {
 
 	@Test
 	public void test() {
-		fail("Not yet implemented");
 	}
 
 }

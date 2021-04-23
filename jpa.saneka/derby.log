@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Fri Apr 23 04:26:54 PDT 2021:
+ Iniciando instancia a816c00e-0178-fe7b-901e-0000106a32b0 de Derby, versión The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): 
+en el directorio de base de datos /tmp/gfembed208881050338531416tmp/lib/databases/embedded_default con el cargador de clases sun.misc.Launcher$AppClassLoader@7f31245a
+Cargado desde file:/home/alumno/.m2/repository/org/glassfish/main/extras/glassfish-embedded-all/5.1.0/glassfish-embedded-all-5.1.0.jar
+java.vendor=Private Build
+java.runtime.version=1.8.0_282-8u282-b08-0ubuntu1~18.04-b08
+user.dir=/home/alumno/Escritorio/Proyecto SII/Saneka-III/jpa.saneka
+os.name=Linux
+os.arch=amd64
+os.version=5.4.0-72-generic
+derby.system.home=null
+Cargador de clases de base de datos iniciado - derby.database.classpath=''
