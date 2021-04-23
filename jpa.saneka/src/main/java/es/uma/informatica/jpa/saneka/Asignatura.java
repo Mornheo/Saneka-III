@@ -135,6 +135,31 @@ public class Asignatura implements Serializable {
 		this.Otro_idioma = Otro_idioma;
 	}
 	
+	
+	public Titulacion getTitulacion() {
+		return titulacion;
+	}
+	public void setTitulacion(Titulacion titulacion) {
+		this.titulacion = titulacion;
+	}
+	public List<Clase> getClases() {
+		return clases;
+	}
+	public void setClases(List<Clase> clases) {
+		this.clases = clases;
+	}
+	public List<Grupos_por_asignatura> getGrupos() {
+		return grupos;
+	}
+	public void setGrupos(List<Grupos_por_asignatura> grupos) {
+		this.grupos = grupos;
+	}
+	public List<Asignaturas_matricula> getAsignaturas_matricula() {
+		return asignaturas_matricula;
+	}
+	public void setAsignaturas_matricula(List<Asignaturas_matricula> asignaturas_matricula) {
+		this.asignaturas_matricula = asignaturas_matricula;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
