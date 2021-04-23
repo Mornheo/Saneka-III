@@ -50,6 +50,5 @@ public class AlumnoEJB implements GestionAlumno{
 		// TODO Auto-generated method stub
 		
 	}
-public class AlumnoEJB {
 
 }

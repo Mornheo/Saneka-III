@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Centro implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-	@Id
+	@Id 
 	private Integer ID;
 	@Column(unique=true,nullable=false)
 	private String Nombre;
@@ -18,7 +18,25 @@ public class Centro implements Serializable{
 	//@JoinTable(name="Centro_Titulacion", joinColumns={ @JoinColumn(name="centro_id") }, inverseJoinColumns={ @JoinColumn(name="titulacion_id") })
 	@JoinTable
 	private List<Titulacion> titulaciones;
-	
+	public Centro(String nombre,String direccion,String telefono, List<Titulacion> titu) {
+		Nombre = nombre;
+		Direccion = direccion;
+		TLF_consejeria = telefono;
+		titulaciones = titu;
+	}
+	public Centro(Integer id,String nombre,String direccion,String telefono, List<Titulacion> titu) {
+		ID = id;
+		Nombre = nombre;
+		Direccion = direccion;
+		TLF_consejeria = telefono;
+		titulaciones = titu;
+	}
+	public Centro(Integer id,String nombre,String direccion,String telefono) {
+		ID = id;
+		Nombre = nombre;
+		Direccion = direccion;
+		TLF_consejeria = telefono;
+	}
 	public Integer getID() {
 		return ID;
 	}

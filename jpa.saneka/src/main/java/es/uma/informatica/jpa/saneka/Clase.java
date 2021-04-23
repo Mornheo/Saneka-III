@@ -8,46 +8,42 @@ import javax.persistence.*;
 public class Clase implements Serializable {
 	public static class ClaseId implements Serializable {
 		private static final long serialVersionUID = 1L;
-		private int Dia;
+		private Integer Dia;
 		private Date Hora_inicio;
-		private int grupo;
+		private Integer grupo;
 		public ClaseId() {}
-		public ClaseId(int dia,Date hora,int grupo) {
+		public ClaseId(Integer dia,Date hora,Integer grupo) {
 			super();
 			Dia = dia;
 			Hora_inicio = hora;
 			this.grupo = grupo;
 		}
-		public int getDia() {
+		
+		public Integer getDia() {
 			return Dia;
 		}
-
-		public void setDia(int dia) {
+		public void setDia(Integer dia) {
 			Dia = dia;
 		}
-
 		public Date getHora_inicio() {
 			return Hora_inicio;
 		}
-
 		public void setHora_inicio(Date hora_inicio) {
 			Hora_inicio = hora_inicio;
 		}
-
-		public int getGrupo() {
+		public Integer getGrupo() {
 			return grupo;
 		}
-
-		public void setGrupo(int grupo) {
+		public void setGrupo(Integer grupo) {
 			this.grupo = grupo;
 		}
 		@Override
 		public int hashCode() {
 			final int prime = 31;
 			int result = 1;
-			result = prime * result + Dia;
+			result = prime * result + ((Dia == null) ? 0 : Dia.hashCode());
 			result = prime * result + ((Hora_inicio == null) ? 0 : Hora_inicio.hashCode());
-			result = prime * result + grupo;
+			result = prime * result + ((grupo == null) ? 0 : grupo.hashCode());
 			return result;
 		}
 		@Override
@@ -59,18 +55,23 @@ public class Clase implements Serializable {
 			if (getClass() != obj.getClass())
 				return false;
 			ClaseId other = (ClaseId) obj;
-			if (Dia != other.Dia)
+			if (Dia == null) {
+				if (other.Dia != null)
+					return false;
+			} else if (!Dia.equals(other.Dia))
 				return false;
 			if (Hora_inicio == null) {
 				if (other.Hora_inicio != null)
 					return false;
 			} else if (!Hora_inicio.equals(other.Hora_inicio))
 				return false;
-			if (grupo != other.grupo)
+			if (grupo == null) {
+				if (other.grupo != null)
+					return false;
+			} else if (!grupo.equals(other.grupo))
 				return false;
 			return true;
 		}
-		
 	}
 	@Id
 	private int Dia;
@@ -87,6 +88,13 @@ public class Clase implements Serializable {
 	@JoinColumn(nullable=false)
 	private Asignatura asignatura;
 	private static final long serialVersionUID = 1L;
+	public Clase(Integer dia,Date hora_ini, Grupo grupo,Date hora_fin,Asignatura asig) {
+		Dia = dia;
+		Hora_inicio = hora_ini;
+		this.grupo = grupo;
+		Hora_fin = hora_fin;
+		asignatura = asig;
+	}
 	public int getDia() {
 		return Dia;
 	}

@@ -33,15 +33,12 @@ public class Grupo implements Serializable{
 	private List<Grupos_por_asignatura> grupos_asignatura;
 	@OneToMany
 	private List<Asignaturas_matricula> asignaturas_matricula;
-	/*
-	public GrupoId() {}
-	public GrupoId(Integer id, Integer codigo) {
-		super();
-		this
-		
-		
+	public Grupo (Integer curso,String letra,String turno,Boolean ingles) {
+		Curso = curso;
+		Letra = letra;
+		Turno = turno;
+		Ingles = ingles;
 	}
-	*/
 	public Integer getID() {
 		return ID;
 	}
