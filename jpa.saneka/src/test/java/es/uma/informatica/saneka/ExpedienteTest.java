@@ -13,7 +13,11 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import es.uma.informatica.ejb.exceptions.ExpedienteExistenteException;
+import es.uma.informatica.ejb.exceptions.ExpedienteNoEncontradoException;
+import es.uma.informatica.ejb.exceptions.SanekaException;
 import es.uma.informatica.ejb.saneka.GestionExpediente;
+import es.uma.informatica.jpa.saneka.Expediente;
 
 public class ExpedienteTest {
 
@@ -34,7 +38,7 @@ public class ExpedienteTest {
 	
 	
 	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
+	public static void setUpBeforeClass() throws Exception{
 		Properties properties = new Properties();
 		properties.setProperty(GLASSFISH_CONFIGI_FILE_PROPERTY, CONFIG_FILE);
 		ejbContainer = EJBContainer.createEJBContainer(properties);
@@ -54,10 +58,36 @@ public class ExpedienteTest {
 		gestionExpediente = (GestionExpediente) ctx.lookup(EXPEDIENTE_EJB);
 		BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
-
+	
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testInsertarExpediente() {
+		try {
+			Expediente exp = new Expediente(1);
+			try {
+				gestionExpediente.insertarExpediente(1, exp);
+			} catch (ExpedienteExistenteException e) {
+				fail("El expediente ya existe");
+			}
+		}catch (SanekaException e) {
+			throw new RuntimeException(e);
+		}
+		
+	}
+	
+	@Test
+	public void testModificarExpediente() {
+		
+		try {
+			Expediente exp = new Expediente(1, true, 5);
+			try {
+				gestionExpediente.modificarExpediente(1, exp);
+			} catch (ExpedienteNoEncontradoException e) {
+				fail("Expediente no encontrado");
+			}	
+		} catch (SanekaException e) {
+			throw new RuntimeException(e);
+			
+		}
 	}
 
 }
