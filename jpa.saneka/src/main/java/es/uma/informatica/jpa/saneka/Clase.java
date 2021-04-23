@@ -11,7 +11,13 @@ public class Clase implements Serializable {
 		private int Dia;
 		private Date Hora_inicio;
 		private int grupo;
-		
+		public ClaseId() {}
+		public ClaseId(int dia,Date hora,int grupo) {
+			super();
+			Dia = dia;
+			Hora_inicio = hora;
+			this.grupo = grupo;
+		}
 		public int getDia() {
 			return Dia;
 		}
@@ -112,6 +118,7 @@ public class Clase implements Serializable {
 	public void setAsignatura(Asignatura asignatura) {
 		this.asignatura = asignatura;
 	}
+	
 	@Override
 	public String toString() {
 		return "Clase [Dia=" + Dia + ", Hora_inicio=" + Hora_inicio + ", grupo=" + grupo + ", Hora_fin=" + Hora_fin
