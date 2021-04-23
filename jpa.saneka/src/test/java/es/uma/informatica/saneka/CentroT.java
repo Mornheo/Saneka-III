@@ -19,32 +19,25 @@ import org.junit.Test;
 import es.uma.informatica.ejb.exceptions.CentroExistenteException;
 import es.uma.informatica.ejb.exceptions.SanekaException;
 import es.uma.informatica.ejb.saneka.GestionCentros;
+import es.uma.informatica.ejb.saneka.GestionExpediente;
 import es.uma.informatica.jpa.saneka.Centro;
 import es.uma.informatica.jpa.saneka.Titulacion;
 
 
-public class CentroTest {
-	private static final Logger LOG = Logger.getLogger(CentroTest.class.getCanonicalName());
+public class CentroT {
+	private static final Logger LOG = Logger.getLogger(CentroT.class.getCanonicalName());
 	private static final String CENTRO_EJB = "java:global/classes/CentroEJB";
 	private static final String GLASSFISH_CONFIGI_FILE_PROPERTY = "org.glassfish.ejb.embedded.glassfish.configuration.file";
 	private static final String CONFIG_FILE = "target/test-classes/META-INF/domain.xml";
 	private static final String UNIDAD_PERSITENCIA_PRUEBAS = "SanekaTest";
-	
-	private static EJBContainer ejbContainer;
-	private static Context ctx;
+
 	
 	private GestionCentros gestionCentro;
-	@BeforeClass
-	public static void setUpClass() throws Exception {
-		Properties properties = new Properties();
-		properties.setProperty(GLASSFISH_CONFIGI_FILE_PROPERTY, CONFIG_FILE);
-		ejbContainer = EJBContainer.createEJBContainer(properties);
-		ctx = ejbContainer.getContext();
-	}
-
+	
 	@Before
 	public void setUp() throws Exception {
-		gestionCentro = (GestionCentros) ctx.lookup(CENTRO_EJB);
+		//Inicializamos las clases y la base de datos
+		gestionCentro = (GestionCentros) SuiteTest.ctx.lookup(CENTRO_EJB);
 		BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
 
@@ -55,8 +48,8 @@ public class CentroTest {
 		try {
 			gestionCentro.insertarCentro(centro);
 		}catch(CentroExistenteException e) {
-			fail("Lanzó excepción al insertar");
-		}		
+			fail("Centro ya existe");
+		}
 	}
 
 }

@@ -9,10 +9,10 @@ public class Clase implements Serializable {
 	public static class ClaseId implements Serializable {
 		private static final long serialVersionUID = 1L;
 		private Integer Dia;
-		private Date Hora_inicio;
+		private String Hora_inicio;
 		private Integer grupo;
 		public ClaseId() {}
-		public ClaseId(Integer dia,Date hora,Integer grupo) {
+		public ClaseId(Integer dia,String hora,Integer grupo) {
 			super();
 			Dia = dia;
 			Hora_inicio = hora;
@@ -25,10 +25,11 @@ public class Clase implements Serializable {
 		public void setDia(Integer dia) {
 			Dia = dia;
 		}
-		public Date getHora_inicio() {
+		
+		public String getHora_inicio() {
 			return Hora_inicio;
 		}
-		public void setHora_inicio(Date hora_inicio) {
+		public void setHora_inicio(String hora_inicio) {
 			Hora_inicio = hora_inicio;
 		}
 		public Integer getGrupo() {
@@ -72,27 +73,26 @@ public class Clase implements Serializable {
 				return false;
 			return true;
 		}
+		
+		
 	}
 	@Id
 	private int Dia;
 	@Id
-	@Temporal(TemporalType.DATE)
-	private Date Hora_inicio;
+	private String Hora_inicio;
 	@Id
 	@ManyToOne
 	@JoinColumn(nullable=false)
 	private Grupo grupo;
-	@Temporal(TemporalType.DATE)
-	private Date Hora_fin;
+	private String Hora_fin;
 	@ManyToOne
 	@JoinColumn(nullable=false)
 	private Asignatura asignatura;
 	private static final long serialVersionUID = 1L;
-	public Clase(Integer dia,Date hora_ini, Grupo grupo,Date hora_fin,Asignatura asig) {
+	public Clase(Integer dia,String hora_ini, Grupo grupo,Asignatura asig) {
 		Dia = dia;
 		Hora_inicio = hora_ini;
 		this.grupo = grupo;
-		Hora_fin = hora_fin;
 		asignatura = asig;
 	}
 	public int getDia() {
@@ -101,25 +101,27 @@ public class Clase implements Serializable {
 	public void setDia(int dia) {
 		Dia = dia;
 	}
-	public Date getHora_inicio() {
-		return Hora_inicio;
-	}
-	public void setHora_inicio(Date hora_inicio) {
-		Hora_inicio = hora_inicio;
-	}
+
 	public Grupo getGrupo() {
 		return grupo;
 	}
 	public void setGrupo(Grupo grupo) {
 		this.grupo = grupo;
 	}
-	public Date getHora_fin() {
+	
+	
+	public String getHora_inicio() {
+		return Hora_inicio;
+	}
+	public void setHora_inicio(String hora_inicio) {
+		Hora_inicio = hora_inicio;
+	}
+	public String getHora_fin() {
 		return Hora_fin;
 	}
-	public void setHora_fin(Date hora_fin) {
+	public void setHora_fin(String hora_fin) {
 		Hora_fin = hora_fin;
 	}
-	
 	public Asignatura getAsignatura() {
 		return asignatura;
 	}

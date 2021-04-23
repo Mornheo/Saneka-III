@@ -17,7 +17,7 @@ import es.uma.informatica.jpa.saneka.Clase;
 @Stateless
 public class ClasesEJB implements GestionClases{
 	
-	private static final Logger LOG = Logger.getLogger(ClasesEJB.class.getCanonicalName());
+	
 	
 	@PersistenceContext(name="jpa.saneka")
 	private EntityManager em;
