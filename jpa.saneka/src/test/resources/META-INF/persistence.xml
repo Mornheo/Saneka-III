@@ -4,18 +4,18 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
   <persistence-unit name="SanekaTest" transaction-type="RESOURCE_LOCAL">
-    	<class>es.uma.informatica.jpa.saneka.Alumno</class>
-		<class>es.uma.informatica.jpa.saneka.Asignatura</class>
-		<class>es.uma.informatica.jpa.saneka.Asignaturas_matricula</class>
-		<class>es.uma.informatica.jpa.saneka.Centro</class>
-		<class>es.uma.informatica.jpa.saneka.Clase</class>
-		<class>es.uma.informatica.jpa.saneka.Encuesta</class>
-		<class>es.uma.informatica.jpa.saneka.Expediente</class>
-		<class>es.uma.informatica.jpa.saneka.Grupo</class>
-		<class>es.uma.informatica.jpa.saneka.Grupos_por_asignatura</class>
-		<class>es.uma.informatica.jpa.saneka.Matricula</class>
-		<class>es.uma.informatica.jpa.saneka.Optativa</class>
-		<class>es.uma.informatica.jpa.saneka.Titulacion</class>
+   	<class>es.uma.informatica.jpa.saneka.Alumno</class>
+	<class>es.uma.informatica.jpa.saneka.Asignatura</class>
+	<class>es.uma.informatica.jpa.saneka.Asignaturas_matricula</class>
+	<class>es.uma.informatica.jpa.saneka.Centro</class>
+	<class>es.uma.informatica.jpa.saneka.Clase</class>
+	<class>es.uma.informatica.jpa.saneka.Encuesta</class>
+	<class>es.uma.informatica.jpa.saneka.Expediente</class>
+	<class>es.uma.informatica.jpa.saneka.Grupo</class>
+	<class>es.uma.informatica.jpa.saneka.Grupos_por_asignatura</class>
+	<class>es.uma.informatica.jpa.saneka.Matricula</class>
+	<class>es.uma.informatica.jpa.saneka.Optativa</class>
+	<class>es.uma.informatica.jpa.saneka.Titulacion</class>
     <shared-cache-mode>NONE</shared-cache-mode>
     <properties>
     	<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
