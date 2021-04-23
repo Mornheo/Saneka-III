@@ -7,3 +7,4 @@ public class SanekaException extends Exception {
 		super(message);
 	}
 }
+}

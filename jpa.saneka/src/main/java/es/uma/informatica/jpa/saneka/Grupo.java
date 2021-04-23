@@ -47,6 +47,11 @@ public class Grupo implements Serializable{
 		this.Letra=letra;
 		this.Turno=turno;
 		this.Ingles=ingles;
+	public Grupo (Integer curso,String letra,String turno,Boolean ingles) {
+		Curso = curso;
+		Letra = letra;
+		Turno = turno;
+		Ingles = ingles;
 	}
 	public Integer getID() {
 		return ID;
