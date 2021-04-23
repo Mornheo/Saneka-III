@@ -65,5 +65,6 @@ public class AlumnoEJB implements GestionAlumno{
 		}
 		em.remove(al);
 	}
+public class AlumnoEJB {
 
 }
