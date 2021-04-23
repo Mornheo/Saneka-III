@@ -15,7 +15,7 @@ import javax.persistence.*;
 public class Expediente implements Serializable {
 
 	   
-	@Id @GeneratedValue //(strategy = GenerationType.SEQUENCE)
+	@Id //@GeneratedValue (strategy = GenerationType.SEQUENCE)
 	private Integer Num_expediente;
 	private Boolean Activo;
 	private long Nota_media_provisional;
@@ -32,6 +32,14 @@ public class Expediente implements Serializable {
 	public Expediente() {
 		super();
 	}   
+	public Expediente(Integer num) {
+		this.Num_expediente = num;
+	}   
+	public Expediente(Integer num, Boolean active, long nota) {
+		this.Activo = active;
+		this.Nota_media_provisional = nota;
+		this.Num_expediente = num;
+	}  
 	public Integer getNum_expediente() {
 		return this.Num_expediente;
 	}
