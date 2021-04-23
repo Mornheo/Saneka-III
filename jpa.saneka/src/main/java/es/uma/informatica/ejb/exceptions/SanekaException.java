@@ -7,6 +7,5 @@ public class SanekaException extends Exception {
 	public SanekaException(String message) {
 		super(message);
 	}
-public class SanekaException extends Exception{
 
 }
