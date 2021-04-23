@@ -40,6 +40,10 @@ public class Titulacion implements Serializable {
 	public Titulacion() {
 		super();
 	}   
+	public Titulacion(Integer cod, List<Centro> centros) {
+		this.Codigo=cod;
+		this.centros=centros;
+	}   
 	public Integer getCodigo() {
 		return this.Codigo;
 	}

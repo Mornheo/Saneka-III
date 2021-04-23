@@ -23,7 +23,7 @@ public class CentroTest {
 
 	@Test
 	public void test() {
-		fail("Not yet implemented");
+		
 	}
 
 }

@@ -74,4 +74,8 @@ public class Asignaturas_matricula implements Serializable {
 		super();
 	}
    
+	public Asignaturas_matricula(Asignatura asig, Matricula matr) {
+		this.asignatura=asig;
+		this.matricula=matr;
+	}
 }
