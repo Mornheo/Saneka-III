@@ -58,6 +58,31 @@ public class Titulacion implements Serializable {
 	public void setCreditos(Integer Creditos) {
 		this.Creditos = Creditos;
 	}
+	
+	public List<Grupo> getGrupos() {
+		return grupos;
+	}
+	public void setGrupos(List<Grupo> grupos) {
+		this.grupos = grupos;
+	}
+	public List<Expediente> getExpedientes() {
+		return expedientes;
+	}
+	public void setExpedientes(List<Expediente> expedientes) {
+		this.expedientes = expedientes;
+	}
+	public List<Centro> getCentros() {
+		return centros;
+	}
+	public void setCentros(List<Centro> centros) {
+		this.centros = centros;
+	}
+	public List<Asignatura> getAsignaturas() {
+		return asignaturas;
+	}
+	public void setAsignaturas(List<Asignatura> asignaturas) {
+		this.asignaturas = asignaturas;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
