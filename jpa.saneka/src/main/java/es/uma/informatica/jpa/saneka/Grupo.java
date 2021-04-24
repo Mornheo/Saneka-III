@@ -9,11 +9,12 @@ import javax.persistence.*;
 public class Grupo implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-	@Id 
+	@Id @Column(unique=true,nullable=false)
 	private Integer ID;
 	@Column(unique=true,nullable=false)
 	private Integer Curso;
-	@Column(unique=true,nullable=false)
+	//@Column(unique=true,nullable=false)
+	@Column(nullable=false)
 	private String Letra;
 	@Column(nullable=false)
 	private String Turno;
@@ -33,11 +34,16 @@ public class Grupo implements Serializable{
 	private List<Grupos_por_asignatura> grupos_asignatura;
 	@OneToMany
 	private List<Asignaturas_matricula> asignaturas_matricula;
-	public Grupo (Integer curso,String letra,String turno,Boolean ingles) {
+	public Grupo() {
+		super();
+	}
+	public Grupo (Integer id,Integer curso,String letra,String turno,Boolean ingles,Titulacion tit) {
+		ID = id;
 		Curso = curso;
 		Letra = letra;
 		Turno = turno;
 		Ingles = ingles;
+		titulacion = tit;
 	}
 	public Integer getID() {
 		return ID;

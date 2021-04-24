@@ -14,12 +14,12 @@ import es.uma.informatica.ejb.exceptions.TitulacionNoEncontradoException;
 import es.uma.informatica.jpa.saneka.Grupo;
 import es.uma.informatica.jpa.saneka.Titulacion;
 @Stateless
-public class GruposEJB implements GestionGrupos{
-	private static final Logger LOG = Logger.getLogger(GruposEJB.class.getCanonicalName());
+public class GrupoEJB implements GestionGrupo{
+	private static final Logger LOG = Logger.getLogger(GrupoEJB.class.getCanonicalName());
 	@PersistenceContext(name="jpa.saneka")
 	private EntityManager em;
 	@Override
-	public void insertarGrupo(String titu, Grupo grupo) throws TitulacionNoEncontradoException,GrupoExistenteException {
+	public void insertarGrupo(Integer titu, Grupo grupo) throws TitulacionNoEncontradoException,GrupoExistenteException {
 		Titulacion titulacion = em.find(Titulacion.class,titu);
 		if(titulacion == null) {
 			throw new TitulacionNoEncontradoException();
@@ -33,7 +33,7 @@ public class GruposEJB implements GestionGrupos{
 	}
 
 	@Override
-	public List<Grupo> obtenerGruposDeTitulacion(String titu) throws TitulacionNoEncontradoException{
+	public List<Grupo> obtenerGruposDeTitulacion(Integer titu) throws TitulacionNoEncontradoException{
 		Titulacion titulacion = em.find(Titulacion.class,titu);
 		if(titulacion == null) {
 			throw new TitulacionNoEncontradoException();
@@ -42,7 +42,7 @@ public class GruposEJB implements GestionGrupos{
 	}
 
 	@Override
-	public void actualizarGrupo(String titu, Grupo grupo) throws TitulacionNoEncontradoException, GrupoNoEncontradoException {
+	public void actualizarGrupo(Integer titu, Grupo grupo) throws TitulacionNoEncontradoException, GrupoNoEncontradoException {
 		// Actualiza curso, letra,turno,ingles,plaza
 		Titulacion titulacion = em.find(Titulacion.class,titu);
 		if(titulacion == null) {
@@ -55,14 +55,12 @@ public class GruposEJB implements GestionGrupos{
 		grupoExistente.setCurso(grupo.getCurso());
 		grupoExistente.setLetra(grupo.getLetra());
 		grupoExistente.setTurno(grupo.getTurno());
-		grupoExistente.setPlazas(grupo.getPlazas());
 		grupoExistente.setIngles(grupo.getIngles());
-		grupoExistente.setClases(grupo.getClases());
 		em.persist(titulacion);	
 	}
 
 	@Override
-	public void eliminarGrupo(String titu, Grupo grupo) throws TitulacionNoEncontradoException, GrupoExistenteException{
+	public void eliminarGrupo(Integer titu, Grupo grupo) throws TitulacionNoEncontradoException, GrupoExistenteException{
 		Titulacion titulacion = em.find(Titulacion.class,titu);
 		if(titulacion == null) {
 			throw new TitulacionNoEncontradoException();
@@ -77,7 +75,7 @@ public class GruposEJB implements GestionGrupos{
 		em.persist(titulacion);
 	}
 	@Override
-	public void eliminarTodosGrupos(String titu) throws TitulacionNoEncontradoException {
+	public void eliminarTodosGrupos(Integer titu) throws TitulacionNoEncontradoException {
 		Titulacion titulacion = em.find(Titulacion.class,titu);
 		if(titulacion == null) {
 			throw new TitulacionNoEncontradoException();
@@ -90,6 +88,16 @@ public class GruposEJB implements GestionGrupos{
 	@Override
 	public String mostrarGrupo(Grupo grupo) {
 		return grupo.toString();
+	}
+
+	@Override
+	public Grupo obtenerGrupo(Integer id) throws GrupoNoEncontradoException {
+		Grupo grupo = em.find(Grupo.class,id);
+		if(grupo == null) {
+			throw new GrupoNoEncontradoException();
+		}
+		return grupo;
+		
 	}
 
 }

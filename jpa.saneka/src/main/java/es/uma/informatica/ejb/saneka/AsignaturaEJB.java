@@ -62,6 +62,15 @@ public class AsignaturaEJB implements GestionAsignatura{
 		existente.setPlazas(asignatura.getPlazas());
 		existente.setTotal_creditos(asignatura.getTotal_creditos());
 	}
+
+	@Override
+	public Asignatura obtenerAsignatura(int ref) throws AsignaturaNoExistenteException {
+		Asignatura existente = em.find(Asignatura.class, ref);
+		if (existente==null) {
+			throw new AsignaturaNoExistenteException();
+		}
+		return existente;
+	}
 	
 	
 	

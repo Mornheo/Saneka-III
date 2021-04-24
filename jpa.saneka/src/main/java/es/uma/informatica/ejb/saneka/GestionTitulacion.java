@@ -18,4 +18,6 @@ public interface GestionTitulacion {
 	
 	public void modificarTitulacion(Titulacion titulacion) throws TitulacionNoExistenteException;
 	
+	public Titulacion obtenerTitulacion(Integer id) throws TitulacionNoExistenteException;
+	
 }

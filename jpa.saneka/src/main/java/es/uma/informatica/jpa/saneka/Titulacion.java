@@ -16,7 +16,7 @@ import javax.persistence.*;
 public class Titulacion implements Serializable {
 
 	   
-	@Id @Column(nullable = false)
+	@Id @Column(unique=true,nullable=false)
 	private Integer Codigo;
 	private String Nombre;
 	private Integer Creditos;
@@ -40,8 +40,10 @@ public class Titulacion implements Serializable {
 	public Titulacion() {
 		super();
 	}   
-	public Titulacion(Integer cod, List<Centro> centros) {
+	public Titulacion(Integer cod,String nom,Integer cre, List<Centro> centros) {
 		this.Codigo=cod;
+		this.Creditos = cre;
+		this.Nombre = nom;
 		this.centros=centros;
 	}   
 	public Integer getCodigo() {

@@ -29,17 +29,21 @@ public class BaseDatos {
 		//Rellenar con la base de datos para los test
 		
 		//Centro
-		Centro centro = new Centro(123, "informatica", "avenida de andalucia n11");
+		List<Titulacion> titulaciones = new ArrayList<>();
+		Centro centro = new Centro(123, "informatica", "avenida de andalucia n11","23446",titulaciones);
 		em.persist(centro);
 		
 		//Titulacion
+		
 		List<Centro> centros = new ArrayList<Centro>();
 		centros.add(centro);
-		Titulacion titu = new Titulacion(1234, centros);
+		Titulacion titu = new Titulacion(1234,"infor",6, centros);
 		em.persist(titu);
-		
+			/*
 		//Alumno
-		Alumno alumnoA = new Alumno();
+		Alumno alumnoA = new Alumno(1,"090","Diego","Centeno");
+
+		alumnoA.setID(1);
 		alumnoA.setDNI("090");
 		alumnoA.setNombre("Diego");
 		alumnoA.setApellido1("Centeno");
@@ -48,7 +52,7 @@ public class BaseDatos {
 		//Expediente
 		Expediente exp = new Expediente(12345, titu, alumnoA);
 		em.persist(exp);
-		
+		*/
 		//Asignatura
 		Asignatura asig = new Asignatura(232, true, 101, 6, titu);
 		em.persist(asig);
@@ -56,7 +60,7 @@ public class BaseDatos {
 		//Optativa
 		Optativa opt = new Optativa(233, true, 102, 6, titu);
 		em.persist(opt);
-		
+		/*
 		//Encuesta
 		Encuesta encu = new Encuesta("23/04/2021", exp);
 		em.persist(encu);
@@ -64,9 +68,9 @@ public class BaseDatos {
 		//Matricula
 		Matricula matr = new Matricula("3", "12/09/2020", exp);
 		em.persist(matr);
-		
+		*/
 		//Grupo
-		Grupo grupo = new Grupo(3, "B", "tarde", false);
+		Grupo grupo = new Grupo(45,3, "B", "tarde", false,titu);
 		em.persist(grupo);
 		
 		//Grupos Por Asignatura
@@ -76,11 +80,11 @@ public class BaseDatos {
 		//Clase
 		Clase clase = new Clase(23, "8:45", asig, grupo);
 		em.persist(clase);
-		
+		/*
 		//Asignaturas Matricula
 		Asignaturas_matricula am = new Asignaturas_matricula(asig, matr);
 		em.persist(am);
-		
+		*/
 		em.getTransaction().commit();
 		em.close();
 		emf.close();

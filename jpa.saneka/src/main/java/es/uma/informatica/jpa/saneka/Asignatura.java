@@ -17,7 +17,7 @@ import javax.persistence.*;
 public class Asignatura implements Serializable {
 
 	   
-	@Id 
+	@Id @Column(unique=true,nullable=false)
 	private Integer Referencia;
 	@Column(nullable = false)
 	private Boolean Ofertada;

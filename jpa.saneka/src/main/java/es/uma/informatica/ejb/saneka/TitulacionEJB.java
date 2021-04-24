@@ -62,4 +62,14 @@ public class TitulacionEJB implements GestionTitulacion{
 		
 	}
 
+	@Override
+	public Titulacion obtenerTitulacion(Integer id) throws TitulacionNoExistenteException {
+		Titulacion existente = em.find(Titulacion.class, id);
+		if (existente==null) {
+			throw new TitulacionNoExistenteException();
+		}
+		return existente;
+		
+	}
+
 }

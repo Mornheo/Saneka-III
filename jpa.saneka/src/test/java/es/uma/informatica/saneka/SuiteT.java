@@ -11,9 +11,11 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
+import es.uma.informatica.jpa.saneka.Clase;
+
 @RunWith(Suite.class)
-@SuiteClasses({AsignaturaT.class})
-public class SuiteTest {
+@SuiteClasses({ClaseTest.class})
+public class SuiteT {
 	
 	private static final String GLASSFISH_CONFIGI_FILE_PROPERTY = "org.glassfish.ejb.embedded.glassfish.configuration.file";
 	private static final String CONFIG_FILE = "target/test-classes/META-INF/domain.xml";

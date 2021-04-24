@@ -17,7 +17,7 @@ import javax.persistence.*;
 public class Alumno implements Serializable {
 
 	   
-	@Id
+	@Id@Column(unique=true,nullable=false)
 	private Integer ID;
 	@Column(unique=true,nullable=false)
 	private String DNI;
@@ -59,7 +59,13 @@ public class Alumno implements Serializable {
 	}
 	public Alumno() {
 		super();
-	}   
+	}
+	public Alumno(Integer id,String dni,String nom,String ap) {
+		ID = id;
+		DNI = dni;
+		Nombre = nom;
+		Apellido1 = ap;
+	}
 	public Integer getID() {
 		return this.ID;
 	}

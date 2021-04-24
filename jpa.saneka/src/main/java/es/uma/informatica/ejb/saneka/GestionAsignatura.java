@@ -15,5 +15,7 @@ public interface GestionAsignatura {
 	public void insertarAsignatura(Asignatura asignatura) throws AsignaturaExistenteException;
 	
 	public void modificarAsignatura(Asignatura asignatura) throws AsignaturaNoExistenteException;
+
+	public Asignatura obtenerAsignatura(int ref) throws AsignaturaNoExistenteException;
 	
 }

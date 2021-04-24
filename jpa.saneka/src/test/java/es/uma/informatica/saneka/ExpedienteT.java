@@ -25,7 +25,7 @@ public class ExpedienteT {
 	private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonicalName());
 	
 	private static final String UNIDAD_PERSITENCIA_PRUEBAS = "SanekaTest";
-	/*
+	
 	//Path a las entidades que se usaran en los test ~/classes/{MiClaseEJB}
 	private static final String EXPEDIENTE_EJB = "java:global/classes/ExpedienteEJB";
 	
@@ -35,14 +35,14 @@ public class ExpedienteT {
 	@Before
 	public void setUp() throws Exception {
 		//Inicializamos las clases y la base de datos
-		gestionExpediente = (GestionExpediente) SuiteTest.ctx.lookup(EXPEDIENTE_EJB);
+		gestionExpediente = (GestionExpediente) SuiteT.ctx.lookup(EXPEDIENTE_EJB);
 		BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
 	
 	@Test
 	public void testInsertarExpediente() {
 		try {
-			Expediente exp = new Expediente(1);
+			Expediente exp = new Expediente(1,false,2);
 			try {
 				gestionExpediente.insertarExpediente(1, exp);
 			} catch (ExpedienteExistenteException e) {
@@ -56,7 +56,7 @@ public class ExpedienteT {
 	@Test
 	public void testInsertarExpedienteExistente() {
 		try {
-			Expediente exp = new Expediente(12345);
+			Expediente exp = new Expediente(12345,true,3);
 			try {
 				gestionExpediente.insertarExpediente(12345, exp);
 				fail("Deberia dar error porque ya existe");
@@ -98,5 +98,5 @@ public class ExpedienteT {
 			throw new RuntimeException(e);
 		}
 	}
-	*/
+	
 }
