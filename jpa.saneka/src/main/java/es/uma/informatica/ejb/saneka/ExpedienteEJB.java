@@ -15,7 +15,7 @@ public class ExpedienteEJB implements GestionExpediente{
 	private EntityManager em;
 
 	@Override
-	public void insertarExpediente(Integer num, Expediente exp) throws ExpedienteExistenteException {
+	public void insertarExpediente(Integer num, Expediente exp) throws ExpedienteNoEncontradoException, ExpedienteExistenteException {
 		try {
 			devolverExpediente(num);
 		} catch (ExpedienteNoEncontradoException e) {
