@@ -51,10 +51,11 @@ public class ExpedienteT {
 	
 	@Test
 	public void testInsertarExpediente() {
-		Titulacion tituEntity = gestionTitulacion.devolverTitulacion(1234);
-		Alumno alumnoEntity = gestionAlumno.devolverAlumno("090");
-		Expediente exp = new Expediente(1, tituEntity, alumnoEntity);
+		Expediente exp = new Expediente();
 			try {
+				Titulacion tituEntity = gestionTitulacion.devolverTitulacion(1234);
+				Alumno alumnoEntity = gestionAlumno.devolverAlumno("090");
+				exp = new Expediente(1, tituEntity, alumnoEntity);
 				gestionExpediente.insertarExpediente(1, exp);
 			} catch (ExpedienteExistenteException e) {
 				fail("El expediente ya existe");
@@ -68,10 +69,11 @@ public class ExpedienteT {
 	
 	@Test
 	public void testInsertarExpedienteExistente() {
-		Titulacion tituEntity = gestionTitulacion.devolverTitulacion(1234);
-		Alumno alumnoEntity = gestionAlumno.devolverAlumno("090");
-		Expediente exp = new Expediente(12345, tituEntity, alumnoEntity);
+		
 			try {
+				Titulacion tituEntity = gestionTitulacion.devolverTitulacion(1234);
+				Alumno alumnoEntity = gestionAlumno.devolverAlumno("090");
+				Expediente exp = new Expediente(12345, tituEntity, alumnoEntity);
 				gestionExpediente.insertarExpediente(12345, exp);
 				fail("Deberia dar error porque ya existe");
 			} catch (ExpedienteExistenteException e) {
@@ -113,10 +115,11 @@ public class ExpedienteT {
 	
 	@Test
 	public void testModificarExpediente() {
-		Titulacion tituEntity = gestionTitulacion.devolverTitulacion(1234);
-		Alumno alumnoEntity = gestionAlumno.devolverAlumno("090");
-		Expediente exp = new Expediente(12345, tituEntity, alumnoEntity);
+		Expediente exp = new Expediente();
 			try {
+				Titulacion tituEntity = gestionTitulacion.devolverTitulacion(1234);
+				Alumno alumnoEntity = gestionAlumno.devolverAlumno("090");
+				exp = new Expediente(12345, tituEntity, alumnoEntity);
 				gestionExpediente.modificarExpediente(12345, exp);
 			} catch (ExpedienteNoEncontradoException e) {
 				fail("Expediente no encontrado");
@@ -130,10 +133,11 @@ public class ExpedienteT {
 	
 	@Test
 	public void testModificarExpedienteNoEncontrado() {
-		Titulacion tituEntity = gestionTitulacion.devolverTitulacion(1234);
-		Alumno alumnoEntity = gestionAlumno.devolverAlumno("090");
-		Expediente exp = new Expediente(12345, tituEntity, alumnoEntity);
+		
 			try {
+				Titulacion tituEntity = gestionTitulacion.devolverTitulacion(1234);
+				Alumno alumnoEntity = gestionAlumno.devolverAlumno("090");
+				Expediente exp = new Expediente(12345, tituEntity, alumnoEntity);
 				gestionExpediente.modificarExpediente(1, exp);
 				fail("Deberia dar error porque no lo encuentra");
 			} catch (ExpedienteNoEncontradoException e) {
@@ -145,10 +149,11 @@ public class ExpedienteT {
 	
 	@Test
 	public void testDevolverExpediente() {
-		Titulacion tituEntity = gestionTitulacion.devolverTitulacion(1234);
-		Alumno alumnoEntity = gestionAlumno.devolverAlumno("090");
-		Expediente exp = new Expediente(1, tituEntity, alumnoEntity);
+		
 			try {
+				Titulacion tituEntity = gestionTitulacion.devolverTitulacion(1234);
+				Alumno alumnoEntity = gestionAlumno.devolverAlumno("090");
+				Expediente exp = new Expediente(1, tituEntity, alumnoEntity);
 				Expediente expEntity = gestionExpediente.devolverExpediente(1);
 				assertEquals(expEntity.hashCode(), exp.hashCode());
 			} catch (ExpedienteNoEncontradoException e) {
@@ -161,10 +166,11 @@ public class ExpedienteT {
 	
 	@Test
 	public void testDevolverExpedienteNoEncontrado() {
-		Titulacion tituEntity = gestionTitulacion.devolverTitulacion(1234);
-		Alumno alumnoEntity = gestionAlumno.devolverAlumno("090");
-		Expediente exp = new Expediente(1, tituEntity, alumnoEntity);
+		
 			try {
+				Titulacion tituEntity = gestionTitulacion.devolverTitulacion(1234);
+				Alumno alumnoEntity = gestionAlumno.devolverAlumno("090");
+				Expediente exp = new Expediente(1, tituEntity, alumnoEntity);
 				Expediente expEntity = gestionExpediente.devolverExpediente(1);
 				fail("El expediente no deberia estar");
 			} catch (ExpedienteNoEncontradoException e) {
@@ -176,8 +182,9 @@ public class ExpedienteT {
 	
 	@Test
 	public void testMostrarExpediente() {
-		String expCadena = gestionExpediente.mostrarExpediente(12345);
+		
 		try {
+			String expCadena = gestionExpediente.mostrarExpediente(12345);
 			Expediente expEntity = gestionExpediente.devolverExpediente(12345);
 			assertEquals(expEntity.toString(), expCadena);
 		} catch (ExpedienteNoEncontradoException e) {
