@@ -1,10 +1,12 @@
 package es.uma.informatica.ejb.saneka;
 
 import javax.ejb.Stateless;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import es.uma.informatica.ejb.exceptions.ExpedienteNoEncontrado;
+import es.uma.informatica.ejb.exceptions.ExpedienteNoEncontradoException;
 import es.uma.informatica.ejb.exceptions.MatriculaExistente;
 import es.uma.informatica.ejb.exceptions.MatriculaNoExistente;
 import es.uma.informatica.jpa.saneka.Expediente;
@@ -17,13 +19,13 @@ public class MatriculaEJB implements GestionMatricula{
 	private EntityManager em;
 
 	@Override
-	public void insertarMatricula(String exp,Matricula matricula) throws ExpedienteNoEncontrado,MatriculaExistente {
+	public void insertarMatricula(Integer exp,Matricula matricula) throws ExpedienteNoEncontradoException,MatriculaExistente {
 		// TODO Auto-generated method stub
 		Expediente ex = em.find(Expediente.class, exp);
 		if (ex == null) {
-			throw new ExpedienteNoEncontrado();
+			throw new ExpedienteNoEncontradoException();
 		}
-		Matricula mat=em.find(Matricula.class,matricula.getNum_archivo());
+		Matricula mat=em.find(Matricula.class,new Matricula.MatriculaId(matricula.getCurso_academico(),exp));
 			if(mat!=null) {
 				throw new MatriculaExistente();
 			}
@@ -32,8 +34,13 @@ public class MatriculaEJB implements GestionMatricula{
 	}
 
 	@Override
-	public void modificarMatricula(Matricula matricula) throws MatriculaNoExistente{
-		Matricula mat=em.find(Matricula.class,matricula.getNum_archivo());
+	public void modificarMatricula(Integer exp,Matricula matricula) throws MatriculaNoExistente, ExpedienteNoEncontradoException{
+		Expediente ex = em.find(Expediente.class, exp);
+		if (ex == null) {
+			throw new ExpedienteNoEncontradoException();
+		}
+		
+		Matricula mat=em.find(Matricula.class,new Matricula.MatriculaId(matricula.getCurso_academico(),exp));
 				if(mat==null) {
 					throw new MatriculaNoExistente();
 				}
@@ -46,8 +53,12 @@ public class MatriculaEJB implements GestionMatricula{
 	}
 
 	@Override
-	public void mostrarMatricula(String ref) throws MatriculaNoExistente {
-		Matricula mat=em.find(Matricula.class,ref);
+	public void mostrarMatricula(Integer exp,String curso) throws ExpedienteNoEncontradoException,MatriculaNoExistente {
+		Expediente e=em.find(Expediente.class,exp);
+		if(e==null) {
+			throw new ExpedienteNoEncontradoException();
+		}
+		Matricula mat=em.find(Matricula.class,new Matricula.MatriculaId(curso,exp));
 		if(mat==null) {
 			throw new MatriculaNoExistente();
 		}
@@ -56,8 +67,12 @@ public class MatriculaEJB implements GestionMatricula{
 	}
 
 	@Override
-	public void eliminarMatricula(String ref) throws MatriculaNoExistente {
-		Matricula mat=em.find(Matricula.class,ref);
+	public void eliminarMatricula(Integer exp,String curso) throws MatriculaNoExistente,ExpedienteNoEncontradoException {
+		Expediente e=em.find(Expediente.class,exp);
+		if(e==null) {
+			throw new ExpedienteNoEncontradoException();
+		}
+		Matricula mat=em.find(Matricula.class,new Matricula.MatriculaId(curso,exp));
 		if(mat==null) {
 			throw new MatriculaNoExistente();
 		}

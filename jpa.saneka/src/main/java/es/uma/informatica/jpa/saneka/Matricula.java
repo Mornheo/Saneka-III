@@ -37,6 +37,10 @@ public class Matricula implements Serializable {
 		private int expediente;
 		private String Curso_academico;
 		
+		public MatriculaId() {
+			super();
+		}
+		
 		public MatriculaId(String ref,Integer exp) {
 			super();
 			this.Curso_academico=ref;
