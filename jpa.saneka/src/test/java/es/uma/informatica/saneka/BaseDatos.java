@@ -43,6 +43,13 @@ public class BaseDatos {
 		Titulacion titu = new Titulacion(1234,"infor",6, centros);
 		em.persist(titu);
 		
+		Titulacion otroTitu = new Titulacion(456,"Matematica",6, centros);
+		em.persist(otroTitu);
+		
+		Titulacion tituB = new Titulacion(56,"Computador",6, centros);
+		em.persist(tituB);
+		
+		
 		//Alumno
 		Alumno alumnoA = new Alumno("090", "Diego", "Centeno", "07143291@uma.es");
 		em.persist(alumnoA);
