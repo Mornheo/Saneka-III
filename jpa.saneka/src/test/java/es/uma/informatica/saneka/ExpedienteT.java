@@ -64,7 +64,13 @@ public class ExpedienteT {
 			throw new RuntimeException(e);
 		}
 		
-		Expediente expEntity = gestionExpediente.devolverExpediente(1);
+		Expediente expEntity = new Expediente();
+		try {
+			expEntity = gestionExpediente.devolverExpediente(1);
+		} catch (SanekaException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		assertEquals(expEntity.hashCode(), exp.hashCode());
 	}
 	
@@ -127,7 +133,13 @@ public class ExpedienteT {
 			} catch (SanekaException e) {
 			throw new RuntimeException(e);
 		}
-			Expediente expEntity = gestionExpediente.devolverExpediente(12345);
+			Expediente expEntity = new Expediente();
+			try {
+				expEntity = gestionExpediente.devolverExpediente(12345);
+			} catch (SanekaException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			assertEquals(expEntity.getActivo(), exp.getActivo());
 			assertEquals(expEntity.getNota_media_provisional(), exp.getNota_media_provisional());
 	}
