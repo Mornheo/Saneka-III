@@ -18,8 +18,6 @@ public class Alumno implements Serializable {
 
 	   
 	@Id
-	private Integer ID;
-	@Column(unique=true,nullable=false)
 	private String DNI;
 	@Column(unique=true,nullable=false)
 	private String Nombre;
@@ -28,6 +26,7 @@ public class Alumno implements Serializable {
 	private String Apellido2;
 	private Integer Num_expediente;
 	private Integer Num_archivo;
+	@Column(nullable=false)
 	private String Email_institucional;
 	private String Email_personal;
 	private String Telefono;
@@ -57,16 +56,18 @@ public class Alumno implements Serializable {
 	public void setExpedientes(List<Expediente> expedientes) {
 		this.expedientes = expedientes;
 	}
+	
+	public Alumno(String dni, String nombre, String Apellido1, String email) {
+		this.DNI=dni;
+		this.Nombre=nombre;
+		this.Apellido1=Apellido1;
+		this.Email_institucional=email;
+	}
+	
 	public Alumno() {
 		super();
 	}   
-	public Integer getID() {
-		return this.ID;
-	}
-
-	public void setID(Integer ID) {
-		this.ID = ID;
-	}   
+	
 	public String getDNI() {
 		return this.DNI;
 	}
@@ -246,12 +247,11 @@ public class Alumno implements Serializable {
 	public Alumno(Alumno a) {
 		this.expedientes = a.getExpedientes();
 	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((ID == null) ? 0 : ID.hashCode());
+		result = prime * result + ((DNI == null) ? 0 : DNI.hashCode());
 		return result;
 	}
 	@Override
@@ -263,26 +263,28 @@ public class Alumno implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Alumno other = (Alumno) obj;
-		if (ID == null) {
-			if (other.ID != null)
+		if (DNI == null) {
+			if (other.DNI != null)
 				return false;
-		} else if (!ID.equals(other.ID))
+		} else if (!DNI.equals(other.DNI))
 			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
-		return "Alumno [ID=" + ID + ", DNI=" + DNI + ", Nombre=" + Nombre + ", Apellido1=" + Apellido1 + ", Apellido2="
-				+ Apellido2 + ", Num_expediente=" + Num_expediente + ", Num_archivo=" + Num_archivo
-				+ ", Email_institucional=" + Email_institucional + ", Email_personal=" + Email_personal + ", Telefono="
-				+ Telefono + ", Movil=" + Movil + ", Direccion_notificacion=" + Direccion_notificacion
-				+ ", Localidad_notificacion=" + Localidad_notificacion + ", Provincia_notificaccion="
-				+ Provincia_notificaccion + ", CP_notificacion=" + CP_notificacion + ", Fecha_matricula="
-				+ Fecha_matricula + ", Turno_preferente=" + Turno_preferente + ", Grupos_asignados=" + Grupos_asignados
-				+ ", Nota_media=" + Nota_media + ", Creditos_superados=" + Creditos_superados + ", Creditos_FB="
-				+ Creditos_FB + ", Creditos_OB=" + Creditos_OB + ", Creditos_OP=" + Creditos_OP + ", Creditos_CF="
-				+ Creditos_CF + ", Creditos_PE=" + Creditos_PE + ", Creditos_TF=" + Creditos_TF + "]";
+		return "Alumno [DNI=" + DNI + ", Nombre=" + Nombre + ", Apellido1=" + Apellido1 + ", Apellido2=" + Apellido2
+				+ ", Num_expediente=" + Num_expediente + ", Num_archivo=" + Num_archivo + ", Email_institucional="
+				+ Email_institucional + ", Email_personal=" + Email_personal + ", Telefono=" + Telefono + ", Movil="
+				+ Movil + ", Direccion_notificacion=" + Direccion_notificacion + ", Localidad_notificacion="
+				+ Localidad_notificacion + ", Provincia_notificaccion=" + Provincia_notificaccion + ", CP_notificacion="
+				+ CP_notificacion + ", Fecha_matricula=" + Fecha_matricula + ", Turno_preferente=" + Turno_preferente
+				+ ", Grupos_asignados=" + Grupos_asignados + ", Nota_media=" + Nota_media + ", Creditos_superados="
+				+ Creditos_superados + ", Creditos_FB=" + Creditos_FB + ", Creditos_OB=" + Creditos_OB
+				+ ", Creditos_OP=" + Creditos_OP + ", Creditos_CF=" + Creditos_CF + ", Creditos_PE=" + Creditos_PE
+				+ ", Creditos_TF=" + Creditos_TF + ", expedientes=" + expedientes + "]";
 	}
+
+	
    
 	
 	

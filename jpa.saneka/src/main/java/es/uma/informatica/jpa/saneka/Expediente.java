@@ -21,10 +21,10 @@ public class Expediente implements Serializable {
 	private long Nota_media_provisional;
 	private static final long serialVersionUID = 1L;
 	@ManyToOne
-	@Column(nullable=false)
+	@JoinColumn(nullable=false)
 	private Alumno alumno;
 	@ManyToOne
-	@Column(nullable=false)
+	@JoinColumn(nullable=false)
 	private Titulacion titulacion;
 	@OneToMany (mappedBy="expediente")
 	private List<Encuesta> encuestas;

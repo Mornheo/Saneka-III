@@ -15,7 +15,7 @@ public class Encuesta implements Serializable {
 	private String Fecha_de_envio;
 	private static final long serialVersionUID = 1L;
 	@ManyToOne
-	@Column (nullable=false)
+	@JoinColumn (nullable=false)
 	private Expediente expediente;
 	
 	@ManyToMany

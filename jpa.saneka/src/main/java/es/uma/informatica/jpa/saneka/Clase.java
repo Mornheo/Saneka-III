@@ -91,6 +91,11 @@ public class Clase implements Serializable {
 		this.asignatura=asig;
 		this.grupo=grupo;
 	}
+	
+	public Clase() {
+		super();
+	}
+	
 	public int getDia() {
 		return Dia;
 	}

@@ -30,6 +30,9 @@ public class Titulacion implements Serializable {
 	@JoinColumn(nullable = false)
 	private List<Centro> centros;
 	
+	@ManyToMany(mappedBy = "titulaciones")
+	private List<Optativa> optativas;
+	
 	@OneToMany(mappedBy = "titulacion")
 	private List<Asignatura> asignaturas;
 	private static final long serialVersionUID = 1L;

@@ -1,3 +1,5 @@
+
+
 package es.uma.informatica.saneka;
 
 import java.util.ArrayList;
@@ -21,13 +23,14 @@ import es.uma.informatica.jpa.saneka.Optativa;
 import es.uma.informatica.jpa.saneka.Titulacion;
 
 public class BaseDatos {
+	
 	public static void inicializaBaseDatos(String nombreUnidadPersistencia) {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory(nombreUnidadPersistencia);
 		EntityManager em = emf.createEntityManager();
 		
 		em.getTransaction().begin();
 		//Rellenar con la base de datos para los test
-		
+	
 		//Centro
 		Centro centro = new Centro(123, "informatica", "avenida de andalucia n11");
 		em.persist(centro);
@@ -39,10 +42,7 @@ public class BaseDatos {
 		em.persist(titu);
 		
 		//Alumno
-		Alumno alumnoA = new Alumno();
-		alumnoA.setDNI("090");
-		alumnoA.setNombre("Diego");
-		alumnoA.setApellido1("Centeno");
+		Alumno alumnoA = new Alumno("090", "Diego", "Centeno", "07143291@uma.es");
 		em.persist(alumnoA);
 		
 		//Expediente
@@ -66,7 +66,7 @@ public class BaseDatos {
 		em.persist(matr);
 		
 		//Grupo
-		Grupo grupo = new Grupo(3, "B", "tarde", false);
+		Grupo grupo = new Grupo(420, 3, "B", "tarde", false, titu);
 		em.persist(grupo);
 		
 		//Grupos Por Asignatura
@@ -81,8 +81,10 @@ public class BaseDatos {
 		Asignaturas_matricula am = new Asignaturas_matricula(asig, matr);
 		em.persist(am);
 		
+		
 		em.getTransaction().commit();
 		em.close();
 		emf.close();
+		
 	}
 }

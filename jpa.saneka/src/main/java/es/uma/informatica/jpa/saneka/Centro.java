@@ -23,6 +23,11 @@ public class Centro implements Serializable{
 		this.Nombre=nombre;
 		this.Direccion=dir;
 	}
+	
+	public Centro() {
+		super();
+	}
+	
 	public Integer getID() {
 		return ID;
 	}
