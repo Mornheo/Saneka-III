@@ -27,36 +27,19 @@ import es.uma.informatica.jpa.saneka.Expediente;
 import es.uma.informatica.jpa.saneka.Matricula;
 import es.uma.informatica.jpa.saneka.Titulacion;
 
-public class MatriculaTest {
+public class MatriculaT {
 
 	private static final String MATRICULA_EJB = "java:global/classes/MatriculaEJB";
-	private static final String GLASSFISH_CONFIGI_FILE_PROPERTY = "org.glassfish.ejb.embedded.glassfish.configuration.file";
-	private static final String CONFIG_FILE = "target/test-classes/META-INF/domain.xml";
 	private static final String UNIDAD_PERSITENCIA_PRUEBAS = "SanekaTest";
 	
-	private static EJBContainer ejbContainer;
-	private static Context ctx;
 	
+	private static Context ctx;
 	private GestionMatricula gestionMatricula;
 	
-	@BeforeClass
-	public static void setUpClass() throws Exception {
-		Properties properties = new Properties();
-		properties.setProperty(GLASSFISH_CONFIGI_FILE_PROPERTY, CONFIG_FILE);
-		ejbContainer = EJBContainer.createEJBContainer(properties);
-		ctx = ejbContainer.getContext();
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-		if (ejbContainer != null) {
-			ejbContainer.close();
-		}
-	}
 
 	@Before
 	public void setUp() throws NamingException {
-		gestionMatricula=(GestionMatricula) ctx.lookup(MATRICULA_EJB);
+		gestionMatricula=(GestionMatricula) SuiteTest.ctx.lookup(MATRICULA_EJB);
 		BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
 
@@ -71,7 +54,7 @@ public class MatriculaTest {
 		Centro centro = new Centro(123, "informatica", "avenida de andalucia n11");
 		List<Centro> centros = new ArrayList<Centro>();
 		centros.add(centro);
-		Titulacion titu = new Titulacion(1234, centros);
+		Titulacion titu = new Titulacion(1234,"infor",6, centros);
 		Expediente exp = new Expediente(12345, titu, a);
 		Matricula m=new Matricula("2", "12/09/2019", exp);
 
@@ -98,7 +81,7 @@ public class MatriculaTest {
 		Centro centro = new Centro(123, "informatica", "avenida de andalucia n11");
 		List<Centro> centros = new ArrayList<Centro>();
 		centros.add(centro);
-		Titulacion titu = new Titulacion(1234, centros);
+		Titulacion titu = new Titulacion(1234,"infor",6, centros);
 		Expediente exp = new Expediente(12345, titu, a);
 		Matricula m=new Matricula("3", "12/09/2020", exp);
 		gestionMatricula.insertarMatricula(exp.getNum_expediente(),m);
@@ -119,7 +102,7 @@ public class MatriculaTest {
 		Centro centro = new Centro(123, "informatica", "avenida de andalucia n11");
 		List<Centro> centros = new ArrayList<Centro>();
 		centros.add(centro);
-		Titulacion titu = new Titulacion(1234, centros);
+		Titulacion titu = new Titulacion(1234,"infor",6, centros);
 		Expediente exp = new Expediente(12345, titu, a);
 		Matricula m=new Matricula("3", "12/09/2019", exp);
 		m.setEstado("Correcto");
@@ -146,7 +129,7 @@ public class MatriculaTest {
 		Centro centro = new Centro(123, "informatica", "avenida de andalucia n11");
 		List<Centro> centros = new ArrayList<Centro>();
 		centros.add(centro);
-		Titulacion titu = new Titulacion(1234, centros);
+		Titulacion titu = new Titulacion(1234,"infor",6, centros);
 		Expediente exp = new Expediente(12345, titu, a);
 		Matricula m=new Matricula("1", "12/09/2019", exp);
 		gestionMatricula.modificarMatricula(exp.getNum_expediente(),m);
@@ -167,7 +150,7 @@ public class MatriculaTest {
 		Centro centro = new Centro(123, "informatica", "avenida de andalucia n11");
 		List<Centro> centros = new ArrayList<Centro>();
 		centros.add(centro);
-		Titulacion titu = new Titulacion(1234, centros);
+		Titulacion titu = new Titulacion(1234,"infor",6, centros);
 		Expediente exp = new Expediente(123456, titu, a);
 		Matricula m=new Matricula("1", "12/09/2019", exp);
 		gestionMatricula.modificarMatricula(exp.getNum_expediente(),m);
@@ -253,6 +236,45 @@ public class MatriculaTest {
 		String curso="1";
 		gestionMatricula.eliminarMatricula(exp, curso);
 		fail("Matricula no existente");
+		}catch(SanekaException e) {
+			fail("Excepcion");	
+		}
+	}
+	
+	@Test
+	public void testDevolverCorrecto() {
+		try {
+		Integer exp=12345;
+		String curso="3";
+		assertEquals(gestionMatricula.devolverMatricula(exp, curso).toString(),
+				"Matricula [Curso_academico=" + "3" + ", Estado=" + null + ", Num_archivo=" + null
+				+ ", Turno_preferente=" + null + ", Fecha_matricula=" + "12/09/2020" + ", Nuevo_ingreso="
+				+ null + ", Listado_asignaturas=" + null + "]"
+				);
+		}catch(ExpedienteNoEncontradoException|MatriculaNoExistente e) {
+			fail("Matricula ya existente o expediente no encontrado");	
+		}
+	}
+	
+	@Test
+	public void testDevolveraMatriculaNoExistente() {
+		try {
+		Integer exp=12345;
+		String curso="1";
+		gestionMatricula.devolverMatricula(exp, curso);
+		fail("Matricula no existente");
+		}catch(SanekaException e) {
+			fail("Excepcion");	
+		}
+	}
+	
+	@Test
+	public void testDevolverExpedienteNoExistente() {
+		try {
+		Integer exp=1;
+		String curso="1";
+		gestionMatricula.devolverMatricula(exp, curso);
+		fail("Expediente no existente");
 		}catch(SanekaException e) {
 			fail("Excepcion");	
 		}
