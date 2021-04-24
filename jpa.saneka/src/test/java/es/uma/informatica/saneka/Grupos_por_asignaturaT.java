@@ -10,8 +10,10 @@ import org.junit.Test;
 import es.uma.informatica.ejb.exceptions.ExpedienteExistenteException;
 import es.uma.informatica.ejb.exceptions.GpAExistenteException;
 import es.uma.informatica.ejb.exceptions.SanekaException;
+import es.uma.informatica.ejb.saneka.GestionAsignatura;
 import es.uma.informatica.ejb.saneka.GestionEncuesta;
 import es.uma.informatica.ejb.saneka.GestionExpediente;
+import es.uma.informatica.ejb.saneka.GestionGrupo;
 import es.uma.informatica.ejb.saneka.GestionGrupos_por_asignatura;
 import es.uma.informatica.jpa.saneka.Alumno;
 import es.uma.informatica.jpa.saneka.Asignatura;
@@ -47,25 +49,47 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 	
 	@Test
 	public void testInsertarGrupo_por_asignatura() {
-		Asignatura asigEntity = gestionAsignatura.devolverAsignatura(232);
-		Grupo grupoEntity = gestionGrupo.devolverGrupo(3);
-		Grupos_por_asignatura gpa = new Grupos_por_asignatura(1, asigEntity, grupoEntity);
-		Grupos_por_asignaturaId id = gpa.;
+		Grupos_por_asignatura gpa = new Grupos_por_asignatura();
+		Grupos_por_asignaturaId id = new Grupos_por_asignaturaId();
 			try {
-				gestionGpa.insertarGpA(1, gpa);
+				Asignatura asigEntity = gestionAsignatura.devolverAsignatura(232);
+				Grupo grupoEntity = gestionGrupo.obtenerGrupo(3);
+				gpa = new Grupos_por_asignatura(1, asigEntity, grupoEntity);
+				id = new Grupos_por_asignaturaId(1, asigEntity.getReferencia(), grupoEntity.getID());
+				gestionGpa.insertarGpA(id, gpa);
 			} catch (GpAExistenteException e) {
 				fail("El GpA ya existe");
 			}catch (SanekaException e) {
 			throw new RuntimeException(e);
 		}
 		
-		Expediente expEntity = gestionExpediente.devolverExpediente(1);
-		assertEquals(expEntity.hashCode(), exp.hashCode());
+		Grupos_por_asignatura gpaEntity = new Grupos_por_asignatura();
+		try {
+			gpaEntity = gestionGpa.devolverGpA(id);
+		} catch (SanekaException e) {
+			fail("No se inserto");
+		}
+		assertEquals(gpaEntity.hashCode(), gpa.hashCode());
 	}
+	
 	@Test
 	public void testInsertarGrupo_por_asignaturaExistente() {
-		
+		Grupos_por_asignatura gpa = new Grupos_por_asignatura();
+		Grupos_por_asignaturaId id = new Grupos_por_asignaturaId();
+			try {
+				Asignatura asigEntity = gestionAsignatura.devolverAsignatura(232);
+				Grupo grupoEntity = gestionGrupo.obtenerGrupo(3);
+				gpa = new Grupos_por_asignatura(3, asigEntity, grupoEntity);
+				id = new Grupos_por_asignaturaId(3, asigEntity.getReferencia(), grupoEntity.getID());
+				gestionGpa.insertarGpA(id, gpa);
+				fail("El GpA no deberia poder introducirse");
+			} catch (GpAExistenteException e) {
+				//OK
+			}catch (SanekaException e) {
+				fail("El GpA no deberia poder introducirse");
+		}
 	}
+	
 	@Test
 	public void testEliminarGrupo_por_asignatura() {
 		

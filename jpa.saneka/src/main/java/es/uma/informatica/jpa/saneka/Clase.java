@@ -90,10 +90,6 @@ public class Clase implements Serializable {
 		this.grupo=grupo;
 	}
 	
-	public Clase() {
-		super();
-	}
-	
 	public int getDia() {
 		return Dia;
 	}
