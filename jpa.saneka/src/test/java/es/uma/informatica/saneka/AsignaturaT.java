@@ -16,6 +16,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import es.uma.informatica.ejb.exceptions.AsignaturaExistenteException;
+import es.uma.informatica.ejb.exceptions.AsignaturaNoEncontradoException;
 import es.uma.informatica.ejb.exceptions.SanekaException;
 import es.uma.informatica.ejb.saneka.GestionAsignatura;
 import es.uma.informatica.ejb.saneka.GestionExpediente;
