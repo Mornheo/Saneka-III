@@ -67,9 +67,9 @@ public class Clase implements Serializable {
 			return true;
 		}
 	}
-	@Id@Column(unique=true,nullable=false)
+	@Id
 	private int Dia;
-	@Id@Column(unique=true,nullable=false)
+	@Id
 	private String Hora_inicio;
 	@Id
 	@ManyToOne

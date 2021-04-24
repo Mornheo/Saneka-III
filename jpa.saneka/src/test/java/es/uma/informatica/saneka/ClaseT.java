@@ -36,9 +36,9 @@ import es.uma.informatica.jpa.saneka.Clase;
 import es.uma.informatica.jpa.saneka.Grupo;
 import es.uma.informatica.jpa.saneka.Titulacion;
 
-public class ClaseTest {
+public class ClaseT {
 	
-	private static final Logger LOG = Logger.getLogger(ClaseTest.class.getCanonicalName());
+	private static final Logger LOG = Logger.getLogger(ClaseT.class.getCanonicalName());
 	private static final String CLASE_EJB = "java:global/classes/ClaseEJB";
 	private static final String ASIGNATURAS_EJB = "java:global/classes/AsignaturaEJB";
 	private static final String GRUPOS_EJB = "java:global/classes/GrupoEJB";

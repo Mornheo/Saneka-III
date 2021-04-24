@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Grupo implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-	@Id @Column(unique=true,nullable=false)
+	@Id 
 	private Integer ID;
 	@Column(unique=true,nullable=false)
 	private Integer Curso;
