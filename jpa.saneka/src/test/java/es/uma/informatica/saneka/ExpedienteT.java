@@ -2,6 +2,7 @@ package es.uma.informatica.saneka;
 
 import static org.junit.Assert.*;
 
+
 import java.util.Properties;
 import java.util.logging.Logger;
 

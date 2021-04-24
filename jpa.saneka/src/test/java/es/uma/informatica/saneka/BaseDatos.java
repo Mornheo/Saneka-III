@@ -32,13 +32,15 @@ public class BaseDatos {
 		//Rellenar con la base de datos para los test
 	
 		//Centro
-		Centro centro = new Centro(123, "informatica", "avenida de andalucia n11");
+		List<Titulacion> titulaciones = new ArrayList<>();
+		Centro centro = new Centro(123, "informatica", "avenida de andalucia n11","23446",titulaciones);
 		em.persist(centro);
 		
 		//Titulacion
+		
 		List<Centro> centros = new ArrayList<Centro>();
 		centros.add(centro);
-		Titulacion titu = new Titulacion(1234, centros);
+		Titulacion titu = new Titulacion(1234,"infor",6, centros);
 		em.persist(titu);
 		
 		//Alumno

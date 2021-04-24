@@ -12,7 +12,7 @@ import es.uma.informatica.ejb.exceptions.CentroNoEncontradoException;
 import es.uma.informatica.jpa.saneka.Centro;
 
 @Stateless
-public class CentroEJB implements GestionCentros{
+public class CentroEJB implements GestionCentro{
 	
 	private static final Logger LOG = Logger.getLogger(CentroEJB.class.getCanonicalName());
 	
@@ -20,7 +20,7 @@ public class CentroEJB implements GestionCentros{
 	private EntityManager em;
 	@Override
 	public void insertarCentro(Centro centro) throws CentroExistenteException{
-		Centro centroExistente = em.find(Centro.class,centro);
+		Centro centroExistente = em.find(Centro.class,centro.getID());
 		if(centroExistente != null) {
 			throw new CentroExistenteException();
 		}
@@ -31,7 +31,7 @@ public class CentroEJB implements GestionCentros{
 	public void actualizarCentro(Centro centro) throws CentroNoEncontradoException {
 		// Que información podemos actualizar
 		// Actualizamos Nombre,direccion,telefono y lista de titulacion
-		Centro centroExistente = em.find(Centro.class,centro);
+		Centro centroExistente = em.find(Centro.class,centro.getID());
 		if(centroExistente == null) {
 			throw new CentroNoEncontradoException();
 		}
@@ -54,6 +54,15 @@ public class CentroEJB implements GestionCentros{
 	@Override
 	public String mostrarCentro(Centro centro) {
 		return centro.toString();
+	}
+
+	@Override
+	public Centro obtenerCentro(Integer id) throws CentroNoEncontradoException {
+		Centro centroExistente = em.find(Centro.class,id);
+		if(centroExistente == null) {
+			throw new CentroNoEncontradoException();
+		}
+		return centroExistente;
 	}
 	
 

@@ -2,31 +2,49 @@ package es.uma.informatica.jpa.saneka;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 @Entity
 public class Centro implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-	@Id
+	@Id 
 	private Integer ID;
-	@Column(unique=true,nullable=false)
+	@Column(nullable=false)
 	private String Nombre;
 	@Column(nullable=false)
 	private String Direccion;
 	private String TLF_consejeria;
 	@ManyToMany
 	//@JoinTable(name="Centro_Titulacion", joinColumns={ @JoinColumn(name="centro_id") }, inverseJoinColumns={ @JoinColumn(name="titulacion_id") })
-	@JoinTable
+	@JoinTable()
 	private List<Titulacion> titulaciones;
-	
 	public Centro() {
 		super();
 	}
-	
-	public Centro(Integer id, String nombre, String dir) {
-		this.ID=id;
-		this.Nombre=nombre;
-		this.Direccion=dir;
+	public Centro (Integer id, String nombre, String dir) {
+		ID=id;
+		Nombre=nombre;
+		Direccion=dir;
+	}
+
+	public Centro(Integer id,String nombre,String direccion,String telefono, List<Titulacion> titu) {
+		ID = id;
+		Nombre = nombre;
+		Direccion = direccion;
+		TLF_consejeria = telefono;
+		titulaciones = titu;
+	}
+	public Centro(Integer id,String nombre,String direccion,String telefono) {
+		ID = id;
+		Nombre = nombre;
+		Direccion = direccion;
+		TLF_consejeria = telefono;
 	}
 	public Integer getID() {
 		return ID;

@@ -11,34 +11,30 @@ public class Clase implements Serializable {
 		private int Dia;
 		private String Hora_inicio;
 		private int grupo;
-		public ClaseId() {}
-		public ClaseId(int dia,String hora,int grupo) {
+		public ClaseId() {super();}
+		public ClaseId(Integer dia,String hora,Integer grupo) {
 			super();
 			Dia = dia;
 			Hora_inicio = hora;
 			this.grupo = grupo;
 		}
-		public int getDia() {
+		
+		public Integer getDia() {
 			return Dia;
 		}
-
-		public void setDia(int dia) {
+		public void setDia(Integer dia) {
 			Dia = dia;
 		}
-
 		public String getHora_inicio() {
 			return Hora_inicio;
 		}
-
 		public void setHora_inicio(String hora_inicio) {
 			Hora_inicio = hora_inicio;
 		}
-
-		public int getGrupo() {
+		public Integer getGrupo() {
 			return grupo;
 		}
-
-		public void setGrupo(int grupo) {
+		public void setGrupo(Integer grupo) {
 			this.grupo = grupo;
 		}
 		@Override
@@ -70,7 +66,6 @@ public class Clase implements Serializable {
 				return false;
 			return true;
 		}
-		
 	}
 	@Id
 	private int Dia;
@@ -78,13 +73,16 @@ public class Clase implements Serializable {
 	private String Hora_inicio;
 	@Id
 	@ManyToOne
-	@JoinColumn(nullable=false)
+	@JoinColumn(unique=true,nullable=false)
 	private Grupo grupo;
 	private String Hora_fin;
 	@ManyToOne
 	@JoinColumn(nullable=false)
 	private Asignatura asignatura;
 	private static final long serialVersionUID = 1L;
+	public Clase() {
+		super();
+	}
 	public Clase(Integer dia, String hora, Asignatura asig, Grupo grupo) {
 		this.Dia=dia;
 		this.Hora_inicio=hora;
@@ -102,17 +100,17 @@ public class Clase implements Serializable {
 	public void setDia(int dia) {
 		Dia = dia;
 	}
-	public String getHora_inicio() {
-		return Hora_inicio;
-	}
-	public void setHora_inicio(String hora_inicio) {
-		Hora_inicio = hora_inicio;
-	}
 	public Grupo getGrupo() {
 		return grupo;
 	}
 	public void setGrupo(Grupo grupo) {
 		this.grupo = grupo;
+	}
+	public String getHora_inicio() {
+		return Hora_inicio;
+	}
+	public void setHora_inicio(String hora_inicio) {
+		Hora_inicio = hora_inicio;
 	}
 	public String getHora_fin() {
 		return Hora_fin;
@@ -120,7 +118,6 @@ public class Clase implements Serializable {
 	public void setHora_fin(String hora_fin) {
 		Hora_fin = hora_fin;
 	}
-	
 	public Asignatura getAsignatura() {
 		return asignatura;
 	}
