@@ -5,7 +5,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import es.uma.informatica.ejb.exceptions.AsignaturaExistenteException;
-import es.uma.informatica.ejb.exceptions.AsignaturaNoEncontradoException;
+import es.uma.informatica.ejb.exceptions.AsignaturaNoExistenteException;
 import es.uma.informatica.jpa.saneka.Asignatura;
 
 @Stateless
@@ -16,10 +16,10 @@ public class AsignaturaEJB implements GestionAsignatura{
 		
 		
 	@Override
-	public String mostrarAsignatura(Integer ref) throws AsignaturaNoEncontradoException {
-		Asignatura existente = em.find(Asignatura.class, ref);
+	public String mostrarAsignatura(Asignatura asignatura) throws AsignaturaNoExistenteException {
+		Asignatura existente = em.find(Asignatura.class, asignatura.getReferencia());
 		if (existente==null) {
-			throw new AsignaturaNoEncontradoException();
+			throw new AsignaturaNoExistenteException();
 		}
 		String res = existente.toString();
 		System.out.println(res);
@@ -27,10 +27,10 @@ public class AsignaturaEJB implements GestionAsignatura{
 	}
 
 	@Override
-	public void eliminarAsignatura(Integer ref) throws AsignaturaNoEncontradoException {
-		Asignatura existente = em.find(Asignatura.class, ref);
+	public void eliminarAsignatura(Asignatura asignatura) throws AsignaturaNoExistenteException {
+		Asignatura existente = em.find(Asignatura.class, asignatura.getReferencia());
 		if(existente==null) {
-			throw new AsignaturaNoEncontradoException();
+			throw new AsignaturaNoExistenteException();
 		}
 		em.remove(existente);
 	}
@@ -45,10 +45,10 @@ public class AsignaturaEJB implements GestionAsignatura{
 	}
 
 	@Override
-	public void modificarAsignatura(Integer ref, Asignatura asignatura) throws AsignaturaNoEncontradoException {
-		Asignatura existente = em.find(Asignatura.class, ref);
+	public void modificarAsignatura(Asignatura asignatura) throws AsignaturaNoExistenteException {
+		Asignatura existente = em.find(Asignatura.class, asignatura.getReferencia());
 		if (existente==null) {
-			throw new AsignaturaNoEncontradoException();
+			throw new AsignaturaNoExistenteException();
 		}
 		existente.setAsignatura(asignatura.getAsignatura());
 		existente.setCaracter(asignatura.getCaracter());
@@ -64,10 +64,10 @@ public class AsignaturaEJB implements GestionAsignatura{
 	}
 
 	@Override
-	public Asignatura devolverAsignatura(Integer ref) throws AsignaturaNoEncontradoException {
+	public Asignatura devolverAsignatura(Integer ref) throws AsignaturaNoExistenteException {
 		Asignatura existente = em.find(Asignatura.class,ref);
 		if (existente==null) {
-			throw new AsignaturaNoEncontradoException();
+			throw new AsignaturaNoExistenteException();
 		}
 		return existente;
 	}

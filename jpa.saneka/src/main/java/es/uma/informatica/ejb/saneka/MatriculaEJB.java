@@ -80,19 +80,5 @@ public class MatriculaEJB implements GestionMatricula{
 		
 	}
 	
-	@Override
-	public Matricula devolverMatricula(Integer exp,String curso) throws ExpedienteNoEncontradoException,MatriculaNoExistente {
-		Expediente e=em.find(Expediente.class,exp);
-		if(e==null) {
-			throw new ExpedienteNoEncontradoException();
-		}
-		Matricula mat=em.find(Matricula.class,new Matricula.MatriculaId(curso,exp));
-		if(mat==null) {
-			throw new MatriculaNoExistente();
-		}
-		return mat;
-		
-	}
-	
 	
 }

@@ -8,13 +8,13 @@ import es.uma.informatica.jpa.saneka.Optativa;
 @Local
 public interface GestionOptativa {
 	
-	public String mostrarOptativa(Integer ref) throws SanekaException;
+	public String mostrarOptativa(Optativa optativa) throws SanekaException;
 	
-	public void eliminarOptativa(Integer ref) throws SanekaException;
+	public void eliminarOptativa(Optativa optativa) throws SanekaException;
 	
-	public void insertarOptativa(Integer ref, Optativa optativa) throws SanekaException;
+	public void insertarOptativa(Optativa optativa) throws SanekaException;
 	
-	public void modificarOptativa(Integer ref, Optativa optativa) throws SanekaException;
+	public void modificarOptativa(Optativa optativa) throws SanekaException;
 	
 	public Optativa devolverOptativa(Integer ref) throws SanekaException;
 	
