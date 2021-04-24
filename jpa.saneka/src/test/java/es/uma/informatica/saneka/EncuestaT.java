@@ -8,15 +8,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 import es.uma.informatica.ejb.exceptions.EncuestaExistenteException;
-import es.uma.informatica.ejb.exceptions.EncuestaNoEncontradaException;
-import es.uma.informatica.ejb.exceptions.ExpedienteNoEncontradoException;
+import es.uma.informatica.ejb.exceptions.EncuestaNoEncontradoException;
 import es.uma.informatica.ejb.exceptions.SanekaException;
 import es.uma.informatica.ejb.saneka.GestionEncuesta;
 import es.uma.informatica.ejb.saneka.GestionExpediente;
-import es.uma.informatica.jpa.saneka.Alumno;
 import es.uma.informatica.jpa.saneka.Encuesta;
 import es.uma.informatica.jpa.saneka.Expediente;
-import es.uma.informatica.jpa.saneka.Titulacion;
 
 public class EncuestaT {
 	
@@ -73,14 +70,14 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 	public void testEliminarEncuesta() {
 		try {
 			gestionEncuesta.eliminarEncuesta("23/04/2021");
-		} catch (EncuestaNoEncontradaException e) {
+		} catch (EncuestaNoEncontradoException e) {
 			fail("No encontró la encuesta");
 		}catch (SanekaException e) {
 			throw new RuntimeException(e);
 		}
 		try {
 			gestionEncuesta.devolverEncuesta("23/04/2021");
-		}catch(EncuestaNoEncontradaException e) {
+		}catch(EncuestaNoEncontradoException e) {
 			//OK
 		}catch (SanekaException e1) {
 			throw new RuntimeException(e1);
@@ -92,7 +89,7 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 		try {
 			gestionEncuesta.eliminarEncuesta("12/12/2020");
 			fail("No debería existir la encuesta");
-		} catch (EncuestaNoEncontradaException e) {
+		} catch (EncuestaNoEncontradoException e) {
 			//OK
 		}catch (SanekaException e) {
 			fail("No debería existir la encuesta");
@@ -105,7 +102,7 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 			String encCadena = gestionEncuesta.mostrarEncuesta("23/04/2021");
 			Encuesta encEntity = gestionEncuesta.devolverEncuesta("23/04/2021");
 			assertEquals(encEntity.toString(), encCadena);
-		} catch (EncuestaNoEncontradaException e) {
+		} catch (EncuestaNoEncontradoException e) {
 			fail("No encuentra la encuesta");
 		}catch (SanekaException e) {
 			throw new RuntimeException(e);
@@ -119,7 +116,7 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 			try {
 				Encuesta encEntity = gestionEncuesta.devolverEncuesta("23/04/2021");
 				assertEquals(encEntity.hashCode(), enc.hashCode());
-			} catch (EncuestaNoEncontradaException e) {
+			} catch (EncuestaNoEncontradoException e) {
 				fail("La encuesta no se ha encontrado");
 			}catch (SanekaException e1) {
 			throw new RuntimeException(e1);
@@ -132,7 +129,7 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 			try {
 				Encuesta encEntity = gestionEncuesta.devolverEncuesta("23/04/2021");
 				fail("La encuesta no deberia estar");
-			} catch (EncuestaNoEncontradaException e) {
+			} catch (EncuestaNoEncontradoException e) {
 				
 			}catch (SanekaException e1) {
 				fail("La encuesta no deberia estar");

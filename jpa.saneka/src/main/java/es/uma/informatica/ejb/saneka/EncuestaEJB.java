@@ -5,7 +5,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import es.uma.informatica.ejb.exceptions.EncuestaExistenteException;
-import es.uma.informatica.ejb.exceptions.EncuestaNoEncontradaException;
+import es.uma.informatica.ejb.exceptions.EncuestaNoEncontradoException;
 import es.uma.informatica.jpa.saneka.Encuesta;
 
 @Stateless
@@ -18,29 +18,29 @@ public class EncuestaEJB implements GestionEncuesta{
 	public void insertarEncuesta(String fecha, Encuesta enc) throws EncuestaExistenteException {
 		try {
 			devolverEncuesta(fecha);
-		} catch (EncuestaNoEncontradaException e) {
+		} catch (EncuestaNoEncontradoException e) {
 			em.persist(enc);
 		}
 		throw new EncuestaExistenteException();
 	}
 
 	@Override
-	public void eliminarEncuesta(String fecha) throws EncuestaNoEncontradaException {
+	public void eliminarEncuesta(String fecha) throws EncuestaNoEncontradoException {
 		Encuesta encEntity = devolverEncuesta(fecha);
 		em.remove(encEntity);
 	}
 
 	@Override
-	public String mostrarEncuesta(String fecha) throws EncuestaNoEncontradaException {
+	public String mostrarEncuesta(String fecha) throws EncuestaNoEncontradoException {
 		Encuesta encEntity = devolverEncuesta(fecha);
 		return encEntity.toString();
 	}
 
 	@Override
-	public Encuesta devolverEncuesta(String fecha) throws EncuestaNoEncontradaException {
+	public Encuesta devolverEncuesta(String fecha) throws EncuestaNoEncontradoException {
 		Encuesta encEntity = em.find(Encuesta.class, fecha);
 		if(encEntity == null) {
-			throw new EncuestaNoEncontradaException();
+			throw new EncuestaNoEncontradoException();
 		}
 		return encEntity;
 	}
