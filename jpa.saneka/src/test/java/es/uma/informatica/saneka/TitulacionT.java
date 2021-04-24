@@ -19,6 +19,7 @@ import es.uma.informatica.ejb.exceptions.SanekaException;
 import es.uma.informatica.ejb.saneka.GestionTitulacion;
 import es.uma.informatica.jpa.saneka.Centro;
 import es.uma.informatica.jpa.saneka.Titulacion;
+import es.uma.informatica.sii.anotaciones.Requisitos;
 
 public class TitulacionT {
 	
@@ -44,6 +45,7 @@ public class TitulacionT {
 		BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
 
+	@Requisitos({"RF-8"})
 	@Test
 	public void introducirTitulacion() throws SanekaException {
 		
@@ -63,6 +65,7 @@ public class TitulacionT {
 		}	
 	}
 	
+	@Requisitos({"RF-8"})
 	@Test (expected = TitulacionExistenteException.class)
 	public void introducirTitulacionExistente() throws SanekaException {
 		
@@ -80,6 +83,7 @@ public class TitulacionT {
 		fail("ERROR: la Titulacion se introducio correctamente, deberia haber saltado excepcion");
 	}
 	
+	@Requisitos({"RF-8"})
 	@Test
 	public void eliminarTitulacion() throws SanekaException {
 		
@@ -105,6 +109,7 @@ public class TitulacionT {
 		}	
 	}
 	
+	@Requisitos({"RF-8"})
 	@Test (expected = TitulacionNoEncontradoException.class)
 	public void eliminarTitulacionNoExistente() throws SanekaException {
 		
@@ -113,6 +118,7 @@ public class TitulacionT {
 		fail("ERROR: la Titulacion se elimino correctamente, deberia haber saltado excepcion");
 	}
 	
+	@Requisitos({"RF-2"})
 	@Test
 	public void modificarTitulacion() throws SanekaException{
 		
@@ -137,6 +143,7 @@ public class TitulacionT {
 		
 	}
 	
+	@Requisitos({"RF-2"})
 	@Test (expected = TitulacionNoEncontradoException.class)
 	public void modificarTitulacionNoExistente() throws SanekaException{
 		
@@ -150,6 +157,7 @@ public class TitulacionT {
 			fail("ERROR: la Titulacion se modifico correctamente, deberia haber saltado excepcion");
 	}
 	
+	@Requisitos({"RF-2"})
 	@Test
 	public void mostrarTitulacion() throws SanekaException{
 		
@@ -184,6 +192,7 @@ public class TitulacionT {
 		
 	}
 	
+	@Requisitos({"RF-3"})
 	@Test
 	public void devolverTitulacion() throws SanekaException{
 		
@@ -203,6 +212,7 @@ public class TitulacionT {
 		
 	}
 	
+	@Requisitos({"RF-3"})
 	@Test (expected = TitulacionNoEncontradoException.class)
 	public void devolverTitulacionNoExistente() throws SanekaException{
 		

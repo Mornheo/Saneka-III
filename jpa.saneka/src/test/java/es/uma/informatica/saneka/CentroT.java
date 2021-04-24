@@ -24,6 +24,7 @@ import es.uma.informatica.ejb.exceptions.SanekaException;
 import es.uma.informatica.ejb.saneka.GestionCentro;
 import es.uma.informatica.jpa.saneka.Centro;
 import es.uma.informatica.jpa.saneka.Titulacion;
+import es.uma.informatica.sii.anotaciones.Requisitos;
 
 import javax.ejb.embeddable.EJBContainer;
 import javax.naming.Context;
@@ -45,6 +46,7 @@ public class CentroT {
 		BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
 
+	@Requisitos({"RF-8"})
 	@Test
 	public void testInsertarCentro() {
 		List<Titulacion> titu= new ArrayList<>();
@@ -57,6 +59,7 @@ public class CentroT {
 		}
 	}
 	
+	@Requisitos({"RF-8"})
 	@Test (expected = CentroExistenteException.class)
 	public void testInsertarCentroExistente() throws SanekaException {
 		final Integer idCentro = 123;
@@ -68,6 +71,8 @@ public class CentroT {
 			fail("Debe lanzar excepción de centro existente");
 		
 	}
+	
+	@Requisitos({"RF-2"})
 	@Test 
 	public void testModificarCentro() {
 		List<Titulacion> titu= new ArrayList<>();
@@ -86,6 +91,8 @@ public class CentroT {
 		}
 		
 	}
+	
+	@Requisitos({"RF-2"})
 	@Test (expected = CentroNoEncontradoException.class )
 	public void testModificarCentroNoEncontrado() throws CentroNoEncontradoException{
 		List<Titulacion> titu= new ArrayList<>();
@@ -97,26 +104,33 @@ public class CentroT {
 		
 	}
 	
+	@Requisitos({"RF-8"})
 	@Test
 	public void testEliminarCentro() {
 			try {
-				Centro centro = gestionCentro.obtenerCentro(123);
-				gestionCentro.eliminarCentro(centro);
-			} catch (CentroNoEncontradoException e) {
+				List<Titulacion> titu= new ArrayList<>();
+				Centro centro = new Centro(12,"computadores","Calle Miguel ","0894343",titu);
+				gestionCentro.insertarCentro(centro);
+				gestionCentro.eliminarCentro(12, centro);
+			} catch (CentroNoEncontradoException | CentroExistenteException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
 	}
-	@Test //(expected =CentroNoEncontradoException.class)
+	
+	@Requisitos({"RF-8"})
+	@Test (expected =CentroNoEncontradoException.class)
 	public void testEliminarCentroNoEncontrado() throws SanekaException {
 		final Integer idCentro = 11;
 		Centro centro = gestionCentro.obtenerCentro(idCentro);
 		centro.setID(19);
-		gestionCentro.eliminarCentro(centro);
-	
-		fail("Debería lanzar excepción de centro no encontrado");
-		
+		try {
+			gestionCentro.eliminarCentro(11, centro);
+			fail("Debería lanzar excepción de centro no encontrado");
+		}catch (CentroNoEncontradoException e){
+			//OK
+		}	
 		
 	}
 }

@@ -24,6 +24,7 @@ import es.uma.informatica.ejb.saneka.GestionTitulacion;
 import es.uma.informatica.jpa.saneka.Alumno;
 import es.uma.informatica.jpa.saneka.Expediente;
 import es.uma.informatica.jpa.saneka.Titulacion;
+import es.uma.informatica.sii.anotaciones.Requisitos;
 
 public class ExpedienteT {
 
@@ -50,6 +51,7 @@ public class ExpedienteT {
 		BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
 	
+	@Requisitos({"RF-8"})
 	@Test
 	public void testInsertarExpediente() {
 		Expediente exp = new Expediente();
@@ -61,7 +63,7 @@ public class ExpedienteT {
 			} catch (ExpedienteExistenteException e) {
 				fail("El expediente ya existe");
 			}catch (SanekaException e) {
-			throw new RuntimeException(e);
+			
 		}
 		
 		Expediente expEntity = new Expediente();
@@ -74,6 +76,7 @@ public class ExpedienteT {
 		assertEquals(expEntity.hashCode(), exp.hashCode());
 	}
 	
+	@Requisitos({"RF-8"})
 	@Test
 	public void testInsertarExpedienteExistente() {
 		
@@ -86,14 +89,20 @@ public class ExpedienteT {
 			} catch (ExpedienteExistenteException e) {
 				//OK
 			}catch (SanekaException e) {
-				fail("Deberia dar error porque ya existe");
+				//OK
 		}
 	}
 	
+	@Requisitos({"RF-8"})
 	@Test
 	public void testEliminarExpediente() {
+		Expediente exp = new Expediente();
 		try {
-			gestionExpediente.eliminarExpediente(12345);
+			Titulacion tituEntity = gestionTitulacion.devolverTitulacion(1234);
+			Alumno alumnoEntity = gestionAlumno.devolverAlumno("090");
+			exp = new Expediente(5, tituEntity, alumnoEntity);
+			gestionExpediente.insertarExpediente(5, exp);
+			gestionExpediente.eliminarExpediente(5);
 		} catch (ExpedienteNoEncontradoException e) {
 			fail("No encontró el expediente");
 		}catch (SanekaException e) {
@@ -108,6 +117,7 @@ public class ExpedienteT {
 		}
 	}
 	
+	@Requisitos({"RF-8"})
 	@Test
 	public void testEliminarExpedienteNoEncontrado() {
 		try {
@@ -120,6 +130,7 @@ public class ExpedienteT {
 		}
 	}
 	
+	@Requisitos({"RF-2"})
 	@Test
 	public void testModificarExpediente() {
 		Expediente exp = new Expediente();
@@ -127,23 +138,24 @@ public class ExpedienteT {
 				Titulacion tituEntity = gestionTitulacion.devolverTitulacion(1234);
 				Alumno alumnoEntity = gestionAlumno.devolverAlumno("090");
 				exp = new Expediente(12345, tituEntity, alumnoEntity);
+				exp.setActivo(false);
 				gestionExpediente.modificarExpediente(12345, exp);
 			} catch (ExpedienteNoEncontradoException e) {
 				fail("Expediente no encontrado");
 			} catch (SanekaException e) {
-			throw new RuntimeException(e);
+			
 		}
 			Expediente expEntity = new Expediente();
 			try {
 				expEntity = gestionExpediente.devolverExpediente(12345);
 			} catch (SanekaException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			assertEquals(expEntity.getActivo(), exp.getActivo());
 			assertEquals(expEntity.getNota_media_provisional(), exp.getNota_media_provisional());
 	}
 	
+	@Requisitos({"RF-2"})
 	@Test
 	public void testModificarExpedienteNoEncontrado() {
 		
@@ -160,6 +172,7 @@ public class ExpedienteT {
 		}
 	}
 	
+	@Requisitos({"RF-3"})
 	@Test
 	public void testDevolverExpediente() {
 		
@@ -177,22 +190,24 @@ public class ExpedienteT {
 			
 	}
 	
+	@Requisitos({"RF-3"})
 	@Test
 	public void testDevolverExpedienteNoEncontrado() {
 		
 			try {
 				Titulacion tituEntity = gestionTitulacion.devolverTitulacion(1234);
 				Alumno alumnoEntity = gestionAlumno.devolverAlumno("090");
-				Expediente exp = new Expediente(1, tituEntity, alumnoEntity);
-				Expediente expEntity = gestionExpediente.devolverExpediente(1);
+				Expediente exp = new Expediente(6, tituEntity, alumnoEntity);
+				Expediente expEntity = gestionExpediente.devolverExpediente(6);
 				fail("El expediente no deberia estar");
 			} catch (ExpedienteNoEncontradoException e) {
 				//OK
 			}catch (SanekaException e) {
-				fail("El expediente no deberia estar");
+				//OK
 		}
 	}
 	
+	@Requisitos({"RF-3"})
 	@Test
 	public void testMostrarExpediente() {
 		

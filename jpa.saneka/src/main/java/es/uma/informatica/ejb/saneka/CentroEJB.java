@@ -43,12 +43,12 @@ public class CentroEJB implements GestionCentro{
 	}
 
 	@Override
-	public void eliminarCentro(Centro centro) throws CentroNoEncontradoException{
-		Centro centroExistente = em.find(Centro.class,centro);
+	public void eliminarCentro(Integer id, Centro centro) throws CentroNoEncontradoException{
+		Centro centroExistente = em.find(Centro.class,id);
 		if(centroExistente == null) {
 			throw new CentroNoEncontradoException();
 		}
-		em.remove(centro);
+		em.remove(centroExistente);
 	}
 
 	@Override

@@ -18,6 +18,7 @@ import es.uma.informatica.ejb.exceptions.AlumnoYaExistente;
 import es.uma.informatica.ejb.exceptions.SanekaException;
 import es.uma.informatica.ejb.saneka.GestionAlumno;
 import es.uma.informatica.jpa.saneka.Alumno;
+import es.uma.informatica.sii.anotaciones.Requisitos;
 	
 public class AlumnoT {
 	
@@ -34,13 +35,11 @@ public class AlumnoT {
 		BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
 	
+	@Requisitos({"RF-8"})
 	@Test
-	public void testInsetarCorrectamente() {
+	public void testInsertarCorrectamente() {
 		try {
-			Alumno a=new Alumno();
-			a.setDNI("100");
-			a.setNombre("Pepe");
-			a.setApellido1("Aparaicio");
+			Alumno a=new Alumno("100", "Pepe", "Aparicio", "27181291@uma.es");
 			gestionAlumno.insertarAlumno(a);
 			try {
 			String dni="100";
@@ -54,13 +53,11 @@ public class AlumnoT {
 		
 	}
 	
+	@Requisitos({"RF-8"})
 	@Test
-	public void testInsetarYaExistente() {
+	public void testInsertarYaExistente() {
 		try {
-			Alumno a=new Alumno();
-			a.setDNI("090");
-			a.setNombre("Pepe");
-			a.setApellido1("Aparaicio");
+			Alumno a=new Alumno("090", "Pepe", "Aparicio", "27181291@uma.es");
 			gestionAlumno.insertarAlumno(a);
 			fail("Alumno ya existente");
 		}
@@ -71,10 +68,13 @@ public class AlumnoT {
 			
 	}
 	
+	@Requisitos({"RF-8"})
 	@Test
 	public void testEliminarCorrectamente() {
 		try {
-			String dni="090";
+			Alumno a=new Alumno("091", "Pepe", "Aparicio", "27181291@uma.es");
+			gestionAlumno.insertarAlumno(a);
+			String dni="091";
 			gestionAlumno.eliminarAlumno(dni);
 			try {
 				gestionAlumno.mostrarAlumno(dni);
@@ -82,12 +82,13 @@ public class AlumnoT {
 			}catch(AlumnoNoEncontrado e){
 				//OK
 			}
-		}catch(AlumnoNoEncontrado e){
+		}catch(AlumnoNoEncontrado | AlumnoYaExistente e){
 			fail("Alumno no encontrado");
 		}
 		
 	}
 	
+	@Requisitos({"RF-8"})
 	@Test
 	public void testEliminarNoExistente() {
 		try {
@@ -99,6 +100,7 @@ public class AlumnoT {
 		}
 	}
 	
+	@Requisitos({"RF-2"})
 	@Test
 	public void testModificarAlumnoCorrecto() {
 		try {
@@ -112,6 +114,7 @@ public class AlumnoT {
 		}
 	}
 	
+	@Requisitos({"RF-2"})
 	@Test
 	public void testModificarAlumnoNoEncontrado() {
 		try {
@@ -125,6 +128,7 @@ public class AlumnoT {
 		}
 	}
 	
+	@Requisitos({"RF-3"})
 	@Test
 	public void testMostrar() {
 		try {
@@ -135,6 +139,7 @@ public class AlumnoT {
 		}
 	}
 	
+	@Requisitos({"RF-3"})
 	@Test
 	public void testMostrarAlumnoNoEncontrado() {
 		try {
@@ -146,6 +151,7 @@ public class AlumnoT {
 		}
 	}
 	
+	@Requisitos({"RF-3"})
 	@Test
 	public void testDevolver() {
 		try {
@@ -156,6 +162,7 @@ public class AlumnoT {
 		}
 	}
 	
+	@Requisitos({"RF-3"})
 	@Test
 	public void testDevolverAlumnoNoEncontrado() {
 		try {

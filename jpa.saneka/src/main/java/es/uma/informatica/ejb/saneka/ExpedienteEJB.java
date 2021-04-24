@@ -16,12 +16,11 @@ public class ExpedienteEJB implements GestionExpediente{
 
 	@Override
 	public void insertarExpediente(Integer num, Expediente exp) throws ExpedienteNoEncontradoException, ExpedienteExistenteException {
-		try {
-			devolverExpediente(num);
-		} catch (ExpedienteNoEncontradoException e) {
-			em.persist(exp);
+		Expediente expEntity = em.find(Expediente.class, num);
+		if(expEntity != null) {
+			throw new ExpedienteNoEncontradoException();
 		}
-		throw new ExpedienteExistenteException();
+		em.persist(exp);
 	}
 
 	@Override

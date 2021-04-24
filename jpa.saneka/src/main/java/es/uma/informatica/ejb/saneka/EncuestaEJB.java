@@ -16,12 +16,11 @@ public class EncuestaEJB implements GestionEncuesta{
 	
 	@Override
 	public void insertarEncuesta(String fecha, Encuesta enc) throws EncuestaExistenteException {
-		try {
-			devolverEncuesta(fecha);
-		} catch (EncuestaNoEncontradoException e) {
-			em.persist(enc);
+		Encuesta encEntity = em.find(Encuesta.class, fecha);
+		if(encEntity != null) {
+			throw new EncuestaExistenteException();
 		}
-		throw new EncuestaExistenteException();
+		em.persist(enc);
 	}
 
 	@Override

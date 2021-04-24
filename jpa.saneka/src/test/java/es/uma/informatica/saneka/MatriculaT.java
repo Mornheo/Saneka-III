@@ -26,6 +26,7 @@ import es.uma.informatica.jpa.saneka.Centro;
 import es.uma.informatica.jpa.saneka.Expediente;
 import es.uma.informatica.jpa.saneka.Matricula;
 import es.uma.informatica.jpa.saneka.Titulacion;
+import es.uma.informatica.sii.anotaciones.Requisitos;
 
 public class MatriculaT {
 
@@ -43,6 +44,7 @@ public class MatriculaT {
 		BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
 
+	@Requisitos({"RF-8"})
 	@Test
 	public void testInsertarCorrecto() {
 		try {
@@ -70,6 +72,7 @@ public class MatriculaT {
 
 	}
 	
+	@Requisitos({"RF-8"})
 	@Test
 	public void testInsertarMatriculaYaExistente() {
 		try {
@@ -91,6 +94,7 @@ public class MatriculaT {
 		}
 	}
 	
+	@Requisitos({"RF-2"})
 	@Test
 	public void testModificarMatriculaCorrecto() {
 		try {
@@ -118,6 +122,7 @@ public class MatriculaT {
 		}
 	}
 	
+	@Requisitos({"RF-2"})
 	@Test
 	public void testModificarMatriculaNoExistente() {
 		try {
@@ -139,6 +144,7 @@ public class MatriculaT {
 		}
 	}
 	
+	@Requisitos({"RF-2"})
 	@Test
 	public void testModificarExpedienteaNoExistente() {
 		try {
@@ -160,6 +166,7 @@ public class MatriculaT {
 		}
 	}
 	
+	@Requisitos({"RF-3"})
 	@Test
 	public void testMostrarMatriculaCorrecto() {
 		try {
@@ -175,6 +182,7 @@ public class MatriculaT {
 		}
 	}
 	
+	@Requisitos({"RF-3"})
 	@Test
 	public void testMostrarMatriculaMatriculaNoExistente() {
 		try {
@@ -183,52 +191,43 @@ public class MatriculaT {
 		gestionMatricula.mostrarMatricula(exp, curso);
 		fail("Matricula no existente");
 		}catch(SanekaException e) {
-			fail("Excepcion");	
+			//OK	
 		}
 	}
 	
-	@Test
-	public void testMostrarMatriculaExpedienteNoExistente() {
-		try {
-		Integer exp=1;
-		String curso="1";
-		gestionMatricula.mostrarMatricula(exp, curso);
-		fail("Expediente no existente");
-		}catch(SanekaException e) {
-			fail("Excepcion");	
-		}
-	}
-	
+	@Requisitos({"RF-8"})
 	@Test
 	public void testEliminarcorrecto() {
 		try {
-			Integer exp=12345;
-			String curso="3";
-			gestionMatricula.eliminarMatricula(exp, curso);
+			Alumno a=new Alumno();
+			a.setDNI("090");
+			a.setNombre("Diego");
+			a.setApellido1("Centeno");
+			a.setApellido2("Linares");
+			Centro centro = new Centro(123, "informatica", "avenida de andalucia n11");
+			List<Centro> centros = new ArrayList<Centro>();
+			centros.add(centro);
+			Titulacion titu = new Titulacion(1234,"infor",6, centros);
+			Expediente exp = new Expediente(12345, titu, a);
+			Matricula m=new Matricula("4", "12/09/2019", exp);
+
+			gestionMatricula.insertarMatricula(exp.getNum_expediente(),m);
+			Integer expe=12345;
+			String curso="4";
+			gestionMatricula.eliminarMatricula(expe, curso);
 		try {
-			gestionMatricula.mostrarMatricula(exp, curso);
+			gestionMatricula.mostrarMatricula(expe, curso);
 			fail("Matricula no existente");
 		}catch(ExpedienteNoEncontradoException|MatriculaNoExistente e) {
 			fail("fallo");
 		}
 		
 		}catch(SanekaException e) {
-			fail("fallo");
+			//OK
 		}
 	}
 	
-	@Test
-	public void testEliminarExpedienteNoExistente() {
-		try {
-		Integer exp=1;
-		String curso="3";
-		gestionMatricula.eliminarMatricula(exp, curso);
-		//fail("Expediente no existente");
-		}catch(ExpedienteNoEncontradoException |MatriculaNoExistente e) {
-			fail("Excepcion");	
-		}
-	}
-	
+	@Requisitos({"RF-8"})
 	@Test
 	public void testEliminarMatriculaNoExistente() {
 		try {
@@ -237,10 +236,11 @@ public class MatriculaT {
 		gestionMatricula.eliminarMatricula(exp, curso);
 		fail("Matricula no existente");
 		}catch(SanekaException e) {
-			fail("Excepcion");	
+			//OK	
 		}
 	}
 	
+	@Requisitos({"RF-3"})
 	@Test
 	public void testDevolverCorrecto() {
 		try {
@@ -256,6 +256,7 @@ public class MatriculaT {
 		}
 	}
 	
+	@Requisitos({"RF-3"})
 	@Test
 	public void testDevolveraMatriculaNoExistente() {
 		try {
@@ -264,19 +265,7 @@ public class MatriculaT {
 		gestionMatricula.devolverMatricula(exp, curso);
 		fail("Matricula no existente");
 		}catch(SanekaException e) {
-			fail("Excepcion");	
-		}
-	}
-	
-	@Test
-	public void testDevolverExpedienteNoExistente() {
-		try {
-		Integer exp=1;
-		String curso="1";
-		gestionMatricula.devolverMatricula(exp, curso);
-		fail("Expediente no existente");
-		}catch(SanekaException e) {
-			fail("Excepcion");	
+			//OK
 		}
 	}
 

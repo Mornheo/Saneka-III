@@ -14,6 +14,7 @@ import es.uma.informatica.ejb.saneka.GestionEncuesta;
 import es.uma.informatica.ejb.saneka.GestionExpediente;
 import es.uma.informatica.jpa.saneka.Encuesta;
 import es.uma.informatica.jpa.saneka.Expediente;
+import es.uma.informatica.sii.anotaciones.Requisitos;
 
 public class EncuestaT {
 	
@@ -37,6 +38,7 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 		BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
 	
+	@Requisitos({"RF-8"})
 	@Test
 	public void testInsertarEncuesta() {
 		Expediente expEntity = new Expediente();
@@ -44,9 +46,9 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 		Encuesta encEntity = new Encuesta();
 		try {
 			expEntity = gestionExpediente.devolverExpediente(12345);	
-			enc = new Encuesta("12/12/2020", expEntity);
-			gestionEncuesta.insertarEncuesta("12/12/2020", enc);
-			encEntity = gestionEncuesta.devolverEncuesta("12/12/2020");
+			enc = new Encuesta("14/12/2020", expEntity);
+			gestionEncuesta.insertarEncuesta("14/12/2020", enc);
+			encEntity = gestionEncuesta.devolverEncuesta("14/12/2020");
 		} catch (EncuestaExistenteException e) {
 			fail("La encuesta ya existe");
 		} catch (SanekaException e1) {
@@ -56,6 +58,7 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 		assertEquals(encEntity.hashCode(), enc.hashCode());
 	}
 	
+	@Requisitos({"RF-8"})
 	@Test
 	public void testInsertarEncuestaExistente() {
 		Expediente expEntity = new Expediente();	
@@ -72,10 +75,17 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 		}
 	}
 	
+	@Requisitos({"RF-8"})
 	@Test
 	public void testEliminarEncuesta() {
+		Expediente expEntity = new Expediente();
+		Encuesta enc = new Encuesta();
+		Encuesta encEntity = new Encuesta();
 		try {
-			gestionEncuesta.eliminarEncuesta("23/04/2021");
+			expEntity = gestionExpediente.devolverExpediente(12345);	
+			enc = new Encuesta("12/12/2020", expEntity);
+			gestionEncuesta.insertarEncuesta("12/12/2020", enc);
+			gestionEncuesta.eliminarEncuesta("12/12/2020");
 		} catch (EncuestaNoEncontradoException e) {
 			fail("No encontró la encuesta");
 		}catch (SanekaException e) {
@@ -90,10 +100,11 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 		}
 	}
 	
+	@Requisitos({"RF-8"})
 	@Test
 	public void testEliminarEncuestaNoEncontrada() {
 		try {
-			gestionEncuesta.eliminarEncuesta("12/12/2020");
+			gestionEncuesta.eliminarEncuesta("13/12/2020");
 			fail("No debería existir la encuesta");
 		} catch (EncuestaNoEncontradoException e) {
 			//OK
@@ -102,6 +113,7 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 		}
 	}
 	
+	@Requisitos({"RF-3"})
 	@Test
 	public void testMostrarEncuesta() {
 		
@@ -116,6 +128,7 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 		}
 	}
 	
+	@Requisitos({"RF-3"})
 	@Test
 	public void testDevolverEncuesta() {
 		Expediente expEntity = new Expediente();	
@@ -132,10 +145,11 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 		}
 	}
 	
+	@Requisitos({"RF-3"})
 	@Test
 	public void testDevolverEncuestaNoEncontrada() {
 			try {
-				gestionEncuesta.devolverEncuesta("23/04/2021");
+				gestionEncuesta.devolverEncuesta("23/05/2021");
 				fail("La encuesta no deberia estar");
 			} catch (EncuestaNoEncontradoException e) {
 				

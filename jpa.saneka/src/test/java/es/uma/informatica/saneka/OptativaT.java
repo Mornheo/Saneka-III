@@ -18,6 +18,7 @@ import es.uma.informatica.ejb.saneka.GestionOptativa;
 import es.uma.informatica.ejb.saneka.GestionTitulacion;
 import es.uma.informatica.jpa.saneka.Optativa;
 import es.uma.informatica.jpa.saneka.Titulacion;
+import es.uma.informatica.sii.anotaciones.Requisitos;
 
 public class OptativaT {
 	
@@ -44,6 +45,7 @@ public class OptativaT {
 		BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
 
+	@Requisitos({"RF-8"})
 	@Test
 	public void introducirOptativa() throws SanekaException {
 		
@@ -58,6 +60,7 @@ public class OptativaT {
 		}	
 	}
 	
+	@Requisitos({"RF-8"})
 	@Test (expected = OptativaExistenteException.class)
 	public void introducirOptativaExistente() throws SanekaException {
 		
@@ -70,6 +73,7 @@ public class OptativaT {
 		fail("ERROR: la Optativa se introducio correctamente, deberia haber saltado excepcion");
 	}
 	
+	@Requisitos({"RF-8"})
 	@Test
 	public void eliminarOptativa() throws SanekaException {
 		
@@ -90,6 +94,7 @@ public class OptativaT {
 		}	
 	}
 	
+	@Requisitos({"RF-8"})
 	@Test (expected = OptativaNoEncontradoException.class)
 	public void eliminarOptativaNoExistente() throws SanekaException {
 		
@@ -98,6 +103,7 @@ public class OptativaT {
 		fail("ERROR: la Optativa se elimino correctamente, deberia haber saltado excepcion");
 	}
 	
+	@Requisitos({"RF-2"})
 	@Test
 	public void modificarOptativa() throws SanekaException{
 		
@@ -116,6 +122,7 @@ public class OptativaT {
 		
 	}
 	
+	@Requisitos({"RF-2"})
 	@Test (expected = OptativaNoEncontradoException.class)
 	public void modificarOptativaNoExistente() throws SanekaException{
 		
@@ -129,6 +136,7 @@ public class OptativaT {
 			fail("ERROR: la Optativa se modifico correctamente, deberia haber saltado excepcion");
 	}
 	
+	@Requisitos({"RF-3"})
 	@Test
 	public void mostrarOptativa() throws SanekaException{
 		
@@ -151,6 +159,7 @@ public class OptativaT {
 		
 	}
 	
+	@Requisitos({"RF-3"})
 	@Test (expected = OptativaNoEncontradoException.class)
 	public void mostrarOptativaNoExistente() throws SanekaException{
 		
@@ -160,6 +169,7 @@ public class OptativaT {
 		
 	}
 	
+	@Requisitos({"RF-3"})
 	@Test
 	public void devolverOptativa() throws SanekaException{
 		
@@ -174,6 +184,7 @@ public class OptativaT {
 		
 	}
 	
+	@Requisitos({"RF-3"})
 	@Test (expected = OptativaNoEncontradoException.class)
 	public void devolverOptativaNoExistente() throws SanekaException{
 		

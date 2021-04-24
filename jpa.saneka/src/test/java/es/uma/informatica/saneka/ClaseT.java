@@ -35,6 +35,7 @@ import org.junit.AfterClass;
 	import es.uma.informatica.jpa.saneka.Clase;
 	import es.uma.informatica.jpa.saneka.Grupo;
 	import es.uma.informatica.jpa.saneka.Titulacion;
+import es.uma.informatica.sii.anotaciones.Requisitos;
 
 	public class ClaseT {
 		
@@ -60,9 +61,11 @@ import org.junit.AfterClass;
 			gestionTitulacion = (GestionTitulacion)  SuiteTest.ctx.lookup(TITULACION_EJB);
 			BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 		}
+		
+		@Requisitos({"RF-8"})
 		@Test
 		public void testIntertarClase() {
-			final Integer idGrupo = 123;
+			final Integer idGrupo = 420;
 			
 			try {
 				Grupo grupo = gestionGrupo.obtenerGrupo(idGrupo);
@@ -90,6 +93,7 @@ import org.junit.AfterClass;
 			}
 		}
 		
+		@Requisitos({"RF-8"})
 		@Test 
 		public void testInsertarClaseGrupoNoEncontrado() {
 			
@@ -107,6 +111,8 @@ import org.junit.AfterClass;
 			
 			
 		}
+		
+		@Requisitos({"RF-2"})
 		@Test
 		public void testModificarClase() {
 			try {
@@ -123,6 +129,8 @@ import org.junit.AfterClass;
 			}
 			
 		}
+		
+		@Requisitos({"RF-2"})
 		@Test
 		public void testModificarClaseGrupoNoEncontrado() {
 			final Integer idGrupo = 123;
@@ -144,9 +152,11 @@ import org.junit.AfterClass;
 			}
 			
 		}
+		
+		@Requisitos({"RF-8"})
 		@Test
 		public void testEliminarClase() {
-			final Integer idGrupo = 123;
+			final Integer idGrupo = 420;
 			try {
 				List<Clase> clases = gestionClase.obtenerClasesDeGrupo(idGrupo);
 				Clase clase0 = clases.get(0);
@@ -157,9 +167,11 @@ import org.junit.AfterClass;
 			}
 			
 		}
+		
+		@Requisitos({"RF-8"})
 		@Test
 		public void testEliminarClaseGrupoNoEncontrado() {
-			final Integer idGrupo = 123;
+			final Integer idGrupo = 420;
 			final Integer otroId = 456;
 			List<Clase> clases;
 			try {
@@ -172,9 +184,11 @@ import org.junit.AfterClass;
 			}
 			
 		}
+		
+		@Requisitos({"RF-8"})
 		@Test 
 		public void testEliminarClaseNoEncontrado() {
-			final Integer idGrupo = 123;
+			final Integer idGrupo = 420;
 			List<Clase> clases;
 			try {
 				clases = gestionClase.obtenerClasesDeGrupo(idGrupo);
@@ -188,9 +202,11 @@ import org.junit.AfterClass;
 			}
 			
 		}
+		
+		@Requisitos({"RF-8"})
 		@Test
 		public void testEliminarTodosClases() {
-			final Integer idGrupo = 123;
+			final Integer idGrupo = 420;
 			try {
 				gestionClase.eliminarTodosClases(idGrupo);
 				List<Clase> clases = gestionClase.obtenerClasesDeGrupo(idGrupo);
@@ -199,6 +215,8 @@ import org.junit.AfterClass;
 				fail("No debería lanzarse excepción");
 			}
 		}
+		
+		@Requisitos({"RF-8"})
 		@Test
 		public void testEliminarTodosClasesGrupoNoEncontrado() {
 			final Integer otroId = 456;

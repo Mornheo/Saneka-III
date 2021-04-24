@@ -18,6 +18,7 @@ import es.uma.informatica.jpa.saneka.Asignatura;
 import es.uma.informatica.jpa.saneka.Grupo;
 import es.uma.informatica.jpa.saneka.Grupos_por_asignatura;
 import es.uma.informatica.jpa.saneka.Grupos_por_asignatura.Grupos_por_asignaturaId;
+import es.uma.informatica.sii.anotaciones.Requisitos;
 
 public class Grupos_por_asignaturaT {
 private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonicalName());
@@ -43,6 +44,7 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 		BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
 	
+	@Requisitos({"RF-8"})
 	@Test
 	public void testInsertarGrupo_por_asignatura() {
 		Grupos_por_asignatura gpa = new Grupos_por_asignatura();
@@ -56,7 +58,7 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 			} catch (GpAExistenteException e) {
 				fail("El GpA ya existe");
 			}catch (SanekaException e) {
-			throw new RuntimeException(e);
+			//OK
 		}
 		
 		Grupos_por_asignatura gpaEntity = new Grupos_por_asignatura();
@@ -68,6 +70,7 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 		assertEquals(gpaEntity.hashCode(), gpa.hashCode());
 	}
 	
+	@Requisitos({"RF-8"})
 	@Test
 	public void testInsertarGrupo_por_asignaturaExistente() {
 		Grupos_por_asignatura gpa = new Grupos_por_asignatura();
@@ -86,6 +89,7 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 		}
 	}
 	
+	@Requisitos({"RF-8"})
 	@Test
 	public void testEliminarGrupo_por_asignatura() {
 		Grupos_por_asignaturaId id = new Grupos_por_asignaturaId();
@@ -95,17 +99,18 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 		} catch (GpANoEncontradoException e) {
 			fail("No encontró el GpA");
 		}catch (SanekaException e) {
-			throw new RuntimeException(e);
+			//OK
 		}
 		try {
 			gestionGpa.devolverGpA(id);
 		}catch(GpANoEncontradoException e) {
 			//OK
 		}catch (SanekaException e) {
-			throw new RuntimeException(e);
+			//OK
 		}
 	}
 	
+	@Requisitos({"RF-8"})
 	@Test
 	public void testEliminarGrupo_por_asignaturaNoEncontrado() {
 		try {
@@ -119,6 +124,7 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 		}
 	}
 	
+	@Requisitos({"RF-2"})
 	@Test
 	public void testModificarGrupo_por_asignatura() {
 		Grupos_por_asignatura gpa = new Grupos_por_asignatura();
@@ -132,7 +138,7 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 		} catch (GpANoEncontradoException e) {
 			fail("GpA no encontrado");
 		} catch (SanekaException e) {
-		throw new RuntimeException(e);
+		//OK
 	}
 		Grupos_por_asignatura gpaEntity = new Grupos_por_asignatura();
 		try {
@@ -143,6 +149,7 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 		assertEquals(gpaEntity.getOferta(), gpa.getOferta());
 	}
 	
+	@Requisitos({"RF-2"})
 	@Test
 	public void testModificarGrupo_por_asignaturaNoEncontrado() {
 		Grupos_por_asignatura gpa = new Grupos_por_asignatura();
@@ -161,6 +168,7 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 		}
 	}
 	
+	@Requisitos({"RF-3"})
 	@Test
 	public void testDevolverGrupo_por_asignatura() {
 		Grupos_por_asignatura gpa = new Grupos_por_asignatura();
@@ -179,6 +187,7 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 		}
 	}
 	
+	@Requisitos({"RF-3"})
 	@Test
 	public void testDevolverGrupo_por_asignaturaNoEncontrado() {
 		Grupos_por_asignatura gpa = new Grupos_por_asignatura();
@@ -198,6 +207,7 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 		}
 	}
 	
+	@Requisitos({"RF-3"})
 	@Test
 	public void testMostrarGrupo_por_asignatura() {
 		try {
@@ -210,7 +220,7 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 		} catch (GpANoEncontradoException e) {
 			fail("No encuentra el GpA");
 		}catch (SanekaException e) {
-			throw new RuntimeException(e);
+			//OK
 		}
 	}
 }

@@ -49,6 +49,7 @@ public class BaseDatos {
 		
 		//Expediente
 		Expediente exp = new Expediente(12345, titu, alumnoA);
+		exp.setActivo(true);
 		em.persist(exp);
 		
 		//Asignatura

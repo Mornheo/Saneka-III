@@ -25,6 +25,7 @@ import es.uma.informatica.ejb.saneka.GestionTitulacion;
 import es.uma.informatica.jpa.saneka.Asignatura;
 import es.uma.informatica.jpa.saneka.Grupo;
 import es.uma.informatica.jpa.saneka.Titulacion;
+import es.uma.informatica.sii.anotaciones.Requisitos;
 
 
 
@@ -46,14 +47,15 @@ public class GrupoT {
 		BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
 	
+	@Requisitos({"RF-8"})
 	@Test
 	public void testInsertarGrupo() {
-		final Integer idTitu = 456;
+		final Integer idTitu = 1234;
 		
 		try {
 			Titulacion titu = gestionTitulacion.devolverTitulacion(idTitu);
 			Grupo grupo = new Grupo(27,4, "A", "tarde", false,titu);
-			gestionGrupo.insertarGrupo(idTitu, grupo);
+			gestionGrupo.insertarGrupo(1234, grupo);
 		} catch (TitulacionNoEncontradoException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -66,20 +68,16 @@ public class GrupoT {
 		}
 		
 		try {
-			List<Grupo> grupos = gestionGrupo.obtenerGruposDeTitulacion(idTitu);
+			Grupo grupos = gestionGrupo.obtenerGrupo(27);
 			//assertEquals(1,grupos.size());
-			assertEquals(new Integer(27),grupos.get(0).getID());
-			assertEquals(new Integer(4),grupos.get(0).getCurso());
-			assertEquals("A",grupos.get(0).getLetra());
-			assertEquals("tarde",grupos.get(0).getTurno());
-			assertEquals(false,grupos.get(0).getIngles());
-		} catch (TitulacionNoEncontradoException e) {
+		} catch (GrupoNoEncontradoException e) {
 			fail("No debería lanzar excepción");
 			e.printStackTrace();
 		}
 		
 	}
 	
+	@Requisitos({"RF-8"})
 	@Test
 	public void testInsertarGrupoTitulacionNoEncontrado()  {
 		final Integer idTitu = 1234;
@@ -99,6 +97,8 @@ public class GrupoT {
 			}
 
 	}
+	
+	@Requisitos({"RF-8"})
 	@Test
 	public void testInsertarGrupoExistente() {
 		final Integer idTitu = 1234;
@@ -115,15 +115,16 @@ public class GrupoT {
 		}
 	}
 	
+	@Requisitos({"RF-3"})
 	@Test
 	public void testObtenerGrupos() {
 		try {
-			final Integer otroTitu = 456;
+			final Integer otroTitu = 1234;
 			Titulacion titu = gestionTitulacion.devolverTitulacion(otroTitu);
-			Grupo grupo = new Grupo(1,7, "N", "tarde", false,titu);
+			Grupo grupo = new Grupo(456,7, "N", "tarde", false,titu);
 			gestionGrupo.insertarGrupo(otroTitu, grupo);
 			List<Grupo> grupos = gestionGrupo.obtenerGruposDeTitulacion(otroTitu);
-			assertEquals(2, grupos.size());
+			assertEquals(1, grupos.size());
 		} catch (TitulacionNoEncontradoException e) {
 			fail("No debería lanzar excepción");
 		} catch (SanekaException e) {
@@ -131,6 +132,8 @@ public class GrupoT {
 			e.printStackTrace();
 		}
 	}
+	
+	@Requisitos({"RF-3"})
 	@Test 
 	public void testObtenerGruposTitulacionNoEncontrado() {
 		try {
@@ -142,6 +145,7 @@ public class GrupoT {
 		}
 	}
 	
+	@Requisitos({"RF-2"})
 	@Test
 	public void testModificarGrupo() throws GrupoExistenteException {
 		final Integer idTitu = 456;
@@ -176,6 +180,7 @@ public class GrupoT {
 		
 	}
 	
+	@Requisitos({"RF-2"})
 	@Test
 	public void ActualizarGrupoTitulacionNoEncontrado(){
 		final Integer idTitu = 1234;
@@ -199,6 +204,8 @@ public class GrupoT {
 		}
 		
 	}
+	
+	@Requisitos({"RF-2"})
 	@Test
 	public void testActualizarGrupoNoEncontrado() {
 		final Integer idTitu = 1234;
@@ -215,6 +222,7 @@ public class GrupoT {
 		}
 	}
 	
+	@Requisitos({"RF-8"})
 	@Test
 	public void testEliminarGrupo()  {
 		final Integer idTitu = 1234;
@@ -237,6 +245,8 @@ public class GrupoT {
 		}
 		
 	}
+	
+	@Requisitos({"RF-8"})
 	@Test
 	public void testEliminarGrupoTitulacionNoEncontrado() {
 		final Integer idTitu = 1234;
@@ -247,12 +257,13 @@ public class GrupoT {
 			Grupo grupo = grupos.get(0);
 			gestionGrupo.eliminarGrupo(otroTitu, grupo);
 			fail("Debería lanzar la excepción de titulacion no encontrado");
-		} catch (TitulacionNoEncontradoException | GrupoExistenteException e) {
+		} catch (TitulacionNoEncontradoException | GrupoNoEncontradoException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
+	@Requisitos({"RF-8"})
 	@Test
 	public void testEliminarGrupoNoEncontrado() {
 		final Integer idTitu = 1234;
@@ -263,24 +274,13 @@ public class GrupoT {
 				grupo.setID(nId);
 				gestionGrupo.eliminarGrupo(idTitu, grupo);
 				fail("Debería lanzar la excepción de grupo no encontrado");
-			} catch (TitulacionNoEncontradoException | GrupoExistenteException e) {
+			} catch (TitulacionNoEncontradoException | GrupoNoEncontradoException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 	}
-	/*
-	@Test
-	public void testEliminarTodosGrupos() {
-		final Integer idTitu = 1234;
-		try {
-			gestionGrupo.eliminarTodosGrupos(idTitu);
-			List<Grupo> grupos = gestionGrupo.obtenerGruposDeTitulacion(idTitu);
-			assertEquals(0,grupos.size());
-		} catch (TitulacionNoEncontradoException e) {
-			fail("No debería lanzarse excepción");
-		}	
-	}
-	*/
+
+	@Requisitos({"RF-8"})
 	@Test
 	public void testEliminarTodosGruposTitulacionNoEncontrado() {
 		final Integer otroTitu = 98;
@@ -291,13 +291,4 @@ public class GrupoT {
 
 		}
 	}
-	/*
-	
-	@AfterClass
-	public static void tearDownClass() {
-		if (ejbContainer != null) {
-			ejbContainer.close();
-		}
-	}
-	*/
 }
