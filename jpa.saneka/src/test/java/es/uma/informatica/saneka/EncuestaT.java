@@ -2,7 +2,6 @@ package es.uma.informatica.saneka;
 
 import static org.junit.Assert.*;
 
-
 import java.util.logging.Logger;
 
 import org.junit.Before;
@@ -40,30 +39,24 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 	
 	@Test
 	public void testInsertarEncuesta() {
-		Expediente expEntity = new Expediente();
-		Encuesta enc = new Encuesta();
-		Encuesta encEntity = new Encuesta();
+		Expediente expEntity = gestionExpediente.devolverExpediente(12345);	
+		Encuesta enc = new Encuesta("12/12/2020", expEntity);
 		try {
-			expEntity = gestionExpediente.devolverExpediente(12345);	
-			enc = new Encuesta("12/12/2020", expEntity);
 			gestionEncuesta.insertarEncuesta("12/12/2020", enc);
-			encEntity = gestionEncuesta.devolverEncuesta("12/12/2020");
 		} catch (EncuestaExistenteException e) {
 			fail("La encuesta ya existe");
 		} catch (SanekaException e1) {
 			throw new RuntimeException(e1);
 		}
-		
-		assertEquals(encEntity.hashCode(), enc.hashCode());
+		Encuesta encEntity = gestionEncuesta.devolverEncuesta("12/12/2020");
+		assertEquals(expEntity.hashCode(), enc.hashCode());
 	}
 	
 	@Test
 	public void testInsertarEncuestaExistente() {
-		Expediente expEntity = new Expediente();	
-		Encuesta enc = new Encuesta();
+		Expediente expEntity = gestionExpediente.devolverExpediente(12345);	
+		Encuesta enc = new Encuesta("23/04/2021", expEntity);
 		try {
-			expEntity = gestionExpediente.devolverExpediente(12345);	
-			enc = new Encuesta("23/04/2021", expEntity);
 			gestionEncuesta.insertarEncuesta("23/04/2021", enc);
 			fail("Deberia encontrarla");
 		} catch (EncuestaExistenteException e) {
@@ -102,7 +95,6 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 			fail("No debería existir la encuesta");
 		}
 	}
-	
 	@Test
 	public void testMostrarEncuesta() {
 		
@@ -119,11 +111,9 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 	
 	@Test
 	public void testDevolverEncuesta() {
-		Expediente expEntity = new Expediente();	
-		Encuesta enc = new Encuesta();
+		Expediente expEntity = gestionExpediente.devolverExpediente(12345);	
+		Encuesta enc = new Encuesta("23/04/2021", expEntity);
 			try {
-				expEntity = gestionExpediente.devolverExpediente(12345);	
-				enc = new Encuesta("23/04/2021", expEntity);
 				Encuesta encEntity = gestionEncuesta.devolverEncuesta("23/04/2021");
 				assertEquals(encEntity.hashCode(), enc.hashCode());
 			} catch (EncuestaNoEncontradoException e) {
@@ -132,11 +122,12 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 			throw new RuntimeException(e1);
 		}
 	}
-	
 	@Test
 	public void testDevolverEncuestaNoEncontrada() {
+		Expediente expEntity = gestionExpediente.devolverExpediente(12345);	
+		Encuesta enc = new Encuesta("12/12/2020", expEntity);
 			try {
-				gestionEncuesta.devolverEncuesta("23/04/2021");
+				Encuesta encEntity = gestionEncuesta.devolverEncuesta("23/04/2021");
 				fail("La encuesta no deberia estar");
 			} catch (EncuestaNoEncontradoException e) {
 				
