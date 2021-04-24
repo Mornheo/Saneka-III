@@ -5,7 +5,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import es.uma.informatica.ejb.exceptions.OptativaExistenteException;
-import es.uma.informatica.ejb.exceptions.OptativaNoEncontradoException;
+import es.uma.informatica.ejb.exceptions.OptativaNoExistenteException;
 import es.uma.informatica.jpa.saneka.Optativa;
 
 @Stateless
@@ -15,10 +15,10 @@ public class OptativaEJB implements GestionOptativa{
 	private EntityManager em;
 	
 	@Override
-	public String mostrarOptativa(Integer ref) throws OptativaNoEncontradoException {
-		Optativa existente = em.find(Optativa.class, ref);
+	public String mostrarOptativa(Optativa optativa) throws OptativaNoExistenteException {
+		Optativa existente = em.find(Optativa.class, optativa.getReferencia());
 		if (existente==null) {
-			throw new OptativaNoEncontradoException();
+			throw new OptativaNoExistenteException();
 		}
 		String res = existente.toString();
 		System.out.println(res);
@@ -26,18 +26,18 @@ public class OptativaEJB implements GestionOptativa{
 	}
 
 	@Override
-	public void eliminarOptativa(Integer ref) throws OptativaNoEncontradoException {
-		Optativa existente = em.find(Optativa.class, ref);
+	public void eliminarOptativa(Optativa optativa) throws OptativaNoExistenteException {
+		Optativa existente = em.find(Optativa.class, optativa.getReferencia());
 		if(existente==null) {
-			throw new OptativaNoEncontradoException();
+			throw new OptativaNoExistenteException();
 		}
 		em.remove(existente);
 		
 	}
 
 	@Override
-	public void insertarOptativa(Integer ref, Optativa optativa) throws OptativaExistenteException {
-		Optativa existente = em.find(Optativa.class, ref);
+	public void insertarOptativa(Optativa optativa) throws OptativaExistenteException {
+		Optativa existente = em.find(Optativa.class, optativa.getReferencia());
 		if (existente!=null){
 			throw new OptativaExistenteException();
 		}
@@ -46,10 +46,10 @@ public class OptativaEJB implements GestionOptativa{
 	}
 
 	@Override
-	public void modificarOptativa(Integer ref, Optativa optativa) throws OptativaNoEncontradoException {
-		Optativa existente = em.find(Optativa.class, ref);
+	public void modificarOptativa(Optativa optativa) throws OptativaNoExistenteException {
+		Optativa existente = em.find(Optativa.class, optativa.getReferencia());
 		if (existente==null) {
-			throw new OptativaNoEncontradoException();
+			throw new OptativaNoExistenteException();
 		}
 		existente.setAsignatura(optativa.getAsignatura());
 		existente.setCaracter(optativa.getCaracter());
@@ -65,10 +65,10 @@ public class OptativaEJB implements GestionOptativa{
 		
 	}
 	
-	public Optativa devolverOptativa(Integer ref) throws OptativaNoEncontradoException{
+	public Optativa devolverOptativa(Integer ref) throws OptativaNoExistenteException{
 		Optativa existente = em.find(Optativa.class, ref);
 		if (existente==null) {
-			throw new OptativaNoEncontradoException();
+			throw new OptativaNoExistenteException();
 		}
 		
 		return existente;

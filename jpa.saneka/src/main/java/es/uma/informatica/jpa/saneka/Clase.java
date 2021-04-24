@@ -80,6 +80,9 @@ public class Clase implements Serializable {
 	@JoinColumn(nullable=false)
 	private Asignatura asignatura;
 	private static final long serialVersionUID = 1L;
+	public Clase() {
+		super();
+	}
 	public Clase(Integer dia, String hora, Asignatura asig, Grupo grupo) {
 		this.Dia=dia;
 		this.Hora_inicio=hora;

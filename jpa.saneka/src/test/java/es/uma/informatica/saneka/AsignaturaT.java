@@ -2,20 +2,24 @@ package es.uma.informatica.saneka;
 
 import static org.junit.Assert.*;
 
+import java.util.Properties;
 import java.util.logging.Logger;
 
-
+import javax.ejb.embeddable.EJBContainer;
 import javax.naming.Context;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
-
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import es.uma.informatica.ejb.exceptions.AsignaturaExistenteException;
-import es.uma.informatica.ejb.exceptions.AsignaturaNoEncontradoException;
 import es.uma.informatica.ejb.exceptions.SanekaException;
-import es.uma.informatica.ejb.exceptions.TitulacionNoEncontradoException;
+import es.uma.informatica.ejb.exceptions.TitulacionNoExistenteException;
 import es.uma.informatica.ejb.saneka.GestionAsignatura;
+import es.uma.informatica.ejb.saneka.GestionExpediente;
 import es.uma.informatica.ejb.saneka.GestionTitulacion;
 import es.uma.informatica.jpa.saneka.Asignatura;
 import es.uma.informatica.jpa.saneka.Titulacion;
@@ -49,87 +53,16 @@ public class AsignaturaT {
 	public void introducirAsignatura() throws SanekaException {
 		
 		Titulacion titul = gestionTitulacion.devolverTitulacion(1234);
-		Integer ref = 11111;
-		Asignatura as = new Asignatura(ref, true, 201, 6, titul);
 		
-		try {
-			gestionAsignatura.insertarAsignatura(ref, as);
-		} catch (AsignaturaExistenteException aee) {
-			fail("Asignatura ya existente");
-		}	
-	}
-	
-	@Test (expected = AsignaturaExistenteException.class)
-	public void introducirAsignaturaExistente() throws SanekaException {
-		
-		Titulacion titul = gestionTitulacion.devolverTitulacion(1234);
-		Integer ref = 232;
-		Asignatura as = new Asignatura(ref, true, 201, 6, titul);
-		
-		gestionAsignatura.insertarAsignatura(ref, as);
-		
-		fail("ERROR: la asignatura se introducio correctamente, deberia haber saltado excepcion");
-	}
-	
-	@Test
-	public void eliminarAsignatura() throws SanekaException {
-		
-		Titulacion titul = gestionTitulacion.devolverTitulacion(1234);
-		Integer ref = 11111;
-		Asignatura as = new Asignatura(ref, true, 201, 6, titul);
-		
-		try {
-			gestionAsignatura.insertarAsignatura(ref, as);
-		} catch (AsignaturaExistenteException aee) {
-			fail("Asignatura ya existente");
-		}	
-		
-		try {
-			gestionAsignatura.eliminarAsignatura(ref);
-		} catch (AsignaturaNoEncontradoException aee) {
-			fail("Asignatura no existe");
-		}	
-	}
-	
-	@Test (expected = AsignaturaNoEncontradoException.class)
-	public void eliminarAsignaturaNoExistente() throws SanekaException {
-		
-		gestionAsignatura.eliminarAsignatura(1234);
-		
-		fail("ERROR: la asignatura se elimino correctamente, deberia haber saltado excepcion");
-	}
-	
-	@Test
-	public void modificarAsignatura() throws SanekaException{
-		
-		Integer ref = 232;
-		Asignatura asig = gestionAsignatura.devolverAsignatura(ref);
-		String duracion = "320";
-		asig.setDuracion(duracion);
-		
-		try {
-			gestionAsignatura.modificarAsignatura(ref, asig);
-		} catch (AsignaturaNoEncontradoException aee){
-			fail("Asignatura no encontrada");
-		}
-		
-		assertEquals(gestionAsignatura.devolverAsignatura(ref).getDuracion(), duracion);
-		
-	}
-	
-	@Test (expected = AsignaturaNoEncontradoException.class)
-	public void modificarAsignaturaNoExistente() throws SanekaException{
-		
+		Asignatura as = new Asignatura(11111, true, 201, 6, titul);
 		Integer ref = 1234;
-		Asignatura asig = gestionAsignatura.devolverAsignatura(ref);
-		String duracion = "320";
-		asig.setDuracion(duracion);
+		as.setReferencia(ref);
 		
-			gestionAsignatura.modificarAsignatura(ref, asig);
-			
-			fail("ERROR: la asignatura se modifico correctamente, deberia haber saltado excepcion");
+		try {
+			gestionAsignatura.insertarAsignatura(ref, as);
+		} catch (AsignaturaExistenteException aee) {
+			fail("Asignatura ya existente");
+		}	
 	}
-	
-	
-	
+
 }
