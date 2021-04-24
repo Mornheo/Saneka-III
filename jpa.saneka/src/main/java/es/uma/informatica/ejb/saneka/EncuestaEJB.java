@@ -1,36 +1,48 @@
 package es.uma.informatica.ejb.saneka;
 
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 import es.uma.informatica.ejb.exceptions.EncuestaExistenteException;
-import es.uma.informatica.ejb.exceptions.EncuestaNoEncontradoException;
+import es.uma.informatica.ejb.exceptions.EncuestaNoEncontradaException;
 import es.uma.informatica.jpa.saneka.Encuesta;
 
 @Stateless
 public class EncuestaEJB implements GestionEncuesta{
-
+	
+	@PersistenceContext(name="SanekaTest")
+	private EntityManager em;
+	
 	@Override
-	public void insertarEncuesta(Encuesta enc) throws EncuestaExistenteException {
-		// TODO Auto-generated method stub
-		
+	public void insertarEncuesta(String fecha, Encuesta enc) throws EncuestaExistenteException {
+		try {
+			devolverEncuesta(fecha);
+		} catch (EncuestaNoEncontradaException e) {
+			em.persist(enc);
+		}
+		throw new EncuestaExistenteException();
 	}
 
 	@Override
-	public void eliminarEncuesta(Encuesta enc) throws EncuestaNoEncontradoException {
-		// TODO Auto-generated method stub
-		
+	public void eliminarEncuesta(String fecha) throws EncuestaNoEncontradaException {
+		Encuesta encEntity = devolverEncuesta(fecha);
+		em.remove(encEntity);
 	}
 
 	@Override
-	public void modificarEncuesta(Encuesta enc) throws EncuestaNoEncontradoException {
-		// TODO Auto-generated method stub
-		
+	public String mostrarEncuesta(String fecha) throws EncuestaNoEncontradaException {
+		Encuesta encEntity = devolverEncuesta(fecha);
+		return encEntity.toString();
 	}
 
 	@Override
-	public void mostrarEncuesta(Encuesta enc) throws EncuestaNoEncontradoException {
-		// TODO Auto-generated method stub
-		
+	public Encuesta devolverEncuesta(String fecha) throws EncuestaNoEncontradaException {
+		Encuesta encEntity = em.find(Encuesta.class, fecha);
+		if(encEntity == null) {
+			throw new EncuestaNoEncontradaException();
+		}
+		return encEntity;
 	}
 
 }

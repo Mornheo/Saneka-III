@@ -6,7 +6,6 @@ import javax.persistence.PersistenceContext;
 
 import es.uma.informatica.ejb.exceptions.ExpedienteExistenteException;
 import es.uma.informatica.ejb.exceptions.ExpedienteNoEncontradoException;
-import es.uma.informatica.ejb.exceptions.SanekaException;
 import es.uma.informatica.jpa.saneka.Expediente;
 
 @Stateless
