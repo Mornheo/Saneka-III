@@ -47,12 +47,12 @@ public class AlumnoEJB implements GestionAlumno{
 	}
 
 	@Override
-	public void mostrarAlumno(String dni) throws AlumnoNoEncontrado{
+	public String mostrarAlumno(String dni) throws AlumnoNoEncontrado{
 		Alumno al=em.find(Alumno.class,dni);
 		if(al==null) {
 			throw new AlumnoNoEncontrado();
 		}
-		System.out.print(al.toString());
+		return al.toString();
 		
 	}
 
@@ -65,6 +65,16 @@ public class AlumnoEJB implements GestionAlumno{
 		}
 		em.remove(al);
 	}
+	
+	@Override
+	public Alumno devolverAlumno(String dni) throws AlumnoNoEncontrado{
+		Alumno al=em.find(Alumno.class,dni);
+		if(al==null) {
+			throw new AlumnoNoEncontrado();
+		}
+		return al;
+	}
+	
 }
 
 

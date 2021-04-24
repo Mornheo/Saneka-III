@@ -12,8 +12,10 @@ public interface GestionAlumno {
 
 	void modificarAlumno(Alumno alumno) throws AlumnoNoEncontrado;
 
-	void mostrarAlumno(String dni) throws AlumnoNoEncontrado;
+	String mostrarAlumno(String dni) throws AlumnoNoEncontrado;
 
 	void eliminarAlumno(String dni) throws AlumnoNoEncontrado;
+
+	Alumno devolverAlumno(String dni) throws AlumnoNoEncontrado;
 
 }

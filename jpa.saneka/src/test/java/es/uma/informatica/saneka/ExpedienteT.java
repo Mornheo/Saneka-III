@@ -2,7 +2,6 @@ package es.uma.informatica.saneka;
 
 import static org.junit.Assert.*;
 
-
 import java.util.Properties;
 import java.util.logging.Logger;
 
@@ -20,6 +19,7 @@ import es.uma.informatica.ejb.exceptions.ExpedienteNoEncontradoException;
 import es.uma.informatica.ejb.exceptions.SanekaException;
 import es.uma.informatica.ejb.saneka.GestionAlumno;
 import es.uma.informatica.ejb.saneka.GestionExpediente;
+import es.uma.informatica.ejb.saneka.GestionTitulacion;
 import es.uma.informatica.jpa.saneka.Alumno;
 import es.uma.informatica.jpa.saneka.Expediente;
 import es.uma.informatica.jpa.saneka.Titulacion;
