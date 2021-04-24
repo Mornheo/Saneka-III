@@ -15,29 +15,24 @@ public class ExpedienteEJB implements GestionExpediente{
 	private EntityManager em;
 
 	@Override
-	public void insertarExpediente(Integer num, Expediente exp) throws ExpedienteExistenteException {
-		Expediente expEntity = em.find(Expediente.class, num);
-		
-		if(expEntity != null) {
-			throw new ExpedienteExistenteException();
+	public void insertarExpediente(Integer num, Expediente exp) throws ExpedienteNoEncontradoException, ExpedienteExistenteException {
+		try {
+			devolverExpediente(num);
+		} catch (ExpedienteNoEncontradoException e) {
+			em.persist(exp);
 		}
-		
-		em.persist(exp);
+		throw new ExpedienteExistenteException();
 	}
 
 	@Override
-	public void eliminarExpediente(Expediente exp) throws ExpedienteNoEncontradoException {
-		// TODO Auto-generated method stub
-		
+	public void eliminarExpediente(Integer num) throws ExpedienteNoEncontradoException {
+		Expediente expEntity = devolverExpediente(num);
+		em.remove(expEntity);
 	}
 
 	@Override
 	public void modificarExpediente(Integer num, Expediente exp) throws ExpedienteNoEncontradoException {
-		Expediente expEntity = em.find(Expediente.class, num);
-		
-		if(expEntity == null) {
-			throw new ExpedienteNoEncontradoException();
-		}
+		Expediente expEntity = devolverExpediente(num);
 		expEntity.setActivo(exp.getActivo());
 		expEntity.setNota_media_provisional(exp.getNota_media_provisional());
 		em.persist(expEntity);
@@ -45,9 +40,19 @@ public class ExpedienteEJB implements GestionExpediente{
 	}
 
 	@Override
-	public void mostrarExpediente(Expediente exp) throws ExpedienteNoEncontradoException {
-		// TODO Auto-generated method stub
+	public String mostrarExpediente(Integer num) throws ExpedienteNoEncontradoException {
+		Expediente expEntity = devolverExpediente(num);
+		return expEntity.toString();
+	}
+
+	@Override
+	public Expediente devolverExpediente(Integer num) throws ExpedienteNoEncontradoException {
+		Expediente expEntity = em.find(Expediente.class, num);
 		
+		if(expEntity == null) {
+			throw new ExpedienteNoEncontradoException();
+		}
+		return expEntity;
 	}
 
 }

@@ -35,6 +35,9 @@ public class Grupos_por_asignatura implements Serializable {
 		private int Curso_academico;
 		private int asignatura;
 		private int grupo;
+		public Grupos_por_asignaturaId() {
+			super();
+		}
 		public int getCurso_academico() {
 			return Curso_academico;
 		}
@@ -89,7 +92,8 @@ public class Grupos_por_asignatura implements Serializable {
 		this.Curso_academico=curso;
 		this.asignatura=asig;
 		this.grupo=grupo;
-	}   
+	} 
+	
 	public Integer getCurso_academico() {
 		return this.Curso_academico;
 	}
