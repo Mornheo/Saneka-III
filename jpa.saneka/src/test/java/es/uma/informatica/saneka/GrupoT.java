@@ -2,11 +2,13 @@ package es.uma.informatica.saneka;
 
 import static org.junit.Assert.assertEquals;
 
+
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.util.List;
 import java.util.Properties;
+import java.util.logging.Logger;
 
 import javax.ejb.embeddable.EJBContainer;
 import javax.naming.Context;
@@ -18,82 +20,84 @@ import es.uma.informatica.ejb.exceptions.GrupoExistenteException;
 import es.uma.informatica.ejb.exceptions.GrupoNoEncontradoException;
 import es.uma.informatica.ejb.exceptions.SanekaException;
 import es.uma.informatica.ejb.exceptions.TitulacionNoEncontradoException;
-import es.uma.informatica.ejb.exceptions.TitulacionNoExistenteException;
 import es.uma.informatica.ejb.saneka.GestionGrupo;
 import es.uma.informatica.ejb.saneka.GestionTitulacion;
+import es.uma.informatica.jpa.saneka.Asignatura;
 import es.uma.informatica.jpa.saneka.Grupo;
 import es.uma.informatica.jpa.saneka.Titulacion;
 
 
 
 public class GrupoT {
-	private static final String GRUPO_EJB = "java:global/classes/GrupoEJB";
-	private static final String GLASSFISH_CONFIGI_FILE_PROPERTY = "org.glassfish.ejb.embedded.glassfish.configuration.file";
-	private static final String CONFIG_FILE = "target/test-classes/META-INF/domain.xml";
-	private static final String TITULACION_EJB = "java:global/classes/TitulacionEJB";
+	private static final Logger LOG = Logger.getLogger(GrupoT.class.getCanonicalName());
 	private static final String UNIDAD_PERSITENCIA_PRUEBAS = "SanekaTest";
-	public static EJBContainer ejbContainer;
-	public static Context ctx;
+	
+	private static final String GRUPO_EJB = "java:global/classes/GrupoEJB";
+	private static final String TITULACION_EJB = "java:global/classes/TitulacionEJB";
+
+	private static Context ctx;
+	
 	private GestionGrupo gestionGrupo;
 	private GestionTitulacion gestionTitulacion;
-	
-	
-	
-	@BeforeClass
-	public static void setUpClass() {
-		Properties properties = new Properties();
-		properties.setProperty(GLASSFISH_CONFIGI_FILE_PROPERTY, CONFIG_FILE);
-		ejbContainer = EJBContainer.createEJBContainer(properties);
-		ctx = ejbContainer.getContext();
-	}
 	@Before
 	public void setup() throws NamingException  {
-		gestionGrupo = (GestionGrupo) ctx.lookup(GRUPO_EJB);
-		gestionTitulacion = (GestionTitulacion) ctx.lookup(TITULACION_EJB);
+		gestionGrupo = (GestionGrupo)  SuiteTest.ctx.lookup(GRUPO_EJB);
+		gestionTitulacion = (GestionTitulacion)  SuiteTest.ctx.lookup(TITULACION_EJB);
 		BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
 	
 	@Test
-	public void testInsertarGrupo() throws SanekaException{
-		final Integer idTitu = 1234;
-		Titulacion titu;
-			titu = gestionTitulacion.obtenerTitulacion(idTitu);
-			Grupo grupo = new Grupo(27,3, "B", "tarde", false,titu);
-			gestionGrupo.insertarGrupo(idTitu, grupo);
+	public void testInsertarGrupo() {
+		final Integer idTitu = 456;
 		
-			
-			
-			/*
+		try {
+			Titulacion titu = gestionTitulacion.devolverTitulacion(idTitu);
+			Grupo grupo = new Grupo(27,4, "A", "tarde", false,titu);
+			gestionGrupo.insertarGrupo(idTitu, grupo);
+		} catch (TitulacionNoEncontradoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (GrupoExistenteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SanekaException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		try {
 			List<Grupo> grupos = gestionGrupo.obtenerGruposDeTitulacion(idTitu);
-			assertEquals(2,grupos.size());
-			assertEquals(new Integer(1234),grupos.get(1).getID());
-			assertEquals(new Integer(3),grupos.get(1).getCurso());
-			assertEquals("B",grupos.get(1).getLetra());
-			assertEquals("tarde",grupos.get(1).getTurno());
-			assertEquals(false,grupos.get(1).getIngles());
+			//assertEquals(1,grupos.size());
+			assertEquals(new Integer(27),grupos.get(0).getID());
+			assertEquals(new Integer(4),grupos.get(0).getCurso());
+			assertEquals("A",grupos.get(0).getLetra());
+			assertEquals("tarde",grupos.get(0).getTurno());
+			assertEquals(false,grupos.get(0).getIngles());
 		} catch (TitulacionNoEncontradoException e) {
 			fail("No debería lanzar excepción");
 			e.printStackTrace();
 		}
-		*/
+		
 	}
-	/*
+	
 	@Test
-	public void testInsertarGrupoTitulacionNoEncontrado() throws TitulacionNoEncontradoException, GrupoExistenteException {
+	public void testInsertarGrupoTitulacionNoEncontrado()  {
 		final Integer idTitu = 1234;
 		final Integer otroTitu = 98;
 		Titulacion titu = new Titulacion();
 			try {
-				titu =gestionTitulacion.obtenerTitulacion(idTitu);
-			} catch (TitulacionNoExistenteException e) {
+				titu =gestionTitulacion.devolverTitulacion(idTitu);
+				Grupo grupo = new Grupo(12,3, "C", "tarde", false,titu);
+				gestionGrupo.insertarGrupo(otroTitu, grupo);
+				fail("Debe lanzar excepción");
+			} catch (TitulacionNoEncontradoException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SanekaException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-				Grupo grupo = new Grupo(12,3, "B", "tarde", false,titu);
-				gestionGrupo.insertarGrupo(otroTitu, grupo);
-				fail("Debe lanzar excepción");
+
 	}
 	@Test
 	public void testInsertarGrupoExistente() {
@@ -110,17 +114,21 @@ public class GrupoT {
 			e.printStackTrace();
 		}
 	}
+	
 	@Test
-	public void testObtenerGrupos() throws TitulacionNoExistenteException, GrupoExistenteException {
+	public void testObtenerGrupos() {
 		try {
-			final Integer idTitu = 1234;
-			Titulacion titu = gestionTitulacion.obtenerTitulacion(idTitu);
-			Grupo grupo = new Grupo(1,3, "B", "tarde", false,titu);
-			gestionGrupo.insertarGrupo(1234, grupo);
-			List<Grupo> grupos = gestionGrupo.obtenerGruposDeTitulacion(1234);
-			assertEquals(1, grupos.size());
+			final Integer otroTitu = 456;
+			Titulacion titu = gestionTitulacion.devolverTitulacion(otroTitu);
+			Grupo grupo = new Grupo(1,7, "N", "tarde", false,titu);
+			gestionGrupo.insertarGrupo(otroTitu, grupo);
+			List<Grupo> grupos = gestionGrupo.obtenerGruposDeTitulacion(otroTitu);
+			assertEquals(2, grupos.size());
 		} catch (TitulacionNoEncontradoException e) {
 			fail("No debería lanzar excepción");
+		} catch (SanekaException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 	@Test 
@@ -133,23 +141,21 @@ public class GrupoT {
 			e.printStackTrace();
 		}
 	}
+	
 	@Test
-	public void testModificarGrupo() throws GrupoExistenteException, TitulacionNoExistenteException {
-		final Integer idTitu = 1234;
-		final Integer ncurso =4;
-		final String nletra = "B";
+	public void testModificarGrupo() throws GrupoExistenteException {
+		final Integer idTitu = 456;
+		final Integer ncurso =9;
+		final String nletra = "G";
 		final String nturno = "manyna";
 		final Boolean ningle = true;
 		Integer id = null;
 		try {
-			Titulacion titu = gestionTitulacion.obtenerTitulacion(idTitu);
-			Grupo grupo = new Grupo(11,3, "B", "tarde", false,titu);
-			gestionGrupo.insertarGrupo(idTitu, grupo);
 			List<Grupo> grupos = gestionGrupo.obtenerGruposDeTitulacion(idTitu);
 			Grupo grupo1 = grupos.get(0);
 			id = grupo1.getID();
-			grupo1.setCurso(ncurso); grupo.setTurno(nturno);
-			grupo1.setLetra(nletra); grupo.setIngles(ningle);
+			grupo1.setCurso(ncurso); grupo1.setTurno(nturno);
+			grupo1.setLetra(nletra); grupo1.setIngles(ningle);
 			gestionGrupo.actualizarGrupo(idTitu, grupo1);
 		} catch (TitulacionNoEncontradoException | GrupoNoEncontradoException e) {
 			// TODO Auto-generated catch block
@@ -169,6 +175,7 @@ public class GrupoT {
 		}
 		
 	}
+	
 	@Test
 	public void ActualizarGrupoTitulacionNoEncontrado(){
 		final Integer idTitu = 1234;
@@ -207,22 +214,26 @@ public class GrupoT {
 			e.printStackTrace();
 		}
 	}
+	
 	@Test
-	public void testEliminarGrupo() throws TitulacionNoExistenteException {
+	public void testEliminarGrupo()  {
 		final Integer idTitu = 1234;
 		List<Grupo> grupos;
 		try {
-			Titulacion titu = gestionTitulacion.obtenerTitulacion(idTitu);
-			Grupo grupo = new Grupo(11,3, "B", "tarde", false,titu);
-			Grupo gru = new Grupo(111,3, "A", "tarde", false,titu);
+			
+			
+			Titulacion titu = gestionTitulacion.devolverTitulacion(idTitu);
+			Grupo grupo = new Grupo(45,5, "L", "tarde", false,titu);
 			gestionGrupo.insertarGrupo(idTitu, grupo);
-			gestionGrupo.insertarGrupo(idTitu, gru);
 			grupos = gestionGrupo.obtenerGruposDeTitulacion(idTitu);
 			Grupo grupo1 = grupos.get(0);
 			gestionGrupo.eliminarGrupo(idTitu, grupo1);
-			assertEquals(1,grupos.size());
-		} catch (TitulacionNoEncontradoException | GrupoExistenteException e) {
+			assertEquals(0,grupos.size());
+		} catch (TitulacionNoEncontradoException e ) {
 			fail("No debería lanzarse excepción");
+		} catch (SanekaException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 	}
@@ -241,12 +252,11 @@ public class GrupoT {
 			e.printStackTrace();
 		}
 	}
+	
 	@Test
 	public void testEliminarGrupoNoEncontrado() {
 		final Integer idTitu = 1234;
-		final Integer nId= 2;
-		
-			
+		final Integer nId= 2;	
 			try {
 				List<Grupo> grupos = gestionGrupo.obtenerGruposDeTitulacion(idTitu);
 				Grupo grupo = grupos.get(0);
@@ -258,6 +268,7 @@ public class GrupoT {
 				e.printStackTrace();
 			}
 	}
+	/*
 	@Test
 	public void testEliminarTodosGrupos() {
 		final Integer idTitu = 1234;
@@ -269,6 +280,7 @@ public class GrupoT {
 			fail("No debería lanzarse excepción");
 		}	
 	}
+	*/
 	@Test
 	public void testEliminarTodosGruposTitulacionNoEncontrado() {
 		final Integer otroTitu = 98;
@@ -279,14 +291,13 @@ public class GrupoT {
 
 		}
 	}
-	*/
+	/*
+	
 	@AfterClass
 	public static void tearDownClass() {
 		if (ejbContainer != null) {
 			ejbContainer.close();
 		}
 	}
-	
-	
-	
+	*/
 }

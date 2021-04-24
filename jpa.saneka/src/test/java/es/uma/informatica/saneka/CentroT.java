@@ -20,6 +20,7 @@ import org.junit.Test;
 
 import es.uma.informatica.ejb.exceptions.CentroExistenteException;
 import es.uma.informatica.ejb.exceptions.CentroNoEncontradoException;
+import es.uma.informatica.ejb.exceptions.SanekaException;
 import es.uma.informatica.ejb.saneka.GestionCentro;
 import es.uma.informatica.jpa.saneka.Centro;
 import es.uma.informatica.jpa.saneka.Titulacion;
@@ -33,23 +34,14 @@ public class CentroT {
 	private static final String CENTRO_EJB = "java:global/classes/CentroEJB";
 	private static final String GLASSFISH_CONFIGI_FILE_PROPERTY = "org.glassfish.ejb.embedded.glassfish.configuration.file";
 	private static final String CONFIG_FILE = "target/test-classes/META-INF/domain.xml";
-	private static final String UNIDAD_PERSITENCIA_PRUEBAS = "jpa.saneka";
+	private static final String UNIDAD_PERSITENCIA_PRUEBAS = "SanekaTest";
 
-	
-	private static EJBContainer ejbContainer;
 	private static Context ctx;
 	
 	private GestionCentro gestionCentro;
-	@BeforeClass
-	public static void setUpClass() {
-		Properties properties = new Properties();
-		properties.setProperty(GLASSFISH_CONFIGI_FILE_PROPERTY, CONFIG_FILE);
-		ejbContainer = EJBContainer.createEJBContainer(properties);
-		ctx = ejbContainer.getContext();
-	}
 	@Before
 	public void setup() throws NamingException  {
-		gestionCentro= (GestionCentro) ctx.lookup(CENTRO_EJB);
+		gestionCentro= (GestionCentro) SuiteTest.ctx.lookup(CENTRO_EJB);
 		BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
 
@@ -65,26 +57,28 @@ public class CentroT {
 		}
 	}
 	
-	@Test 
-	public void testInsertarCentroExistente() {
-		final Integer idCentro = 11;
+	@Test (expected = CentroExistenteException.class)
+	public void testInsertarCentroExistente() throws SanekaException {
+		final Integer idCentro = 123;
 		
-		try {
+		
 			Centro centro = gestionCentro.obtenerCentro(idCentro);
 			gestionCentro.insertarCentro(centro);
-			fail("Debe lanzar excepción");
-		}catch(CentroExistenteException | CentroNoEncontradoException e) {
-			fail("Debe lanzar excepción de centro existente");
-		}
-	}
-	@Test
-	public void testModificarCentro() {
 		
+			fail("Debe lanzar excepción de centro existente");
+		
+	}
+	@Test 
+	public void testModificarCentro() {
+		List<Titulacion> titu= new ArrayList<>();
 		try {
-			Centro centro = new Centro(123,"informatica","Calle Miguel ","789");
+			Centro centro = new Centro(11,"computadores","Calle Miguel ","0894343",titu);
+			centro.setDireccion("direccion");
+			centro.setTLF_consejeria("789");
+			centro.setNombre("informatica");
 			gestionCentro.actualizarCentro(centro);
 			assertTrue(gestionCentro.obtenerCentro(123).getNombre() == "informatica");
-			assertTrue(gestionCentro.obtenerCentro(123).getDireccion() == "Calle Miguel ");
+			assertTrue(gestionCentro.obtenerCentro(123).getDireccion() == "direccion");
 			assertTrue(gestionCentro.obtenerCentro(123).getTLF_consejeria() == "789");
 		} catch (CentroNoEncontradoException e) {
 			// TODO Auto-generated catch block
@@ -92,48 +86,37 @@ public class CentroT {
 		}
 		
 	}
-	@Test
-	public void testModificarCentroNoEncontrado(){
-		
-		try {
-			Centro centro = new Centro(4657,"informatica","Calle Miguel ","789");
+	@Test (expected = CentroNoEncontradoException.class )
+	public void testModificarCentroNoEncontrado() throws CentroNoEncontradoException{
+		List<Titulacion> titu= new ArrayList<>();
+			Centro centro = new Centro(4657,"informatica","Calle Miguel ","789",titu);
 			gestionCentro.actualizarCentro(centro);
-		} catch (CentroNoEncontradoException e) {
+		
 			fail("Debería lanzar excepción de centro no encontrado");
-		}
+		
 		
 	}
 	
 	@Test
 	public void testEliminarCentro() {
-		
-		try {
-			Centro centro = new Centro(123,"informatica","avenida de andalucia n 11 ","0894343");
-			gestionCentro.eliminarCentro(centro);
+			try {
+				Centro centro = gestionCentro.obtenerCentro(123);
+				gestionCentro.eliminarCentro(centro);
+			} catch (CentroNoEncontradoException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
-		} catch (CentroNoEncontradoException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	}
+	@Test //(expected =CentroNoEncontradoException.class)
+	public void testEliminarCentroNoEncontrado() throws SanekaException {
+		final Integer idCentro = 11;
+		Centro centro = gestionCentro.obtenerCentro(idCentro);
+		centro.setID(19);
+		gestionCentro.eliminarCentro(centro);
+	
+		fail("Debería lanzar excepción de centro no encontrado");
+		
 		
 	}
-	@Test
-	public void testEliminarCentroNoEncontrado() {
-		try {
-			Centro centro = new Centro(1234,"informatica","avenida de andalucia n 11 ","0894343");
-			
-			gestionCentro.eliminarCentro(centro);
-		} catch (CentroNoEncontradoException e) {
-			fail("Debería lanzar excepción de centro no encontrado");
-		}
-		
-	}
-	
-	@AfterClass
-	public static void tearDownClass() {
-		if (ejbContainer != null) {
-			ejbContainer.close();
-		}
-	}
-	
 }
