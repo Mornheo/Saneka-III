@@ -15,5 +15,5 @@ public interface GestionMatricula {
 
 	void insertarMatricula(Integer exp, Matricula matricula) throws ExpedienteNoEncontradoException,MatriculaExistente;
 
-	void mostrarMatricula(Integer exp,String curso) throws MatriculaNoExistente,ExpedienteNoEncontradoException;
+	String mostrarMatricula(Integer exp,String curso) throws MatriculaNoExistente,ExpedienteNoEncontradoException;
 }

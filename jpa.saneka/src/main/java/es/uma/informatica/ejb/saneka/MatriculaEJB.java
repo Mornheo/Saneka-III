@@ -53,7 +53,7 @@ public class MatriculaEJB implements GestionMatricula{
 	}
 
 	@Override
-	public void mostrarMatricula(Integer exp,String curso) throws ExpedienteNoEncontradoException,MatriculaNoExistente {
+	public String mostrarMatricula(Integer exp,String curso) throws ExpedienteNoEncontradoException,MatriculaNoExistente {
 		Expediente e=em.find(Expediente.class,exp);
 		if(e==null) {
 			throw new ExpedienteNoEncontradoException();
@@ -62,7 +62,7 @@ public class MatriculaEJB implements GestionMatricula{
 		if(mat==null) {
 			throw new MatriculaNoExistente();
 		}
-		System.out.println(mat.toString());
+		return mat.toString();
 		
 	}
 
