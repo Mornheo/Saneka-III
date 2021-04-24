@@ -17,7 +17,6 @@ import org.junit.Test;
 
 import es.uma.informatica.ejb.exceptions.AsignaturaExistenteException;
 import es.uma.informatica.ejb.exceptions.SanekaException;
-import es.uma.informatica.ejb.exceptions.TitulacionNoExistenteException;
 import es.uma.informatica.ejb.saneka.GestionAsignatura;
 import es.uma.informatica.ejb.saneka.GestionExpediente;
 import es.uma.informatica.ejb.saneka.GestionTitulacion;
@@ -64,5 +63,96 @@ public class AsignaturaT {
 			fail("Asignatura ya existente");
 		}	
 	}
-
+	
+	@Test (expected = AsignaturaNoEncontradoException.class)
+	public void eliminarAsignaturaNoExistente() throws SanekaException {
+		
+		gestionAsignatura.eliminarAsignatura(1234);
+		
+		fail("ERROR: la asignatura se elimino correctamente, deberia haber saltado excepcion");
+	}
+	
+	@Test
+	public void modificarAsignatura() throws SanekaException{
+		
+		Integer ref = 232;
+		Asignatura asig = gestionAsignatura.devolverAsignatura(ref);
+		String duracion = "320";
+		asig.setDuracion(duracion);
+		
+		try {
+			gestionAsignatura.modificarAsignatura(ref, asig);
+		} catch (AsignaturaNoEncontradoException aee){
+			fail("Asignatura no encontrada");
+		}
+		
+		assertEquals(gestionAsignatura.devolverAsignatura(ref).getDuracion(), duracion);
+		
+	}
+	
+	@Test (expected = AsignaturaNoEncontradoException.class)
+	public void modificarAsignaturaNoExistente() throws SanekaException{
+		
+		Integer ref = 1234;
+		Asignatura asig = gestionAsignatura.devolverAsignatura(ref);
+		String duracion = "320";
+		asig.setDuracion(duracion);
+		
+			gestionAsignatura.modificarAsignatura(ref, asig);
+			
+			fail("ERROR: la asignatura se modifico correctamente, deberia haber saltado excepcion");
+	}
+	
+	@Test
+	public void mostrarAsignatura() throws SanekaException{
+		
+		Integer ref = 232;
+		Titulacion titu = gestionTitulacion.devolverTitulacion(1234);
+		
+		Asignatura asig = new Asignatura(232, true, 101, 6, titu);
+		
+		String asignatura = null;
+		
+		try {
+			asignatura = gestionAsignatura.mostrarAsignatura(ref);
+		} catch (AsignaturaNoEncontradoException aee){
+			fail("Asignatura no encontrada");
+		}
+		
+		assertEquals(asignatura, asig.toString());
+		
+	}
+	
+	@Test (expected = AsignaturaNoEncontradoException.class)
+	public void mostrarAsignaturaNoExistente() throws SanekaException{
+		
+		Integer ref = 1234;
+		
+		gestionAsignatura.mostrarAsignatura(ref);
+		
+	}
+	
+	@Test
+	public void devolverAsignatura() throws SanekaException{
+		
+		Integer ref = 232;
+		Titulacion titu = gestionTitulacion.devolverTitulacion(1234);
+		
+		Asignatura asig = new Asignatura(232, true, 101, 6, titu);
+		
+		Asignatura as = gestionAsignatura.devolverAsignatura(ref);
+		
+		assertEquals(asig, as);
+		
+	}
+	
+	@Test (expected = AsignaturaNoEncontradoException.class)
+	public void devolverAsignaturaNoExistente() throws SanekaException{
+		
+		Integer ref = 1234;
+		
+		Asignatura as = gestionAsignatura.devolverAsignatura(ref);
+		
+	}
+	
 }
