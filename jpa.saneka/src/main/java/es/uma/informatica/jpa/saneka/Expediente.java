@@ -15,14 +15,16 @@ import javax.persistence.*;
 public class Expediente implements Serializable {
 
 	   
-	@Id @GeneratedValue //(strategy = GenerationType.SEQUENCE)
+	@Id //@GeneratedValue (strategy = GenerationType.SEQUENCE)
 	private Integer Num_expediente;
 	private Boolean Activo;
 	private long Nota_media_provisional;
 	private static final long serialVersionUID = 1L;
 	@ManyToOne
+	@JoinColumn(nullable=false)
 	private Alumno alumno;
 	@ManyToOne
+	@JoinColumn(nullable=false)
 	private Titulacion titulacion;
 	@OneToMany (mappedBy="expediente")
 	private List<Encuesta> encuestas;
@@ -37,6 +39,11 @@ public class Expediente implements Serializable {
 		this.titulacion=titu;
 		this.alumno=al;
 	}   
+	public Expediente(Integer num, Boolean active, long nota) {
+		this.Activo = active;
+		this.Nota_media_provisional = nota;
+		this.Num_expediente = num;
+	}  
 	public Integer getNum_expediente() {
 		return this.Num_expediente;
 	}

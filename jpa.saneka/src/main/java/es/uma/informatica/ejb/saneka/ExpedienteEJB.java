@@ -11,14 +11,14 @@ import es.uma.informatica.jpa.saneka.Expediente;
 @Stateless
 public class ExpedienteEJB implements GestionExpediente{
 	
-	@PersistenceContext(name="jpa.saneka")
+	@PersistenceContext(name="SanekaTest")
 	private EntityManager em;
 
 	@Override
-	public void insertarExpediente(Expediente exp) throws ExpedienteExistenteException {
-		Expediente expEntity = em.find(Expediente.class, exp);
+	public void insertarExpediente(Integer num, Expediente exp) throws ExpedienteExistenteException {
+		Expediente expEntity = em.find(Expediente.class, num);
 		
-		if(expEntity == null) {
+		if(expEntity != null) {
 			throw new ExpedienteExistenteException();
 		}
 		
@@ -32,8 +32,15 @@ public class ExpedienteEJB implements GestionExpediente{
 	}
 
 	@Override
-	public void modificarExpediente(Expediente exp) throws ExpedienteNoEncontradoException {
-		// TODO Auto-generated method stub
+	public void modificarExpediente(Integer num, Expediente exp) throws ExpedienteNoEncontradoException {
+		Expediente expEntity = em.find(Expediente.class, num);
+		
+		if(expEntity == null) {
+			throw new ExpedienteNoEncontradoException();
+		}
+		expEntity.setActivo(exp.getActivo());
+		expEntity.setNota_media_provisional(exp.getNota_media_provisional());
+		em.persist(expEntity);
 		
 	}
 

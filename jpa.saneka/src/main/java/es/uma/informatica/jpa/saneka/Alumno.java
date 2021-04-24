@@ -26,6 +26,7 @@ public class Alumno implements Serializable {
 	private String Apellido2;
 	private Integer Num_expediente;
 	private Integer Num_archivo;
+	@Column(nullable=false)
 	private String Email_institucional;
 	private String Email_personal;
 	private String Telefono;
@@ -55,10 +56,18 @@ public class Alumno implements Serializable {
 	public void setExpedientes(List<Expediente> expedientes) {
 		this.expedientes = expedientes;
 	}
+	
+	public Alumno(String dni, String nombre, String Apellido1, String email) {
+		this.DNI=dni;
+		this.Nombre=nombre;
+		this.Apellido1=Apellido1;
+		this.Email_institucional=email;
+	}
+	
 	public Alumno() {
 		super();
 	}   
-
+	
 	public String getDNI() {
 		return this.DNI;
 	}
@@ -242,32 +251,7 @@ public class Alumno implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((Apellido1 == null) ? 0 : Apellido1.hashCode());
-		result = prime * result + ((Apellido2 == null) ? 0 : Apellido2.hashCode());
-		result = prime * result + ((CP_notificacion == null) ? 0 : CP_notificacion.hashCode());
-		result = prime * result + ((Creditos_CF == null) ? 0 : Creditos_CF.hashCode());
-		result = prime * result + ((Creditos_FB == null) ? 0 : Creditos_FB.hashCode());
-		result = prime * result + ((Creditos_OB == null) ? 0 : Creditos_OB.hashCode());
-		result = prime * result + ((Creditos_OP == null) ? 0 : Creditos_OP.hashCode());
-		result = prime * result + ((Creditos_PE == null) ? 0 : Creditos_PE.hashCode());
-		result = prime * result + ((Creditos_TF == null) ? 0 : Creditos_TF.hashCode());
-		result = prime * result + ((Creditos_superados == null) ? 0 : Creditos_superados.hashCode());
 		result = prime * result + ((DNI == null) ? 0 : DNI.hashCode());
-		result = prime * result + ((Direccion_notificacion == null) ? 0 : Direccion_notificacion.hashCode());
-		result = prime * result + ((Email_institucional == null) ? 0 : Email_institucional.hashCode());
-		result = prime * result + ((Email_personal == null) ? 0 : Email_personal.hashCode());
-		result = prime * result + ((Fecha_matricula == null) ? 0 : Fecha_matricula.hashCode());
-		result = prime * result + ((Grupos_asignados == null) ? 0 : Grupos_asignados.hashCode());
-		result = prime * result + ((Localidad_notificacion == null) ? 0 : Localidad_notificacion.hashCode());
-		result = prime * result + ((Movil == null) ? 0 : Movil.hashCode());
-		result = prime * result + ((Nombre == null) ? 0 : Nombre.hashCode());
-		result = prime * result + ((Nota_media == null) ? 0 : Nota_media.hashCode());
-		result = prime * result + ((Num_archivo == null) ? 0 : Num_archivo.hashCode());
-		result = prime * result + ((Num_expediente == null) ? 0 : Num_expediente.hashCode());
-		result = prime * result + ((Provincia_notificaccion == null) ? 0 : Provincia_notificaccion.hashCode());
-		result = prime * result + ((Telefono == null) ? 0 : Telefono.hashCode());
-		result = prime * result + ((Turno_preferente == null) ? 0 : Turno_preferente.hashCode());
-		result = prime * result + ((expedientes == null) ? 0 : expedientes.hashCode());
 		return result;
 	}
 	@Override
@@ -279,10 +263,10 @@ public class Alumno implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Alumno other = (Alumno) obj;
-		if (Apellido1 == null) {
-			if (other.Apellido1 != null)
+		if (DNI == null) {
+			if (other.DNI != null)
 				return false;
-		} else if (!Apellido1.equals(other.Apellido1))
+		} else if (!DNI.equals(other.DNI))
 			return false;
 		if (Apellido2 == null) {
 			if (other.Apellido2 != null)
