@@ -9,13 +9,13 @@ import es.uma.informatica.jpa.saneka.Titulacion;
 @Local
 public interface GestionTitulacion {
 	
-	public String mostrarTitulacion(Titulacion titulacion) throws SanekaException;
+	public String mostrarTitulacion(Integer code) throws SanekaException;
 	
-	public void eliminarTitulacion(Titulacion titulacion) throws SanekaException;
+	public void eliminarTitulacion(Integer code) throws SanekaException;
 	
-	public void insertarTitulacion(Titulacion titulacion) throws SanekaException;
+	public void insertarTitulacion(Integer code, Titulacion titulacion) throws SanekaException;
 	
-	public void modificarTitulacion(Titulacion titulacion) throws SanekaException;
+	public void modificarTitulacion(Integer code, Titulacion titulacion) throws SanekaException;
 	
 	public Titulacion devolverTitulacion(Integer code) throws SanekaException;
 	
