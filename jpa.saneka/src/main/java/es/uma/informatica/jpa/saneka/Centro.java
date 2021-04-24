@@ -19,6 +19,15 @@ public class Centro implements Serializable{
 	@JoinTable
 	private List<Titulacion> titulaciones;
 	
+	public Centro() {
+		super();
+	}
+	
+	public Centro(Integer id, String nombre, String dir) {
+		this.ID=id;
+		this.Nombre=nombre;
+		this.Direccion=dir;
+	}
 	public Integer getID() {
 		return ID;
 	}

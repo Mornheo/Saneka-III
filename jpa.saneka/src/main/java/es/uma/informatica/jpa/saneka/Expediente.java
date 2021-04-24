@@ -32,6 +32,11 @@ public class Expediente implements Serializable {
 	public Expediente() {
 		super();
 	}   
+	public Expediente(Integer num, Titulacion titu, Alumno al) {
+		this.Num_expediente = num;
+		this.titulacion=titu;
+		this.alumno=al;
+	}   
 	public Integer getNum_expediente() {
 		return this.Num_expediente;
 	}

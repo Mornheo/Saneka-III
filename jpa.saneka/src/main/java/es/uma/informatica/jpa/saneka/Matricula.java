@@ -21,7 +21,7 @@ public class Matricula implements Serializable {
 	private String Turno_preferente;
 	@Column(nullable=false)
 	private String Fecha_matricula;
-	private boolean Nuevo_ingreso;
+	private String Nuevo_ingreso;
 	private String Listado_asignaturas;
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -36,6 +36,16 @@ public class Matricula implements Serializable {
 		private static final long serialVersionUID = 1L;
 		private int expediente;
 		private String Curso_academico;
+		
+		public MatriculaId() {
+			super();
+		}
+		
+		public MatriculaId(String ref,Integer exp) {
+			super();
+			this.Curso_academico=ref;
+			this.expediente=exp;
+		}
 		
 		public int getExpediente() {
 			return expediente;
@@ -92,6 +102,13 @@ public class Matricula implements Serializable {
 	public Matricula() {
 		super();
 	}   
+	
+	public Matricula(String curso, String fecha, Expediente exp) {
+		this.Curso_academico=curso;
+		this.Fecha_matricula=fecha;
+		this.expediente=exp;
+	} 
+	
 	public String getCurso_academico() {
 		return this.Curso_academico;
 	}
@@ -127,11 +144,11 @@ public class Matricula implements Serializable {
 	public void setFecha_matricula(String Fecha_matricula) {
 		this.Fecha_matricula = Fecha_matricula;
 	}   
-	public boolean getNuevo_ingreso() {
+	public String getNuevo_ingreso() {
 		return this.Nuevo_ingreso;
 	}
 
-	public void setNuevo_ingreso(boolean Nuevo_ingreso) {
+	public void setNuevo_ingreso(String Nuevo_ingreso) {
 		this.Nuevo_ingreso = Nuevo_ingreso;
 	}   
 	public String getListado_asignaturas() {
@@ -141,6 +158,7 @@ public class Matricula implements Serializable {
 	public void setListado_asignaturas(String Listado_asignaturas) {
 		this.Listado_asignaturas = Listado_asignaturas;
 	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -149,11 +167,14 @@ public class Matricula implements Serializable {
 		result = prime * result + ((Estado == null) ? 0 : Estado.hashCode());
 		result = prime * result + ((Fecha_matricula == null) ? 0 : Fecha_matricula.hashCode());
 		result = prime * result + ((Listado_asignaturas == null) ? 0 : Listado_asignaturas.hashCode());
-		result = prime * result + (Nuevo_ingreso ? 1231 : 1237);
+		result = prime * result + ((Nuevo_ingreso == null) ? 0 : Nuevo_ingreso.hashCode());
 		result = prime * result + ((Num_archivo == null) ? 0 : Num_archivo.hashCode());
 		result = prime * result + ((Turno_preferente == null) ? 0 : Turno_preferente.hashCode());
+		result = prime * result + ((asignaturas_matriculas == null) ? 0 : asignaturas_matriculas.hashCode());
+		result = prime * result + ((expediente == null) ? 0 : expediente.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -183,7 +204,10 @@ public class Matricula implements Serializable {
 				return false;
 		} else if (!Listado_asignaturas.equals(other.Listado_asignaturas))
 			return false;
-		if (Nuevo_ingreso != other.Nuevo_ingreso)
+		if (Nuevo_ingreso == null) {
+			if (other.Nuevo_ingreso != null)
+				return false;
+		} else if (!Nuevo_ingreso.equals(other.Nuevo_ingreso))
 			return false;
 		if (Num_archivo == null) {
 			if (other.Num_archivo != null)
@@ -195,8 +219,19 @@ public class Matricula implements Serializable {
 				return false;
 		} else if (!Turno_preferente.equals(other.Turno_preferente))
 			return false;
+		if (asignaturas_matriculas == null) {
+			if (other.asignaturas_matriculas != null)
+				return false;
+		} else if (!asignaturas_matriculas.equals(other.asignaturas_matriculas))
+			return false;
+		if (expediente == null) {
+			if (other.expediente != null)
+				return false;
+		} else if (!expediente.equals(other.expediente))
+			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
 		return "Matricula [Curso_academico=" + Curso_academico + ", Estado=" + Estado + ", Num_archivo=" + Num_archivo
