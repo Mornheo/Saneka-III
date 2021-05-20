@@ -64,7 +64,7 @@ import es.uma.informatica.sii.anotaciones.Requisitos;
 		
 		@Requisitos({"RF-8"})
 		@Test
-		public void testIntertarClase() {
+		public void testInsertarClase() {
 			final Integer idGrupo = 420;
 			
 			try {
