@@ -29,7 +29,7 @@ public class Matricula implements Serializable {
 	@JoinColumn(nullable=false)
 	private Expediente expediente;
 	@OneToMany(mappedBy = "matricula")
-	@JoinColumn(nullable=false)
+	@Column(nullable=false)
 	private List<Asignaturas_matricula> asignaturas_matriculas;
 	
 	public static class MatriculaId implements Serializable {
