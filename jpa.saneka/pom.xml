@@ -9,6 +9,7 @@
 	<module>jpa.saneka-ejb</module>
 	<module>jpa.saneka-war</module>
 	<module>jpa.saneka-ear</module>
+	<module>jpa.saneka-tests</module>
 </modules>
 	
 </project>
