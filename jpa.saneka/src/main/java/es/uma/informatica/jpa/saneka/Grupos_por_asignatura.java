@@ -16,8 +16,8 @@ public class Grupos_por_asignatura implements Serializable {
 
 	   
 	@Id
-	private Integer Curso_academico;
-	private Boolean Oferta;
+	private Integer curso_academico;
+	private Boolean oferta;
 	private static final long serialVersionUID = 1L;
 	@ManyToMany (mappedBy = "gpas")
 	private List<Encuesta> encuestas;
@@ -32,22 +32,22 @@ public class Grupos_por_asignatura implements Serializable {
 	public static class Grupos_por_asignaturaId implements Serializable {
 
 		private static final long serialVersionUID = 1L;
-		private int Curso_academico;
+		private int curso;
 		private int asignatura;
 		private int grupo;
 		public Grupos_por_asignaturaId() {
 			super();
 		}
 		public Grupos_por_asignaturaId(Integer curso, Integer asig, Integer grupo) {
-			this.Curso_academico=curso;
+			this.curso=curso;
 			this.asignatura=asig;
 			this.grupo=grupo;
 		}
 		public int getCurso_academico() {
-			return Curso_academico;
+			return curso;
 		}
 		public void setCurso_academico(int curso_academico) {
-			Curso_academico = curso_academico;
+			curso = curso_academico;
 		}
 		public int getAsignatura() {
 			return asignatura;
@@ -65,7 +65,7 @@ public class Grupos_por_asignatura implements Serializable {
 		public int hashCode() {
 			final int prime = 31;
 			int result = 1;
-			result = prime * result + Curso_academico;
+			result = prime * result + curso;
 			result = prime * result + asignatura;
 			result = prime * result + grupo;
 			return result;
@@ -79,7 +79,7 @@ public class Grupos_por_asignatura implements Serializable {
 			if (getClass() != obj.getClass())
 				return false;
 			Grupos_por_asignaturaId other = (Grupos_por_asignaturaId) obj;
-			if (Curso_academico != other.Curso_academico)
+			if (curso != other.curso)
 				return false;
 			if (asignatura != other.asignatura)
 				return false;
@@ -94,30 +94,30 @@ public class Grupos_por_asignatura implements Serializable {
 		super();
 	}  
 	public Grupos_por_asignatura(Integer curso, Asignatura asig, Grupo grupo) {
-		this.Curso_academico=curso;
+		this.curso_academico=curso;
 		this.asignatura=asig;
 		this.grupo=grupo;
 	} 
 	
 	public Integer getCurso_academico() {
-		return this.Curso_academico;
+		return this.curso_academico;
 	}
 
-	public void setCurso_academico(Integer Curso_academico) {
-		this.Curso_academico = Curso_academico;
+	public void setCurso_academico(Integer curso) {
+		this.curso_academico = curso;
 	}   
 	public boolean getOferta() {
-		return this.Oferta;
+		return this.oferta;
 	}
 
-	public void setOferta(boolean Oferta) {
-		this.Oferta = Oferta;
+	public void setOferta(boolean oferta) {
+		this.oferta = oferta;
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((Curso_academico == null) ? 0 : Curso_academico.hashCode());
+		result = prime * result + ((curso_academico == null) ? 0 : curso_academico.hashCode());
 		return result;
 	}
 	@Override
@@ -129,16 +129,16 @@ public class Grupos_por_asignatura implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Grupos_por_asignatura other = (Grupos_por_asignatura) obj;
-		if (Curso_academico == null) {
-			if (other.Curso_academico != null)
+		if (curso_academico == null) {
+			if (other.curso_academico != null)
 				return false;
-		} else if (!Curso_academico.equals(other.Curso_academico))
+		} else if (!curso_academico.equals(other.curso_academico))
 			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
-		return "Grupos_por_asignatura [Curso_academico=" + Curso_academico + ", Oferta=" + Oferta + "]";
+		return "Grupos_por_asignatura [Curso_academico=" + curso_academico + ", Oferta=" + oferta + "]";
 	}
    
 }

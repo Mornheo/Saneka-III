@@ -78,4 +78,11 @@ public class Asignaturas_matricula implements Serializable {
 		this.asignatura=asig;
 		this.matricula=matr;
 	}
+
+	@Override
+	public String toString() {
+		return "Asignaturas_matricula [asignatura=" + asignatura + ", matricula=" + matricula + ", grupo=" + grupo
+				+ "]";
+	}
+	
 }

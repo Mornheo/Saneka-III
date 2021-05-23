@@ -12,7 +12,7 @@ public class Encuesta implements Serializable {
 
 	   
 	@Id
-	private String Fecha_de_envio;
+	private String fecha_de_envio;
 	private static final long serialVersionUID = 1L;
 	@ManyToOne
 	@JoinColumn (nullable=false)
@@ -26,21 +26,21 @@ public class Encuesta implements Serializable {
 		super();
 	}  
 	public Encuesta(String fecha, Expediente exp) {
-		this.Fecha_de_envio=fecha;
+		this.fecha_de_envio=fecha;
 		this.expediente=exp;
 	}   
 	public String getFecha_de_envio() {
-		return this.Fecha_de_envio;
+		return this.fecha_de_envio;
 	}
 
-	public void setFecha_de_envio(String Fecha_de_envio) {
-		this.Fecha_de_envio = Fecha_de_envio;
+	public void setFecha_de_envio(String fecha) {
+		this.fecha_de_envio = fecha;
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((Fecha_de_envio == null) ? 0 : Fecha_de_envio.hashCode());
+		result = prime * result + ((fecha_de_envio == null) ? 0 : fecha_de_envio.hashCode());
 		return result;
 	}
 	@Override
@@ -52,16 +52,16 @@ public class Encuesta implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Encuesta other = (Encuesta) obj;
-		if (Fecha_de_envio == null) {
-			if (other.Fecha_de_envio != null)
+		if (fecha_de_envio == null) {
+			if (other.fecha_de_envio != null)
 				return false;
-		} else if (!Fecha_de_envio.equals(other.Fecha_de_envio))
+		} else if (!fecha_de_envio.equals(other.fecha_de_envio))
 			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
-		return "Encuesta [Fecha_de_envio=" + Fecha_de_envio + "]";
+		return "Encuesta [Fecha_de_envio=" + fecha_de_envio + "]";
 	}
    
 }
