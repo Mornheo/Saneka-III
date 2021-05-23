@@ -14,12 +14,12 @@ public class Centro implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	@Id 
-	private Integer ID;
+	private Integer id;
 	@Column(nullable=false)
-	private String Nombre;
+	private String nombre;
 	@Column(nullable=false)
-	private String Direccion;
-	private String TLF_consejeria;
+	private String direccion;
+	private String teleConsejeria;
 	@ManyToMany
 	//@JoinTable(name="Centro_Titulacion", joinColumns={ @JoinColumn(name="centro_id") }, inverseJoinColumns={ @JoinColumn(name="titulacion_id") })
 	@JoinTable()
@@ -28,49 +28,48 @@ public class Centro implements Serializable{
 		super();
 	}
 	public Centro (Integer id, String nombre, String dir) {
-		ID=id;
-		Nombre=nombre;
-		Direccion=dir;
+		this.id=id;
+		this.nombre=nombre;
+		direccion=dir;
 	}
-
+	
 	public Centro(Integer id,String nombre,String direccion,String telefono, List<Titulacion> titu) {
-		ID = id;
-		Nombre = nombre;
-		Direccion = direccion;
-		TLF_consejeria = telefono;
+		this.id = id;
+		this.nombre = nombre;
+		this.direccion = direccion;
+		teleConsejeria = telefono;
 		titulaciones = titu;
 	}
 	public Centro(Integer id,String nombre,String direccion,String telefono) {
-		ID = id;
-		Nombre = nombre;
-		Direccion = direccion;
-		TLF_consejeria = telefono;
+		this.id = id;
+		this.nombre = nombre;
+		this.direccion = direccion;
+		teleConsejeria = telefono;
 	}
-	public Integer getID() {
-		return ID;
+	public Integer getId() {
+		return id;
 	}
-	public void setID(Integer iD) {
-		ID = iD;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 	public String getNombre() {
-		return Nombre;
+		return nombre;
 	}
 	public void setNombre(String nombre) {
-		Nombre = nombre;
+		this.nombre = nombre;
 	}
 	public String getDireccion() {
-		return Direccion;
+		return direccion;
 	}
 	public void setDireccion(String direccion) {
-		Direccion = direccion;
+		this.direccion = direccion;
 	}
-	public String getTLF_consejeria() {
-		return TLF_consejeria;
+	public String getTeleConsejeria() {
+		return teleConsejeria;
 	}
-	public void setTLF_consejeria(String tLF_consejeria) {
-		TLF_consejeria = tLF_consejeria;
+	public void setTeleConsejeria(String teleConsejeria) {
+		this.teleConsejeria = teleConsejeria;
 	}
-	
 	public List<Titulacion> getTitulaciones() {
 		return titulaciones;
 	}
@@ -81,7 +80,7 @@ public class Centro implements Serializable{
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((ID == null) ? 0 : ID.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
 	@Override
@@ -93,18 +92,19 @@ public class Centro implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Centro other = (Centro) obj;
-		if (ID == null) {
-			if (other.ID != null)
+		if (id == null) {
+			if (other.id != null)
 				return false;
-		} else if (!ID.equals(other.ID))
+		} else if (!id.equals(other.id))
 			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
-		return "Centro [ID=" + ID + ", Nombre=" + Nombre + ", Direccion=" + Direccion + ", TLF_consejeria="
-				+ TLF_consejeria + "]";
+		return "Centro [id=" + id + ", nombre=" + nombre + ", direccion=" + direccion + ", teleConsejeria="
+				+ teleConsejeria + ", titulaciones=" + titulaciones + "]";
 	}
+	
 	
 	
 }

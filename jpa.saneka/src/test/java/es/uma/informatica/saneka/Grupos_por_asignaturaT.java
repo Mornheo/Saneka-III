@@ -53,7 +53,7 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 				Asignatura asigEntity = gestionAsignatura.devolverAsignatura(232);
 				Grupo grupoEntity = gestionGrupo.obtenerGrupo(3);
 				gpa = new Grupos_por_asignatura(1, asigEntity, grupoEntity);
-				id = new Grupos_por_asignaturaId(1, asigEntity.getReferencia(), grupoEntity.getID());
+				id = new Grupos_por_asignaturaId(1, asigEntity.getReferencia(), grupoEntity.getId());
 				gestionGpa.insertarGpA(id, gpa);
 			} catch (GpAExistenteException e) {
 				fail("El GpA ya existe");
@@ -79,7 +79,7 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 				Asignatura asigEntity = gestionAsignatura.devolverAsignatura(232);
 				Grupo grupoEntity = gestionGrupo.obtenerGrupo(3);
 				gpa = new Grupos_por_asignatura(3, asigEntity, grupoEntity);
-				id = new Grupos_por_asignaturaId(3, asigEntity.getReferencia(), grupoEntity.getID());
+				id = new Grupos_por_asignaturaId(3, asigEntity.getReferencia(), grupoEntity.getId());
 				gestionGpa.insertarGpA(id, gpa);
 				fail("El GpA no deberia poder introducirse");
 			} catch (GpAExistenteException e) {
@@ -133,7 +133,7 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 			Asignatura asigEntity = gestionAsignatura.devolverAsignatura(232);
 			Grupo grupoEntity = gestionGrupo.obtenerGrupo(3);
 			gpa = new Grupos_por_asignatura(3, asigEntity, grupoEntity);
-			id = new Grupos_por_asignaturaId(3, asigEntity.getReferencia(), grupoEntity.getID());
+			id = new Grupos_por_asignaturaId(3, asigEntity.getReferencia(), grupoEntity.getId());
 			gestionGpa.modificarGpA(id, gpa);
 		} catch (GpANoEncontradoException e) {
 			fail("GpA no encontrado");
@@ -158,7 +158,7 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 			Asignatura asigEntity = gestionAsignatura.devolverAsignatura(232);
 			Grupo grupoEntity = gestionGrupo.obtenerGrupo(3);
 			gpa = new Grupos_por_asignatura(3, asigEntity, grupoEntity);
-			id = new Grupos_por_asignaturaId(3, asigEntity.getReferencia(), grupoEntity.getID());
+			id = new Grupos_por_asignaturaId(3, asigEntity.getReferencia(), grupoEntity.getId());
 			gestionGpa.modificarGpA(id, gpa);
 			fail("GpA no deberia encontrarlo");
 		} catch (GpANoEncontradoException e) {
@@ -177,7 +177,7 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 			Asignatura asigEntity = gestionAsignatura.devolverAsignatura(232);
 			Grupo grupoEntity = gestionGrupo.obtenerGrupo(3);
 			gpa = new Grupos_por_asignatura(3, asigEntity, grupoEntity);
-			id = new Grupos_por_asignaturaId(3, asigEntity.getReferencia(), grupoEntity.getID());
+			id = new Grupos_por_asignaturaId(3, asigEntity.getReferencia(), grupoEntity.getId());
 			Grupos_por_asignatura gpaEntity = gestionGpa.devolverGpA(id);
 			assertEquals(gpaEntity.hashCode(), gpa.hashCode());
 		} catch (ExpedienteNoEncontradoException e) {
@@ -196,7 +196,7 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 			Asignatura asigEntity = gestionAsignatura.devolverAsignatura(232);
 			Grupo grupoEntity = gestionGrupo.obtenerGrupo(3);
 			gpa = new Grupos_por_asignatura(3, asigEntity, grupoEntity);
-			id = new Grupos_por_asignaturaId(3, asigEntity.getReferencia(), grupoEntity.getID());
+			id = new Grupos_por_asignaturaId(3, asigEntity.getReferencia(), grupoEntity.getId());
 			Grupos_por_asignatura gpaEntity = gestionGpa.devolverGpA(id);
 			assertEquals(gpaEntity.hashCode(), gpa.hashCode());
 			fail("El GpA no deberia encontrarse");
@@ -213,7 +213,7 @@ private static final Logger LOG = Logger.getLogger(ExpedienteT.class.getCanonica
 		try {
 			Asignatura asigEntity = gestionAsignatura.devolverAsignatura(232);
 			Grupo grupoEntity = gestionGrupo.obtenerGrupo(3);
-			Grupos_por_asignaturaId id = new Grupos_por_asignaturaId(3, asigEntity.getReferencia(), grupoEntity.getID());
+			Grupos_por_asignaturaId id = new Grupos_por_asignaturaId(3, asigEntity.getReferencia(), grupoEntity.getId());
 			String gpaCadena = gestionGpa.mostrarGpA(id);
 			Grupos_por_asignatura gpaEntity = gestionGpa.devolverGpA(id);
 			assertEquals(gpaEntity.toString(), gpaCadena);

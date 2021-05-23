@@ -71,7 +71,7 @@ import es.uma.informatica.sii.anotaciones.Requisitos;
 				Grupo grupo = gestionGrupo.obtenerGrupo(idGrupo);
 				Asignatura asig = gestionAsignatura.devolverAsignatura(232);
 				Clase clase = new Clase(2,"2021-04-11",asig,grupo);
-				gestionClase.insertarClase(grupo.getID(),clase);
+				gestionClase.insertarClase(grupo.getId(),clase);
 			}catch (AsignaturaNoEncontradoException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -87,7 +87,7 @@ import es.uma.informatica.sii.anotaciones.Requisitos;
 				List<Clase> clases = gestionClase.obtenerClasesDeGrupo(idGrupo);
 				assertEquals(1, clases.size());
 				assertEquals(2,clases.get(0).getDia());
-				assertEquals("2021-04-11",clases.get(0).getHora_inicio());
+				assertEquals("2021-04-11",clases.get(0).getHoraInicio());
 			}catch(SanekaException e) {
 				fail("No debería lanzar excepción");
 			}
@@ -103,7 +103,7 @@ import es.uma.informatica.sii.anotaciones.Requisitos;
 				Grupo grupo = new Grupo(34,4,"A","tarde",false,titu);
 				Asignatura asig = gestionAsignatura.devolverAsignatura(232);
 				Clase clase = new Clase(2,"2021-04-11",asig,grupo);
-				gestionClase.insertarClase(grupo.getID(), clase);
+				gestionClase.insertarClase(grupo.getId(), clase);
 				fail("Debería lanzar excepción de grupo no encontrado");
 			}catch(SanekaException e) {
 				
@@ -121,7 +121,7 @@ import es.uma.informatica.sii.anotaciones.Requisitos;
 				Grupo grupo = gestionGrupo.obtenerGrupo(123);
 				Asignatura asig = new Asignatura(226,true,112,6,titu);
 				Clase clase = new Clase(2,"2021-04-11",asig,grupo);
-				gestionClase.actualizarClase(grupo.getID(), clase);
+				gestionClase.actualizarClase(grupo.getId(), clase);
 				
 			} catch (SanekaException e) {
 				// TODO Auto-generated catch block
@@ -140,7 +140,7 @@ import es.uma.informatica.sii.anotaciones.Requisitos;
 				List<Clase> clases = gestionClase.obtenerClasesDeGrupo(idGrupo);
 				Clase clase0 = clases.get(0);
 				clase0.setDia(12);
-				clase0.setHora_fin("25/6/2021");
+				clase0.setHoraFin("25/6/2021");
 				gestionClase.actualizarClase(otroId, clase0);
 				fail("Debería lanzar excepción de Grupo no encontrado");
 			} catch (GrupoNoEncontradoException e) {

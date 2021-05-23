@@ -28,7 +28,7 @@ public class ClaseEJB implements GestionClase{
 		if(GrupoEntity == null) {
 			throw new GrupoNoEncontradoException();
 		}
-		Clase claseExistente = em.find(Clase.class, new Clase.ClaseId(clase.getDia(),clase.getHora_fin(),clase.getGrupo().getID()));
+		Clase claseExistente = em.find(Clase.class, new Clase.ClaseId(clase.getDia(),clase.getHoraInicio(),clase.getGrupo().getId()));
 		if(claseExistente != null) {
 			throw new ClaseExistenteException();
 		}
@@ -51,13 +51,13 @@ public class ClaseEJB implements GestionClase{
 		if(GrupoEntity == null) {
 			throw new GrupoNoEncontradoException();
 		}
-		Clase claseExistente = em.find(Clase.class, new Clase.ClaseId(clase.getDia(),clase.getHora_fin(),clase.getGrupo().getID()));
+		Clase claseExistente = em.find(Clase.class, new Clase.ClaseId(clase.getDia(),clase.getHoraInicio(),clase.getGrupo().getId()));
 		if(claseExistente == null) {
 			throw new ClaseNoEncontradoException();
 		}
 		// Actualizamos 
 		claseExistente.setAsignatura(clase.getAsignatura());
-		claseExistente.setHora_fin(clase.getHora_fin());;
+		claseExistente.setHoraFin(clase.getHoraFin());;
 		em.persist(GrupoEntity);
 		
 	}
@@ -68,7 +68,7 @@ public class ClaseEJB implements GestionClase{
 		if(GrupoEntity == null) {
 			throw new GrupoNoEncontradoException();
 		}
-		Clase claseExistente = em.find(Clase.class, new Clase.ClaseId(clase.getDia(),clase.getHora_fin(),clase.getGrupo().getID()));
+		Clase claseExistente = em.find(Clase.class, new Clase.ClaseId(clase.getDia(),clase.getHoraInicio(),clase.getGrupo().getId()));
 		if(claseExistente == null) {
 			throw new ClaseNoEncontradoException();
 		}

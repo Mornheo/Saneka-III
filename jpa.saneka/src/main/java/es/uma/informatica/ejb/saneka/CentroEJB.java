@@ -20,7 +20,7 @@ public class CentroEJB implements GestionCentro{
 	private EntityManager em;
 	@Override
 	public void insertarCentro(Centro centro) throws CentroExistenteException{
-		Centro centroExistente = em.find(Centro.class,centro.getID());
+		Centro centroExistente = em.find(Centro.class,centro.getId());
 		if(centroExistente != null) {
 			throw new CentroExistenteException();
 		}
@@ -31,13 +31,13 @@ public class CentroEJB implements GestionCentro{
 	public void actualizarCentro(Centro centro) throws CentroNoEncontradoException {
 		// Que información podemos actualizar
 		// Actualizamos Nombre,direccion,telefono y lista de titulacion
-		Centro centroExistente = em.find(Centro.class,centro.getID());
+		Centro centroExistente = em.find(Centro.class,centro.getId());
 		if(centroExistente == null) {
 			throw new CentroNoEncontradoException();
 		}
 		centroExistente.setDireccion(centro.getDireccion());
 		centroExistente.setNombre(centro.getNombre());
-		centroExistente.setTLF_consejeria(centro.getTLF_consejeria());
+		centroExistente.setTeleConsejeria(centro.getTeleConsejeria());
 		centroExistente.setTitulaciones(centro.getTitulaciones());
 		em.persist(centroExistente);
 	}

@@ -79,12 +79,12 @@ public class CentroT {
 		try {
 			Centro centro = new Centro(11,"computadores","Calle Miguel ","0894343",titu);
 			centro.setDireccion("direccion");
-			centro.setTLF_consejeria("789");
+			centro.setTeleConsejeria("789");
 			centro.setNombre("informatica");
 			gestionCentro.actualizarCentro(centro);
 			assertTrue(gestionCentro.obtenerCentro(123).getNombre() == "informatica");
 			assertTrue(gestionCentro.obtenerCentro(123).getDireccion() == "direccion");
-			assertTrue(gestionCentro.obtenerCentro(123).getTLF_consejeria() == "789");
+			assertTrue(gestionCentro.obtenerCentro(123).getTeleConsejeria() == "789");
 		} catch (CentroNoEncontradoException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -124,7 +124,7 @@ public class CentroT {
 	public void testEliminarCentroNoEncontrado() throws SanekaException {
 		final Integer idCentro = 11;
 		Centro centro = gestionCentro.obtenerCentro(idCentro);
-		centro.setID(19);
+		centro.setId(19);
 		try {
 			gestionCentro.eliminarCentro(11, centro);
 			fail("Debería lanzar excepción de centro no encontrado");

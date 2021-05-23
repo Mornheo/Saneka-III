@@ -10,19 +10,19 @@ public class Grupo implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	@Id 
-	private Integer ID;
+	private Integer id;
 	@Column(unique=true,nullable=false)
-	private Integer Curso;
+	private Integer curso;
 	//@Column(unique=true,nullable=false)
 	@Column(nullable=false)
-	private String Letra;
+	private String letra;
 	@Column(nullable=false)
-	private String Turno;
+	private String turno;
 	@Column(nullable=false)
-	private Boolean Ingles;
-	private Boolean Visible;
-	private String Asignar;
-	private Integer Plazas;
+	private Boolean ingles;
+	private Boolean visible;
+	private String asignar;
+	private Integer plazas;
 	@ManyToOne
 	@JoinColumn(nullable=false)
 	private Titulacion titulacion;
@@ -31,133 +31,105 @@ public class Grupo implements Serializable{
 	@OneToMany
 	private List<Clase> clases;
 	@OneToMany
-	private List<Grupos_por_asignatura> grupos_asignatura;
+	private List<Grupos_por_asignatura> gruposAsignatura;
 	@OneToMany
-	private List<Asignaturas_matricula> asignaturas_matricula;
+	private List<Asignaturas_matricula> asignaturasMatricula;
 	public Grupo() {
 		super();
 	}
 	public Grupo (Integer id,Integer curso,String letra,String turno,Boolean ingles,Titulacion tit) {
-		ID = id;
-		Curso = curso;
-		Letra = letra;
-		Turno = turno;
-		Ingles = ingles;
+		this.id = id;
+		this.curso = curso;
+		this.letra = letra;
+		this.turno = turno;
+		this.ingles = ingles;
 		titulacion = tit;
 	}
-	
-	public Integer getID() {
-		return ID;
+	public Integer getId() {
+		return id;
 	}
-
-	public void setID(Integer iD) {
-		ID = iD;
+	public void setId(Integer id) {
+		this.id = id;
 	}
-
 	public Integer getCurso() {
-		return Curso;
+		return curso;
 	}
-
 	public void setCurso(Integer curso) {
-		Curso = curso;
+		this.curso = curso;
 	}
-
 	public String getLetra() {
-		return Letra;
+		return letra;
 	}
-
 	public void setLetra(String letra) {
-		Letra = letra;
+		this.letra = letra;
 	}
-
 	public String getTurno() {
-		return Turno;
+		return turno;
 	}
-
 	public void setTurno(String turno) {
-		Turno = turno;
+		this.turno = turno;
 	}
 	public Boolean getIngles() {
-		return Ingles;
+		return ingles;
 	}
-
 	public void setIngles(Boolean ingles) {
-		Ingles = ingles;
+		this.ingles = ingles;
 	}
-
 	public Boolean getVisible() {
-		return Visible;
+		return visible;
 	}
-
 	public void setVisible(Boolean visible) {
-		Visible = visible;
+		this.visible = visible;
 	}
-
 	public String getAsignar() {
-		return Asignar;
+		return asignar;
 	}
-
 	public void setAsignar(String asignar) {
-		Asignar = asignar;
+		this.asignar = asignar;
 	}
-
 	public Integer getPlazas() {
-		return Plazas;
+		return plazas;
 	}
-
 	public void setPlazas(Integer plazas) {
-		Plazas = plazas;
+		this.plazas = plazas;
 	}
-	
 	public Titulacion getTitulacion() {
 		return titulacion;
 	}
-
 	public void setTitulacion(Titulacion titulacion) {
 		this.titulacion = titulacion;
 	}
-
 	public List<Grupo> getGrupos() {
 		return grupos;
 	}
-
 	public void setGrupos(List<Grupo> grupos) {
 		this.grupos = grupos;
 	}
-
 	public List<Clase> getClases() {
 		return clases;
 	}
-
 	public void setClases(List<Clase> clases) {
 		this.clases = clases;
 	}
-
-	public List<Grupos_por_asignatura> getGrupos_asignatura() {
-		return grupos_asignatura;
+	public List<Grupos_por_asignatura> getGruposAsignatura() {
+		return gruposAsignatura;
 	}
-
-	public void setGrupos_asignatura(List<Grupos_por_asignatura> grupos_asignatura) {
-		this.grupos_asignatura = grupos_asignatura;
+	public void setGruposAsignatura(List<Grupos_por_asignatura> gruposAsignatura) {
+		this.gruposAsignatura = gruposAsignatura;
 	}
-	
-
-	public List<Asignaturas_matricula> getAsignaturas_matricula() {
-		return asignaturas_matricula;
+	public List<Asignaturas_matricula> getAsignaturasMatricula() {
+		return asignaturasMatricula;
 	}
-
-	public void setAsignaturas_matricula(List<Asignaturas_matricula> asignaturas_matricula) {
-		this.asignaturas_matricula = asignaturas_matricula;
+	public void setAsignaturasMatricula(List<Asignaturas_matricula> asignaturasMatricula) {
+		this.asignaturasMatricula = asignaturasMatricula;
 	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((ID == null) ? 0 : ID.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -167,20 +139,19 @@ public class Grupo implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Grupo other = (Grupo) obj;
-		if (ID == null) {
-			if (other.ID != null)
+		if (id == null) {
+			if (other.id != null)
 				return false;
-		} else if (!ID.equals(other.ID))
+		} else if (!id.equals(other.id))
 			return false;
 		return true;
 	}
-
 	@Override
 	public String toString() {
-		return "Grupo [ID=" + ID + ", Curso=" + Curso + ", Letra=" + Letra + ", Turno=" + Turno + ", Ingles=" + Ingles
-				+ ", Visible=" + Visible + ", Asignar=" + Asignar + ", Plazas=" + Plazas + "]";
+		return "Grupo [id=" + id + ", curso=" + curso + ", letra=" + letra + ", turno=" + turno + ", ingles=" + ingles
+				+ ", visible=" + visible + ", asignar=" + asignar + ", plazas=" + plazas + ", titulacion=" + titulacion
+				+ ", grupos=" + grupos + ", clases=" + clases + ", gruposAsignatura=" + gruposAsignatura
+				+ ", asignaturasMatricula=" + asignaturasMatricula + "]";
 	}
-
-	
-	
+		
 }

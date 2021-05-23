@@ -24,7 +24,7 @@ public class GrupoEJB implements GestionGrupo{
 		if(titulacion == null) {
 			throw new TitulacionNoEncontradoException();
 		}
-		Grupo grupoExistente = em.find(Grupo.class,grupo.getID());
+		Grupo grupoExistente = em.find(Grupo.class,grupo.getId());
 		if(grupoExistente != null) {
 			throw new GrupoExistenteException();
 		}
@@ -48,7 +48,7 @@ public class GrupoEJB implements GestionGrupo{
 		if(titulacion == null) {
 			throw new TitulacionNoEncontradoException();
 		}
-		Grupo grupoExistente = em.find(Grupo.class,grupo.getID());
+		Grupo grupoExistente = em.find(Grupo.class,grupo.getId());
 		if(grupoExistente == null) {
 			throw new GrupoNoEncontradoException();
 		}
@@ -65,7 +65,7 @@ public class GrupoEJB implements GestionGrupo{
 		if(titulacion == null) {
 			throw new TitulacionNoEncontradoException();
 		}
-		Grupo grupoExistente = em.find(Grupo.class,grupo.getID());
+		Grupo grupoExistente = em.find(Grupo.class,grupo.getId());
 		if(grupoExistente == null) {
 			throw new GrupoNoEncontradoException();
 		}
