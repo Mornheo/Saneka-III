@@ -18,21 +18,21 @@ public class Asignatura implements Serializable {
 
 	   
 	@Id @Column(unique=true,nullable=false)
-	private Integer Referencia;
+	private Integer referencia;
 	@Column(nullable = false)
-	private Boolean Ofertada;
+	private Boolean ofertada;
 	@Column(nullable = false)
-	private Integer Codigo_1;
-	private String Asignatura;
-	private Integer Curso;
+	private Integer codigo_1;
+	private String nombre;
+	private Integer curso;
 	@Column(nullable = false)
-	private Integer Creditos_teoria;
-	private Integer Creditos_practica;
-	private Integer Total_creditos;
-	private String Caracter;
-	private String Duracion;
-	private String Plazas;
-	private String Otro_idioma;
+	private Integer creditos_teoria;
+	private Integer creditos_practica;
+	private Integer total_creditos;
+	private String caracter;
+	private String duracion;
+	private String plazas;
+	private String otro_idioma;
 	
 	
 	@ManyToOne
@@ -51,95 +51,95 @@ public class Asignatura implements Serializable {
 		super();
 	}  
 	public Asignatura(Integer ref, Boolean ofe, Integer cod, Integer credT, Titulacion titu) {
-		this.Referencia=ref;
-		this.Ofertada=ofe;
-		this.Codigo_1=cod;
-		this.Creditos_teoria=credT;
+		this.referencia=ref;
+		this.ofertada=ofe;
+		this.codigo_1=cod;
+		this.creditos_teoria=credT;
 		this.titulacion=titu;		
 	}   
 	public Integer getReferencia() {
-		return this.Referencia;
+		return this.referencia;
 	}
 
 	public void setReferencia(Integer Referencia) {
-		this.Referencia = Referencia;
+		this.referencia = Referencia;
 	}   
 	public Boolean getOfertada() {
-		return this.Ofertada;
+		return this.ofertada;
 	}
 
 	public void setOfertada(Boolean Ofertada) {
-		this.Ofertada = Ofertada;
+		this.ofertada = Ofertada;
 	}   
 	public Integer getCodigo_1() {
-		return this.Codigo_1;
+		return this.codigo_1;
 	}
 
 	public void setCodigo_1(Integer Codigo_1) {
-		this.Codigo_1 = Codigo_1;
+		this.codigo_1 = Codigo_1;
 	}   
 	public String getAsignatura() {
-		return this.Asignatura;
+		return this.nombre;
 	}
 
 	public void setAsignatura(String Asignatura) {
-		this.Asignatura = Asignatura;
+		this.nombre = Asignatura;
 	}   
 	public Integer getCurso() {
-		return this.Curso;
+		return this.curso;
 	}
 
 	public void setCurso(Integer Curso) {
-		this.Curso = Curso;
+		this.curso = Curso;
 	}   
 	public Integer getCreditos_teoria() {
-		return this.Creditos_teoria;
+		return this.creditos_teoria;
 	}
 
 	public void setCreditos_teoria(Integer Creditos_teoria) {
-		this.Creditos_teoria = Creditos_teoria;
+		this.creditos_teoria = Creditos_teoria;
 	}   
 	public Integer getCreditos_practica() {
-		return this.Creditos_practica;
+		return this.creditos_practica;
 	}
 
 	public void setCreditos_practica(Integer Creditos_practica) {
-		this.Creditos_practica = Creditos_practica;
+		this.creditos_practica = Creditos_practica;
 	}   
 	public Integer getTotal_creditos() {
-		return this.Total_creditos;
+		return this.total_creditos;
 	}
 
 	public void setTotal_creditos(Integer Total_creditos) {
-		this.Total_creditos = Total_creditos;
+		this.total_creditos = Total_creditos;
 	}   
 	public String getCaracter() {
-		return this.Caracter;
+		return this.caracter;
 	}
 
 	public void setCaracter(String Caracter) {
-		this.Caracter = Caracter;
+		this.caracter = Caracter;
 	}   
 	public String getDuracion() {
-		return this.Duracion;
+		return this.duracion;
 	}
 
 	public void setDuracion(String Duracion) {
-		this.Duracion = Duracion;
+		this.duracion = Duracion;
 	}   
 	public String getPlazas() {
-		return this.Plazas;
+		return this.plazas;
 	}
 
 	public void setPlazas(String Plazas) {
-		this.Plazas = Plazas;
+		this.plazas = Plazas;
 	}   
 	public String getOtro_idioma() {
-		return this.Otro_idioma;
+		return this.otro_idioma;
 	}
 
 	public void setOtro_idioma(String Otro_idioma) {
-		this.Otro_idioma = Otro_idioma;
+		this.otro_idioma = Otro_idioma;
 	}
 	
 	
@@ -171,7 +171,7 @@ public class Asignatura implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((Referencia == null) ? 0 : Referencia.hashCode());
+		result = prime * result + ((referencia == null) ? 0 : referencia.hashCode());
 		return result;
 	}
 	@Override
@@ -183,19 +183,19 @@ public class Asignatura implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Asignatura other = (Asignatura) obj;
-		if (Referencia == null) {
-			if (other.Referencia != null)
+		if (referencia == null) {
+			if (other.referencia != null)
 				return false;
-		} else if (!Referencia.equals(other.Referencia))
+		} else if (!referencia.equals(other.referencia))
 			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
-		return "Asignatura [Referencia=" + Referencia + ", Ofertada=" + Ofertada + ", Codigo_1=" + Codigo_1
-				+ ", Asignatura=" + Asignatura + ", Curso=" + Curso + ", Creditos_teoria=" + Creditos_teoria
-				+ ", Creditos_practica=" + Creditos_practica + ", Total_creditos=" + Total_creditos + ", Caracter="
-				+ Caracter + ", Duracion=" + Duracion + ", Plazas=" + Plazas + ", Otro_idioma=" + Otro_idioma + "]";
+		return "Asignatura [Referencia=" + referencia + ", Ofertada=" + ofertada + ", Codigo_1=" + codigo_1
+				+ ", Asignatura=" + nombre + ", Curso=" + curso + ", Creditos_teoria=" + creditos_teoria
+				+ ", Creditos_practica=" + creditos_practica + ", Total_creditos=" + total_creditos + ", Caracter="
+				+ caracter + ", Duracion=" + duracion + ", Plazas=" + plazas + ", Otro_idioma=" + otro_idioma + "]";
 	}
 	
 	

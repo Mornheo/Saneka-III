@@ -16,7 +16,7 @@ import javax.persistence.*;
 public class Optativa extends Asignatura implements Serializable {
 
 	
-	private String Mencion;
+	private String mencion;
 	private static final long serialVersionUID = 1L;
 	
 	@ManyToMany
@@ -30,11 +30,11 @@ public class Optativa extends Asignatura implements Serializable {
 		super(ref, ofe, cod, credT, titu);
 	}  
 	public String getMencion() {
-		return this.Mencion;
+		return this.mencion;
 	}
 
 	public void setMencion(String Mencion) {
-		this.Mencion = Mencion;
+		this.mencion = Mencion;
 	}
 	@Override
 	public int hashCode() {

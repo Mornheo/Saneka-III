@@ -17,9 +17,9 @@ public class Titulacion implements Serializable {
 
 	   
 	@Id @Column(unique=true,nullable=false)
-	private Integer Codigo;
-	private String Nombre;
-	private Integer Creditos;
+	private Integer codigo;
+	private String nombre;
+	private Integer creditos;
 	
 	@OneToMany(mappedBy = "titulacion")
 	private List<Grupo> grupos;
@@ -41,31 +41,31 @@ public class Titulacion implements Serializable {
 		super();
 	}   
 	public Titulacion(Integer cod,String nom,Integer cre, List<Centro> centros) {
-		this.Codigo=cod;
-		this.Creditos = cre;
-		this.Nombre = nom;
+		this.codigo=cod;
+		this.creditos = cre;
+		this.nombre = nom;
 		this.centros=centros;
 	}   
 	public Integer getCodigo() {
-		return this.Codigo;
+		return this.codigo;
 	}
 
 	public void setCodigo(Integer Codigo) {
-		this.Codigo = Codigo;
+		this.codigo = Codigo;
 	}   
 	public String getNombre() {
-		return this.Nombre;
+		return this.nombre;
 	}
 
 	public void setNombre(String Nombre) {
-		this.Nombre = Nombre;
+		this.nombre = Nombre;
 	}   
 	public Integer getCreditos() {
-		return this.Creditos;
+		return this.creditos;
 	}
 
 	public void setCreditos(Integer Creditos) {
-		this.Creditos = Creditos;
+		this.creditos = Creditos;
 	}
 	
 	public List<Grupo> getGrupos() {
@@ -96,7 +96,7 @@ public class Titulacion implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((Codigo == null) ? 0 : Codigo.hashCode());
+		result = prime * result + ((codigo == null) ? 0 : codigo.hashCode());
 		return result;
 	}
 	@Override
@@ -108,16 +108,16 @@ public class Titulacion implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Titulacion other = (Titulacion) obj;
-		if (Codigo == null) {
-			if (other.Codigo != null)
+		if (codigo == null) {
+			if (other.codigo != null)
 				return false;
-		} else if (!Codigo.equals(other.Codigo))
+		} else if (!codigo.equals(other.codigo))
 			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
-		return "Titulacion [Codigo=" + Codigo + ", Nombre=" + Nombre + ", Creditos=" + Creditos + "]";
+		return "Titulacion [Codigo=" + codigo + ", Nombre=" + nombre + ", Creditos=" + creditos + "]";
 	}
    
 }
