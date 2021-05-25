@@ -6,34 +6,39 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-	<h:head>
-        <title>Login</title>
-    </h:head>
-    <h:body>
+<h:head>
+	<title>Login</title>
+</h:head>
+<h:body>
 
-        <h:form>
-           <h:panelGrid id = "panel" columns = "2"
-            cellpadding = "10" cellspacing = "1">
+	<h:form>
+		<h:panelGrid id="panel" columns="2" cellpadding="10" cellspacing="1">
 
-            <f:facet name = "header">
-               <h:outputText value = "login"/>
-            </f:facet>
-            
-                  <h:outputText value="Correo:"/>
-                  <h:inputText id="correo" value="#{}" required="true"/>
-                  <h:message for="correo" style = "color:red"/>
+			<f:facet name="header">
+				<h:outputText value="login" />
+			</f:facet>
 
-                  <h:outputText value="Contraseña:"/>
-                  <h:inputSecret id="password" value="#{}" required="true"/>
-                  <h:message for="password" style = "color:red"/>
+			<h:outputText value="Correo:" />
+			<h:inputText id="correo" required="true" />
+			<h:message for="correo" style="color:red" />
 
-                  <h:commandButton value="Entrar" action="#{}"/>
+			<h:outputText value="Contraseña:" />
+			<h:inputSecret id="password" required="true" />
+			<h:message for="password" style="color:red" />
 
-              </h:panelGrid>
-              
-              <div>
-                  <p>Si no tiene cuenta puede crear una en la <h:link outcome="registro.xhtml">página de registro</h:link></p>
-              </div>
-        </h:form>
-    </h:body>
+			<f:facet name="footer">
+				<h:commandButton value="Entrar"/>
+			</f:facet>
+
+
+		</h:panelGrid>
+
+		<div>
+			<p>
+				Si no tiene cuenta puede crear una en la
+				<h:link outcome="registro.xhtml">página de registro</h:link>
+			</p>
+		</div>
+	</h:form>
+</h:body>
 </html>

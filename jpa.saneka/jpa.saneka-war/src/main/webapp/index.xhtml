@@ -7,9 +7,16 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 <h:head>
-<title>Hola Mundo</title>
+	<title>Hola Mundo</title>
 </h:head>
 <h:body>
-<h1 id="cabecera"><h:outputText id="texto" value="#{saludo.saludo}"/></h1>
+	<h1 id="cabecera">
+		<h:outputText id="texto" value="#{saludo.saludo}" />
+	</h1>
+	<p>
+		<h:link outcome="registro.xhtml">página de registro</h:link>
+		-----
+		<h:link outcome="login.xhtml">página de login</h:link>
+	</p>
 </h:body>
 </html>

@@ -7,39 +7,46 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 <h:head>
-	<Title>Registro</Title>
+	<title>Registro</title>
 </h:head>
 
 <h:body>
-	<h:form>
-         <h:panelGrid id = "panel" columns = "2"
-            cellpadding = "10" cellspacing = "1">
-            
-            <f:facet name = "header">
-               <h:outputText value = "Formulario de Registro"/>
-            </f:facet>
-            
-            <h:outputLabel value = "DNI:" />
-            <h:inputText  id="dni" value="#{}" required="true"/>
-            
-            <h:outputLabel value = "Usuario:" />
-            <h:inputText  id="user" value="#{}" required="true"/>
-            
-            <h:outputLabel value = "Contraseña:" />
-            <h:inputSecret id="password" value="#{}" required="true">
-            	<f:validateLength for = "password" minimum = "5"/>	<!-- comprueba que la contrasenya tiene longitud mayor de 5 caracteres -->
-            </h:inputSecret>
-            <h:message for = "password" style = "color:red" />	<!-- muestra error si la contraseña es menor de 5 caracteres -->
-            
-            <h:outputLabel value = "Titulación:" />
-            <h:selectOneListbox  id="titulacion" value="#{}" required="true"/>  
-                  
-            <f:facet name = "footer">
-                  <h:commandButton id = "submit" value = "Submit" />
-                  <h:link outcome="login.xhtml">Volver a la página de login</h:link>        
-            </f:facet>
-         </h:panelGrid>
-      </h:form>
+	<h:form id="registro">
+		<h:panelGrid id="panel" columns="2" cellpadding="10" cellspacing="1">
+
+			<f:facet name="header">
+				<h:outputText value="Formulario de Registro" />
+			</f:facet>
+
+			<h:outputLabel value="DNI:" />
+			<h:inputText id="dni" required="true" />
+
+			<h:outputLabel value="Usuario:" />
+			<h:inputText id="user" required="true" />
+			<h:message for="user" style="color:red"/>
+			
+			<h:outputLabel value="Contraseña:" />
+			<h:inputSecret id="password" required="true">
+				<f:validateLength for="password" minimum="5" />
+				<!-- comprueba que la contrasenya tiene longitud mayor de 5 caracteres -->
+			</h:inputSecret>
+			<h:message for="password" style="color:red" />
+			<!-- muestra error si la contraseña es menor de 5 caracteres -->
+
+			<h:outputLabel value="Repetir contraseña:" />
+			<h:inputSecret id="repassword" required="true" />
+			<h:message for="repassword" style="color:red" />
+			<!-- muestra error si las contraseñas no coinciden -->
+
+			<h:outputLabel value="Titulación:" />
+			<h:selectOneListbox id="titulacion" required="true" />
+
+			<f:facet name="footer">
+				<h:commandButton value="Registrar" />
+				<h:link outcome="login.xhtml">Volver a la página de login</h:link>
+			</f:facet>
+		</h:panelGrid>
+	</h:form>
 </h:body>
 
 </html>
