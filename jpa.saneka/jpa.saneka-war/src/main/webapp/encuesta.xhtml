@@ -7,27 +7,28 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 <h:head>
-	<title>Login</title>
+	<title>Encuesta</title>
 </h:head>
 <h:body>
-
-	<h:form id="login">
+	<h:form id="encuesta">
 		<h:panelGrid id="panel" columns="2" cellpadding="10" cellspacing="1">
 
 			<f:facet name="header">
-				<h:outputText value="login" />
+				<h:outputText value="Encuesta" />
 			</f:facet>
 
-			<h:outputText value="Correo:" />
-			<h:inputText id="correo" required="true" />
-			<h:message for="correo" style="color:red" />
-
-			<h:outputText value="Contraseña:" />
-			<h:inputSecret id="password" required="true" />
-			<h:message for="password" style="color:red" />
+			<h:outputText value="Turno Preferente:" />
+			<h:selectOneRadio id="turno" required="true">
+				<f:selectItems value="#{}" />
+			</h:selectOneRadio>
+			
+			<h:outputText value="Asignaturas:" />
+			<h:selectManyListbox id="asignaturas">
+				<f:selectItems value="#{}" />
+			</h:selectManyListbox>
 
 			<f:facet name="footer">
-				<h:commandButton value="Entrar" action="encuesta.xhtml"/>
+				<h:commandButton value="Entrar"/>
 			</f:facet>
 
 
