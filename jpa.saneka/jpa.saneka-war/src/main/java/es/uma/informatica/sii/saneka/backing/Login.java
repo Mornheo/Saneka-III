@@ -1,5 +1,12 @@
 package es.uma.informatica.sii.saneka.backing;
 
+
+import es.uma.informatica.ejb.exceptions.ContraseniaInvalidaException;
+import es.uma.informatica.ejb.exceptions.SanekaException;
+import es.uma.informatica.ejb.exceptions.UsuarioInactivoException;
+import es.uma.informatica.ejb.exceptions.UsuarioNoEncontradoException;
+import es.uma.informatica.ejb.saneka.GestionUsuario;
+import es.uma.informatica.jpa.saneka.Usuario;
 import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
@@ -44,16 +51,16 @@ public class Login {
             sesion.setUsuario(gestion.refrescarUsuario(usuario));
             return "contactos.xhtml";
 
-        } catch (CuentaInexistenteException e) {
+        } catch (UsuarioNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("La cuenta no existe");
             FacesContext.getCurrentInstance().addMessage("login:user", fm);
         } catch (ContraseniaInvalidaException e) {
             FacesMessage fm = new FacesMessage("La contraseña no es correcta");
             FacesContext.getCurrentInstance().addMessage("login:pass", fm);
-        } catch (CuentaInactivaException e) {
+        } catch (UsuarioInactivoException e) {
             FacesMessage fm = new FacesMessage("La cuenta existe pero no está activa");
             FacesContext.getCurrentInstance().addMessage("login:user", fm);
-        } catch (AgendaException e) {
+        } catch (SanekaException e) {
             FacesMessage fm = new FacesMessage("Error: " + e);
             FacesContext.getCurrentInstance().addMessage(null, fm);
         }

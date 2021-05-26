@@ -7,8 +7,10 @@
 package es.uma.informatica.sii.saneka.backing;
 
 import es.uma.informatica.ejb.exceptions.SanekaException;
+import es.uma.informatica.ejb.saneka.GestionUsuario;
+import es.uma.informatica.jpa.saneka.Usuario;
+
 import java.io.Serializable;
-import java.util.List;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
@@ -56,7 +58,6 @@ public class InfoSesion implements Serializable {
         if (usuario != null)
         {
             usuario = gestion.refrescarUsuario(usuario);
-            System.out.println(usuario.getContactos().size());
         } 
         }
         catch (SanekaException e) {

@@ -9,6 +9,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+
 @Entity
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -22,6 +23,10 @@ public abstract class Usuario implements Serializable {
     @XmlTransient
     @JsonbTransient
     private String cadenaValidacion;
+    
+    public Usuario() {
+    	super();
+    }
 	public String getEmailInstitucional() {
 		return emailInstitucional;
 	}

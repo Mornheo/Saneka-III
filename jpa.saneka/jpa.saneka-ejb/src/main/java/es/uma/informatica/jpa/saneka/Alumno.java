@@ -57,6 +57,10 @@ public class Alumno implements Serializable {
 		this.expedientes = expedientes;
 	}
 	
+	public Alumno() {
+		super();
+	}
+	
 	public Alumno(String dni, String nombre, String Apellido1, String email) {
 		this.dni=dni;
 		this.nombre=nombre;

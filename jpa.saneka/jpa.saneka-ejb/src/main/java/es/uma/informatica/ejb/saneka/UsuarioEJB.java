@@ -9,7 +9,7 @@ import es.uma.informatica.ejb.exceptions.ContraseniaInvalidaException;
 import es.uma.informatica.ejb.exceptions.OptativaNoEncontradoException;
 import es.uma.informatica.ejb.exceptions.SanekaException;
 import es.uma.informatica.ejb.exceptions.UsuarioExistenteException;
-import es.uma.informatica.ejb.exceptions.UsuarioInactivaException;
+import es.uma.informatica.ejb.exceptions.UsuarioInactivoException;
 import es.uma.informatica.ejb.exceptions.UsuarioNoEncontradoException;
 import es.uma.informatica.jpa.saneka.Usuario;
 import es.uma.informatica.ejb.exceptions.ValidacionIncorrectaException;
@@ -94,7 +94,7 @@ public class UsuarioEJB implements GestionUsuario{
         }
 
         if (user.getCadenaValidacion() != null) {
-            throw new UsuarioInactivaException();
+            throw new UsuarioInactivoException();
         }
 
         if (!user.getContrasenia().equals(u.getContrasenia())) {
