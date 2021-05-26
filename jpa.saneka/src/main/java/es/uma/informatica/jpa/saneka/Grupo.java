@@ -26,13 +26,13 @@ public class Grupo implements Serializable{
 	@ManyToOne
 	@JoinColumn(nullable=false)
 	private Titulacion titulacion;
-	@OneToMany
-	private List<Grupo> grupos;
-	@OneToMany
+	@ManyToOne
+	private Grupo grupos;
+	@OneToMany(targetEntity=Clase.class,mappedBy="grupo")
 	private List<Clase> clases;
-	@OneToMany
+	@OneToMany(targetEntity=Grupos_por_asignatura.class,mappedBy="grupo")
 	private List<Grupos_por_asignatura> gruposAsignatura;
-	@OneToMany
+	@OneToMany(targetEntity=Asignaturas_matricula.class,mappedBy="grupo")
 	private List<Asignaturas_matricula> asignaturasMatricula;
 	public Grupo() {
 		super();
@@ -99,10 +99,10 @@ public class Grupo implements Serializable{
 	public void setTitulacion(Titulacion titulacion) {
 		this.titulacion = titulacion;
 	}
-	public List<Grupo> getGrupos() {
+	public Grupo getGrupos() {
 		return grupos;
 	}
-	public void setGrupos(List<Grupo> grupos) {
+	public void setGrupos(Grupo grupos) {
 		this.grupos = grupos;
 	}
 	public List<Clase> getClases() {

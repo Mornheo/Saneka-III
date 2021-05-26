@@ -17,7 +17,7 @@ public class AlumnoEJB implements GestionAlumno{
 	@Override
 	public void insertarAlumno(Alumno alumno) throws AlumnoYaExistente{
 		// TODO Auto-generated method stub
-		Alumno al=em.find(Alumno.class,alumno.getDNI());
+		Alumno al=em.find(Alumno.class,alumno.getDni());
 		if(al!=null) {
 			throw new AlumnoYaExistente();
 		}
@@ -29,19 +29,19 @@ public class AlumnoEJB implements GestionAlumno{
 		// De alumno se puede cambiar el nombre, los apellidos,email-personal,
 		// telefono,direccion notificacion, localidad notificacion, provincia
 		// notificacion, cp.
-		Alumno al=em.find(Alumno.class,alumno.getDNI());
+		Alumno al=em.find(Alumno.class,alumno.getDni());
 		if(al==null) {
 			throw new AlumnoNoEncontrado();
 		}
 		al.setApellido1(alumno.getApellido1());
 		al.setApellido2(alumno.getApellido2());
-		al.setCP_notificacion(alumno.getCP_notificacion());
-		al.setDireccion_notificacion(alumno.getDireccion_notificacion());
-		al.setEmail_personal(alumno.getEmail_personal());
+		al.setCpNotificacion(alumno.getCpNotificacion());
+		al.setDireccionNotificacion(alumno.getDireccionNotificacion());
+		al.setEmailPersonal(alumno.getEmailPersonal());
 		al.setTelefono(alumno.getTelefono());
-		al.setLocalidad_notificacion(alumno.getLocalidad_notificacion());
-		al.setProvincia_notificaccion(alumno.getProvincia_notificaccion());
-		al.setCP_notificacion(alumno.getCP_notificacion());
+		al.setLocalidadNotificacion(alumno.getLocalidadNotificacion());
+		al.setProvinciaNotificaccion(alumno.getProvinciaNotificaccion());
+		al.setCpNotificacion(alumno.getCpNotificacion());
 		em.persist(al);
 		
 	}

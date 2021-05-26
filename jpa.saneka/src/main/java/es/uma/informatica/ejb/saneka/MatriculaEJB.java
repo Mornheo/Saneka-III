@@ -25,7 +25,7 @@ public class MatriculaEJB implements GestionMatricula{
 		if (ex == null) {
 			throw new ExpedienteNoEncontradoException();
 		}
-		Matricula mat=em.find(Matricula.class,new Matricula.MatriculaId(matricula.getCurso_academico(),exp));
+		Matricula mat=em.find(Matricula.class,new Matricula.MatriculaId(matricula.getCursoAcademico(),exp));
 			if(mat!=null) {
 				throw new MatriculaExistente();
 			}
@@ -40,15 +40,15 @@ public class MatriculaEJB implements GestionMatricula{
 			throw new ExpedienteNoEncontradoException();
 		}
 		
-		Matricula mat=em.find(Matricula.class,new Matricula.MatriculaId(matricula.getCurso_academico(),exp));
+		Matricula mat=em.find(Matricula.class,new Matricula.MatriculaId(matricula.getCursoAcademico(),exp));
 				if(mat==null) {
 					throw new MatriculaNoExistente();
 				}
 		
 		mat.setEstado(matricula.getEstado());
-		mat.setFecha_matricula(matricula.getFecha_matricula());
-		mat.setNuevo_ingreso(matricula.getNuevo_ingreso());
-		mat.setTurno_preferente(mat.getTurno_preferente());
+		mat.setFechaMatricula(matricula.getFechaMatricula());
+		mat.setNuevoIngreso(matricula.getNuevoIngreso());
+		mat.setTurnoPreferente(mat.getTurnoPreferente());
 		em.persist(mat);
 	}
 

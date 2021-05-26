@@ -48,8 +48,8 @@ public class MatriculaT {
 	@Test
 	public void testInsertarCorrecto() {
 		try {
-		Alumno a=new Alumno();
-		a.setDNI("090");
+		Alumno a=new Alumno(null, null, null, null);
+		a.setDni("090");
 		a.setNombre("Diego");
 		a.setApellido1("Centeno");
 		a.setApellido2("Linares");
@@ -62,7 +62,7 @@ public class MatriculaT {
 
 		gestionMatricula.insertarMatricula(exp.getNum_expediente(),m);
 		try {
-			assertEquals(m.toString(),gestionMatricula.mostrarMatricula(exp.getNum_expediente(), m.getCurso_academico()));
+			assertEquals(m.toString(),gestionMatricula.mostrarMatricula(exp.getNum_expediente(), m.getCursoAcademico()));
 		}catch(SanekaException e) {
 			fail("No deberia salir esto");
 		}
@@ -76,8 +76,8 @@ public class MatriculaT {
 	@Test
 	public void testInsertarMatriculaYaExistente() {
 		try {
-		Alumno a=new Alumno();
-		a.setDNI("090");
+		Alumno a=new Alumno(null, null, null, null);
+		a.setDni("090");
 		a.setNombre("Diego");
 		a.setApellido1("Centeno");
 		a.setApellido2("Linares");
@@ -98,8 +98,8 @@ public class MatriculaT {
 	@Test
 	public void testModificarMatriculaCorrecto() {
 		try {
-		Alumno a=new Alumno();
-		a.setDNI("090");
+		Alumno a=new Alumno(null, null, null, null);
+		a.setDni("090");
 		a.setNombre("Diego");
 		a.setApellido1("Centeno");
 		a.setApellido2("Linares");
@@ -112,7 +112,7 @@ public class MatriculaT {
 		m.setEstado("Correcto");
 		gestionMatricula.modificarMatricula(exp.getNum_expediente(), m);
 		try {
-			assertEquals(m.toString(),gestionMatricula.mostrarMatricula(exp.getNum_expediente(), m.getCurso_academico()));
+			assertEquals(m.toString(),gestionMatricula.mostrarMatricula(exp.getNum_expediente(), m.getCursoAcademico()));
 		}catch(SanekaException e) {
 			fail("No se ha modificado");
 		}
@@ -126,8 +126,8 @@ public class MatriculaT {
 	@Test
 	public void testModificarMatriculaNoExistente() {
 		try {
-		Alumno a=new Alumno();
-		a.setDNI("090");
+		Alumno a=new Alumno(null, null, null, null);
+		a.setDni("090");
 		a.setNombre("Diego");
 		a.setApellido1("Centeno");
 		a.setApellido2("Linares");
@@ -148,8 +148,8 @@ public class MatriculaT {
 	@Test
 	public void testModificarExpedienteaNoExistente() {
 		try {
-		Alumno a=new Alumno();
-		a.setDNI("090");
+		Alumno a=new Alumno(null, null, null, null);
+		a.setDni("090");
 		a.setNombre("Diego");
 		a.setApellido1("Centeno");
 		a.setApellido2("Linares");
@@ -199,8 +199,8 @@ public class MatriculaT {
 	@Test
 	public void testEliminarcorrecto() {
 		try {
-			Alumno a=new Alumno();
-			a.setDNI("090");
+			Alumno a=new Alumno(null, null, null, null);
+			a.setDni("090");
 			a.setNombre("Diego");
 			a.setApellido1("Centeno");
 			a.setApellido2("Linares");

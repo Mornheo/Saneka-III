@@ -104,8 +104,8 @@ public class AlumnoT {
 	@Test
 	public void testModificarAlumnoCorrecto() {
 		try {
-			Alumno a=new Alumno();
-			a.setDNI("090");
+			Alumno a=new Alumno(null, null, null, null);
+			a.setDni("090");
 			a.setApellido1("Bezoya");
 			gestionAlumno.modificarAlumno(a);
 			assertNotEquals(a.getApellido1(),"Centeno");
@@ -118,8 +118,8 @@ public class AlumnoT {
 	@Test
 	public void testModificarAlumnoNoEncontrado() {
 		try {
-			Alumno a=new Alumno();
-			a.setDNI("000");
+			Alumno a=new Alumno(null, null, null, null);
+			a.setDni("000");
 			a.setApellido1("Bezoya");
 			gestionAlumno.modificarAlumno(a);
 			fail("No se ha encontrado");
