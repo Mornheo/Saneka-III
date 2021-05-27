@@ -137,7 +137,7 @@ ALTER TABLE gpa
                                         grupo_id );
 
 CREATE TABLE grupo (
-    id                    INTEGER NOT NULL,
+    id                    VARCHAR2(10 BYTE) NOT NULL,
     curso                 INTEGER NOT NULL,
     letra                 VARCHAR2(20 CHAR) NOT NULL,
     turno_manana_tarde    VARCHAR2(20 CHAR) NOT NULL,
@@ -148,7 +148,7 @@ CREATE TABLE grupo (
     titu_codigo           INTEGER NOT NULL,
     plazas_nuevo_ingreso  INTEGER,
     sustituye_ingles      VARCHAR2(3 BYTE),
-    grupo_id              INTEGER
+    grupo_id              VARCHAR2(10 BYTE)
 );
 
 ALTER TABLE grupo ADD CONSTRAINT grupo_pk PRIMARY KEY ( id );

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="7E4FAB08-3F57-F542-CB10-BBF8BA315F88" containerWithKeyObject="ED76DB29-8D04-9DC5-534B-689C0E490483" localFKIndex="1135332A-BFFF-8DF0-35C4-5FF7334C998B" name="ENCUESTA_GPA_GPA_FK">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 12:30:37 UTC</createdTime>
+<generatorID>DCEC1A42-20F7-81BE-AB55-69F0AACC9BAF</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<referredTableLongName>GPA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>50BD1BFC-994F-C856-79BC-D4DC224C5AE5</referredTableID>
+<keyObject>8E9A3410-EDC2-A174-0859-4F8494BE5770</keyObject>
+<referredKeyID>8E9A3410-EDC2-A174-0859-4F8494BE5770</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>c,ASIG_Referencia,GRUPO_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

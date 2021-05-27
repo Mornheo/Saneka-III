@@ -1,8 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<relationalModel class="oracle.dbtools.crest.model.design.relational.RelationalDesign" name="Relational_1" id="0A023E47-6FDA-2D85-BA1F-08DAE098DF1E" mainViewID="795B917E-1D26-9DED-002C-4CF36EBB4A2D">
-<createdBy>alvar</createdBy>
-<createdTime>2021-05-27 12:12:11 UTC</createdTime>
-<ownerDesignName>Modelo ER</ownerDesignName>
-<shouldBeOpen>false</shouldBeOpen>
-<selectedRDBMSSite>32076570-2523-435C-2E92-BF29817DFF70</selectedRDBMSSite>
-</relationalModel>

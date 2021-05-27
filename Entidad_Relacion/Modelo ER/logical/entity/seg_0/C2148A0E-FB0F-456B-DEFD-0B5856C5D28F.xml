@@ -57,9 +57,9 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="ID" id="72FB0C31-D985-1B5E-1A90-58CAE245D96C">
+<Attribute name="ID" id="3B1B08E0-F48E-D1A7-780F-F9E62321FA71">
 <createdBy>alvar</createdBy>
-<createdTime>2021-03-16 11:36:05 UTC</createdTime>
+<createdTime>2021-05-27 12:29:50 UTC</createdTime>
 <generatorID>6FC1628D-24E1-A065-923B-CD3FC8A106BE</generatorID>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
@@ -68,7 +68,8 @@
 <referedAttribute>CA350D13-916B-6EF1-851B-FA549CF84608</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
@@ -85,7 +86,7 @@
 <usedAttributes>
 <attributeRef>F824E1C1-A448-0C65-D5E6-79E02EF69008</attributeRef>
 <attributeRef>ED038CB0-DECC-215D-B7B8-DA8385203403</attributeRef>
-<attributeRef>72FB0C31-D985-1B5E-1A90-58CAE245D96C</attributeRef>
+<attributeRef>3B1B08E0-F48E-D1A7-780F-F9E62321FA71</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>
