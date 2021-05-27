@@ -1,5 +1,5 @@
 -- Generado por Oracle SQL Developer Data Modeler 20.4.1.406.0906
---   en:        2021-04-15 20:22:19 CEST
+--   en:        2021-05-27 13:53:02 CEST
 --   sitio:      Oracle Database 11g
 --   tipo:      Oracle Database 11g
 
@@ -10,6 +10,7 @@
 -- predefined type, no DDL - XMLTYPE
 
 CREATE TABLE alumno (
+    id                      INTEGER NOT NULL,
     dni                     VARCHAR2(50 CHAR) NOT NULL,
     nombre                  VARCHAR2(50 CHAR) NOT NULL,
     apellido1               VARCHAR2(50 CHAR) NOT NULL,
@@ -37,7 +38,7 @@ CREATE TABLE alumno (
     creditos_tf             INTEGER
 );
 
-ALTER TABLE alumno ADD CONSTRAINT alumno_pk PRIMARY KEY ( dni );
+ALTER TABLE alumno ADD CONSTRAINT alumno_pk PRIMARY KEY ( id );
 
 CREATE TABLE asig (
     referencia         INTEGER NOT NULL,
@@ -118,7 +119,7 @@ CREATE TABLE exp (
     activo       CHAR(1),
     nota_media   INTEGER,
     titu_codigo  INTEGER NOT NULL,
-    alumno_dni   VARCHAR2(50 CHAR) NOT NULL
+    alumno_id    INTEGER NOT NULL
 );
 
 ALTER TABLE exp ADD CONSTRAINT exp_pk PRIMARY KEY ( num );
@@ -190,14 +191,6 @@ CREATE TABLE titu_centro (
 ALTER TABLE titu_centro ADD CONSTRAINT titu_centro_pk PRIMARY KEY ( titu_codigo,
                                                                     centro_id );
 
-CREATE TABLE titu_opt (
-    titu_codigo     INTEGER NOT NULL,
-    opt_referencia  INTEGER NOT NULL
-);
-
-ALTER TABLE titu_opt ADD CONSTRAINT titu_opt_pk PRIMARY KEY ( titu_codigo,
-                                                              opt_referencia );
-
 ALTER TABLE asig_matr
     ADD CONSTRAINT asig_matr_asig_fk FOREIGN KEY ( asig_referencia )
         REFERENCES asig ( referencia );
@@ -241,8 +234,8 @@ ALTER TABLE encuesta_gpa
                          grupo_id );
 
 ALTER TABLE exp
-    ADD CONSTRAINT exp_alumno_fk FOREIGN KEY ( alumno_dni )
-        REFERENCES alumno ( dni );
+    ADD CONSTRAINT exp_alumno_fk FOREIGN KEY ( alumno_id )
+        REFERENCES alumno ( id );
 
 ALTER TABLE exp
     ADD CONSTRAINT exp_titu_fk FOREIGN KEY ( titu_codigo )
@@ -280,21 +273,13 @@ ALTER TABLE titu_centro
     ADD CONSTRAINT titu_centro_titu_fk FOREIGN KEY ( titu_codigo )
         REFERENCES titu ( codigo );
 
-ALTER TABLE titu_opt
-    ADD CONSTRAINT titu_opt_opt_fk FOREIGN KEY ( opt_referencia )
-        REFERENCES opt ( referencia );
-
-ALTER TABLE titu_opt
-    ADD CONSTRAINT titu_opt_titu_fk FOREIGN KEY ( titu_codigo )
-        REFERENCES titu ( codigo );
-
 
 
 -- Informe de Resumen de Oracle SQL Developer Data Modeler: 
 -- 
--- CREATE TABLE                            15
+-- CREATE TABLE                            14
 -- CREATE INDEX                             0
--- ALTER TABLE                             38
+-- ALTER TABLE                             35
 -- CREATE VIEW                              0
 -- ALTER VIEW                               0
 -- CREATE PACKAGE                           0

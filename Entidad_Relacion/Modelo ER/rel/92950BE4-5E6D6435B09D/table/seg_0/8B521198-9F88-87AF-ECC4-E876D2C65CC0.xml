@@ -1,0 +1,107 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8B521198-9F88-87AF-ECC4-E876D2C65CC0" name="ENCUESTA_GPA">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 11:52:49 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ENCUESTA_Fecha_de_envio" id="939C3D8A-CF94-1FDD-B837-702465399613">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 11:52:49 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E5D3348B-9583-E5C1-8E73-D093C972273F" referredColumn="8FF42D0A-E48C-FE90-D94B-DFABCED6A7C5"/>
+</associations>
+</Column>
+<Column name="GPA_c" id="117049B0-6AF3-2A6A-9FDB-4E430BA34985">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 11:52:49 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="65422CE9-DC31-3A4F-D62B-54A249ED25B6" referredColumn="BCB28D32-B4C6-1573-8988-6158CA5ECEEB"/>
+</associations>
+</Column>
+<Column name="GPA_ASIG_Referencia" id="F2A5B84C-35D0-1C97-254A-9D99720C6EEF">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 11:52:49 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="65422CE9-DC31-3A4F-D62B-54A249ED25B6" referredColumn="5A0316AB-9AF2-7AD5-F2A3-7D4CC30BF9BD"/>
+</associations>
+</Column>
+<Column name="GPA_ID" id="C8C43F48-6503-9DF4-F4DC-05F331C913C0">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 11:52:49 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="65422CE9-DC31-3A4F-D62B-54A249ED25B6" referredColumn="2BA7E635-E0FB-88A5-6DF0-1D6E631CF5B1"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AD435A0E-8495-7310-C425-4F2E879F55A7" name="ENCUESTA_GPA_PK">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 11:52:49 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="939C3D8A-CF94-1FDD-B837-702465399613"/>
+<colUsage columnID="117049B0-6AF3-2A6A-9FDB-4E430BA34985"/>
+<colUsage columnID="F2A5B84C-35D0-1C97-254A-9D99720C6EEF"/>
+<colUsage columnID="C8C43F48-6503-9DF4-F4DC-05F331C913C0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="99C22B47-3BAC-DBBD-FA2A-441A66E39BEA" name="ENCUESTA_GPA_ENCUESTA_FK">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 11:52:49 UTC</createdTime>
+<generatorID>DCEC1A42-20F7-81BE-AB55-69F0AACC9BAF</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="939C3D8A-CF94-1FDD-B837-702465399613"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DD05F1DF-241C-B00F-57C6-FE65C8B89912" name="ENCUESTA_GPA_GPA_FK">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 11:52:49 UTC</createdTime>
+<generatorID>DCEC1A42-20F7-81BE-AB55-69F0AACC9BAF</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="117049B0-6AF3-2A6A-9FDB-4E430BA34985"/>
+<colUsage columnID="F2A5B84C-35D0-1C97-254A-9D99720C6EEF"/>
+<colUsage columnID="C8C43F48-6503-9DF4-F4DC-05F331C913C0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

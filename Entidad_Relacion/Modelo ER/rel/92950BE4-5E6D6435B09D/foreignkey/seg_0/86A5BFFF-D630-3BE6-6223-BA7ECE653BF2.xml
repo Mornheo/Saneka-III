@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="86A5BFFF-D630-3BE6-6223-BA7ECE653BF2" containerWithKeyObject="6C184988-EE0B-57E0-F806-DA77BB9C8EB5" localFKIndex="B03B1F55-6682-BC7D-C669-4DB8D72D142E" name="OPT_ASIG_FK">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 11:52:48 UTC</createdTime>
+<generatorID>553CA7AB-318B-EAF7-CCC2-4FDC6E540A57</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<referredTableLongName>ASIG</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>934A183D-F43F-60CB-C346-04D307D27D73</referredTableID>
+<keyObject>1C95D233-0916-2CC2-246E-23AC6B6C0F10</keyObject>
+<referredKeyID>1C95D233-0916-2CC2-246E-23AC6B6C0F10</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Referencia</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
