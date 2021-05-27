@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="12867844-BACD-09E7-67FD-575786BFBDD0" containerWithKeyObject="44B893BE-2390-76BD-F598-3919A8718CDA" localFKIndex="C626CB10-F812-9483-7408-CD4EDD87DD34" name="GRUPO_TITULACION_FK">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 13:26:36 UTC</createdTime>
+<generatorID>64E6025A-EB2F-1158-828E-067BA01B342B</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<referredTableLongName>TITULACION</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>6C1E8A0D-8633-C60A-924C-017F8B46F91C</referredTableID>
+<keyObject>8A3BA094-647E-219E-E79F-570FF0DABD7C</keyObject>
+<referredKeyID>8A3BA094-647E-219E-E79F-570FF0DABD7C</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Codigo</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

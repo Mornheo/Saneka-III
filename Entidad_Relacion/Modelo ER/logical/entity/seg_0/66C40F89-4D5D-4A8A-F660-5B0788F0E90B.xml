@@ -4,7 +4,7 @@
 <createdTime>2021-03-16 11:21:26 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="F517675C-101C-55FE-50A5-FCBE7DA1FDC2" value="true"/>
+<item key="D9030977-8418-6DD3-57FC-EB2268B1D567" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -15,14 +15,13 @@
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
-<preferredAbbreviation>OPT</preferredAbbreviation>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
 <Attribute name="Mencion" id="9D320D4A-A7D4-FE78-78DB-34B8488322E2">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:21:34 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="F517675C-101C-55FE-50A5-FCBE7DA1FDC2" value="true"/>
+<item key="D9030977-8418-6DD3-57FC-EB2268B1D567" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>

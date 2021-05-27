@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="2244F2B6-FE92-5428-07A0-45C014A09D70" containerWithKeyObject="572269D6-56AF-00C1-1359-24A71242CE90" localFKIndex="BFF694A9-62F8-E088-4A65-B344D29DEBBA" name="GPA_ASIGNATURA_FK">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 13:26:36 UTC</createdTime>
+<generatorID>D05CC7C2-9F25-65F6-EBA3-185246FB8055</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<referredTableLongName>ASIGNATURA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>626A6CC9-46E5-4283-B208-F363656AA012</referredTableID>
+<keyObject>D95125C0-E93B-4256-7CB5-6F41DC63C48B</keyObject>
+<referredKeyID>D95125C0-E93B-4256-7CB5-6F41DC63C48B</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Referencia</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="3F9C3543-AD20-5059-E253-1930F58A2B62" containerWithKeyObject="04E08434-14AB-01A5-9E2A-6C9806FBF86C" localFKIndex="C5320212-768C-A02E-795B-477F122E01E0" name="MATRICULA_EXPEDIENTE_FK">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 13:26:36 UTC</createdTime>
+<generatorID>599FC4AD-1A8F-9D19-37BE-97CCDAC39C6D</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<referredTableLongName>EXPEDIENTE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>234B8261-20E5-3516-F7B4-DE9892EF63F8</referredTableID>
+<keyObject>F6FFED18-4C5F-16EB-D8CB-F9D0BF87F6C1</keyObject>
+<referredKeyID>F6FFED18-4C5F-16EB-D8CB-F9D0BF87F6C1</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Num</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
