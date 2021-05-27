@@ -1,5 +1,5 @@
 -- Generado por Oracle SQL Developer Data Modeler 20.4.1.406.0906
---   en:        2021-05-27 14:05:30 CEST
+--   en:        2021-05-27 14:19:19 CEST
 --   sitio:      Oracle Database 11g
 --   tipo:      Oracle Database 11g
 

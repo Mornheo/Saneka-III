@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B186087A-9E83-EAEB-49AA-03F8857A960A" name="ENCUESTA">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 12:18:39 UTC</createdTime>
+<generatorID>EC46784B-16B0-C237-D5F4-D8D1281E233E</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Fecha_de_envio" id="7A6E9FFA-3D53-8948-FA85-E01FB83376AF">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 12:18:39 UTC</createdTime>
+<generatorID>B0EFA306-E4FF-31FC-6097-AE4E3F2C9AAA</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EXP_Num" id="8FB79285-F22F-6A55-882A-0D707FC14629">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 12:18:39 UTC</createdTime>
+<generatorID>3A29C64C-B80A-218E-D38C-0E1E8059D17B</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="37B1968A-64C5-1FA4-6899-615BE0C682FA" referredColumn="6492C8FE-D7E4-9EF4-0BC8-EF3AA5FE8668"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="78B2BFD0-EEA5-F855-FDA2-5AF6572DFE73" name="ENCUESTA_PK">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 12:18:39 UTC</createdTime>
+<generatorID>46A4D0EB-AB58-8B98-F2DB-3C4650B1A859</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7A6E9FFA-3D53-8948-FA85-E01FB83376AF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4CB458F8-DB4A-463B-4AA2-65A5FC69DA58" name="ENCUESTA_EXP_FK">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 12:18:39 UTC</createdTime>
+<generatorID>01A73196-161F-25AB-1F23-A424D7857135</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8FB79285-F22F-6A55-882A-0D707FC14629"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

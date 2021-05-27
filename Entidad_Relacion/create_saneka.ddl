@@ -1,5 +1,5 @@
 -- Generado por Oracle SQL Developer Data Modeler 20.4.1.406.0906
---   en:        2021-05-27 13:53:02 CEST
+--   en:        2021-05-27 14:19:00 CEST
 --   sitio:      Oracle Database 11g
 --   tipo:      Oracle Database 11g
 
@@ -116,7 +116,7 @@ ALTER TABLE encuesta_gpa
 
 CREATE TABLE exp (
     num          INTEGER NOT NULL,
-    activo       CHAR(1),
+    activo       CHAR(2 BYTE),
     nota_media   INTEGER,
     titu_codigo  INTEGER NOT NULL,
     alumno_id    INTEGER NOT NULL
@@ -126,7 +126,7 @@ ALTER TABLE exp ADD CONSTRAINT exp_pk PRIMARY KEY ( num );
 
 CREATE TABLE gpa (
     c                INTEGER NOT NULL,
-    oferta           CHAR(1),
+    oferta           CHAR(2 BYTE),
     asig_referencia  INTEGER NOT NULL,
     grupo_id         INTEGER NOT NULL
 );
@@ -137,16 +137,18 @@ ALTER TABLE gpa
                                         grupo_id );
 
 CREATE TABLE grupo (
-    id                  INTEGER NOT NULL,
-    curso               INTEGER NOT NULL,
-    letra               VARCHAR2(20 CHAR) NOT NULL,
-    turno_manana_tarde  VARCHAR2(20 CHAR) NOT NULL,
-    ingles              CHAR(1) NOT NULL,
-    visible             CHAR(1),
-    asignar             VARCHAR2(20 CHAR),
-    plazas              INTEGER,
-    titu_codigo         INTEGER NOT NULL,
-    grupo_id            INTEGER
+    id                    INTEGER NOT NULL,
+    curso                 INTEGER NOT NULL,
+    letra                 VARCHAR2(20 CHAR) NOT NULL,
+    turno_manana_tarde    VARCHAR2(20 CHAR) NOT NULL,
+    ingles                CHAR(2 BYTE) NOT NULL,
+    visible               CHAR(2 BYTE),
+    asignar               VARCHAR2(20 CHAR),
+    plazas                INTEGER,
+    titu_codigo           INTEGER NOT NULL,
+    plazas_nuevo_ingreso  INTEGER,
+    sustituye_ingles      VARCHAR2(3 BYTE),
+    grupo_id              INTEGER
 );
 
 ALTER TABLE grupo ADD CONSTRAINT grupo_pk PRIMARY KEY ( id );
@@ -159,8 +161,8 @@ CREATE TABLE matr (
     estado               VARCHAR2(20 CHAR),
     num_archivo          INTEGER,
     turno_pref           VARCHAR2(20 CHAR),
-    fecha                DATE NOT NULL,
-    nuevo_ingreso        CHAR(1),
+    fecha                VARCHAR2(30 BYTE) NOT NULL,
+    nuevo_ingreso        CHAR(2 BYTE),
     listado_asignaturas  VARCHAR2(50 CHAR),
     exp_num              INTEGER NOT NULL
 );
