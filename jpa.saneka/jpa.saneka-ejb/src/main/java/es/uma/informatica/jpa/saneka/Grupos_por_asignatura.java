@@ -13,8 +13,6 @@ import javax.persistence.*;
 @Entity
 @IdClass(Grupos_por_asignatura.Grupos_por_asignaturaId.class)
 public class Grupos_por_asignatura implements Serializable {
-
-	   
 	@Id
 	private Integer curso_academico;
 	private Boolean oferta;
@@ -28,7 +26,6 @@ public class Grupos_por_asignatura implements Serializable {
 	@Id
 	@ManyToOne
 	private Grupo grupo;
-	
 	public static class Grupos_por_asignaturaId implements Serializable {
 
 		private static final long serialVersionUID = 1L;

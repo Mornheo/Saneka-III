@@ -16,15 +16,15 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-/**
- *
- * @author francis
- */
 @Named(value = "infoSesion")
 @SessionScoped
 public class InfoSesion implements Serializable {
 
-    @Inject
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Inject
     private GestionUsuario gestion;
     private Usuario usuario;
     

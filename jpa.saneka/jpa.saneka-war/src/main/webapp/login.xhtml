@@ -10,28 +10,19 @@
 	<title>Login</title>
 </h:head>
 <h:body>
-
-	<h:form id="login">
-		<h:panelGrid id="panel" columns="2" cellpadding="10" cellspacing="1">
-
-			<f:facet name="header">
-				<h:outputText value="login" />
-			</f:facet>
-
-			<h:outputText value="Correo:" />
-			<h:inputText id="correo" required="true" />
-			<h:message for="correo" style="color:red" />
-
-			<h:outputText value="Contraseña:" />
-			<h:inputSecret id="password" required="true" />
-			<h:message for="password" style="color:red" />
-
-			<f:facet name="footer">
-				<h:commandButton value="Entrar" action="encuesta.xhtml"/>
-			</f:facet>
-
-
-		</h:panelGrid>
-	</h:form>
+<h:form>
+　	<h:panelGrid columns="3">
+		<f:facet name="header">
+	    <h:outputText value="Login" /></f:facet>
+	　　<h:outputText value="Correo:" />
+	　　<h:inputText value="#{Usuario.emailInstitucional}" id="correo" required="true" />
+	　　<h:message for="correo" style="color: red" />
+	
+	　　<h:outputText value="Contraseña:" />
+	　　<h:inputSecret value="#{Usuario.contrasenia}" id="password" required="true" />
+	　　<h:message for="password" style="color: red" />
+	</h:panelGrid>
+	<h:commandButton value="Entrar" action="encuesta.xhtml"/>
+</h:form>
 </h:body>
 </html>

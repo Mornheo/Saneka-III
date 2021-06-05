@@ -13,5 +13,6 @@
   
   <welcome-file-list>
   	<welcome-file>faces/login.xhtml</welcome-file>
+  	<welcome-file>faces/login/*</welcome-file>
   </welcome-file-list>
 </web-app>

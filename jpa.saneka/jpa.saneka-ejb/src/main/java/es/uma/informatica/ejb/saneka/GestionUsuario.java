@@ -5,9 +5,11 @@ package es.uma.informatica.ejb.saneka;
 
 
 
+import javax.ejb.Local;
+
 import es.uma.informatica.ejb.exceptions.SanekaException;
 import es.uma.informatica.jpa.saneka.Usuario;
-
+@Local
 public interface GestionUsuario {
     public void validarCuenta(String cuenta, String validacion) throws SanekaException;
     public void compruebaLogin(Usuario u) throws SanekaException;
