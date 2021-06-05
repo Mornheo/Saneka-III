@@ -22,13 +22,13 @@ public class Asignatura implements Serializable {
 	@Column(nullable = false)
 	private Boolean ofertada;
 	@Column(nullable = false)
-	private Integer codigo_1;
+	private Integer codigo;
 	private String nombre;
 	private Integer curso;
 	@Column(nullable = false)
-	private Integer creditos_teoria;
-	private Integer creditos_practica;
-	private Integer total_creditos;
+	private Integer creditosTeoria;
+	private Integer creditosPractica;
+	private Integer totalCreditos;
 	private String caracter;
 	private String duracion;
 	private String plazas;
@@ -43,7 +43,7 @@ public class Asignatura implements Serializable {
 	@OneToMany(mappedBy = "asignatura")
 	private List<Grupos_por_asignatura> grupos;
 	@OneToMany(mappedBy ="asignatura")
-	private List<Asignaturas_matricula> asignaturas_matricula;
+	private List<Asignaturas_matricula> asignaturasMatricula;
 	
 	private static final long serialVersionUID = 1L;
 
@@ -53,8 +53,8 @@ public class Asignatura implements Serializable {
 	public Asignatura(Integer ref, Boolean ofe, Integer cod, Integer credT, Titulacion titu) {
 		this.referencia=ref;
 		this.ofertada=ofe;
-		this.codigo_1=cod;
-		this.creditos_teoria=credT;
+		this.codigo=cod;
+		this.creditosTeoria=credT;
 		this.titulacion=titu;		
 	}   
 	public Integer getReferencia() {
@@ -72,11 +72,11 @@ public class Asignatura implements Serializable {
 		this.ofertada = Ofertada;
 	}   
 	public Integer getCodigo_1() {
-		return this.codigo_1;
+		return this.codigo;
 	}
 
 	public void setCodigo_1(Integer Codigo_1) {
-		this.codigo_1 = Codigo_1;
+		this.codigo = Codigo_1;
 	}   
 	public String getAsignatura() {
 		return this.nombre;
@@ -93,25 +93,25 @@ public class Asignatura implements Serializable {
 		this.curso = Curso;
 	}   
 	public Integer getCreditos_teoria() {
-		return this.creditos_teoria;
+		return this.creditosTeoria;
 	}
 
 	public void setCreditos_teoria(Integer Creditos_teoria) {
-		this.creditos_teoria = Creditos_teoria;
+		this.creditosTeoria = Creditos_teoria;
 	}   
 	public Integer getCreditos_practica() {
-		return this.creditos_practica;
+		return this.creditosPractica;
 	}
 
 	public void setCreditos_practica(Integer Creditos_practica) {
-		this.creditos_practica = Creditos_practica;
+		this.creditosPractica = Creditos_practica;
 	}   
 	public Integer getTotal_creditos() {
-		return this.total_creditos;
+		return this.totalCreditos;
 	}
 
 	public void setTotal_creditos(Integer Total_creditos) {
-		this.total_creditos = Total_creditos;
+		this.totalCreditos = Total_creditos;
 	}   
 	public String getCaracter() {
 		return this.caracter;
@@ -162,10 +162,10 @@ public class Asignatura implements Serializable {
 		this.grupos = grupos;
 	}
 	public List<Asignaturas_matricula> getAsignaturas_matricula() {
-		return asignaturas_matricula;
+		return asignaturasMatricula;
 	}
 	public void setAsignaturas_matricula(List<Asignaturas_matricula> asignaturas_matricula) {
-		this.asignaturas_matricula = asignaturas_matricula;
+		this.asignaturasMatricula = asignaturas_matricula;
 	}
 	@Override
 	public int hashCode() {
@@ -192,9 +192,9 @@ public class Asignatura implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Asignatura [Referencia=" + referencia + ", Ofertada=" + ofertada + ", Codigo_1=" + codigo_1
-				+ ", Asignatura=" + nombre + ", Curso=" + curso + ", Creditos_teoria=" + creditos_teoria
-				+ ", Creditos_practica=" + creditos_practica + ", Total_creditos=" + total_creditos + ", Caracter="
+		return "Asignatura [Referencia=" + referencia + ", Ofertada=" + ofertada + ", Codigo_1=" + codigo
+				+ ", Asignatura=" + nombre + ", Curso=" + curso + ", Creditos_teoria=" + creditosTeoria
+				+ ", Creditos_practica=" + creditosPractica + ", Total_creditos=" + totalCreditos + ", Caracter="
 				+ caracter + ", Duracion=" + duracion + ", Plazas=" + plazas + ", Otro_idioma=" + otro_idioma + "]";
 	}
 	
