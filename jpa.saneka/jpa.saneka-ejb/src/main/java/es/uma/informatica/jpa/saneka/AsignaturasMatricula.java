@@ -10,8 +10,8 @@ import es.uma.informatica.jpa.saneka.Matricula.MatriculaId;
  *
  */
 @Entity
-@IdClass(Asignaturas_matricula.Asignaturas_matriculaId.class)
-public class Asignaturas_matricula implements Serializable {
+@IdClass(AsignaturasMatricula.AsignaturasMatriculaId.class)
+public class AsignaturasMatricula implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -23,7 +23,7 @@ public class Asignaturas_matricula implements Serializable {
 	@ManyToOne
 	private Grupo grupo;
 	
-	public static class Asignaturas_matriculaId implements Serializable {
+	public static class AsignaturasMatriculaId implements Serializable {
 
 		private static final long serialVersionUID = 1L;
 		private int asignatura;
@@ -57,7 +57,7 @@ public class Asignaturas_matricula implements Serializable {
 				return false;
 			if (getClass() != obj.getClass())
 				return false;
-			Asignaturas_matriculaId other = (Asignaturas_matriculaId) obj;
+			AsignaturasMatriculaId other = (AsignaturasMatriculaId) obj;
 			if (asignatura != other.asignatura)
 				return false;
 			if (matricula == null) {
@@ -70,11 +70,11 @@ public class Asignaturas_matricula implements Serializable {
 		
 	}
 	
-	public Asignaturas_matricula() {
+	public AsignaturasMatricula() {
 		super();
 	}
    
-	public Asignaturas_matricula(Asignatura asig, Matricula matr) {
+	public AsignaturasMatricula(Asignatura asig, Matricula matr) {
 		this.asignatura=asig;
 		this.matricula=matr;
 	}

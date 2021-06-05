@@ -11,13 +11,13 @@ import javax.persistence.Persistence;
 
 import es.uma.informatica.jpa.saneka.Alumno;
 import es.uma.informatica.jpa.saneka.Asignatura;
-import es.uma.informatica.jpa.saneka.Asignaturas_matricula;
+import es.uma.informatica.jpa.saneka.AsignaturasMatricula;
 import es.uma.informatica.jpa.saneka.Centro;
 import es.uma.informatica.jpa.saneka.Clase;
 import es.uma.informatica.jpa.saneka.Encuesta;
 import es.uma.informatica.jpa.saneka.Expediente;
 import es.uma.informatica.jpa.saneka.Grupo;
-import es.uma.informatica.jpa.saneka.Grupos_por_asignatura;
+import es.uma.informatica.jpa.saneka.GruposPorAsignatura;
 import es.uma.informatica.jpa.saneka.Matricula;
 import es.uma.informatica.jpa.saneka.Optativa;
 import es.uma.informatica.jpa.saneka.Titulacion;
@@ -73,7 +73,7 @@ public class BaseDatos {
 		em.persist(grupo);
 		
 		//Grupos Por Asignatura
-		Grupos_por_asignatura gpa = new Grupos_por_asignatura(3, asig, grupo);
+		GruposPorAsignatura gpa = new GruposPorAsignatura(3, asig, grupo);
 		em.persist(gpa);
 		
 		//Clase
@@ -81,7 +81,7 @@ public class BaseDatos {
 		em.persist(clase);
 		
 		//Asignaturas Matricula
-		Asignaturas_matricula am = new Asignaturas_matricula(asig, matr);
+		AsignaturasMatricula am = new AsignaturasMatricula(asig, matr);
 		em.persist(am);
 		
 		

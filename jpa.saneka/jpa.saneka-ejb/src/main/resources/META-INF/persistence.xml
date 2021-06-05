@@ -7,13 +7,13 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org
     <jta-data-source>java:jboss/datasources/sii</jta-data-source>
 		<class>es.uma.informatica.jpa.saneka.Alumno</class>
 		<class>es.uma.informatica.jpa.saneka.Asignatura</class>
-		<class>es.uma.informatica.jpa.saneka.Asignaturas_matricula</class>
+		<class>es.uma.informatica.jpa.saneka.AsignaturasMatricula</class>
 		<class>es.uma.informatica.jpa.saneka.Centro</class>
 		<class>es.uma.informatica.jpa.saneka.Clase</class>
 		<class>es.uma.informatica.jpa.saneka.Encuesta</class>
 		<class>es.uma.informatica.jpa.saneka.Expediente</class>
 		<class>es.uma.informatica.jpa.saneka.Grupo</class>
-		<class>es.uma.informatica.jpa.saneka.Grupos_por_asignatura</class>
+		<class>es.uma.informatica.jpa.saneka.GruposPorAsignatura</class>
 		<class>es.uma.informatica.jpa.saneka.Matricula</class>
 		<class>es.uma.informatica.jpa.saneka.Optativa</class>
 		<class>es.uma.informatica.jpa.saneka.Titulacion</class>

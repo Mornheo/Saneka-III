@@ -11,12 +11,10 @@ import javax.persistence.*;
  *
  */
 @Entity
-@IdClass(Grupos_por_asignatura.Grupos_por_asignaturaId.class)
-public class Grupos_por_asignatura implements Serializable {
-
-	   
+@IdClass(GruposPorAsignatura.GruposPorAsignaturaId.class)
+public class GruposPorAsignatura implements Serializable {
 	@Id
-	private Integer curso_academico;
+	private Integer cursoAcademico;
 	private Boolean Oferta;
 	private static final long serialVersionUID = 1L;
 	@ManyToMany (mappedBy = "gpas")
@@ -28,26 +26,25 @@ public class Grupos_por_asignatura implements Serializable {
 	@Id
 	@ManyToOne
 	private Grupo grupo;
-	
-	public static class Grupos_por_asignaturaId implements Serializable {
+	public static class GruposPorAsignaturaId implements Serializable {
 
 		private static final long serialVersionUID = 1L;
-		private int curso_academico;
+		private int cursoAcademico;
 		private int asignatura;
 		private int grupo;
-		public Grupos_por_asignaturaId() {
+		public GruposPorAsignaturaId() {
 			super();
 		}
-		public Grupos_por_asignaturaId(Integer curso, Integer asig, Integer grupo) {
-			this.curso_academico=curso;
+		public GruposPorAsignaturaId(Integer curso, Integer asig, Integer grupo) {
+			this.cursoAcademico=curso;
 			this.asignatura=asig;
 			this.grupo=grupo;
 		}
-		public int getCurso_academico() {
-			return curso_academico;
+		public int getCursoAcademico() {
+			return cursoAcademico;
 		}
-		public void setCurso_academico(int curso) {
-			curso_academico = curso;
+		public void setCursoAcademico(int curso) {
+			cursoAcademico = curso;
 		}
 		public int getAsignatura() {
 			return asignatura;
@@ -65,7 +62,7 @@ public class Grupos_por_asignatura implements Serializable {
 		public int hashCode() {
 			final int prime = 31;
 			int result = 1;
-			result = prime * result + curso_academico;
+			result = prime * result + cursoAcademico;
 			result = prime * result + asignatura;
 			result = prime * result + grupo;
 			return result;
@@ -78,8 +75,8 @@ public class Grupos_por_asignatura implements Serializable {
 				return false;
 			if (getClass() != obj.getClass())
 				return false;
-			Grupos_por_asignaturaId other = (Grupos_por_asignaturaId) obj;
-			if (curso_academico != other.curso_academico)
+			GruposPorAsignaturaId other = (GruposPorAsignaturaId) obj;
+			if (cursoAcademico != other.cursoAcademico)
 				return false;
 			if (asignatura != other.asignatura)
 				return false;
@@ -90,21 +87,21 @@ public class Grupos_por_asignatura implements Serializable {
 		
 	}
 
-	public Grupos_por_asignatura() {
+	public GruposPorAsignatura() {
 		super();
 	}  
-	public Grupos_por_asignatura(Integer curso, Asignatura asig, Grupo grupo) {
-		this.curso_academico=curso;
+	public GruposPorAsignatura(Integer curso, Asignatura asig, Grupo grupo) {
+		this.cursoAcademico=curso;
 		this.asignatura=asig;
 		this.grupo=grupo;
 	} 
 	
-	public Integer getCurso_academico() {
-		return this.curso_academico;
+	public Integer getCursoAcademico() {
+		return this.cursoAcademico;
 	}
 
-	public void setCurso_academico(Integer Curso_academico) {
-		this.curso_academico = Curso_academico;
+	public void setCursoAcademico(Integer Curso_academico) {
+		this.cursoAcademico = Curso_academico;
 	}   
 	public boolean getOferta() {
 		return this.Oferta;
@@ -117,7 +114,7 @@ public class Grupos_por_asignatura implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((curso_academico == null) ? 0 : curso_academico.hashCode());
+		result = prime * result + ((cursoAcademico == null) ? 0 : cursoAcademico.hashCode());
 		return result;
 	}
 	@Override
@@ -128,17 +125,17 @@ public class Grupos_por_asignatura implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Grupos_por_asignatura other = (Grupos_por_asignatura) obj;
-		if (curso_academico == null) {
-			if (other.curso_academico != null)
+		GruposPorAsignatura other = (GruposPorAsignatura) obj;
+		if (cursoAcademico == null) {
+			if (other.cursoAcademico != null)
 				return false;
-		} else if (!curso_academico.equals(other.curso_academico))
+		} else if (!cursoAcademico.equals(other.cursoAcademico))
 			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
-		return "Grupos_por_asignatura [Curso_academico=" + curso_academico + ", Oferta=" + Oferta + "]";
+		return "Grupos_por_asignatura [Curso_academico=" + cursoAcademico + ", Oferta=" + Oferta + "]";
 	}
    
 }

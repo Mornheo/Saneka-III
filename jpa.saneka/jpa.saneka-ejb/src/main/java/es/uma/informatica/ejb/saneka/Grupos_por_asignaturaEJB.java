@@ -10,8 +10,8 @@ import es.uma.informatica.ejb.exceptions.GpAExistenteException;
 import es.uma.informatica.ejb.exceptions.GpANoEncontradoException;
 import es.uma.informatica.ejb.exceptions.SanekaException;
 import es.uma.informatica.jpa.saneka.Expediente;
-import es.uma.informatica.jpa.saneka.Grupos_por_asignatura;
-import es.uma.informatica.jpa.saneka.Grupos_por_asignatura.Grupos_por_asignaturaId;
+import es.uma.informatica.jpa.saneka.GruposPorAsignatura;
+import es.uma.informatica.jpa.saneka.GruposPorAsignatura.GruposPorAsignaturaId;
 
 @Stateless
 public class Grupos_por_asignaturaEJB implements GestionGrupos_por_asignatura{
@@ -20,7 +20,7 @@ public class Grupos_por_asignaturaEJB implements GestionGrupos_por_asignatura{
 	private EntityManager em;
 
 	@Override
-	public void insertarGpA(Grupos_por_asignaturaId id, Grupos_por_asignatura gpa) throws GpANoEncontradoException, GpAExistenteException {
+	public void insertarGpA(GruposPorAsignaturaId id, GruposPorAsignatura gpa) throws GpANoEncontradoException, GpAExistenteException {
 		try {
 			devolverGpA(id);
 		} catch (GpANoEncontradoException e) {
@@ -30,27 +30,27 @@ public class Grupos_por_asignaturaEJB implements GestionGrupos_por_asignatura{
 	}
 
 	@Override
-	public void eliminarGpA(Grupos_por_asignaturaId id) throws SanekaException {
-		Grupos_por_asignatura gpaEntity = devolverGpA(id);
+	public void eliminarGpA(GruposPorAsignaturaId id) throws SanekaException {
+		GruposPorAsignatura gpaEntity = devolverGpA(id);
 		em.remove(gpaEntity);	
 	}
 
 	@Override
-	public void modificarGpA(Grupos_por_asignaturaId id, Grupos_por_asignatura gpa) throws SanekaException {
-		Grupos_por_asignatura gpaEntity = devolverGpA(id);
+	public void modificarGpA(GruposPorAsignaturaId id, GruposPorAsignatura gpa) throws SanekaException {
+		GruposPorAsignatura gpaEntity = devolverGpA(id);
 		gpaEntity.setOferta(gpa.getOferta());
 		em.persist(gpaEntity);
 	}
 
 	@Override
-	public String mostrarGpA(Grupos_por_asignaturaId id) throws SanekaException {
-		Grupos_por_asignatura gpaEntity = devolverGpA(id);
+	public String mostrarGpA(GruposPorAsignaturaId id) throws SanekaException {
+		GruposPorAsignatura gpaEntity = devolverGpA(id);
 		return gpaEntity.toString();
 	}
 
 	@Override
-	public Grupos_por_asignatura devolverGpA(Grupos_por_asignaturaId id) throws GpANoEncontradoException {
-		Grupos_por_asignatura gpaEntity = em.find(Grupos_por_asignatura.class, id);
+	public GruposPorAsignatura devolverGpA(GruposPorAsignaturaId id) throws GpANoEncontradoException {
+		GruposPorAsignatura gpaEntity = em.find(GruposPorAsignatura.class, id);
 		if(gpaEntity == null) {
 			throw new GpANoEncontradoException();
 		}

@@ -16,9 +16,9 @@ public class Expediente implements Serializable {
 
 	   
 	@Id //@GeneratedValue (strategy = GenerationType.SEQUENCE)
-	private Integer num_expediente;
+	private Integer numExpediente;
 	private Boolean activo;
-	private long nota_media_provisional;
+	private long notaMediaProvisional;
 	private static final long serialVersionUID = 1L;
 	@ManyToOne
 	@JoinColumn(nullable=false)
@@ -35,21 +35,21 @@ public class Expediente implements Serializable {
 		super();
 	}   
 	public Expediente(Integer num, Titulacion titu, Alumno al) {
-		this.num_expediente = num;
+		this.numExpediente = num;
 		this.titulacion=titu;
 		this.alumno=al;
 	}   
 	public Expediente(Integer num, Boolean active, long nota) {
 		this.activo = active;
-		this.nota_media_provisional = nota;
-		this.num_expediente = num;
+		this.notaMediaProvisional = nota;
+		this.numExpediente = num;
 	}  
-	public Integer getNum_expediente() {
-		return this.num_expediente;
+	public Integer getNumExpediente() {
+		return this.numExpediente;
 	}
 
-	public void setNum_expediente(Integer num_expediente) {
-		this.num_expediente = num_expediente;
+	public void setNumExpediente(Integer num_expediente) {
+		this.numExpediente = num_expediente;
 	}   
 	public boolean getActivo() {
 		return this.activo;
@@ -58,18 +58,18 @@ public class Expediente implements Serializable {
 	public void setActivo(boolean activo) {
 		this.activo = activo;
 	}   
-	public long getNota_media_provisional() {
-		return this.nota_media_provisional;
+	public long getNotaMediaProvisional() {
+		return this.notaMediaProvisional;
 	}
 
-	public void setNota_media_provisional(long nota_media_provisional) {
-		this.nota_media_provisional = nota_media_provisional;
+	public void setNotaMediaProvisional(long nota) {
+		this.notaMediaProvisional = nota;
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((num_expediente == null) ? 0 : num_expediente.hashCode());
+		result = prime * result + ((numExpediente == null) ? 0 : numExpediente.hashCode());
 		return result;
 	}
 	@Override
@@ -81,17 +81,17 @@ public class Expediente implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Expediente other = (Expediente) obj;
-		if (num_expediente == null) {
-			if (other.num_expediente != null)
+		if (numExpediente == null) {
+			if (other.numExpediente != null)
 				return false;
-		} else if (!num_expediente.equals(other.num_expediente))
+		} else if (!numExpediente.equals(other.numExpediente))
 			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
-		return "Expediente [Num_expediente=" + num_expediente + ", Activo=" + activo + ", Nota_media_provisional="
-				+ nota_media_provisional + "]";
+		return "Expediente [Num_expediente=" + numExpediente + ", Activo=" + activo + ", Nota_media_provisional="
+				+ notaMediaProvisional + "]";
 	}
    
 }

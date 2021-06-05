@@ -2,6 +2,7 @@ package es.uma.informatica.sii.saneka.backing;
 
 
 import es.uma.informatica.ejb.exceptions.ContraseniaInvalidaException;
+
 import es.uma.informatica.ejb.exceptions.SanekaException;
 import es.uma.informatica.ejb.exceptions.UsuarioInactivoException;
 import es.uma.informatica.ejb.exceptions.UsuarioNoEncontradoException;
@@ -9,16 +10,16 @@ import es.uma.informatica.ejb.saneka.GestionUsuario;
 import es.uma.informatica.jpa.saneka.Usuario;
 import es.uma.informatica.jpa.saneka.UsuarioSecretaria;
 
+<<<<<<< HEAD
+import javax.ejb.EJB;
+=======
+>>>>>>> branch 'main' of https://github.com/Mornheo/Saneka-III.git
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
-/**
- *
- * @author francis
- */
 @Named(value = "login")
 @RequestScoped
 public class Login {
