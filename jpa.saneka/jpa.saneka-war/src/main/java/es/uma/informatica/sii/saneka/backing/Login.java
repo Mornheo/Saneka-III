@@ -10,7 +10,10 @@ import es.uma.informatica.ejb.saneka.GestionUsuario;
 import es.uma.informatica.jpa.saneka.Usuario;
 import es.uma.informatica.jpa.saneka.UsuarioSecretaria;
 
+<<<<<<< HEAD
 import javax.ejb.EJB;
+=======
+>>>>>>> branch 'main' of https://github.com/Mornheo/Saneka-III.git
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;

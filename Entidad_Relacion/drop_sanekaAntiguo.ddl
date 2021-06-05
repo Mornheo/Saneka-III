@@ -1,5 +1,5 @@
 -- Generado por Oracle SQL Developer Data Modeler 20.4.1.406.0906
---   en:        2021-04-15 20:22:41 CEST
+--   en:        2021-05-27 14:19:19 CEST
 --   sitio:      Oracle Database 11g
 --   tipo:      Oracle Database 11g
 
@@ -32,5 +32,3 @@ DROP TABLE opt CASCADE CONSTRAINTS;
 DROP TABLE titu CASCADE CONSTRAINTS;
 
 DROP TABLE titu_centro CASCADE CONSTRAINTS;
-
-DROP TABLE titu_opt CASCADE CONSTRAINTS;

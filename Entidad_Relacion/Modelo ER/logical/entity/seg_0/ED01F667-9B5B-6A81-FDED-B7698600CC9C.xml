@@ -4,7 +4,7 @@
 <createdTime>2021-03-16 10:59:05 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="F517675C-101C-55FE-50A5-FCBE7DA1FDC2" value="true"/>
+<item key="D9030977-8418-6DD3-57FC-EB2268B1D567" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -14,14 +14,13 @@
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
-<preferredAbbreviation>TITU</preferredAbbreviation>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
 <Attribute name="Codigo" id="FB31A13C-448A-17D3-98FC-8112408E11AD">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 10:59:45 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="F517675C-101C-55FE-50A5-FCBE7DA1FDC2" value="true"/>
+<item key="D9030977-8418-6DD3-57FC-EB2268B1D567" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -33,7 +32,7 @@
 <createdTime>2021-03-16 10:59:53 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="F517675C-101C-55FE-50A5-FCBE7DA1FDC2" value="true"/>
+<item key="D9030977-8418-6DD3-57FC-EB2268B1D567" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -47,7 +46,7 @@
 <createdTime>2021-03-16 10:59:57 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="F517675C-101C-55FE-50A5-FCBE7DA1FDC2" value="true"/>
+<item key="D9030977-8418-6DD3-57FC-EB2268B1D567" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -62,7 +61,7 @@
 <createdTime>2021-03-16 11:00:40 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="F517675C-101C-55FE-50A5-FCBE7DA1FDC2" value="true"/>
+<item key="D9030977-8418-6DD3-57FC-EB2268B1D567" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <newElementsIDs>FB31A13C-448A-17D3-98FC-8112408E11AD</newElementsIDs>

@@ -4,7 +4,7 @@
 <createdTime>2021-03-16 11:14:08 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="414E280E-DE20-6630-7CC7-D2E1CDAF8A7B" value="true"/>
+<item key="86A4B6A4-3708-0352-D00E-03091C26292D" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -16,32 +16,31 @@
 <normalForm>Third</normalForm>
 <preferredAbbreviation>GPA</preferredAbbreviation>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="Curso" id="F824E1C1-A448-0C65-D5E6-79E02EF69008">
+<Attribute name="Curso" id="623BD39E-B6E1-14A6-F1AC-5AD63FC47B86">
 <createdBy>alvar</createdBy>
-<createdTime>2021-03-16 11:14:22 UTC</createdTime>
+<createdTime>2021-05-27 13:25:53 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="414E280E-DE20-6630-7CC7-D2E1CDAF8A7B" value="true"/>
+<item key="86A4B6A4-3708-0352-D00E-03091C26292D" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
-<preferredAbbreviation>c</preferredAbbreviation>
 </Attribute>
 <Attribute name="Oferta" id="7C17E2A3-D37D-1D3D-DAE1-810C011361A4">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:14:22 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="414E280E-DE20-6630-7CC7-D2E1CDAF8A7B" value="true"/>
+<item key="86A4B6A4-3708-0352-D00E-03091C26292D" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT006</logicalDatatype>
-<dataTypeSize>1</dataTypeSize>
-<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>2 BYTE</dataTypeSize>
+<ownDataTypeParameters>2 BYTE,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="Referencia" id="ED038CB0-DECC-215D-B7B8-DA8385203403">
 <createdBy>alvar</createdBy>
@@ -49,7 +48,7 @@
 <generatorID>D05CC7C2-9F25-65F6-EBA3-185246FB8055</generatorID>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="414E280E-DE20-6630-7CC7-D2E1CDAF8A7B" value="true"/>
+<item key="86A4B6A4-3708-0352-D00E-03091C26292D" value="true"/>
 </engineerTo>
 <referedAttribute>0DD81814-9E2E-8CE4-E0C3-B1BB71E338E7</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
@@ -57,19 +56,20 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="ID" id="72FB0C31-D985-1B5E-1A90-58CAE245D96C">
+<Attribute name="ID" id="3B1B08E0-F48E-D1A7-780F-F9E62321FA71">
 <createdBy>alvar</createdBy>
-<createdTime>2021-03-16 11:36:05 UTC</createdTime>
+<createdTime>2021-05-27 12:29:50 UTC</createdTime>
 <generatorID>6FC1628D-24E1-A065-923B-CD3FC8A106BE</generatorID>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="414E280E-DE20-6630-7CC7-D2E1CDAF8A7B" value="true"/>
+<item key="86A4B6A4-3708-0352-D00E-03091C26292D" value="true"/>
 </engineerTo>
 <referedAttribute>CA350D13-916B-6EF1-851B-FA549CF84608</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
@@ -77,16 +77,15 @@
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:14:52 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="414E280E-DE20-6630-7CC7-D2E1CDAF8A7B" value="false"/>
+<item key="86A4B6A4-3708-0352-D00E-03091C26292D" value="true"/>
 </engineerTo>
 <pk>true</pk>
-<newElementsIDs>F824E1C1-A448-0C65-D5E6-79E02EF69008,D05CC7C2-9F25-65F6-EBA3-185246FB8055,6FC1628D-24E1-A065-923B-CD3FC8A106BE</newElementsIDs>
+<newElementsIDs>D05CC7C2-9F25-65F6-EBA3-185246FB8055,6FC1628D-24E1-A065-923B-CD3FC8A106BE,623BD39E-B6E1-14A6-F1AC-5AD63FC47B86</newElementsIDs>
 <usedAttributes>
-<attributeRef>F824E1C1-A448-0C65-D5E6-79E02EF69008</attributeRef>
 <attributeRef>ED038CB0-DECC-215D-B7B8-DA8385203403</attributeRef>
-<attributeRef>72FB0C31-D985-1B5E-1A90-58CAE245D96C</attributeRef>
+<attributeRef>3B1B08E0-F48E-D1A7-780F-F9E62321FA71</attributeRef>
+<attributeRef>623BD39E-B6E1-14A6-F1AC-5AD63FC47B86</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

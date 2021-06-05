@@ -1,0 +1,265 @@
+"REFERENCIA","CREDITOS","OFERTADA","NOMBRE","CURSO","CARACTER","DURACION","Unidad_Temporal_(Cuatrimestre)","IDIOMAS_DE_IMPARTICION","TITULACION_CODIGO","CODIGO"
+"53824",4,5,"No  ","Análisis Avanzado de Datos Clínicos (SE)",3,"","2º Semestre",,"",1056,336
+"53825",4,5,"No  ","Codificación y Gestión de la Información Sanitaria (SE)",3,"","2º Semestre",,"",1056,337
+"53826",4,5,"No  ","Diseño e Implementación de Sistemas de Información Clínica (SE)",3,"","2º Semestre",,"",1056,338
+"53827",6,"No  ","Infraestructuras de Sistemas de Información (SE)",3,"","2º Semestre",,"",1056,339
+"53828",6,"No  ","Salud Pública y Organización Sanitaria (SE)",3,"","2º Semestre",,"",1056,340
+"53829",4,5,"No  ","Seguridad, Confidencialidad y Gestión de la Identidad (SE)",3,"","2º Semestre",,"",1056,341
+"51147",6,"Sí  ","Tecnología de Computadores",1,"","2º Semestre",,"Solo un grupo",1042,110
+"51148",6,"Sí  ","Análisis y Diseño de Algoritmos",2,"","1º Semestre",,"Solo un grupo",1042,201
+"51149",6,"Sí  ","Bases de Datos",2,"","1º Semestre",,"Solo un grupo",1042,202
+"51150",6,"Sí  ","Estructura de Computadores",2,"","1º Semestre",,"Solo un grupo",1042,203
+"51151",6,"Sí  ","Estructura de Datos",2,"","1º Semestre",,"Solo un grupo",1042,204
+"51152",6,"Sí  ","Teoría de Autómatas y Lenguajes Formales",2,"","1º Semestre",,"Solo un grupo",1042,205
+"51153",6,"Sí  ","Introducción a la Ingeniería del Software",2,"","2º Semestre",,"Solo un grupo",1042,206
+"51154",6,"Sí  ","Programación de Sistemas y Concurrencia",2,"","2º Semestre",,"Solo un grupo",1042,207
+"51155",6,"Sí  ","Redes y Sistemas Distribuidos",2,"","2º Semestre",,"Solo un grupo",1042,208
+"51156",6,"Sí  ","Sistemas Inteligentes",2,"","2º Semestre",,"Solo un grupo",1042,209
+"51157",6,"Sí  ","Sistemas Operativos",2,"","2º Semestre",,"Solo un grupo",1042,210
+"51160",6,"Sí  ","Gestión de la Información",3,"","1º Semestre",,"",1042,301
+"51161",6,"Sí  ","Ingeniería de Requisitos",3,"","1º Semestre",,"",1042,302
+"51162",6,"Sí  ","Modelado y Diseño del Software",3,"","1º Semestre",,"",1042,303
+"51166",6,"Sí  ","Técnicas Computacionales para la Ingeniería del Software",3,"","1º Semestre",,"",1042,304
+"51169",6,"Sí  ","Interfaces de Usuario",3,"","2º Semestre",,"",1042,305
+"51171",6,"Sí  ","Mantenimiento y Pruebas del Software",3,"","2º Semestre",,"",1042,306
+"51174",6,"Sí  ","Seguridad en Servicios y Aplicaciones",3,"","2º Semestre",,"",1042,307
+"51175",6,"Sí  ","Tecnologías de Aplicaciones Web",3,"","2º Semestre",,"",1042,308
+"51195",6,"Sí  ","Proyectos y Legislación",4,"","2º Semestre",,"",1042,401
+"51180",6,"Sí  ","Gestión de Proyectos Software",4,"","1º Semestre",,"",1042,402
+"51181",6,"Sí  ","Ingeniería Web",4,"","1º Semestre",,"",1042,403
+"51182",6,"Sí  ","Métodos formales para la Ingeniería del Software",4,"","1º Semestre",,"",1042,404
+"51186",6,"Sí  ","Software para sistemas empotrados y dispositivos móviles",4,"","1º Semestre",,"",1042,405
+"51198",12,"Sí  ","Trabajo Fin de Grado",4,"","2º Semestre",,"",1042,450
+"51673",6,"Sí  ","Cálculo para la Computación",1,"","1º Semestre",,"",1043,101
+"51674",6,"Sí  ","Fundamentos Físicos de la Informática",1,"","1º Semestre",,"",1043,102
+"51675",6,"Sí  ","Fundamentos de Electrónica",1,"","1º Semestre",,"",1043,103
+"51676",6,"Sí  ","Fundamentos de la Programación",1,"","1º Semestre",,"Solo un grupo",1043,104
+"51677",6,"Sí  ","Matemática Discreta",1,"","1º Semestre",,"",1043,105
+"51678",6,"Sí  ","Estructuras Algebraicas para la Computación",1,"","2º Semestre",,"",1043,106
+"51679",6,"Sí  ","Métodos Estadísticos para la Computación",1,"","2º Semestre",,"",1043,107
+"51680",6,"Sí  ","Organización Empresarial",1,"","2º Semestre",,"",1043,108
+"51681",6,"Sí  ","Programación Orientada a Objetos",1,"","2º Semestre",,"Solo un grupo",1043,109
+"51682",6,"Sí  ","Tecnología de Computadores",1,"","2º Semestre",,"Solo un grupo",1043,110
+"51683",6,"Sí  ","Análisis y Diseño de Algoritmos",2,"","1º Semestre",,"Solo un grupo",1043,201
+"51684",6,"Sí  ","Bases de Datos",2,"","1º Semestre",,"Solo un grupo",1043,202
+"51685",6,"Sí  ","Estructura de Computadores",2,"","1º Semestre",,"Solo un grupo",1043,203
+"51686",6,"Sí  ","Estructura de Datos",2,"","1º Semestre",,"Solo un grupo",1043,204
+"51687",6,"Sí  ","Teoría de Autómatas y Lenguajes Formales",2,"","1º Semestre",,"Solo un grupo",1043,205
+"51688",6,"Sí  ","Introducción a la Ingeniería del Software",2,"","2º Semestre",,"Solo un grupo",1043,206
+"51689",6,"Sí  ","Programación de Sistemas y Concurrencia",2,"","2º Semestre",,"Solo un grupo",1043,207
+"51690",6,"Sí  ","Redes y Sistemas Distribuidos",2,"","2º Semestre",,"Solo un grupo",1043,208
+"51691",6,"Sí  ","Sistemas Inteligentes",2,"","2º Semestre",,"Solo un grupo",1043,209
+"51692",6,"Sí  ","Sistemas Operativos",2,"","2º Semestre",,"Solo un grupo",1043,210
+"51701",6,"Sí  ","Arquitecturas de Almacenamiento",3,"","1º Semestre",,"",1043,301
+"51700",6,"Sí  ","Arquitectura de Computadores",3,"","1º Semestre",,"",1043,302
+"51702",6,"Sí  ","Circuitos Electrónicos y Señales",3,"","1º Semestre",,"",1043,303
+"51703",6,"Sí  ","Diseño de Sistemas Empotrados",3,"","1º Semestre",,"",1043,304
+"51708",6,"Sí  ","Diseño con Microcontroladores",3,"","2º Semestre",,"",1043,305
+"51709",6,"Sí  ","Diseño de Infraestructuras de Red",3,"","2º Semestre",,"",1043,306
+"51710",6,"Sí  ","Diseño de Sistemas Operativos",3,"","2º Semestre",,"",1043,307
+"51716",6,"Sí  ","Sistemas de Tiempo Real",3,"","2º Semestre",,"",1043,308
+"51735",6,"Sí  ","Proyectos y Legislación",4,"","2º Semestre",,"",1043,401
+"51718",6,"Sí  ","Arquitecturas Paralelas",4,"","1º Semestre",,"",1043,402
+"51720",6,"Sí  ","Control por Computador",4,"","1º Semestre",,"",1043,403
+"51722",6,"Sí  ","Diseño de Infraestructuras Informáticas",4,"","1º Semestre",,"",1043,404
+"51725",6,"Sí  ","Programación Distribuida",4,"","1º Semestre",,"",1043,405
+"51739",12,"Sí  ","Trabajo Fin de Grado",4,"","2º Semestre",,"",1043,450
+"53407",4,5,"No  ","Análisis de Datos de Expresión Génica",4,"","1º Semestre",,"",1056,820
+"53408",4,5,"No  ","Biofísica",4,"","1º Semestre",,"",1056,821
+"53409",4,5,"No  ","Biología Sintética",4,"","1º Semestre",,"",1056,822
+"53410",4,5,"No  ","Computación en Biotecnología",4,"","1º Semestre",,"",1056,823
+"53411",4,5,"No  ","Sistemas Biológicos Complejos",4,"","1º Semestre",,"",1056,824
+"53417",4,5,"Sí  ","Biofísica Celular y Tisular",4,"","1º Semestre",,"",1056,830
+"53418",4,5,"Sí  ","Ingeniería de Tejidos",4,"","1º Semestre",,"",1056,831
+"53419",4,5,"Sí  ","Prostética",4,"","1º Semestre",,"",1056,832
+"53420",4,5,"Sí  ","Robótica Médica",4,"","1º Semestre",,"",1056,833
+"53421",4,5,"No  ","Sistemas de Control y Biomecatrónica",4,"","1º Semestre",,"",1056,834
+"53422",4,5,"Sí  ","Sistemas de Rehabilitación y Ayuda a la Discapacidad",4,"","2º Semestre",,"",1056,835
+"53413",4,5,"Sí  ","Aprendizaje Computacional",4,"","1º Semestre",,"",1056,920
+"53412",4,5,"Sí  ","Almacenes de Datos",4,"","1º Semestre",,"",1056,921
+"53414",4,5,"Sí  ","Estándares de Datos Abiertos e Integración de Datos",4,"","1º Semestre",,"",1056,922
+"53415",4,5,"Sí  ","Ingeniería Web",4,"","1º Semestre",,"",1056,923
+"53416",4,5,"No  ","Minería de Textos",4,"","2º Semestre",,"",1056,924
+"53424",4,5,"Sí  ","Bioseñales Médicas",4,"","2º Semestre",,"",1056,930
+"53425",4,5,"Sí  ","Microtecnología y Nanotecnología en Biomedicina",4,"","2º Semestre",,"",1056,931
+"53423",4,5,"Sí  ","Modelado de Sistemas Biomédicos",4,"","1º Semestre",,"",1056,932
+"53426",4,5,"Sí  ","Seguridad, Ética y Regulación en Ingeniería Biomédica",4,"","2º Semestre",,"",1056,933
+"53427",4,5,"No  ","Telemedicina",4,"","2º Semestre",,"",1056,934
+"53830",6,"No  ","Arquitectura de Sistemas y Software de Base (SE)",4,"","1º Semestre",,"",1056,935
+"53831",4,5,"No  ","Computación Orientada a Servicios (SE)",4,"","1º Semestre",,"",1056,936
+"53832",4,5,"No  ","Gestión de Proyectos Informáticos (SE)",4,"","1º Semestre",,"",1056,937
+"53833",6,"No  ","Gestión de Servicios y Tecnologías de la Información (SE)",4,"","1º Semestre",,"",1056,938
+"53834",4,5,"No  ","Gestión del Cambio, Comunicación y Liderazgo (SE)",4,"","1º Semestre",,"",1056,939
+"53835",4,5,"No  ","Minería de Datos Clínicos (SE)",4,"","1º Semestre",,"",1056,940
+"53836",4,5,"No  ","Proyectos de Informática Clínica (SE)",4,"","2º Semestre",,"",1056,941
+"53837",4,5,"No  ","Sistemas de Información para Teleasistencia y Atención Remota (SE)",4,"","2º Semestre",,"",1056,942
+"53838",4,5,"No  ","Tecnología de las Comunicaciones (SE)",4,"","2º Semestre",,"",1056,943
+"53839",4,5,"No  ","Tecnologías para la Administración Electrónica (SE)",4,"","2º Semestre",,"",1056,944
+"53840",4,5,"No  ","Ética y Legislación en Salud (SE)",4,"","2º Semestre",,"",1056,945
+"51487",12,"Sí  ","Álgebra Lineal y Geometría",1,"","1º y 2º ",,"",1073,101
+"51478",6,"Sí  ","Análisis Matemático I",1,"","1º Semestre",,"",1073,102
+"51479",6,"Sí  ","Estructuras Básicas del Álgebra",1,"","1º Semestre",,"",1073,103
+"51483",6,"Sí  ","Análisis Matemático II",1,"","2º Semestre",,"",1073,107
+"51484",6,"Sí  ","Estructuras Algebraicas",1,"","2º Semestre",,"",1073,108
+"51481",6,"Sí  ","Matemática Discreta",2,"","1º Semestre",,"Ningún grupo",1073,201
+"51488",6,"Sí  ","Análisis Matemático III",2,"","1º Semestre",,"",1073,202
+"51489",6,"Sí  ","Ecuaciones Diferenciales I",2,"","1º Semestre",,"",1073,203
+"51486",6,"Sí  ","Introducción a la Probabilidad y a la Estadística",2,"","2º Semestre",,"",1073,207
+"51493",6,"Sí  ","Ampliación de Álgebra Lineal y Geometría",2,"","2º Semestre",,"",1073,208
+"51494",6,"Sí  ","Análisis Matemático IV",2,"","2º Semestre",,"",1073,209
+"51492",6,"No  ","Topología General",3,"","1º Semestre",,"",1073,301
+"51491",6,"No  ","Métodos Numéricos I",3,"","1º Semestre",,"",1073,302
+"51498",6,"No  ","Ecuaciones Diferenciales II",3,"","1º Semestre",,"",1073,303
+"51496",6,"No  ","Geometría Diferencial de Curvas y Superficies",3,"","2º Semestre",,"",1073,307
+"51497",6,"No  ","Métodos Numéricos II",3,"","2º Semestre",,"",1073,308
+"51507",6,"No  ","Variable Compleja",3,"","2º Semestre",,"",1073,309
+"51500",6,"No  ","Probabilidad",4,"","1º Semestre",,"",1073,401
+"51501",6,"No  ","Teoría de la Medida e Integración",4,"","1º Semestre",,"",1073,402
+"51502",6,"No  ","Topología Algebraica Básica",4,"","1º Semestre",,"",1073,403
+"51503",6,"No  ","Análisis Numérico",4,"","2º Semestre",,"",1073,406
+"51504",6,"No  ","Geometría Diferencial Global de Superficies",4,"","2º Semestre",,"",1073,407
+"51505",6,"No  ","Inferencia Estadística",4,"","2º Semestre",,"",1073,408
+"51499",6,"No  ","Optimización",5,"","1º Semestre",,"",1073,501
+"51521",6,"No  ","Ampliación de Teoría de la Probabilidad",5,"","1º Semestre",,"",1073,502
+"51526",6,"No  ","Ecuaciones en Derivadas Parciales y Análisis de Fourier",5,"","1º Semestre",,"",1073,503
+"51506",6,"No  ","Teoría de Cuerpos",5,"","2º Semestre",,"",1073,504
+"51536",6,"No  ","Modelización",5,"","2º Semestre",,"",1073,505
+"51539",12,"No  ","Trabajo Fin de Grado (Matemáticas)",5,"","2º Semestre",,"",1073,511
+"53303",13,5,"Sí  ","Práctias Externas",4,"","2º Semestre",,"",1056,504
+"50658",6,"Sí  ","Cálculo para la Computación",1,"","1º Semestre",,"",1041,101
+"50659",6,"Sí  ","Fundamentos Físicos de la Informática",1,"","1º Semestre",,"",1041,102
+"50660",6,"Sí  ","Fundamentos de Electrónica",1,"","1º Semestre",,"",1041,103
+"50661",6,"Sí  ","Fundamentos de la Programación",1,"","1º Semestre",,"Solo un grupo",1041,104
+"50662",6,"Sí  ","Matemática Discreta",1,"","1º Semestre",,"",1041,105
+"50663",6,"Sí  ","Estructuras Algebraicas para la Computación",1,"","2º Semestre",,"",1041,106
+"50664",6,"Sí  ","Métodos Estadísticos para la Computación",1,"","2º Semestre",,"",1041,107
+"50665",6,"Sí  ","Organización Empresarial",1,"","2º Semestre",,"",1041,108
+"50666",6,"Sí  ","Programación Orientada a Objetos",1,"","2º Semestre",,"Solo un grupo",1041,109
+"50667",6,"Sí  ","Tecnología de Computadores",1,"","2º Semestre",,"Solo un grupo",1041,110
+"50994",6,"Sí  ","Análisis y Diseño de Algoritmos",2,"","1º Semestre",,"Solo un grupo",1041,201
+"50995",6,"Sí  ","Bases de Datos",2,"","1º Semestre",,"Solo un grupo",1041,202
+"50996",6,"Sí  ","Estructura de Computadores",2,"","1º Semestre",,"Solo un grupo",1041,203
+"50997",6,"Sí  ","Estructura de Datos",2,"","1º Semestre",,"Solo un grupo",1041,204
+"50998",6,"Sí  ","Teoría de Autómatas y Lenguajes Formales",2,"","1º Semestre",,"Solo un grupo",1041,205
+"50999",6,"Sí  ","Introducción a la Ingeniería del Software",2,"","2º Semestre",,"Solo un grupo",1041,206
+"51000",6,"Sí  ","Programación de Sistemas y Concurrencia",2,"","2º Semestre",,"Solo un grupo",1041,207
+"51001",6,"Sí  ","Redes y Sistemas Distribuidos",2,"","2º Semestre",,"Solo un grupo",1041,208
+"51002",6,"Sí  ","Sistemas Inteligentes",2,"","2º Semestre",,"Solo un grupo",1041,209
+"51003",6,"Sí  ","Sistemas Operativos",2,"","2º Semestre",,"Solo un grupo",1041,210
+"51007",6,"Sí  ","Introducción a los Sistemas de Información",3,"","1º Semestre",,"",1041,301
+"51009",6,"Sí  ","Procesadores de Lenguajes",3,"","1º Semestre",,"",1041,302
+"51011",6,"Sí  ","Seguridad de la Información",3,"","1º Semestre",,"",1041,303
+"51015",6,"Sí  ","Administración de Bases de Datos",3,"","2º Semestre",,"",1041,305
+"51025",6,"Sí  ","Sistemas de Información para Internet",3,"","2º Semestre",,"",1041,306
+"51024",6,"Sí  ","Sistemas Inteligentes II",3,"","2º Semestre",,"",1041,307
+"51008",6,"Sí  ","Lógica Computacional",3,"","1º Semestre",,"",1041,310
+"51016",6,"Sí  ","Algoritmia y Complejidad",3,"","2º Semestre",,"",1041,311
+"51017",6,"Sí  ","Análisis y Diseño de los Sistemas de Información",3,"","1º Semestre",,"",1041,320
+"51013",6,"Sí  ","Sistemas de Información Empresarial",3,"","2º Semestre",,"",1041,321
+"51005",6,"Sí  ","Desarrollo de Servicios Telemáticos",3,"","1º Semestre",,"",1041,330
+"51022",6,"Sí  ","Modelos Estadísticos y Simulación",3,"","2º Semestre",,"",1041,331
+"51055",6,"Sí  ","Proyectos y Legislación",4,"","2º Semestre",,"",1041,401
+"51029",6,"Sí  ","Aprendizaje Computacional",4,"","1º Semestre",,"",1041,410
+"51036",6,"Sí  ","Modelos de la Computación",4,"","1º Semestre",,"",1041,411
+"51041",6,"Sí  ","Robótica",4,"","1º Semestre",,"",1041,412
+"51046",6,"Sí  ","Teoría de los Lenguajes de Programación",4,"","1º Semestre",,"",1041,413
+"51027",6,"Sí  ","Administración de Redes y Sistemas",4,"","1º Semestre",,"",1041,420
+"51032",6,"Sí  ","Dirección de Proyectos de Sistemas de Información",4,"","1º Semestre",,"",1041,421
+"51034",6,"Sí  ","Diseño y Explotación de Almacenes de Datos",4,"","1º Semestre",,"",1041,422
+"51037",6,"Sí  ","Negocio Electrónico",4,"","1º Semestre",,"",1041,423
+"51028",6,"Sí  ","Administración de Sistemas Operativos",4,"","1º Semestre",,"",1041,430
+"51033",6,"Sí  ","Diseño y Evaluación de Infraestructuras Informáticas",4,"","1º Semestre",,"",1041,431
+"51038",6,"Sí  ","Planificación de Proyectos y Análisis de Riesgos",4,"","1º Semestre",,"",1041,432
+"51043",6,"Sí  ","Tecnología de los Sistemas de Producción",4,"","1º Semestre",,"",1041,433
+"51059",12,"Sí  ","Trabajo Fin de Grado (Informática)",4,"","2º Semestre",,"",1041,450
+"53158",6,"No  ","Ampliación de Física",3,"","1º Semestre",,"",1041,801
+"51047",6,"Sí  ","Arquitecturas Virtuales",4,"","1º Semestre",,"",1041,802
+"51031",6,"Sí  ","Desarrollo de Software Crítico",4,"","1º Semestre",,"",1041,803
+"51006",6,"Sí  ","Electrónica Digital",3,"","1º Semestre",,"",1041,804
+"51035",6,"No  ","Fundamentos de Economía y Política Económica",4,"","1º Semestre",,"",1041,805
+"51051",6,"Sí  ","Herramientas de Diseño Electrónico",4,"","1º Semestre",,"",1041,806
+"51018",6,"Sí  ","Ingeniería de Protocolos",3,"","1º Semestre",,"",1041,807
+"51019",6,"Sí  ","Inteligencia Artificial para Juegos",3,"","1º Semestre",,"",1041,808
+"51010",6,"No  ","Programación Gráfica 3D",3,"","1º Semestre",,"",1041,809
+"51057",6,"Sí  ","Redes Inalámbricas",3,"","1º Semestre",,"",1041,810
+"51012",6,"No  ","Servicios Multimedia",3,"","1º Semestre",,"",1041,811
+"51042",6,"No  ","Sistemas de Automatización",4,"","1º Semestre",,"",1041,812
+"51014",6,"Sí  ","Teoría de Dominios y Modelos Denotacionales",3,"","1º Semestre",,"",1041,813
+"51044",6,"Sí  ","Teoría de la Información y la Codificación",3,"","1º Semestre",,"",1041,814
+"51026",6,"Sí  ","Visión por Computador",3,"","1º Semestre",,"",1041,815
+"51030",6,"Sí  ","Arquitecturas Cluster",3,"","2º Semestre",,"",1041,850
+"51730",6,"Sí  ","Arquitecturas Especializadas",4,"","2º Semestre",,"",1041,851
+"51190",6,"Sí  ","Calidad de Software",4,"","2º Semestre",,"",1041,852
+"51191",6,"Sí  ","Cognición y Comunicación en Ingeniería del Software",4,"","2º Semestre",,"",1041,853
+"51192",6,"No  ","Desarrollo del Software Dirigido por Modelos",4,"","2º Semestre",,"",1041,854
+"51048",6,"No  ","Diseño de Equipos y Sistemas Electrónicos",4,"","2º Semestre",,"",1041,855
+"51049",6,"Sí  ","Electrónica para Domótica",3,"","2º Semestre",,"",1041,856
+"51050",6,"Sí  ","Gestión Inteligente de la Información",4,"","2º Semestre",,"",1041,857
+"51734",6,"No  ","Implementación Electrónica de Procesadores",4,"","2º Semestre",,"",1041,858
+"51052",6,"No  ","Inteligencia Computacional",4,"","2º Semestre",,"",1041,859
+"51020",6,"Sí  ","Laboratorio de Computación Científica",3,"","2º Semestre",,"",1041,860
+"51053",6,"No  ","Lógica e Informática",4,"","2º Semestre",,"",1041,861
+"51021",6,"Sí  ","Modelado y Simulación de Sistemas",3,"","2º Semestre",,"",1041,862
+"51056",12,"Sí  ","Prácticas Externas",4,"","2º Semestre",,"",1041,863
+"51039",6,"Sí  ","Procesamiento de Imágenes y Video",3,"","2º Semestre",,"",1041,864
+"51040",6,"Sí  ","Programación de Robots",3,"","2º Semestre",,"",1041,865
+"51023",6,"Sí  ","Programación de Videojuegos",3,"","2º Semestre",,"",1041,866
+"51054",6,"No  ","Programación Declarativa",4,"","2º Semestre",,"",1041,867
+"51738",6,"No  ","Sensores y Actuadores",4,"","2º Semestre",,"",1041,868
+"51058",6,"Sí  ","Sistemas de Información para la Industria",4,"","2º Semestre",,"",1041,869
+"51045",6,"No  ","Teoría de la Señal",4,"","2º Semestre",,"",1041,870
+"51138",6,"Sí  ","Cálculo para la Computación",1,"","1º Semestre",,"",1042,101
+"51139",6,"Sí  ","Fundamentos Físicos de la Informática",1,"","1º Semestre",,"",1042,102
+"51140",6,"Sí  ","Fundamentos de Electrónica",1,"","1º Semestre",,"",1042,103
+"51141",6,"Sí  ","Fundamentos de la Programación",1,"","1º Semestre",,"Solo un grupo",1042,104
+"51142",6,"Sí  ","Matemática Discreta",1,"","1º Semestre",,"",1042,105
+"51143",6,"Sí  ","Estructuras Algebraicas para la Computación",1,"","2º Semestre",,"",1042,106
+"51144",6,"Sí  ","Métodos Estadísticos para la Computación",1,"","2º Semestre",,"",1042,107
+"51145",6,"Sí  ","Organización Empresarial",1,"","2º Semestre",,"",1042,108
+"51146",6,"Sí  ","Programación Orientada a Objetos",1,"","2º Semestre",,"Solo un grupo",1042,109
+"53008",6,"Sí  ","Bioquímica Estructural",1,"","1º Semestre",,"",1056,101
+"53009",6,"Sí  ","Cálculo",1,"","1º Semestre",,"",1056,102
+"53010",6,"Sí  ","Fundamentos de la Programación",1,"","1º Semestre",,"",1056,103
+"53011",6,"Sí  ","Física I",1,"","1º Semestre",,"",1056,104
+"53012",6,"Sí  ","Álgebra Lineal",1,"","1º Semestre",,"",1056,105
+"53013",6,"Sí  ","Ampliación de Cálculo",1,"","2º Semestre",,"",1056,106
+"53014",6,"Sí  ","Estadística",1,"","2º Semestre",,"",1056,107
+"53015",6,"Sí  ","Física II",1,"","2º Semestre",,"",1056,108
+"53016",6,"Sí  ","Gestión de Empresas",1,"","2º Semestre",,"",1056,109
+"53017",6,"Sí  ","Programación Orientada a Objetos",1,"","2º Semestre",,"",1056,110
+"53109",6,"Sí  ","Ampliación de Matemáticas",2,"","1º Semestre",,"",1056,201
+"53110",6,"Sí  ","Biología Molecular y Bioquímica",2,"","1º Semestre",,"",1056,202
+"53111",6,"Sí  ","Circuitos y Máquinas Eléctricas",2,"","1º Semestre",,"",1056,203
+"53112",6,"Sí  ","Electrónica",2,"","1º Semestre",,"",1056,204
+"53113",6,"Sí  ","Estructuras de Datos y Algoritmos",2,"","1º Semestre",,"",1056,205
+"53114",6,"Sí  ","Anatomía y Fisiología",2,"","2º Semestre",,"",1056,206
+"53115",6,"Sí  ","Arquitectura de Computadores y Sistemas Operativos",2,"","2º Semestre",,"",1056,207
+"53116",6,"Sí  ","Bases de Datos",2,"","2º Semestre",,"",1056,208
+"53117",6,"Sí  ","Biología Celular y Genética",2,"","2º Semestre",,"",1056,209
+"53118",6,"Sí  ","Control Automático",2,"","2º Semestre",,"",1056,210
+"53161",6,"Sí  ","Fundamentos de Informática Clínica",3,"","1º Semestre",,"",1056,301
+"53162",6,"Sí  ","Imágenes Biomédicas",3,"","1º Semestre",,"",1056,302
+"53163",6,"Sí  ","Ingeniería del Software",3,"","1º Semestre",,"",1056,303
+"53164",6,"Sí  ","Redes y Sistemas Distribuidos",3,"","1º Semestre",,"",1056,304
+"53165",6,"Sí  ","Sistemas Inteligentes",3,"","1º Semestre",,"",1056,305
+"53210",4,5,"Sí  ","Bases de Datos Biológicas",3,"","2º Semestre",,"",1056,320
+"53211",4,5,"Sí  ","Biomateriales",3,"","2º Semestre",,"",1056,330
+"53212",4,5,"Sí  ","Biomecánica I: Sólidos",3,"","2º Semestre",,"",1056,331
+"53213",4,5,"Sí  ","Biomecánica II: Fluidos",3,"","2º Semestre",,"",1056,332
+"53214",4,5,"Sí  ","Biotecnología",3,"","2º Semestre",,"",1056,333
+"53215",6,"Sí  ","Ciencia y Resistencia de Materiales",3,"","2º Semestre",,"",1056,334
+"53218",4,5,"Sí  ","Genómica, Proteómica y Metabolómica",3,"","2º Semestre",,"",1056,321
+"53220",6,"Sí  ","Ingeniería del Software Avanzada",3,"","2º Semestre",,"",1056,322
+"53221",6,"Sí  ","Instrumentación Biomédica",3,"","2º Semestre",,"",1056,335
+"53222",4,5,"Sí  ","Minería de Datos",3,"","2º Semestre",,"",1056,323
+"53223",4,5,"Sí  ","Programación Avanzada en Bioinformática",3,"","2º Semestre",,"",1056,324
+"53226",6,"Sí  ","Técnicas y Modelos Algorítmicos",3,"","2º Semestre",,"",1056,325
+"53283",6,"Sí  ","Electromedicina",4,"","1º Semestre",,"",1056,415
+"53286",6,"Sí  ","Instalaciones Hospitalarias",4,"","1º Semestre",,"",1056,416
+"53296",4,5,"Sí  ","Proyectos de Ingeniería Biomédica",4,"","2º Semestre",,"",1056,414
+"53304",12,"Sí  ","Trabajo Fin de Grado",4,"","2º Semestre",,"",1056,423
+"53308",6,"Sí  ","Biología de Sistemas",4,"","1º Semestre",,"",1056,425
+"53309",6,"Sí  ","Herramientas y Algoritmos en Bioinformática",4,"","1º Semestre",,"",1056,424
+"53310",4,5,"Sí  ","Proyectos de Bioinformática",4,"","2º Semestre",,"",1056,426
+"51196",12,"SI  ","Prácticas Externas",4,"","2º Semestre",,"",1042,863
+"51736",12,"SI  ","Prácticas Externas",4,"","2º Semestre",,"",1043,863

@@ -1,0 +1,115 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D1518A5F-0803-573C-C52B-F589A9C59C2A" name="CLASE">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 13:26:36 UTC</createdTime>
+<generatorID>F1E90428-073D-EEEF-ED6F-53498232A172</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Dia" id="8759417E-AD96-26D3-9502-99F9849E07E9">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 13:26:36 UTC</createdTime>
+<generatorID>70664585-AC73-3524-AEA1-CEB14B8F058B</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Hora_inicio" id="F1200D01-1C48-C787-31E9-A71BAA44BE51">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 13:26:36 UTC</createdTime>
+<generatorID>FE0009EB-D6E6-0C1E-12ED-200C86D2F713</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Hora__fin" id="54575581-39A0-E8C6-48D2-A25E2262C9AC">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 13:26:36 UTC</createdTime>
+<generatorID>BAF18002-5DEE-CBAD-4C06-7EBE8F6023B7</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ASIGNATURA_Referencia" id="48155591-28CF-7EA5-D47C-3B17DADD720C">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 13:26:36 UTC</createdTime>
+<generatorID>FC7DA877-501B-1970-F488-B6D432E6227E</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D7B53BD8-0A2E-F81C-643B-10A9AC5D7D2B" referredColumn="E557A927-39C9-A445-81EF-05DF2E931C7E"/>
+</associations>
+</Column>
+<Column name="GRUPO_ID" id="706BF745-C81E-5DAE-F57D-F487703B22BC">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 13:26:36 UTC</createdTime>
+<generatorID>FAE91835-A893-8BF5-8AC6-7073D51A35AF</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6C5B4B38-D2CB-FE45-1754-F8BA8DEE9619" referredColumn="D272FBCE-9FB4-98CD-4841-26FE688013B3"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="214A4219-FCB5-A339-FA12-DD152385ADC1" name="CLASE_PK">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 13:26:36 UTC</createdTime>
+<generatorID>49EF94F3-EAA5-B8D6-882F-65C1A505CAE5</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8759417E-AD96-26D3-9502-99F9849E07E9"/>
+<colUsage columnID="F1200D01-1C48-C787-31E9-A71BAA44BE51"/>
+<colUsage columnID="706BF745-C81E-5DAE-F57D-F487703B22BC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="587EC832-2959-6DFE-796B-EE741BA4D134" name="CLASE_ASIGNATURA_FK">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 13:26:36 UTC</createdTime>
+<generatorID>22FA14AF-4AA9-ACFE-B799-2E41682F828E</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="48155591-28CF-7EA5-D47C-3B17DADD720C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DBAC84B6-0645-F263-EF09-2B11EE90ADE7" name="CLASE_GRUPO_FK">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 13:26:36 UTC</createdTime>
+<generatorID>6B7593A9-B358-C998-8023-797F1EB14A22</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="706BF745-C81E-5DAE-F57D-F487703B22BC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="A61112B9-D8D4-5200-ABAC-63124F02E50E" containerWithKeyObject="572269D6-56AF-00C1-1359-24A71242CE90" localFKIndex="24C0B971-6C1F-A554-7903-49F80DB4BAE6" name="GPA_GRUPO_FK">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 13:26:36 UTC</createdTime>
+<generatorID>6FC1628D-24E1-A065-923B-CD3FC8A106BE</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<referredTableLongName>GRUPO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>44B893BE-2390-76BD-F598-3919A8718CDA</referredTableID>
+<keyObject>719729CD-2C27-97D9-2475-AF8EA3345E1F</keyObject>
+<referredKeyID>719729CD-2C27-97D9-2475-AF8EA3345E1F</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

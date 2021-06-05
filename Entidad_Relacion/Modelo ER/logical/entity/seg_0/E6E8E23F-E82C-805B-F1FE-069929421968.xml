@@ -4,7 +4,7 @@
 <createdTime>2021-03-16 11:25:19 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="414E280E-DE20-6630-7CC7-D2E1CDAF8A7B" value="true"/>
+<item key="D9405DB0-964C-53B3-2CAD-8F3B3E191443" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -22,7 +22,7 @@
 <generatorID>82960B47-729C-FA69-8601-8FA192F60C70</generatorID>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="414E280E-DE20-6630-7CC7-D2E1CDAF8A7B" value="true"/>
+<item key="D9405DB0-964C-53B3-2CAD-8F3B3E191443" value="true"/>
 </engineerTo>
 <referedAttribute>4F0C75F3-41FE-E3F9-39FC-8778B1990EE5</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
@@ -36,7 +36,7 @@
 <generatorID>82960B47-729C-FA69-8601-8FA192F60C70</generatorID>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="414E280E-DE20-6630-7CC7-D2E1CDAF8A7B" value="true"/>
+<item key="D9405DB0-964C-53B3-2CAD-8F3B3E191443" value="true"/>
 </engineerTo>
 <referedAttribute>5A5E4D02-D1CC-787F-31B4-E5C591065C30</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
@@ -50,7 +50,7 @@
 <generatorID>18F7856C-D18A-4B40-AD6D-265206E43708</generatorID>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="414E280E-DE20-6630-7CC7-D2E1CDAF8A7B" value="true"/>
+<item key="D9405DB0-964C-53B3-2CAD-8F3B3E191443" value="true"/>
 </engineerTo>
 <referedAttribute>0DD81814-9E2E-8CE4-E0C3-B1BB71E338E7</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
@@ -58,20 +58,21 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="ID" id="F1C403A9-32C2-5FD9-0D8C-9E7EF6736978">
+<Attribute name="ID" id="F6DE011B-042B-9793-D74D-7B537CBD0F76">
 <createdBy>alvar</createdBy>
-<createdTime>2021-03-16 11:37:56 UTC</createdTime>
+<createdTime>2021-05-27 12:29:50 UTC</createdTime>
 <generatorID>DF02C2E0-6092-538D-02D1-88B329B9B7B3</generatorID>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="414E280E-DE20-6630-7CC7-D2E1CDAF8A7B" value="true"/>
+<item key="D9405DB0-964C-53B3-2CAD-8F3B3E191443" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <referedAttribute>CA350D13-916B-6EF1-851B-FA549CF84608</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
@@ -79,9 +80,8 @@
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:34:24 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="414E280E-DE20-6630-7CC7-D2E1CDAF8A7B" value="false"/>
+<item key="D9405DB0-964C-53B3-2CAD-8F3B3E191443" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <newElementsIDs>82960B47-729C-FA69-8601-8FA192F60C70,18F7856C-D18A-4B40-AD6D-265206E43708</newElementsIDs>

@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="88FA45DC-6068-5D4B-D7D8-E0BBD588DD53" name="TITU_CENTRO">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 13:26:36 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="TITULACION_Codigo" id="C948D609-7491-ABF7-ABBF-5222EFB2EE98">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 13:26:36 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B7B85D95-40CC-C987-8AF6-6D77C9DA4E84" referredColumn="ED1F46FE-4F09-BE11-09D6-51F715B1F3CE"/>
+</associations>
+</Column>
+<Column name="CENTRO_ID" id="5BA058E8-74BA-9576-D966-C296E5A24B0F">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 13:26:36 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="15E624CD-1134-BC69-8FFD-53EA1CF418C5" referredColumn="71969DA8-5F8F-02DC-440A-96492D2F88B1"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CDC8F0FA-D58F-3A97-581B-535F8AFF65C6" name="TITU_CENTRO_PK">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 13:26:36 UTC</createdTime>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C948D609-7491-ABF7-ABBF-5222EFB2EE98"/>
+<colUsage columnID="5BA058E8-74BA-9576-D966-C296E5A24B0F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B569A72C-7AD0-4F1C-A28F-D0E0145376E0" name="TITU_CENTRO_TITULACION_FK">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 13:26:36 UTC</createdTime>
+<generatorID>36B99867-FEF4-DBEE-3F31-167F0F4E9EAC</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C948D609-7491-ABF7-ABBF-5222EFB2EE98"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9382054D-CB51-4815-0166-75F76BEB22F6" name="TITU_CENTRO_CENTRO_FK">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 13:26:36 UTC</createdTime>
+<generatorID>36B99867-FEF4-DBEE-3F31-167F0F4E9EAC</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5BA058E8-74BA-9576-D966-C296E5A24B0F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

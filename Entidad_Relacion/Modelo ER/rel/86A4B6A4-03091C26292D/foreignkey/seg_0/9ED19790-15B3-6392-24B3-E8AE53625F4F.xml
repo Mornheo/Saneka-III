@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="9ED19790-15B3-6392-24B3-E8AE53625F4F" containerWithKeyObject="626A6CC9-46E5-4283-B208-F363656AA012" localFKIndex="E570C318-3644-608C-D5E9-4C9C6A96E1B2" name="ASIGNATURA_TITULACION_FK">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 13:26:36 UTC</createdTime>
+<generatorID>91CE72F0-9792-0F7E-AD53-AFB82AD1A986</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<referredTableLongName>TITULACION</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>6C1E8A0D-8633-C60A-924C-017F8B46F91C</referredTableID>
+<keyObject>8A3BA094-647E-219E-E79F-570FF0DABD7C</keyObject>
+<referredKeyID>8A3BA094-647E-219E-E79F-570FF0DABD7C</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Codigo</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

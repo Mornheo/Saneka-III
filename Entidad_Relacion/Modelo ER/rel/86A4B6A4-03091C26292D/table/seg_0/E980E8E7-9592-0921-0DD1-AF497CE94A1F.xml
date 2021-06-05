@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E980E8E7-9592-0921-0DD1-AF497CE94A1F" name="OPTATIVA">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 13:26:36 UTC</createdTime>
+<generatorID>66C40F89-4D5D-4A8A-F660-5B0788F0E90B</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Referencia" id="C1130727-7C7A-B7D4-6115-FCFDC40F1765">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 13:26:36 UTC</createdTime>
+<generatorID>0DD81814-9E2E-8CE4-E0C3-B1BB71E338E7</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4DCD9FB7-B4F7-E368-7722-66C9A51B6289" referredColumn="E557A927-39C9-A445-81EF-05DF2E931C7E"/>
+</associations>
+</Column>
+<Column name="Mencion" id="357B8A95-6D88-7869-325F-257FD0BE6A04">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 13:26:36 UTC</createdTime>
+<generatorID>9D320D4A-A7D4-FE78-78DB-34B8488322E2</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C384B215-68C4-FCC4-4045-B97F200B1938" name="OPTATIVA_PK">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 13:26:36 UTC</createdTime>
+<generatorID>2EDE1135-76E3-DD13-4226-323072201B13</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C1130727-7C7A-B7D4-6115-FCFDC40F1765"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DCAC01DB-308B-C1DD-808A-35E0EB07A345" name="OPTATIVA_ASIGNATURA_FK">
+<createdBy>alvar</createdBy>
+<createdTime>2021-05-27 13:26:36 UTC</createdTime>
+<generatorID>553CA7AB-318B-EAF7-CCC2-4FDC6E540A57</generatorID>
+<ownerDesignName>Modelo ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C1130727-7C7A-B7D4-6115-FCFDC40F1765"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

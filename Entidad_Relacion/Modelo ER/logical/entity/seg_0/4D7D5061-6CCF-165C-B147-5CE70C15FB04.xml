@@ -4,7 +4,7 @@
 <createdTime>2021-03-16 11:05:52 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="F517675C-101C-55FE-50A5-FCBE7DA1FDC2" value="true"/>
+<item key="D9030977-8418-6DD3-57FC-EB2268B1D567" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -14,14 +14,13 @@
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
-<preferredAbbreviation>EXP</preferredAbbreviation>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
 <Attribute name="Num" id="05CB2A29-F558-BA0B-6C72-0E581A0FF5D0">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:05:59 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="F517675C-101C-55FE-50A5-FCBE7DA1FDC2" value="true"/>
+<item key="D9030977-8418-6DD3-57FC-EB2268B1D567" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -33,21 +32,21 @@
 <createdTime>2021-03-16 11:06:16 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="F517675C-101C-55FE-50A5-FCBE7DA1FDC2" value="true"/>
+<item key="D9030977-8418-6DD3-57FC-EB2268B1D567" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT006</logicalDatatype>
-<dataTypeSize>1</dataTypeSize>
-<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>2 BYTE</dataTypeSize>
+<ownDataTypeParameters>2 BYTE,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="Nota_media" id="9FC902D5-62BD-C238-A315-92286E1BF6CD">
 <createdBy>alvar</createdBy>
 <createdTime>2021-03-16 11:06:26 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="F517675C-101C-55FE-50A5-FCBE7DA1FDC2" value="true"/>
+<item key="D9030977-8418-6DD3-57FC-EB2268B1D567" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -61,7 +60,7 @@
 <generatorID>5EB0631D-F725-518D-D017-4CFE1E90CE05</generatorID>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="F517675C-101C-55FE-50A5-FCBE7DA1FDC2" value="true"/>
+<item key="D9030977-8418-6DD3-57FC-EB2268B1D567" value="true"/>
 </engineerTo>
 <referedAttribute>FB31A13C-448A-17D3-98FC-8112408E11AD</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
@@ -69,19 +68,18 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="DNI" id="14EE5CE2-AB37-0B3C-8F3B-E10B5E693625">
+<Attribute name="ID" id="4FCE3CF6-7487-1985-C68E-7D3DFA1E6C27">
 <createdBy>alvar</createdBy>
-<createdTime>2021-04-15 17:39:42 UTC</createdTime>
+<createdTime>2021-05-27 11:42:16 UTC</createdTime>
 <generatorID>3C2C1A7F-BDC9-FCA7-8073-11C0EF29B37D</generatorID>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="F517675C-101C-55FE-50A5-FCBE7DA1FDC2" value="true"/>
+<item key="D9030977-8418-6DD3-57FC-EB2268B1D567" value="true"/>
 </engineerTo>
-<referedAttribute>F34A9A32-26E3-0FDD-5CA0-208BA9A39723</referedAttribute>
+<referedAttribute>357E4F55-D056-57FA-73F3-958AB0A58116</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>50 CHAR</dataTypeSize>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
@@ -91,7 +89,7 @@
 <createdTime>2021-03-16 11:06:14 UTC</createdTime>
 <ownerDesignName>Modelo ER</ownerDesignName>
 <engineerTo>
-<item key="F517675C-101C-55FE-50A5-FCBE7DA1FDC2" value="true"/>
+<item key="D9030977-8418-6DD3-57FC-EB2268B1D567" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
