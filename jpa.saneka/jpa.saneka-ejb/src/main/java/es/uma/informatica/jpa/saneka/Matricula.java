@@ -30,7 +30,7 @@ public class Matricula implements Serializable {
 	private Expediente expediente;
 	@OneToMany(mappedBy = "matricula")
 	@Column(nullable=false)
-	private List<Asignaturas_matricula> asignaturas_matriculas;
+	private List<Asignaturas_matricula> asignaturasMatriculas;
 	
 	public static class MatriculaId implements Serializable {
 		private static final long serialVersionUID = 1L;
@@ -174,18 +174,18 @@ public class Matricula implements Serializable {
 	}
 
 	public List<Asignaturas_matricula> getAsignaturas_matriculas() {
-		return asignaturas_matriculas;
+		return asignaturasMatriculas;
 	}
 
 	public void setAsignaturas_matriculas(List<Asignaturas_matricula> asignaturas_matriculas) {
-		this.asignaturas_matriculas = asignaturas_matriculas;
+		this.asignaturasMatriculas = asignaturas_matriculas;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((asignaturas_matriculas == null) ? 0 : asignaturas_matriculas.hashCode());
+		result = prime * result + ((asignaturasMatriculas == null) ? 0 : asignaturasMatriculas.hashCode());
 		result = prime * result + ((cursoAcademico == null) ? 0 : cursoAcademico.hashCode());
 		result = prime * result + ((estado == null) ? 0 : estado.hashCode());
 		result = prime * result + ((expediente == null) ? 0 : expediente.hashCode());
@@ -206,10 +206,10 @@ public class Matricula implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Matricula other = (Matricula) obj;
-		if (asignaturas_matriculas == null) {
-			if (other.asignaturas_matriculas != null)
+		if (asignaturasMatriculas == null) {
+			if (other.asignaturasMatriculas != null)
 				return false;
-		} else if (!asignaturas_matriculas.equals(other.asignaturas_matriculas))
+		} else if (!asignaturasMatriculas.equals(other.asignaturasMatriculas))
 			return false;
 		if (cursoAcademico == null) {
 			if (other.cursoAcademico != null)
@@ -259,7 +259,7 @@ public class Matricula implements Serializable {
 		return "Matricula [cursoAcademico=" + cursoAcademico + ", estado=" + estado + ", numArchivo=" + numArchivo
 				+ ", turnoPreferente=" + turnoPreferente + ", fechaMatricula=" + fechaMatricula + ", nuevoIngreso="
 				+ nuevoIngreso + ", listadoAsignaturas=" + listadoAsignaturas + ", expediente=" + expediente
-				+ ", asignaturas_matriculas=" + asignaturas_matriculas + "]";
+				+ ", asignaturas_matriculas=" + asignaturasMatriculas + "]";
 	} 
 	
 
