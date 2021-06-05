@@ -60,9 +60,9 @@ public class MatriculaT {
 		Expediente exp = new Expediente(12345, titu, a);
 		Matricula m=new Matricula("2", "12/09/2019", exp);
 
-		gestionMatricula.insertarMatricula(exp.getNum_expediente(),m);
+		gestionMatricula.insertarMatricula(exp.getNumExpediente(),m);
 		try {
-			assertEquals(m.toString(),gestionMatricula.mostrarMatricula(exp.getNum_expediente(), m.getCursoAcademico()));
+			assertEquals(m.toString(),gestionMatricula.mostrarMatricula(exp.getNumExpediente(), m.getCursoAcademico()));
 		}catch(SanekaException e) {
 			fail("No deberia salir esto");
 		}
@@ -87,7 +87,7 @@ public class MatriculaT {
 		Titulacion titu = new Titulacion(1234,"infor",6, centros);
 		Expediente exp = new Expediente(12345, titu, a);
 		Matricula m=new Matricula("3", "12/09/2020", exp);
-		gestionMatricula.insertarMatricula(exp.getNum_expediente(),m);
+		gestionMatricula.insertarMatricula(exp.getNumExpediente(),m);
 		fail("Matricula Existente");
 		}catch(MatriculaExistente | ExpedienteNoEncontradoException e){
 			//OK
@@ -110,9 +110,9 @@ public class MatriculaT {
 		Expediente exp = new Expediente(12345, titu, a);
 		Matricula m=new Matricula("3", "12/09/2019", exp);
 		m.setEstado("Correcto");
-		gestionMatricula.modificarMatricula(exp.getNum_expediente(), m);
+		gestionMatricula.modificarMatricula(exp.getNumExpediente(), m);
 		try {
-			assertEquals(m.toString(),gestionMatricula.mostrarMatricula(exp.getNum_expediente(), m.getCursoAcademico()));
+			assertEquals(m.toString(),gestionMatricula.mostrarMatricula(exp.getNumExpediente(), m.getCursoAcademico()));
 		}catch(SanekaException e) {
 			fail("No se ha modificado");
 		}
@@ -137,7 +137,7 @@ public class MatriculaT {
 		Titulacion titu = new Titulacion(1234,"infor",6, centros);
 		Expediente exp = new Expediente(12345, titu, a);
 		Matricula m=new Matricula("1", "12/09/2019", exp);
-		gestionMatricula.modificarMatricula(exp.getNum_expediente(),m);
+		gestionMatricula.modificarMatricula(exp.getNumExpediente(),m);
 		fail("Matricula No Existente");
 		}catch(MatriculaNoExistente | ExpedienteNoEncontradoException e){
 			//OK
@@ -159,7 +159,7 @@ public class MatriculaT {
 		Titulacion titu = new Titulacion(1234,"infor",6, centros);
 		Expediente exp = new Expediente(123456, titu, a);
 		Matricula m=new Matricula("1", "12/09/2019", exp);
-		gestionMatricula.modificarMatricula(exp.getNum_expediente(),m);
+		gestionMatricula.modificarMatricula(exp.getNumExpediente(),m);
 		fail("Expediente No Existente");
 		}catch(MatriculaNoExistente | ExpedienteNoEncontradoException e){
 			//OK
@@ -211,7 +211,7 @@ public class MatriculaT {
 			Expediente exp = new Expediente(12345, titu, a);
 			Matricula m=new Matricula("4", "12/09/2019", exp);
 
-			gestionMatricula.insertarMatricula(exp.getNum_expediente(),m);
+			gestionMatricula.insertarMatricula(exp.getNumExpediente(),m);
 			Integer expe=12345;
 			String curso="4";
 			gestionMatricula.eliminarMatricula(expe, curso);

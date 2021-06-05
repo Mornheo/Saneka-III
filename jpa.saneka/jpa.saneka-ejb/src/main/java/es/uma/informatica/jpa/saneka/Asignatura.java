@@ -41,9 +41,9 @@ public class Asignatura implements Serializable {
 	@OneToMany(mappedBy = "asignatura")
 	private List<Clase> clases;
 	@OneToMany(mappedBy = "asignatura")
-	private List<Grupos_por_asignatura> grupos;
+	private List<GruposPorAsignatura> grupos;
 	@OneToMany(mappedBy ="asignatura")
-	private List<Asignaturas_matricula> asignaturasMatricula;
+	private List<AsignaturasMatricula> asignaturasMatricula;
 	
 	private static final long serialVersionUID = 1L;
 
@@ -155,16 +155,16 @@ public class Asignatura implements Serializable {
 	public void setClases(List<Clase> clases) {
 		this.clases = clases;
 	}
-	public List<Grupos_por_asignatura> getGrupos() {
+	public List<GruposPorAsignatura> getGrupos() {
 		return grupos;
 	}
-	public void setGrupos(List<Grupos_por_asignatura> grupos) {
+	public void setGrupos(List<GruposPorAsignatura> grupos) {
 		this.grupos = grupos;
 	}
-	public List<Asignaturas_matricula> getAsignaturas_matricula() {
+	public List<AsignaturasMatricula> getAsignaturas_matricula() {
 		return asignaturasMatricula;
 	}
-	public void setAsignaturas_matricula(List<Asignaturas_matricula> asignaturas_matricula) {
+	public void setAsignaturas_matricula(List<AsignaturasMatricula> asignaturas_matricula) {
 		this.asignaturasMatricula = asignaturas_matricula;
 	}
 	@Override

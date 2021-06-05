@@ -30,10 +30,10 @@ public class Grupo implements Serializable{
 	private Grupo grupos;
 	@OneToMany(targetEntity=Clase.class,mappedBy="grupo")
 	private List<Clase> clases;
-	@OneToMany(targetEntity=Grupos_por_asignatura.class,mappedBy="grupo")
-	private List<Grupos_por_asignatura> gruposAsignatura;
-	@OneToMany(targetEntity=Asignaturas_matricula.class,mappedBy="grupo")
-	private List<Asignaturas_matricula> asignaturasMatricula;
+	@OneToMany(targetEntity=GruposPorAsignatura.class,mappedBy="grupo")
+	private List<GruposPorAsignatura> gruposAsignatura;
+	@OneToMany(targetEntity=AsignaturasMatricula.class,mappedBy="grupo")
+	private List<AsignaturasMatricula> asignaturasMatricula;
 	public Grupo() {
 		super();
 	}
@@ -111,16 +111,16 @@ public class Grupo implements Serializable{
 	public void setClases(List<Clase> clases) {
 		this.clases = clases;
 	}
-	public List<Grupos_por_asignatura> getGruposAsignatura() {
+	public List<GruposPorAsignatura> getGruposAsignatura() {
 		return gruposAsignatura;
 	}
-	public void setGruposAsignatura(List<Grupos_por_asignatura> gruposAsignatura) {
+	public void setGruposAsignatura(List<GruposPorAsignatura> gruposAsignatura) {
 		this.gruposAsignatura = gruposAsignatura;
 	}
-	public List<Asignaturas_matricula> getAsignaturasMatricula() {
+	public List<AsignaturasMatricula> getAsignaturasMatricula() {
 		return asignaturasMatricula;
 	}
-	public void setAsignaturasMatricula(List<Asignaturas_matricula> asignaturasMatricula) {
+	public void setAsignaturasMatricula(List<AsignaturasMatricula> asignaturasMatricula) {
 		this.asignaturasMatricula = asignaturasMatricula;
 	}
 	@Override

@@ -33,7 +33,7 @@ public class ExpedienteEJB implements GestionExpediente{
 	public void modificarExpediente(Integer num, Expediente exp) throws ExpedienteNoEncontradoException {
 		Expediente expEntity = devolverExpediente(num);
 		expEntity.setActivo(exp.getActivo());
-		expEntity.setNota_media_provisional(exp.getNota_media_provisional());
+		expEntity.setNotaMediaProvisional(exp.getNotaMediaProvisional());
 		em.persist(expEntity);
 		
 	}

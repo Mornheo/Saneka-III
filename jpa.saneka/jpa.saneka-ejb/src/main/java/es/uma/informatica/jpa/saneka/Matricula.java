@@ -30,7 +30,7 @@ public class Matricula implements Serializable {
 	private Expediente expediente;
 	@OneToMany(mappedBy = "matricula")
 	@Column(nullable=false)
-	private List<Asignaturas_matricula> asignaturasMatriculas;
+	private List<AsignaturasMatricula> asignaturasMatriculas;
 	
 	public static class MatriculaId implements Serializable {
 		private static final long serialVersionUID = 1L;
@@ -173,11 +173,11 @@ public class Matricula implements Serializable {
 		this.expediente = expediente;
 	}
 
-	public List<Asignaturas_matricula> getAsignaturas_matriculas() {
+	public List<AsignaturasMatricula> getAsignaturas_matriculas() {
 		return asignaturasMatriculas;
 	}
 
-	public void setAsignaturas_matriculas(List<Asignaturas_matricula> asignaturas_matriculas) {
+	public void setAsignaturas_matriculas(List<AsignaturasMatricula> asignaturas_matriculas) {
 		this.asignaturasMatriculas = asignaturas_matriculas;
 	}
 

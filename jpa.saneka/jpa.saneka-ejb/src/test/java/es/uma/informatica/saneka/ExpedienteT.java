@@ -152,7 +152,7 @@ public class ExpedienteT {
 				e.printStackTrace();
 			}
 			assertEquals(expEntity.getActivo(), exp.getActivo());
-			assertEquals(expEntity.getNota_media_provisional(), exp.getNota_media_provisional());
+			assertEquals(expEntity.getNotaMediaProvisional(), exp.getNotaMediaProvisional());
 	}
 	
 	@Requisitos({"RF-2"})
