@@ -15,13 +15,9 @@ public interface GestionUsuario {
     public void compruebaLogin(Usuario u) throws SanekaException;
     public Usuario refrescarUsuario(Usuario u) throws SanekaException;
 	public String mostrarUsuario(String email) throws SanekaException;
-	
 	public void eliminarUsuario(String email) throws SanekaException;
-	
 	public void insertarUsuario(Usuario user) throws SanekaException;
-	
 	public void modificarUsuario(String email,String cons) throws SanekaException;
-	
 	public Usuario devolverUsuario(String email) throws SanekaException;
 
 }

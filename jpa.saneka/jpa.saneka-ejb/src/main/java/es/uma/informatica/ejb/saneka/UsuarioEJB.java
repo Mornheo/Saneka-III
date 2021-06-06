@@ -2,6 +2,7 @@ package es.uma.informatica.ejb.saneka;
 
 import java.util.Random;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -14,6 +15,7 @@ import es.uma.informatica.ejb.exceptions.UsuarioNoEncontradoException;
 import es.uma.informatica.jpa.saneka.Usuario;
 import es.uma.informatica.ejb.exceptions.ValidacionIncorrectaException;
 
+@Stateless
 public class UsuarioEJB implements GestionUsuario{
 	private static final int TAM_CADENA_VALIDACION = 20;
 	@PersistenceContext(name="jpa.saneka")
