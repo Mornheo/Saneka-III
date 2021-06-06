@@ -5,14 +5,26 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
-<head><title>Encuesta realizada</title></head>
+	
+<head><title>Eliminar Asignatura</title></head>
 <body>
 
-<h1>La encuesta se ha realizado con exito</h1>
-<p>
-Sus datos se han enviado satisfactoriamente.
-<input type="button" value="Volver" id="volver"/>
-</p>
+<h1>Asignatura</h1>
+
+<form>
+ 
+  <label for="ref">Referencia:</label>
+  <input type="text" id="ref" name="ref"/>
+  <br/>
+  <br/>
+  
+  <p>
+  <input type="button" value="Eliminar" id="eliminar"/>
+  
+  <input type="button" value="Cancelar" id="cancelar"/>
+  </p>
+  
+</form>
 
 </body>
 </html>
