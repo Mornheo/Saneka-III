@@ -14,6 +14,7 @@ import es.uma.informatica.ejb.exceptions.UsuarioInactivoException;
 import es.uma.informatica.ejb.exceptions.UsuarioNoEncontradoException;
 import es.uma.informatica.jpa.saneka.Usuario;
 import es.uma.informatica.ejb.exceptions.ValidacionIncorrectaException;
+
 @Stateless
 public class UsuarioEJB implements GestionUsuario{
 	private static final int TAM_CADENA_VALIDACION = 20;

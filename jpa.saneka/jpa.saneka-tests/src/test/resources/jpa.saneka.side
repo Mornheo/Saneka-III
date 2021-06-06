@@ -1,0 +1,173 @@
+{
+  "id": "9d67fec5-775a-4f91-9d81-5a75e73c49fe",
+  "version": "2.0",
+  "name": "jpa.saneka",
+  "url": "http://localhost:8080/jpa.saneka-war/",
+  "tests": [{
+    "id": "40a4a9da-98f2-4e7a-8b37-db4182922ec8",
+    "name": "PruebaSencilla",
+    "commands": [{
+      "id": "3ed3fefa-e862-46d0-a7bb-e8093aaea4cb",
+      "comment": "",
+      "command": "open",
+      "target": "/jpa.saneka-war/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dbd99810-27b0-4a3d-a27a-cfedd72a6209",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1059x730",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8b10ebaa-c980-4cc5-ab07-aa22f50a8a22",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=titulo",
+      "targets": [
+        ["css=th", "css:finder"],
+        ["xpath=//form[@id='j_idt5']/table/thead/tr/th", "xpath:idRelative"],
+        ["xpath=//th", "xpath:position"],
+        ["xpath=//th[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": "Login"
+    }]
+  }, {
+    "id": "4101d1ea-3da3-4bb8-9c16-e3ce02660439",
+    "name": "LoginFallido",
+    "commands": [{
+      "id": "da257585-868c-4dc4-83fd-0febc17406af",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/jpa.saneka-war/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "93be7b7f-02ab-4483-b689-0f44e8713667",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "668x463",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3e78295c-c954-46d4-99b5-e2ad1ab511ce",
+      "comment": "",
+      "command": "type",
+      "target": "id=j_idt5:correo",
+      "targets": [
+        ["id=j_idt5:correo", "id"],
+        ["name=j_idt5:correo", "name"],
+        ["css=#j_idt5\\3A correo", "css:finder"],
+        ["xpath=//input[@id='j_idt5:correo']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt5']/table/tbody/tr/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "tal@uma.es"
+    }, {
+      "id": "2b56b42c-664a-41ae-a10c-0657d11ab91b",
+      "comment": "",
+      "command": "click",
+      "target": "id=j_idt5:correo",
+      "targets": [
+        ["id=j_idt5:correo", "id"],
+        ["name=j_idt5:correo", "name"],
+        ["css=#j_idt5\\3A correo", "css:finder"],
+        ["xpath=//input[@id='j_idt5:correo']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt5']/table/tbody/tr/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4167c023-0c3b-4653-a76a-16b0644c146d",
+      "comment": "",
+      "command": "assertValue",
+      "target": "id=j_idt5:correo",
+      "targets": [
+        ["id=j_idt5:correo", "id"],
+        ["name=j_idt5:correo", "name"],
+        ["css=#j_idt5\\3A correo", "css:finder"],
+        ["xpath=//input[@id='j_idt5:correo']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt5']/table/tbody/tr/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "tal@uma.es"
+    }, {
+      "id": "c0a65170-1953-42a9-8980-6b490468bdd8",
+      "comment": "",
+      "command": "click",
+      "target": "id=j_idt5:password",
+      "targets": [
+        ["id=j_idt5:password", "id"],
+        ["name=j_idt5:password", "name"],
+        ["css=#j_idt5\\3Apassword", "css:finder"],
+        ["xpath=//input[@id='j_idt5:password']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt5']/table/tbody/tr[2]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cc73745d-80ad-4fa3-b57a-0f704da5be40",
+      "comment": "",
+      "command": "type",
+      "target": "id=j_idt5:password",
+      "targets": [
+        ["id=j_idt5:password", "id"],
+        ["name=j_idt5:password", "name"],
+        ["css=#j_idt5\\3Apassword", "css:finder"],
+        ["xpath=//input[@id='j_idt5:password']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt5']/table/tbody/tr[2]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": "1234"
+    }, {
+      "id": "3c159270-6002-4030-9e9c-683948c1845d",
+      "comment": "",
+      "command": "assertValue",
+      "target": "id=j_idt5:password",
+      "targets": [
+        ["id=j_idt5:password", "id"],
+        ["name=j_idt5:password", "name"],
+        ["css=#j_idt5\\3Apassword", "css:finder"],
+        ["xpath=//input[@id='j_idt5:password']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt5']/table/tbody/tr[2]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": "1234"
+    }, {
+      "id": "4c141eaa-6b65-4f75-a739-72b3514873c4",
+      "comment": "",
+      "command": "click",
+      "target": "name=j_idt5:j_idt12",
+      "targets": [
+        ["name=j_idt5:j_idt12", "name"],
+        ["css=input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='j_idt5:j_idt12']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt5']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "83e54305-dea3-40a9-98d8-02a81f0b434d",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Internal Server Error')]", "xpath:innerText"]
+      ],
+      "value": "Internal Server Error"
+    }]
+  }],
+  "suites": [{
+    "id": "478e10cc-29a3-482a-8b02-fd02951ed67e",
+    "name": "Login Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["40a4a9da-98f2-4e7a-8b37-db4182922ec8", "4101d1ea-3da3-4bb8-9c16-e3ce02660439"]
+  }],
+  "urls": ["http://localhost:8080/", "http://localhost:8080/jpa.saneka-war/"],
+  "plugins": []
+}
