@@ -11,7 +11,7 @@
 </h:head>
 <h:body>
 <h:form>
-　	<h:panelGrid columns="3">
+　	<h:panelGrid id="panel" columns="3" cellpadding="10" cellspacing="1">
 		<f:facet name="header">
 	    <h:outputText value="Login" /></f:facet>
 	　　<h:outputText value="Correo:" />
@@ -22,7 +22,7 @@
 	　　<h:inputSecret value="#{Usuario.contrasenia}" id="password" required="true" />
 	　　<h:message for="password" style="color: red" />
 	</h:panelGrid>
-	<h:commandButton value="Entrar" action="encuesta.xhtml"/>
+	<h:commandButton value="Entrar" action= "login.Entrar"/>
 </h:form>
 </h:body>
 </html>

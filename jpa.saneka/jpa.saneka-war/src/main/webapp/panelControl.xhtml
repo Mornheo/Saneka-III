@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	
+<head><title>Panel de control de Secretaria</title></head>
+<body>
+
+<h1>Secretaria</h1>
+
+<h:form>
+	<h:panelGrid id="panel" columns="3" cellpadding="10" cellspacing="1">
+		<h:outputText value = "Insertar"></h:outputText>
+		<h:selectOneMenu value="#{secretaria.selectedItem1}" id = "selectCrear">
+	    <f:selectItems value="#{secretaria.availableItems.entrySet()}" var="entry"
+	        itemValue="#{entry.key}" itemLabel="#{entry.value}" />
+		</h:selectOneMenu>
+		<h:commandButton value="Crear" action= "#{secretaria.crear}"/>
+		
+		
+		
+		<h:outputText value = "Modificar"></h:outputText>
+		<h:selectOneMenu value="#{secretaria.selectedItem2}" id= "selectModificar">
+	    <f:selectItems value="#{secretaria.availableItems.entrySet()}" var="entry"
+	        itemValue="#{entry.key}" itemLabel="#{entry.value}" />
+		</h:selectOneMenu>
+		<h:commandButton value="Modificar" action= "#{secretaria.modificar}"/>
+		
+		<h:outputText value = "Eliminar"></h:outputText>
+		<h:selectOneMenu value="#{secretaria.selectedItem3}" id = "selectEliminar">
+	    <f:selectItems value="#{secretaria.availableItems.entrySet()}" var="entry"
+	        itemValue="#{entry.key}" itemLabel="#{entry.value}" />
+		</h:selectOneMenu>
+		<h:commandButton value="Eliminar" action= "#{secretaria.eliminar}"/>
+		
+		<h:commandButton value="Volver a iniciar sesión" action = "#{secretaria.volver}"/>
+			
+	</h:panelGrid>
+	
+</h:form>
+
+
+
+</body>
+</html>

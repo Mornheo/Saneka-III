@@ -10,10 +10,7 @@ import es.uma.informatica.ejb.saneka.GestionUsuario;
 import es.uma.informatica.jpa.saneka.Usuario;
 import es.uma.informatica.jpa.saneka.UsuarioSecretaria;
 
-<<<<<<< HEAD
 import javax.ejb.EJB;
-=======
->>>>>>> branch 'main' of https://github.com/Mornheo/Saneka-III.git
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
@@ -51,7 +48,7 @@ public class Login {
         try {
             gestion.compruebaLogin(usuario);
             sesion.setUsuario(gestion.refrescarUsuario(usuario));
-            return "contactos.xhtml";
+            return "encuesta.xhtml";
 
         } catch (UsuarioNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("La cuenta no existe");

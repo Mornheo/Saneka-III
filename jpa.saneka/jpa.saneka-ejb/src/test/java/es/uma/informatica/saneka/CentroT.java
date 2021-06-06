@@ -111,7 +111,7 @@ public class CentroT {
 				List<Titulacion> titu= new ArrayList<>();
 				Centro centro = new Centro(12,"computadores","Calle Miguel ","0894343",titu);
 				gestionCentro.insertarCentro(centro);
-				gestionCentro.eliminarCentro(12, centro);
+				gestionCentro.eliminarCentro(12);
 			} catch (CentroNoEncontradoException | CentroExistenteException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -126,7 +126,7 @@ public class CentroT {
 		Centro centro = gestionCentro.obtenerCentro(idCentro);
 		centro.setId(19);
 		try {
-			gestionCentro.eliminarCentro(11, centro);
+			gestionCentro.eliminarCentro(11);
 			fail("Debería lanzar excepción de centro no encontrado");
 		}catch (CentroNoEncontradoException e){
 			//OK
