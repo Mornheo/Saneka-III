@@ -60,17 +60,17 @@ public class GrupoEJB implements GestionGrupo{
 	}
 
 	@Override
-	public void eliminarGrupo(Integer titu, Grupo grupo) throws TitulacionNoEncontradoException, GrupoNoEncontradoException{
+	public void eliminarGrupo(Integer titu, Integer grupo) throws TitulacionNoEncontradoException, GrupoNoEncontradoException{
 		Titulacion titulacion = em.find(Titulacion.class,titu);
 		if(titulacion == null) {
 			throw new TitulacionNoEncontradoException();
 		}
-		Grupo grupoExistente = em.find(Grupo.class,grupo.getId());
+		Grupo grupoExistente = em.find(Grupo.class,grupo);
 		if(grupoExistente == null) {
 			throw new GrupoNoEncontradoException();
 		}
 		List<Grupo> grupos = titulacion.getGrupos();
-		grupos.remove(grupo);
+		grupos.remove(grupoExistente);
 		titulacion.setGrupos(grupos);
 		em.persist(titulacion);
 	}

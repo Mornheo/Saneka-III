@@ -14,6 +14,7 @@ import es.uma.informatica.ejb.exceptions.ClaseNoEncontradoException;
 import es.uma.informatica.jpa.saneka.Grupo;
 
 import es.uma.informatica.jpa.saneka.Clase;
+import es.uma.informatica.jpa.saneka.Clase.ClaseId;
 
 @Stateless
 public class ClaseEJB implements GestionClase{
@@ -63,17 +64,17 @@ public class ClaseEJB implements GestionClase{
 	}
 
 	@Override
-	public void eliminarClase(Integer Grupo, Clase clase) throws GrupoNoEncontradoException, ClaseNoEncontradoException {
+	public void eliminarClase(Integer Grupo, ClaseId claseid) throws GrupoNoEncontradoException, ClaseNoEncontradoException {
 		Grupo GrupoEntity = em.find(Grupo.class,Grupo);
 		if(GrupoEntity == null) {
 			throw new GrupoNoEncontradoException();
 		}
-		Clase claseExistente = em.find(Clase.class, new Clase.ClaseId(clase.getDia(),clase.getHoraInicio(),clase.getGrupo().getId()));
+		Clase claseExistente = em.find(Clase.class, claseid);
 		if(claseExistente == null) {
 			throw new ClaseNoEncontradoException();
 		}
 		List<Clase> clases = GrupoEntity.getClases();
-		clases.remove(clase);
+		clases.remove(claseExistente);
 		GrupoEntity.setClases(clases);
 		em.persist(GrupoEntity);
 		

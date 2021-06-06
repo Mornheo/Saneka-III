@@ -3,12 +3,16 @@ package es.uma.informatica.sii.saneka.backing;
 
 import es.uma.informatica.ejb.exceptions.ContraseniaInvalidaException;
 
+
 import es.uma.informatica.ejb.exceptions.SanekaException;
 import es.uma.informatica.ejb.exceptions.UsuarioInactivoException;
 import es.uma.informatica.ejb.exceptions.UsuarioNoEncontradoException;
 import es.uma.informatica.ejb.saneka.GestionUsuario;
 import es.uma.informatica.jpa.saneka.Usuario;
 import es.uma.informatica.jpa.saneka.UsuarioSecretaria;
+
+
+import javax.ejb.EJB;
 
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
@@ -47,7 +51,7 @@ public class Login {
         try {
             gestion.compruebaLogin(usuario);
             sesion.setUsuario(gestion.refrescarUsuario(usuario));
-            return "contactos.xhtml";
+            return "encuesta.xhtml";
 
         } catch (UsuarioNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("La cuenta no existe");

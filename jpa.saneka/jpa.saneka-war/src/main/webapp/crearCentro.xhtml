@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head> <title>Crear centro</title></h:head>
+<h:body>
+	<h:form>
+		<h:panelGrid id="panel" columns="3" cellpadding="10" cellspacing="1">
+			<f:facet name="header"><h:outputText value="Creación de centro" /></f:facet>
+			<h:outputText value="Nombre:" />
+		　　	<h:inputText value="#{Centro.nombre}" id="nombre" required="true" />
+		　　	<h:message for="nombre" style="color: red" />
+			<h:outputText value="Direccion:" />
+		　　	<h:inputText value="#{Centro.direccion}" id="direccion" required="true" />
+		　　	<h:message for="curso" style="color: red" />
+			<h:outputText value="Telefono Consejeria:" />
+		　　	<h:inputText value="#{Centro.teleConsejeria}" id="telefono" required="true" />
+		　　	<h:message for="telefono" style="color: red" />
+			
+			<h:commandButton value="Envia"/>
+			
+		</h:panelGrid>
+		<h:commandButton value="Volver a panel de control" action="panelControl.xhtml"/>
+	</h:form>
+</h:body>
+</html>

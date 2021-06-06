@@ -33,7 +33,8 @@ import org.junit.AfterClass;
 	import es.uma.informatica.jpa.saneka.Asignatura;
 	import es.uma.informatica.jpa.saneka.Centro;
 	import es.uma.informatica.jpa.saneka.Clase;
-	import es.uma.informatica.jpa.saneka.Grupo;
+import es.uma.informatica.jpa.saneka.Clase.ClaseId;
+import es.uma.informatica.jpa.saneka.Grupo;
 	import es.uma.informatica.jpa.saneka.Titulacion;
 import es.uma.informatica.sii.anotaciones.Requisitos;
 
@@ -160,7 +161,8 @@ import es.uma.informatica.sii.anotaciones.Requisitos;
 			try {
 				List<Clase> clases = gestionClase.obtenerClasesDeGrupo(idGrupo);
 				Clase clase0 = clases.get(0);
-				gestionClase.eliminarClase(idGrupo, clase0);
+				ClaseId id = new Clase.ClaseId(clase0.getDia(),clase0.getHoraInicio(),clase0.getGrupo().getId());
+				gestionClase.eliminarClase(idGrupo, id);
 			} catch (GrupoNoEncontradoException | ClaseNoEncontradoException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -177,7 +179,7 @@ import es.uma.informatica.sii.anotaciones.Requisitos;
 			try {
 				clases = gestionClase.obtenerClasesDeGrupo(idGrupo);
 				Clase clase0 = clases.get(0);
-				gestionClase.eliminarClase(otroId, clase0);
+				gestionClase.eliminarClase(otroId, new ClaseId(clase0.getDia(),clase0.getHoraInicio(),clase0.getGrupo().getId()));
 			} catch (GrupoNoEncontradoException | ClaseNoEncontradoException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -189,12 +191,10 @@ import es.uma.informatica.sii.anotaciones.Requisitos;
 		@Test 
 		public void testEliminarClaseNoEncontrado() {
 			final Integer idGrupo = 420;
+			final ClaseId idClase= new ClaseId(23,"12-30",90);
 			List<Clase> clases;
 			try {
-				clases = gestionClase.obtenerClasesDeGrupo(idGrupo);
-				Clase clase0 = clases.get(0);
-				clase0.setDia(23);
-				gestionClase.eliminarClase(idGrupo, clase0);
+				gestionClase.eliminarClase(idGrupo, idClase);
 				fail("Debería lanzar la excepción de clase no encontrado");
 			} catch (GrupoNoEncontradoException | ClaseNoEncontradoException e) {
 				// TODO Auto-generated catch block

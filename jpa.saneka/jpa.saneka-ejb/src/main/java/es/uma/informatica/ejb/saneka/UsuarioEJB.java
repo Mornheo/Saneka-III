@@ -46,7 +46,6 @@ public class UsuarioEJB implements GestionUsuario{
 			throw new UsuarioExistenteException();
 		}
 		em.persist(u);
-		
 	}
 
 	@Override

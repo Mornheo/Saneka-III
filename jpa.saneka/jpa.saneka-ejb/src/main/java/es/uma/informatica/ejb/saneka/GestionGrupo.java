@@ -15,7 +15,7 @@ public interface GestionGrupo {
 	public void insertarGrupo(Integer titu,Grupo grupo) throws TitulacionNoEncontradoException,GrupoExistenteException;
 	public List<Grupo> obtenerGruposDeTitulacion(Integer titu) throws TitulacionNoEncontradoException;
 	public void actualizarGrupo(Integer titu,Grupo grupo) throws TitulacionNoEncontradoException, GrupoNoEncontradoException;
-	public void eliminarGrupo(Integer titu,Grupo grupo) throws TitulacionNoEncontradoException, GrupoNoEncontradoException;
+	public void eliminarGrupo(Integer titu,Integer grupo) throws TitulacionNoEncontradoException, GrupoNoEncontradoException;
 	public void eliminarTodosGrupos(Integer titu) throws TitulacionNoEncontradoException;
 	public Grupo obtenerGrupo(Integer id) throws GrupoNoEncontradoException;
 	public String mostrarGrupo(Grupo grupo);

@@ -235,7 +235,7 @@ public class GrupoT {
 			gestionGrupo.insertarGrupo(idTitu, grupo);
 			grupos = gestionGrupo.obtenerGruposDeTitulacion(idTitu);
 			Grupo grupo1 = grupos.get(0);
-			gestionGrupo.eliminarGrupo(idTitu, grupo1);
+			gestionGrupo.eliminarGrupo(idTitu, grupo1.getId());
 			assertEquals(0,grupos.size());
 		} catch (TitulacionNoEncontradoException e ) {
 			fail("No debería lanzarse excepción");
@@ -255,7 +255,7 @@ public class GrupoT {
 		try {
 			grupos = gestionGrupo.obtenerGruposDeTitulacion(idTitu);
 			Grupo grupo = grupos.get(0);
-			gestionGrupo.eliminarGrupo(otroTitu, grupo);
+			gestionGrupo.eliminarGrupo(otroTitu, grupo.getId());
 			fail("Debería lanzar la excepción de titulacion no encontrado");
 		} catch (TitulacionNoEncontradoException | GrupoNoEncontradoException e) {
 			// TODO Auto-generated catch block
@@ -270,9 +270,7 @@ public class GrupoT {
 		final Integer nId= 2;	
 			try {
 				List<Grupo> grupos = gestionGrupo.obtenerGruposDeTitulacion(idTitu);
-				Grupo grupo = grupos.get(0);
-				grupo.setId(nId);
-				gestionGrupo.eliminarGrupo(idTitu, grupo);
+				gestionGrupo.eliminarGrupo(idTitu, nId);
 				fail("Debería lanzar la excepción de grupo no encontrado");
 			} catch (TitulacionNoEncontradoException | GrupoNoEncontradoException e) {
 				// TODO Auto-generated catch block
