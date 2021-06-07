@@ -74,7 +74,7 @@
   		</plugin>
   		<plugin>
   			<groupId>org.apache.maven.plugins</groupId>
-  			<artifactId>maven-ejb-plugin</artifactId>
+  			<artifactId>maven-surefire-plugin</artifactId>
   			<configuration>
   				<skip>${skip.ejb.tests}</skip>
   			</configuration>
