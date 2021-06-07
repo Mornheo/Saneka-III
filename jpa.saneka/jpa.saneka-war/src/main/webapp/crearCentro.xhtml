@@ -20,9 +20,10 @@
 		　　	<h:inputText value="#{secretaria.Centro.teleConsejeria}" id="telefono" required="true" />
 		　　	<h:message for="telefono" style="color: red" />
 			
-			<h:commandButton value="Envia"/>
+			<h:commandButton value="Crear" action ="#{secretaria.crearCentro}"/>
 			
 		</h:panelGrid>
+		
 		<h:commandButton value="Volver a panel de control" action="panelControl.xhtml"/>
 	</h:form>
 </h:body>
