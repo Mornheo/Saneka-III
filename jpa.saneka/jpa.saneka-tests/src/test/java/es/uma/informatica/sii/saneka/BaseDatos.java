@@ -3,6 +3,7 @@
 package es.uma.informatica.sii.saneka;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -22,8 +23,6 @@ import es.uma.informatica.jpa.saneka.Matricula;
 import es.uma.informatica.jpa.saneka.Optativa;
 import es.uma.informatica.jpa.saneka.Titulacion;
 import es.uma.informatica.jpa.saneka.Usuario;
-import es.uma.informatica.jpa.saneka.UsuarioAlumno;
-import es.uma.informatica.jpa.saneka.UsuarioSecretaria;
 
 public class BaseDatos {
 	
@@ -54,8 +53,10 @@ public class BaseDatos {
 		em.persist(alumno3);
 		Alumno alumno4 = new Alumno("374147G", "Rafael", "Martin", "07182345@uma.es");
 		em.persist(alumno4);
-		
+		Alumno alumnoA = new Alumno("123","Pablo","Merino","123@uma.es");
+		em.persist(alumnoA);
 		//Usuarios Alumnos
+		/*
 		Usuario userA1 = new UsuarioAlumno("07143291@uma.es", "123", "saneka");
 		em.persist(userA1);
 		Usuario userA2 = new UsuarioAlumno("07198655@uma.es", "123", "saneka");
@@ -68,7 +69,7 @@ public class BaseDatos {
 		//Usuarios Secretaria
 		Usuario userS1 = new UsuarioSecretaria("sec1@uma.es", "1235", "malaga");
 		em.persist(userS1);
-		
+		*/
 		//Expediente
 		Expediente exp = new Expediente(12345, titu, alumnoA);
 		exp.setActivo(true);

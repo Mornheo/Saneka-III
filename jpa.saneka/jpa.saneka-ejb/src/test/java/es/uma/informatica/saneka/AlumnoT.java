@@ -105,9 +105,9 @@ public class AlumnoT {
 	public void testModificarAlumnoCorrecto() {
 		try {
 			Alumno a=new Alumno(null, null, null, null);
-			a.setDni("090");
+			a.setDni("446753A");
 			a.setApellido1("Bezoya");
-			gestionAlumno.modificarAlumno(a);
+			gestionAlumno.modificarAlumno("446753A",a);
 			assertNotEquals(a.getApellido1(),"Centeno");
 		}catch(SanekaException e) {
 			fail("No se ha cambiado");
@@ -121,7 +121,7 @@ public class AlumnoT {
 			Alumno a=new Alumno(null, null, null, null);
 			a.setDni("000");
 			a.setApellido1("Bezoya");
-			gestionAlumno.modificarAlumno(a);
+			gestionAlumno.modificarAlumno("1234",a);
 			fail("No se ha encontrado");
 		}catch(AlumnoNoEncontrado e) {
 			//OK

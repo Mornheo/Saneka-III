@@ -34,13 +34,13 @@ public class MatriculaEJB implements GestionMatricula{
 	}
 
 	@Override
-	public void modificarMatricula(Integer exp,String matr,Matricula matricula) throws MatriculaNoExistente, ExpedienteNoEncontradoException{
+	public void modificarMatricula(Integer exp,Matricula matricula) throws MatriculaNoExistente, ExpedienteNoEncontradoException{
 		Expediente ex = em.find(Expediente.class, exp);
 		if (ex == null) {
 			throw new ExpedienteNoEncontradoException();
 		}
 		
-		Matricula mat=em.find(Matricula.class,matr);
+		Matricula mat=em.find(Matricula.class,new Matricula.MatriculaId(matricula.getCursoAcademico(),exp));
 				if(mat==null) {
 					throw new MatriculaNoExistente();
 				}

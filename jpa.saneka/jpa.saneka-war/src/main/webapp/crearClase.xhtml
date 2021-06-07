@@ -12,16 +12,16 @@
 		<h:panelGrid id="panel" columns="3" cellpadding="10" cellspacing="1">
 			<f:facet name="header"><h:outputText value="Creación de clase" /></f:facet>
 			<h:outputText value="Dia:" />
-		　　	<h:inputText value="#{secretaria.Clase.dia}" id="dia" required="true" />
+		　　	<h:inputText value="#{secretaria.clase.dia}" id="dia" required="true" />
 		　　	<h:message for="dia" style="color: red" />
 			<h:outputText value="Hora de inicio:" />
-		　　	<h:inputText value="#{secretaria.Clase.horaInicio}" id="horaInicio" required="true" />
+		　　	<h:inputText value="#{secretaria.clase.horaInicio}" id="horaInicio" required="true" />
 		　　	<h:message for="hora" style="color: red" />
 			<h:outputText value="Grupo id:" />
-		　　	<h:inputText value="#{secretaria.Clase.grupo.id}" id="grupoId" required="true" />
+		　　	<h:inputText value="#{secretaria.clase.grupo.id}" id="grupoId" required="true" />
 		　　	<h:message for="grupoId" style="color: red" />
 			<h:outputText value="Hora de fin:" />
-		　　	<h:inputText value="#{secretaria.Clase.horaFin}" id="horaFin"/>
+		　　	<h:inputText value="#{secretaria.clase.horaFin}" id="horaFin"/>
 			<f:facet name="footer">
 					<h:commandButton value="Crear" action ="#{secretaria.crearClase}"/>
 					<h:button value="Volver a panel de control" outcome="panelControl.xhtml" />

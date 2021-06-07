@@ -47,7 +47,7 @@ public class ClaseEJB implements GestionClase{
 	}
 
 	@Override
-	public void actualizarClase(Integer Grupo, Integer idClase,Clase clase) throws GrupoNoEncontradoException,ClaseNoEncontradoException {
+	public void actualizarClase(Integer Grupo, ClaseId idClase,Clase clase) throws GrupoNoEncontradoException,ClaseNoEncontradoException {
 		Grupo GrupoEntity = em.find(Grupo.class,Grupo);
 		if(GrupoEntity == null) {
 			throw new GrupoNoEncontradoException();
@@ -64,7 +64,7 @@ public class ClaseEJB implements GestionClase{
 	}
 
 	@Override
-	public void eliminarClase(Integer Grupo, Integer claseid) throws GrupoNoEncontradoException, ClaseNoEncontradoException {
+	public void eliminarClase(Integer Grupo, Clase.ClaseId claseid) throws GrupoNoEncontradoException, ClaseNoEncontradoException {
 		Grupo GrupoEntity = em.find(Grupo.class,Grupo);
 		if(GrupoEntity == null) {
 			throw new GrupoNoEncontradoException();

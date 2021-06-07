@@ -11,7 +11,7 @@
 		<h:panelGrid id="panel" columns="3" cellpadding="10" cellspacing="1">
 			<f:facet name="header"><h:outputText value="Eliminación de centro" /></f:facet>
 			<h:outputText value="CentroId:" />
-		　　	<h:inputText value="#{secretaria.Centro.id}" id="centroId" required="true"><f:convertNumber type= "currency" /></h:inputText>
+		　　	<h:inputText value="#{secretaria.idCentro}" id="centroId" required="true"><f:convertNumber type= "currency" /></h:inputText>
 		　　	<h:message for="id" style="color: red" />
 			<f:facet name="footer">
 					<h:commandButton value="Eliminar" action ="#{secretaria.eliminarCentro}"/>

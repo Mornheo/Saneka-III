@@ -71,20 +71,30 @@ public class Asignatura implements Serializable {
 	public void setOfertada(Boolean Ofertada) {
 		this.ofertada = Ofertada;
 	}   
-	public Integer getCodigo_1() {
-		return this.codigo;
+	public Integer getCodigo() {
+		return codigo;
 	}
-
-	public void setCodigo_1(Integer Codigo_1) {
-		this.codigo = Codigo_1;
-	}   
-	public String getAsignatura() {
-		return this.nombre;
+	public void setCodigo(Integer codigo) {
+		this.codigo = codigo;
 	}
-
-	public void setAsignatura(String Asignatura) {
-		this.nombre = Asignatura;
-	}   
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public Integer getCreditosTeoria() {
+		return creditosTeoria;
+	}
+	public void setCreditosTeoria(Integer creditosTeoria) {
+		this.creditosTeoria = creditosTeoria;
+	}
+	public Integer getCreditosPractica() {
+		return creditosPractica;
+	}
+	public void setCreditosPractica(Integer creditosPractica) {
+		this.creditosPractica = creditosPractica;
+	}
 	public Integer getCurso() {
 		return this.curso;
 	}

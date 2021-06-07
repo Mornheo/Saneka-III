@@ -122,7 +122,8 @@ import es.uma.informatica.sii.anotaciones.Requisitos;
 				Grupo grupo = gestionGrupo.obtenerGrupo(123);
 				Asignatura asig = new Asignatura(226,true,112,6,titu);
 				Clase clase = new Clase(2,"2021-04-11",asig,grupo);
-				gestionClase.actualizarClase(grupo.getId(), clase);
+				ClaseId id = new Clase.ClaseId(23,"2021-3-19",grupo.getId());
+				gestionClase.actualizarClase(grupo.getId(),id, clase);
 				
 			} catch (SanekaException e) {
 				// TODO Auto-generated catch block
@@ -142,7 +143,7 @@ import es.uma.informatica.sii.anotaciones.Requisitos;
 				Clase clase0 = clases.get(0);
 				clase0.setDia(12);
 				clase0.setHoraFin("25/6/2021");
-				gestionClase.actualizarClase(otroId, clase0);
+				gestionClase.actualizarClase(otroId,new Clase.ClaseId(clase0.getDia(),clase0.getHoraInicio(),clase0.getGrupo().getId()), clase0);
 				fail("Debería lanzar excepción de Grupo no encontrado");
 			} catch (GrupoNoEncontradoException e) {
 				// TODO Auto-generated catch block
@@ -179,7 +180,7 @@ import es.uma.informatica.sii.anotaciones.Requisitos;
 			try {
 				clases = gestionClase.obtenerClasesDeGrupo(idGrupo);
 				Clase clase0 = clases.get(0);
-				gestionClase.eliminarClase(otroId, new ClaseId(clase0.getDia(),clase0.getHoraInicio(),clase0.getGrupo().getId()));
+				gestionClase.eliminarClase(otroId,new ClaseId(clase0.getDia(),clase0.getHoraInicio(),clase0.getGrupo().getId()));
 			} catch (GrupoNoEncontradoException | ClaseNoEncontradoException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -194,7 +195,7 @@ import es.uma.informatica.sii.anotaciones.Requisitos;
 			final ClaseId idClase= new ClaseId(23,"12-30",90);
 			List<Clase> clases;
 			try {
-				gestionClase.eliminarClase(idGrupo, idClase);
+				gestionClase.eliminarClase(idGrupo,idClase);
 				fail("Debería lanzar la excepción de clase no encontrado");
 			} catch (GrupoNoEncontradoException | ClaseNoEncontradoException e) {
 				// TODO Auto-generated catch block

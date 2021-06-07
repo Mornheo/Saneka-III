@@ -5,30 +5,32 @@ import java.io.Serializable;
 import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
 @Entity
-@XmlRootElement
-@XmlAccessorType(XmlAccessType.FIELD)
-@NamedQuery(name="Usuario.findAll", query="SELECT u FROM Usuario u")
-public abstract class Usuario implements Serializable {
+public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     private String emailInstitucional;
-    @XmlTransient
-    @JsonbTransient
     private String contrasenia;
+    private Boolean secretaria;
+    @OneToOne
+    @JoinColumn(nullable= true)
+    private Alumno alumno;
     
-    public Usuario() {
-    	super();
-    }
-    public Usuario(String email, String pass) {
+   public Usuario() {
+	   super();
+   }
+    public Usuario(String email, String pass, Boolean sec) {
     	emailInstitucional = email;
     	contrasenia = pass;
+    	secretaria = sec;
     }
 	public String getEmailInstitucional() {
 		return emailInstitucional;
@@ -41,6 +43,12 @@ public abstract class Usuario implements Serializable {
 	}
 	public void setContrasenia(String contrasenia) {
 		this.contrasenia = contrasenia;
+	}
+	public Boolean getSecretaria() {
+		return secretaria;
+	}
+	public void setSecretaria(Boolean secretaria) {
+		this.secretaria = secretaria;
 	}
 	@Override
 	public int hashCode() {
@@ -67,7 +75,7 @@ public abstract class Usuario implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Usuario [emailInstitucional=" + emailInstitucional + ", contrasenia=" + contrasenia + "]";
+		return "Usuario [emailInstitucional=" + emailInstitucional + ", secretaria=" + secretaria + "]";
 	}
     
 }
