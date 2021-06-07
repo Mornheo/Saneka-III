@@ -23,6 +23,7 @@ public class Secretaria{
         availableItems.put("Grupo", "Grupo");
         availableItems.put("Matrícula", "Matrícula");
         availableItems.put("Titulacion", "Titulaicon");
+        availableItems.put("Optativa", "Optativa");
         
     }
     
@@ -67,6 +68,7 @@ public class Secretaria{
 			case "Grupo": enlace = "crearGrupo.xhtml";break;
 			case "Matrícula": enlace = "crearMatricula.xhtml"; break;
 			case "Titulacion": enlace = "crearTitulacion.xhtml"; break;
+			case "Optativa": enlace= "crearOptativa.xhtml"; break;
 		}
 		return enlace;
 
@@ -83,6 +85,7 @@ public class Secretaria{
 			case "Grupo": enlace = "modificarGrupo.xhtml";break;
 			case "Matrícula": enlace = "modificarMatricula.xhtml"; break;
 			case "Titulacion": enlace = "modificarTitulacion.xhtml"; break;
+			case "Optativa": enlace = "modificarOptativa.xhtml"; break;
 		}
 		return enlace;
 
@@ -98,6 +101,7 @@ public class Secretaria{
 			case "Grupo": enlace = "eliminarGrupo.xhtml";break;
 			case "Matrícula": enlace = "eliminarMatricula.xhtml"; break;
 			case "Titulacion": enlace = "eliminarTitulacion.xhtml"; break;
+			case "Optativa": enlace = "eliminarOptativa.xhtml"; break;
 		}
 		return enlace;
 

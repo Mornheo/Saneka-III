@@ -14,36 +14,36 @@
 		<h:panelGrid id="panel" columns="3" cellpadding="10" cellspacing="1">
 		<f:facet name="header"><h:outputText value="Modificación de grupo" /></f:facet>
 		<h:outputText value="Titulacion:" />
-	　　	<h:inputText value="#{Grupo.titulacion.codigo}" id="titulacion" required="true" converterMessage="Please enter digits only."/>
+	　　	<h:inputText value="#{secretaria.Grupo.titulacion.codigo}" id="titulacion" required="true" converterMessage="Please enter digits only."/>
 	　　	<h:message for="titulacion" style="color: red" />
 
 		<h:outputText value="Curso:" />
-	　　	<h:inputText value="#{Grupo.curso}" id="curso" required="true" converterMessage="Please enter digits only." />
+	　　	<h:inputText value="#{secretaria.Grupo.curso}" id="curso" required="true" converterMessage="Please enter digits only." />
 	　　	<h:message for="curso" style="color: red" />
 		
 		<h:outputText value="Letra:" />
-	　　	<h:inputText value="#{Grupo.letra}" id="letra" required="true" />
+	　　	<h:inputText value="#{secretaria.Grupo.letra}" id="letra" required="true" />
 	　　	<h:message for="letra" style="color: red" />
 		
 		<h:outputText value="Turno:" />
-	　　	<h:inputText value="#{Grupo.turno}" id="turno" required="true" />
+	　　	<h:inputText value="#{secretaria.Grupo.turno}" id="turno" required="true" />
 	　　	<h:message for="turno" style="color: red" />
 	
 		<h:outputText value="Grupo ingles:" />
-		<h:selectOneRadio id="ingles" values="#{Grupo.ingles}" required="true">
+		<h:selectOneRadio id="ingles" values="#{secretaria.Grupo.ingles}" required="true">
 				<f:selectItem itemValue = "Si" itemLabel = "Si" /> 
    				<f:selectItem itemValue = "No" itemLabel = "No" />
 		</h:selectOneRadio>
 	　　	<h:message for="ingles" style="color: red" />
 		
 		<h:outputText value="visible" />
-	　　	<h:selectOneRadio id="visible" values="#{Grupo.visible}" >
+	　　	<h:selectOneRadio id="visible" values="#{secretaria.Grupo.visible}" >
 				<f:selectItem itemValue = "Si" itemLabel = "Si" /> 
    				<f:selectItem itemValue = "No" itemLabel = "No" />
 		</h:selectOneRadio>
 		<f:verbatim><br></br></f:verbatim>
 		<h:outputText value="Asignar" />
-	　　	<h:inputText value="#{Grupo.asignar}" id="asignar" />
+	　　	<h:inputText value="#{secretaria.Grupo.asignar}" id="asignar" />
 		
 		<f:facet name="footer">
 				<h:commandButton value="Envia"/>

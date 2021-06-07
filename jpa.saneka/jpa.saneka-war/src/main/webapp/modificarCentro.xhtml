@@ -11,13 +11,13 @@
 		<h:panelGrid id="panel" columns="3" cellpadding="10" cellspacing="1">
 			<f:facet name="header"><h:outputText value="Modificación de centro" /></f:facet>
 			<h:outputText value="Nombre:" />
-		　　	<h:inputText value="#{Centro.nombre}" id="nombre" required="true" />
+		　　	<h:inputText value="#{secretaria.Centro.nombre}" id="nombre" required="true" />
 		　　	<h:message for="nombre" style="color: red" />
 			<h:outputText value="Direccion:" />
-		　　	<h:inputText value="#{Centro.direccion}" id="direccion" required="true" />
+		　　	<h:inputText value="#{secretaria.Centro.direccion}" id="direccion" required="true" />
 		　　	<h:message for="curso" style="color: red" />
 			<h:outputText value="Telefono Consejeria:" />
-		　　	<h:inputText value="#{Centro.teleConsejeria}" id="telefono" />
+		　　	<h:inputText value="#{secretaria.Centro.teleConsejeria}" id="telefono" />
 			<f:facet name="footer">
 					<h:commandButton value="Envia"/>
 			</f:facet>	
