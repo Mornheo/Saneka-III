@@ -20,17 +20,13 @@ public abstract class Usuario implements Serializable {
     @XmlTransient
     @JsonbTransient
     private String contrasenia;
-    @XmlTransient
-    @JsonbTransient
-    private String cadenaValidacion;
     
     public Usuario() {
     	super();
     }
-    public Usuario(String email, String pass, String cval) {
+    public Usuario(String email, String pass) {
     	emailInstitucional = email;
     	contrasenia = pass;
-    	cadenaValidacion = cval;
     }
 	public String getEmailInstitucional() {
 		return emailInstitucional;
@@ -43,12 +39,6 @@ public abstract class Usuario implements Serializable {
 	}
 	public void setContrasenia(String contrasenia) {
 		this.contrasenia = contrasenia;
-	}
-	public String getCadenaValidacion() {
-		return cadenaValidacion;
-	}
-	public void setCadenaValidacion(String cadenaValidacion) {
-		this.cadenaValidacion = cadenaValidacion;
 	}
 	@Override
 	public int hashCode() {
@@ -75,8 +65,7 @@ public abstract class Usuario implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Usuario [emailInstitucional=" + emailInstitucional + ", contrasenia=" + contrasenia
-				+ ", cadenaValidacion=" + cadenaValidacion + "]";
+		return "Usuario [emailInstitucional=" + emailInstitucional + ", contrasenia=" + contrasenia + "]";
 	}
     
 }
