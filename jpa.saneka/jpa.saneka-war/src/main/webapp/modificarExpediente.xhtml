@@ -14,13 +14,13 @@
 		<h:panelGrid id="panel" columns="3" cellpadding="10" cellspacing="1">
 			<f:facet name="header"><h:outputText value="Modificacion de expediente" /></f:facet>
 			<h:outputText value="Titulacion:" />
-		　　	<h:inputText value="#{Expediente.titulacion.codigo}" id="titulacion" required="true" converterMessage="Please enter digits only."/>
+		　　	<h:inputText value="#{secretaria.Expediente.titulacion.codigo}" id="titulacion" required="true" converterMessage="Please enter digits only."/>
 		　　	<h:message for="titulacion" style="color: red" />
 			<h:outputText value="Numero de expediente:" />
-		　　	<h:inputText value="#{Expediente.numExpediente}" id="numExpediente" required="true" converterMessage="Please enter digits only." />
+		　　	<h:inputText value="#{secretaria.Expediente.numExpediente}" id="numExpediente" required="true" converterMessage="Please enter digits only." />
 		　　	<h:message for="curso" style="color: red" />
 			<h:outputText value="Alumno DNI:" />
-		　　	<h:inputText value="#{Expediente.alumno.dni}" id="dni" required="true"  />
+		　　	<h:inputText value="#{secretaria.Expediente.alumno.dni}" id="dni" required="true"  />
 		　　	<h:message for="dni" style="color: red" />
 			<h:outputText value="Activo:" />
 			<h:selectOneRadio id="activo" values="#{Expediente.activo}" >
