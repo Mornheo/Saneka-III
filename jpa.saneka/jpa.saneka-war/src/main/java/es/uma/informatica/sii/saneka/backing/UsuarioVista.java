@@ -19,4 +19,5 @@ public class UsuarioVista {
 	public List<Usuario> listaUsuarios() throws SanekaException {
 		return gestion.devolverUsuarios();
 	}
+	
 }
