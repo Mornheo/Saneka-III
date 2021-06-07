@@ -6,21 +6,21 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 	
-<head><title>Insertar Asignatura</title></head>
+<head><title>Modificar Optativa</title></head>
 <body>
 
-<h1>Asignatura</h1>
+<h1>Optativa</h1>
 
 <h:form>
   
   <label for="idC">ID de centro:</label>
-  <h:inputText value="#{titulacion.centro.id}" id="idC"/>
+  <h:inputText value="#{asignatura.titulaciones.centro.id}" id="idC"/>
   <h:message for="idC" style="color: red" />
   <br/>
   <br/>
   
   <label for="codTitu">Código titulación:</label>
-  <h:inputText value="#{titulacion.codigo}" id="codTitu"/>
+  <h:inputText value="#{asignatura.titulacion.codigo}" id="codTitu"/>
   <h:message for="codTitu" style="color: red" />
   <br/>
   <br/>
@@ -32,7 +32,7 @@
   <br/>
   
   <label for="codTitu">Código titulación:</label>
-  <h:inputText value="#{titulacion.codigo}" id="codTitu" required="true" />
+  <h:inputText value="#{asignatura.titulacion.codigo}" id="codTitu" required="true" />
   <h:message for="codTitu" style="color: red" />
   <br/>
   <br/>
@@ -73,8 +73,14 @@
   <br/>
   <br/>
   
+  <label for="mencion">Mención:</label>
+  <h:inputText value="#{optativa.mencion}" id="mencion"/>
+  <h:message for="mencion" style="color: red" />
+  <br/>
+  <br/>
+  
   <p>
-  <input type="button" value="Crear"/>
+  <input type="button" value="Modificar"/>
   <h:commandButton value="Volver a panel de control" action = "panelControl.xhtml"/>
   </p>
   
