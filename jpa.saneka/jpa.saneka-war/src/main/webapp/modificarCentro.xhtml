@@ -19,10 +19,10 @@
 			<h:outputText value="Telefono Consejeria:" />
 		　　	<h:inputText value="#{secretaria.Centro.teleConsejeria}" id="telefono" />
 			<f:facet name="footer">
-					<h:commandButton value="Modificar" action ="#{secretaria.modificarCentro}"/>
+					<h:commandButton value="Modificar" id="btonModificar" action ="#{secretaria.modificarCentro}"/>
 			</f:facet>	
 		</h:panelGrid>
-        <h:commandButton value="Volver a panel de control" action = "panelControl.xhtml"/>
+        <h:commandButton value="Volver a panel de control" id="btonVolver" action = "panelControl.xhtml"/>
 	</h:form>
 </h:body>
 </html>

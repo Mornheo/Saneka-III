@@ -18,10 +18,10 @@
 		　　	<h:inputText value="#{secretaria.Clase.id}" id="claseId" required="true"/>
 			<h:message for="claseId" style="color: red" />
 			<f:facet name="footer">
-					<h:commandButton value="Eliminar" action ="#{secretaria.eliminarClase}"/>
+					<h:commandButton value="Eliminar" id="btonEliminar" action ="#{secretaria.eliminarClase}"/>
 			</f:facet>	
 		</h:panelGrid>
-        <h:commandButton value="Volver a panel de control" action = "panelControl.xhtml"/>
+        <h:commandButton value="Volver a panel de control" id="btonVolver" action = "panelControl.xhtml"/>
 	</h:form>
 </h:body>
 </html>

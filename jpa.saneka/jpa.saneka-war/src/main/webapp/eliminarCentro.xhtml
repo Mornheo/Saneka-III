@@ -14,10 +14,10 @@
 		　　	<h:inputText value="#{secretaria.Centro.id}" id="centroId" required="true"><f:convertNumber type= "currency" /></h:inputText>
 		　　	<h:message for="id" style="color: red" />
 			<f:facet name="footer">
-					<h:commandButton value="Eliminar" action ="#{secretaria.eliminarCentro}"/>
+					<h:commandButton value="Eliminar" id="btonEliminar" action ="#{secretaria.eliminarCentro}"/>
 			</f:facet>	
 		</h:panelGrid>
-        <h:commandButton value="Volver a panel de control" action = "panelControl.xhtml"/>
+        <h:commandButton value="Volver a panel de control" id="btonVolver" action = "panelControl.xhtml"/>
 	</h:form>
 </h:body>
 </html>

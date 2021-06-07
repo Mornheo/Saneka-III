@@ -20,10 +20,10 @@
 		　　	<h:inputText value="#{secretaria.Expediente.numExpediente}" id="numExpediente" required="true" converterMessage="Please enter digits only." />
 		　　	<h:message for="curso" style="color: red" />
 			<f:facet name="footer">
-					<h:commandButton value="Eliminar" action ="#{secretaria.eliminarExpediente}"/>
+					<h:commandButton value="Eliminar" id="btonEliminar" action ="#{secretaria.eliminarExpediente}"/>
 			</f:facet>	
 		</h:panelGrid>
-	<h:commandButton value="Volver a panel de control" action = "panelControl.xhtml"/>
+	<h:commandButton value="Volver a panel de control" id="btonVolver" action = "panelControl.xhtml"/>
 	</h:form>
 </h:body>
 </html>
