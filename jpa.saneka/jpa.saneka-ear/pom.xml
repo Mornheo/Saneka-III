@@ -15,6 +15,7 @@
   		<version>0.0.1-SNAPSHOT</version>
   		<type>war</type>
   	</dependency>
+  	
   	<dependency>
   		<groupId>es.uma.informatica.sii</groupId>
   		<artifactId>jpa.saneka-ejb</artifactId>

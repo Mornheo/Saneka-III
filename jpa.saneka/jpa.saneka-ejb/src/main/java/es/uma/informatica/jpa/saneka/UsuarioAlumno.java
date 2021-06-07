@@ -1,5 +1,10 @@
 package es.uma.informatica.jpa.saneka;
 
+import javax.persistence.Entity;
+import javax.persistence.NamedQuery;
+
+@Entity
+@NamedQuery(name="UsuarioAlumno.findAll", query="SELECT ua FROM UsuarioAlumno ua")
 public class UsuarioAlumno extends Usuario{
 
 	/**

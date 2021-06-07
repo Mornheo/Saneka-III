@@ -29,7 +29,6 @@ public class Login {
 
     @Inject
     private InfoSesion sesion;
-
     private Usuario usuario;
 
     /**
@@ -51,8 +50,13 @@ public class Login {
         try {
             gestion.compruebaLogin(usuario);
             sesion.setUsuario(gestion.refrescarUsuario(usuario));
-            return "encuesta.xhtml";
-
+            //System.out.println(usuario.getContrasenia()+usuario.getEmailInstitucional());
+            if(gestion.isEsAlumno()) {
+            	return "encuesta.xhtml";
+            }else {
+            	return "panelControl.xhtml";
+            }
+            
         } catch (UsuarioNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("La cuenta no existe");
             FacesContext.getCurrentInstance().addMessage("login:user", fm);
