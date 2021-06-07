@@ -2,7 +2,7 @@ package es.uma.informatica.jpa.saneka;
 
 import java.io.Serializable;
 
-import javax.json.bind.annotation.JsonbTransient;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;

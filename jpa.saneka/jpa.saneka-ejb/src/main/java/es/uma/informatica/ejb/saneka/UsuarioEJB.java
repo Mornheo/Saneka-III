@@ -20,7 +20,6 @@ import es.uma.informatica.ejb.exceptions.ValidacionIncorrectaException;
 
 @Stateless
 public class UsuarioEJB implements GestionUsuario{
-	private static final int TAM_CADENA_VALIDACION = 20;
 	@PersistenceContext(name="jpa.saneka")
 	private EntityManager em;
 	private boolean esAlumno;
