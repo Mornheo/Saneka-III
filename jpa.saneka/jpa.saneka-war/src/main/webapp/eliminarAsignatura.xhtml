@@ -13,8 +13,21 @@
 
 <h:form>
  
+  <label for="idC">ID de centro:</label>
+  <h:inputText value="#{titulacion.centro.id}" id="idC"/>
+  <h:message for="idC" style="color: red" />
+  <br/>
+  <br/>
+  
+  <label for="codTitu">Código titulación:</label>
+  <h:inputText value="#{titulacion.codigo}" id="codTitu"/>
+  <h:message for="codTitu" style="color: red" />
+  <br/>
+  <br/>
+  
   <label for="ref">Referencia:</label>
-  <input type="text" id="ref" name="ref"/>
+  <h:inputText value="#{asignatura.referencia}" id="ref" required="true" />
+  <h:message for="ref" style="color: red" />
   <br/>
   <br/>
   

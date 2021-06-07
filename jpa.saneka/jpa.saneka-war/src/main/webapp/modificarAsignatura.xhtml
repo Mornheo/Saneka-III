@@ -14,48 +14,63 @@
 <h:form>
 
   
-  <label for="nombre">Referencia:</label> 
-  <input type="text" id="nombre" name="nombre"/>
+  <label for="idC">ID de centro:</label>
+  <h:inputText value="#{titulacion.centro.id}" id="idC"/>
+  <h:message for="idC" style="color: red" />
   <br/>
   <br/>
   
-  <label for="Nombre">Nombre:</label>
-  <input type="text" id="Nombre" name="Nombre"/>
+  <label for="codTitu">Código titulación:</label>
+  <h:inputText value="#{titulacion.codigo}" id="codTitu"/>
+  <h:message for="codTitu" style="color: red" />
+  <br/>
+  <br/>
+
+  <label for="ref">Referencia:</label>
+  <h:inputText value="#{asignatura.referencia}" id="referencia" required="true" />
+  <h:message for="referencia" style="color: red" />
   <br/>
   <br/>
   
-  <label for="Curso">Curso:</label>
-  <input type="text" id="Curso" name="Curso"/>
+  <label for="codTitu">Código titulación:</label>
+  <h:inputText value="#{titulacion.codigo}" id="codTitu" required="true" />
+  <h:message for="codTitu" style="color: red" />
   <br/>
   <br/>
   
-  <label for="Carácter">Carácter:</label>
-  <input type="text" id="Carácter" name="Carácter"/>
+  <label for="cod">Código:</label>
+  <h:inputText value="#{asignatura.codigo}" id="cod" required="true" />
+  <h:message for="cod" style="color: red" />
   <br/>
   <br/>
   
-  <label for="credT">Créditos teoría:</label>
-  <input type="text" id="credT" name="credT"/>
+  <label for="ofer">Ofertada:</label>
+  <h:inputText value="#{asignatura.ofertada}" id="ofer" required="true" />
+  <h:message for="ofer" style="color: red" />
   <br/>
   <br/>
   
-  <label for="credP">Créditos práctica:</label>
-  <input type="text" id="credP" name="credP"/>
+  <label for="nombre">Nombre:</label>
+  <h:inputText value="#{asignatura.nombre}" id="nombre"/>
+  <h:message for="nombre" style="color: red" />
   <br/>
   <br/>
   
-  <label for="Duración">Duración:</label>
-  <input type="text" id="Duración" name="Duración"/>
+  <label for="curso">Curso:</label>
+  <h:inputText value="#{asignatura.curso}" id="curso"/>
+  <h:message for="curso" style="color: red" />
   <br/>
   <br/>
   
-  <label for="Plazas">Plazas:</label>
-  <input type="text" id="Plazas" name="Plazas"/>
+  <label for="cTeoria">Créditos teoría:</label>
+  <h:inputText value="#{asignatura.creditosTeoria}" id="cTeoria"/>
+  <h:message for="cTeoria" style="color: red" />
   <br/>
   <br/>
   
-  <label for="mencion">Si es optativa, mención:</label>
-  <input type="text" id="mencion" name="mencion"/>
+  <label for="cTeoria">Créditos práctica:</label>
+  <h:inputText value="#{asignatura.creditosPractica}" id="cPractica"/>
+  <h:message for="cPractica" style="color: red" />
   <br/>
   <br/>
   

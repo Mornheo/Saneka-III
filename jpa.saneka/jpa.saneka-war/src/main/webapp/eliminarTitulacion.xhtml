@@ -13,13 +13,15 @@
 
 <h:form>
  
-  <label for="idC">ID de centro:</label> 
-  <input type="text" id="idC" name="idC"/>
+<label for="idC">ID de centro:</label>
+  <h:inputText value="#{titulacion.centro.id}" id="idC"/>
+  <h:message for="idC" style="color: red" />
   <br/>
   <br/>
   
-  <label for="cod">Código:</label>
-  <input type="text" id="cod" name="cod"/>
+  <label for="codTitu">Código titulación:</label>
+  <h:inputText value="#{titulacion.codigo}" id="codTitu"/>
+  <h:message for="codTitu" style="color: red" />
   <br/>
   <br/>
   

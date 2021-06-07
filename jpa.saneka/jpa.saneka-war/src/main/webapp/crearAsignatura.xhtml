@@ -13,52 +13,59 @@
 
 <h:form>
   <label for="ref">Referencia:</label>
-  <input type="text" id="ref" name="ref"/>
+  <h:inputText value="#{asignatura.referencia}" id="referencia" required="true" />
+  <h:message for="referencia" style="color: red" />
   <br/>
   <br/>
   
   <label for="codTitu">Código titulación:</label>
-  <input type="text" id="codTitu" name="codTitu"/>
+  <h:inputText value="#{titulacion.codigo}" id="codTitu" required="true" />
+  <h:message for="codTitu" style="color: red" />
   <br/>
   <br/>
   
   <label for="cod">Código:</label>
-  <input type="text" id="cod" name="cod"/>
+  <h:inputText value="#{asignatura.codigo}" id="cod" required="true" />
+  <h:message for="cod" style="color: red" />
   <br/>
   <br/>
   
   <label for="ofer">Ofertada:</label>
-  <input type="text" id="ofer" name="ofer"/>
+  <h:inputText value="#{asignatura.ofertada}" id="ofer" required="true" />
+  <h:message for="ofer" style="color: red" />
   <br/>
   <br/>
   
   <label for="nombre">Nombre:</label>
-  <input type="text" id="nombre" name="nombre"/>
+  <h:inputText value="#{asignatura.nombre}" id="nombre"/>
+  <h:message for="nombre" style="color: red" />
   <br/>
   <br/>
   
   <label for="curso">Curso:</label>
-  <input type="text" id="curso" name="curso"/>
+  <h:inputText value="#{asignatura.curso}" id="curso"/>
+  <h:message for="curso" style="color: red" />
   <br/>
   <br/>
   
   <label for="cTeoria">Créditos teoría:</label>
-  <input type="text" id="cTeoria" name="cTeoria"/>
+  <h:inputText value="#{asignatura.creditosTeoria}" id="cTeoria"/>
+  <h:message for="cTeoria" style="color: red" />
   <br/>
   <br/>
   
-  <label for="mencion">Si es optativa, su mención:</label>
-  <input type="text" id="mencion" name="mencion"/>
+  <label for="cTeoria">Créditos práctica:</label>
+  <h:inputText value="#{asignatura.creditosPractica}" id="cPractica"/>
+  <h:message for="cPractica" style="color: red" />
   <br/>
   <br/>
   
   <p>
   <input type="button" value="Crear"/>
-  
-  <input type="button" value="Cancelar"/>
+  <h:commandButton value="Volver a panel de control" action = "panelControl.xhtml"/>
+  <h:message for="codTitu" style="color: red" />
   </p>
   
-  <h:commandButton value="Volver a panel de control" action = "panelControl.xhtml"/>
   
 </h:form>
 
