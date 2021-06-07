@@ -36,13 +36,14 @@ public class LoginSuiteIT {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
-
-	private static final String GLASSFISH_CONFIGI_FILE_PROPERTY = "org.glassfish.ejb.embedded.glassfish.configuration.file";
-	private static final String CONFIG_FILE = "test/resources/META-INF/domain.xml";
+  
+  private static final String UNIDAD_PERSISTENCIA = "SanekaTest";
+  private static final String GLASSFISH_CONFIGI_FILE_PROPERTY = "org.glassfish.ejb.embedded.glassfish.configuration.file";
+  private static final String CONFIG_FILE = "test/resources/META-INF/domain.xml";
 	
-	public static EJBContainer ejbContainer;
-	public static Context ctx;
-	
+  public static EJBContainer ejbContainer;
+  public static Context ctx;
+	/*
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception{
 		Properties properties = new Properties();
@@ -57,13 +58,13 @@ public class LoginSuiteIT {
 			ejbContainer.close();
 		}
 	}
-	
+	*/
   @Before
   public void setUp() {
     driver = new FirefoxDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
-    BaseDatos.inicializaBaseDatos("SanekaTest");
+    BaseDatos.inicializaBaseDatos(UNIDAD_PERSISTENCIA);
   }
   
   @After
