@@ -17,10 +17,10 @@
 		<h:outputText value="GrupoId:" />
 	　　	<h:inputText value="#{secretaria.idGrupo}" id="grupoId" required="true" converterMessage="Please enter digits only." />
 		<f:facet name="footer">
-				<h:commandButton value="Eliminar" action ="#{secretaria.eliminarGrupo}"/>
+				<h:commandButton value="Eliminar" id="btonEliminar" action ="#{secretaria.eliminarGrupo}"/>
 		</f:facet>	
 		</h:panelGrid>
-        <h:commandButton value="Volver a panel de control" action = "panelControl.xhtml"/>
+        <h:commandButton value="Volver a panel de control" id="btonVolver" action = "panelControl.xhtml"/>
 	</h:form>
 </h:body>
 </html>
