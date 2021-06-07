@@ -1,7 +1,5 @@
 package es.uma.informatica.ejb.saneka;
 
-import java.util.Random;
-
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -17,7 +15,6 @@ import es.uma.informatica.ejb.exceptions.ValidacionIncorrectaException;
 
 @Stateless
 public class UsuarioEJB implements GestionUsuario{
-	private static final int TAM_CADENA_VALIDACION = 20;
 	@PersistenceContext(name="jpa.saneka")
 	private EntityManager em;
 	@Override
@@ -66,38 +63,13 @@ public class UsuarioEJB implements GestionUsuario{
 	}
 
 	@Override
-	public void validarCuenta(String email, String validacion) throws SanekaException {
-		// TODO Auto-generated method stub
-		Usuario u = em.find(Usuario.class, email);
-        if (u == null) {
-            throw new UsuarioNoEncontradoException();
-        }
-
-        if (u.getCadenaValidacion() == null) {
-            // la cuenta ya está activa
-            return;
-        }
-
-        if (!u.getCadenaValidacion().equals(validacion)) {
-            throw new ValidacionIncorrectaException();
-        }
-        // else
-        // Eliminamos la cadena de validación, indicando que ya está activa la cuenta
-        u.setCadenaValidacion(null);
-	}
-
-	@Override
 	public void compruebaLogin(Usuario u) throws SanekaException {
 		// TODO Auto-generated method stub
     	Usuario user = em.find(Usuario.class, u.getEmailInstitucional());
         if (user == null) {
             throw new UsuarioNoEncontradoException();
         }
-
-        if (user.getCadenaValidacion() != null) {
-            throw new UsuarioInactivoException();
-        }
-
+        
         if (!user.getContrasenia().equals(u.getContrasenia())) {
             throw new ContraseniaInvalidaException();
         }
@@ -112,23 +84,5 @@ public class UsuarioEJB implements GestionUsuario{
         return user;
 	}
 	
-	 private String generarCadenaAleatoria() {
-	        Random rnd = new Random(System.currentTimeMillis());
-	        StringBuilder sb = new StringBuilder();
-
-	        for (int i = 0; i < TAM_CADENA_VALIDACION; i++) {
-	            int v = rnd.nextInt(62);
-	            if (v < 26) {
-	                sb.append((char) ('a' + v));
-	            } else if (v < 52) {
-	                sb.append((char) ('A' + v - 26));
-	            } else {
-	                sb.append((char) ('0' + v - 52));
-	            }
-	        }
-
-	        return sb.toString();
-
-	    }
 
 }

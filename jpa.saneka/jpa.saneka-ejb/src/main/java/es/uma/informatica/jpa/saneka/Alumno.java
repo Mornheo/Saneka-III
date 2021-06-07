@@ -49,6 +49,8 @@ public class Alumno implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@OneToMany(targetEntity=Expediente.class,mappedBy="alumno")
 	private List<Expediente> expedientes;
+	@OneToOne(mappedBy = "alumno")
+	private Usuario usuario;
 	
 	public List<Expediente> getExpedientes() {
 		return expedientes;

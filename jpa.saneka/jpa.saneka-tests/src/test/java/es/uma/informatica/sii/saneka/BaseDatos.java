@@ -22,8 +22,6 @@ import es.uma.informatica.jpa.saneka.Matricula;
 import es.uma.informatica.jpa.saneka.Optativa;
 import es.uma.informatica.jpa.saneka.Titulacion;
 import es.uma.informatica.jpa.saneka.Usuario;
-import es.uma.informatica.jpa.saneka.UsuarioAlumno;
-import es.uma.informatica.jpa.saneka.UsuarioSecretaria;
 
 public class BaseDatos {
 	
@@ -56,21 +54,21 @@ public class BaseDatos {
 		em.persist(alumno4);
 		
 		//Usuarios Alumnos
-		Usuario userA1 = new UsuarioAlumno("07143291@uma.es", "123", "saneka");
+		Usuario userA1 = new Usuario("07143291@uma.es", "123", false);
 		em.persist(userA1);
-		Usuario userA2 = new UsuarioAlumno("07198655@uma.es", "123", "saneka");
+		Usuario userA2 = new Usuario("07198655@uma.es", "123", false);
 		em.persist(userA2);
-		Usuario userA3 = new UsuarioAlumno("65712347@uma.es", "3333", "saneka");
+		Usuario userA3 = new Usuario("65712347@uma.es", "123", false);
 		em.persist(userA3);
-		Usuario userA4 = new UsuarioAlumno("07182345@uma.es", "123", "saneka");
+		Usuario userA4 = new Usuario("07182345@uma.es", "123", false);
 		em.persist(userA4);
 		
 		//Usuarios Secretaria
-		Usuario userS1 = new UsuarioSecretaria("sec1@uma.es", "1235", "malaga");
+		Usuario userS1 = new Usuario("sec1@uma.es", "123", true);
 		em.persist(userS1);
 		
 		//Expediente
-		Expediente exp = new Expediente(12345, titu, alumnoA);
+		Expediente exp = new Expediente(12345, titu, alumno1);
 		exp.setActivo(true);
 		em.persist(exp);
 		

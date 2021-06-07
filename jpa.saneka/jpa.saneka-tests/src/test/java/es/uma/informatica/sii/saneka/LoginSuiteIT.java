@@ -3,7 +3,10 @@ package es.uma.informatica.sii.saneka;
 
 import org.junit.Test;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.After;
+import org.junit.AfterClass;
+
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.core.IsNot.not;
@@ -22,6 +25,10 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
 import java.util.*;
+
+import javax.ejb.embeddable.EJBContainer;
+import javax.naming.Context;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -29,7 +36,28 @@ public class LoginSuiteIT {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
-  
+
+	private static final String GLASSFISH_CONFIGI_FILE_PROPERTY = "org.glassfish.ejb.embedded.glassfish.configuration.file";
+	private static final String CONFIG_FILE = "test/resources/META-INF/domain.xml";
+	
+	public static EJBContainer ejbContainer;
+	public static Context ctx;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception{
+		Properties properties = new Properties();
+		properties.setProperty(GLASSFISH_CONFIGI_FILE_PROPERTY, CONFIG_FILE);
+		ejbContainer = EJBContainer.createEJBContainer(properties);
+		ctx = ejbContainer.getContext();
+	}
+	
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+		if (ejbContainer != null) {
+			ejbContainer.close();
+		}
+	}
+	
   @Before
   public void setUp() {
     driver = new FirefoxDriver();
@@ -47,6 +75,24 @@ public class LoginSuiteIT {
   public void pruebaSencilla() {
     driver.get("http://localhost:8080/jpa.saneka-war/");
     driver.manage().window().setSize(new Dimension(1059, 730));
-    assertThat(driver.findElement(By.id("titulo")).getText(), is("Login"));
+    assertThat(driver.getTitle(), is("Login"));
   }
+  @Test
+  public void loginExitoso() {
+	    driver.get("http://localhost:8080/jpa.saneka-war/");
+	    driver.manage().window().setSize(new Dimension(668, 463));
+	    driver.findElement(By.id("j_idt5:correo")).sendKeys("sec1@uma.es");
+	    {
+	      String value = driver.findElement(By.id("j_idt5:correo")).getAttribute("value");
+	      assertThat(value, is("sec1@uma.es"));
+	    }
+	    driver.findElement(By.id("j_idt5:password")).sendKeys("123");
+	    {
+	      String value = driver.findElement(By.id("j_idt5:password")).getAttribute("value");
+	      assertThat(value, is("123"));
+	    }
+	    driver.findElement(By.name("j_idt5:j_idt11")).click();
+	    assertThat(driver.getTitle(), is("Encuesta"));
+	  }
+
 }

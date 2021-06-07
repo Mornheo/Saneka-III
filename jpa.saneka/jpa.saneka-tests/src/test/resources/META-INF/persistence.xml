@@ -6,23 +6,24 @@
   <persistence-unit name="SanekaTest" transaction-type="RESOURCE_LOCAL">
    	<class>es.uma.informatica.jpa.saneka.Alumno</class>
 	<class>es.uma.informatica.jpa.saneka.Asignatura</class>
-	<class>es.uma.informatica.jpa.saneka.Asignaturas_matricula</class>
+	<class>es.uma.informatica.jpa.saneka.AsignaturasMatricula</class>
 	<class>es.uma.informatica.jpa.saneka.Centro</class>
 	<class>es.uma.informatica.jpa.saneka.Clase</class>
 	<class>es.uma.informatica.jpa.saneka.Encuesta</class>
 	<class>es.uma.informatica.jpa.saneka.Expediente</class>
 	<class>es.uma.informatica.jpa.saneka.Grupo</class>
-	<class>es.uma.informatica.jpa.saneka.Grupos_por_asignatura</class>
+	<class>es.uma.informatica.jpa.saneka.GruposPorAsignatura</class>
 	<class>es.uma.informatica.jpa.saneka.Matricula</class>
 	<class>es.uma.informatica.jpa.saneka.Optativa</class>
 	<class>es.uma.informatica.jpa.saneka.Titulacion</class>
+	<class>es.uma.informatica.jpa.saneka.Usuario</class>
     <shared-cache-mode>NONE</shared-cache-mode>
     <properties>
-    	<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
     	<property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE"/>
 		<property name="javax.persistence.jdbc.user" value=""/>
 		<property name="javax.persistence.jdbc.password" value=""/>
 		<property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
-    </properties>
+		</properties>
   </persistence-unit>
 </persistence>

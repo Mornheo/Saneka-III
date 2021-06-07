@@ -9,9 +9,6 @@ import es.uma.informatica.ejb.exceptions.UsuarioInactivoException;
 import es.uma.informatica.ejb.exceptions.UsuarioNoEncontradoException;
 import es.uma.informatica.ejb.saneka.GestionUsuario;
 import es.uma.informatica.jpa.saneka.Usuario;
-import es.uma.informatica.jpa.saneka.UsuarioSecretaria;
-
-
 import javax.ejb.EJB;
 
 import javax.inject.Named;
@@ -36,7 +33,7 @@ public class Login {
      * Creates a new instance of login
      */
     public Login() {
-        usuario = new UsuarioSecretaria();
+        usuario = new Usuario();
     }
 
     public Usuario getUsuario() {
