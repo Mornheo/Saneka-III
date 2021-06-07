@@ -24,9 +24,9 @@
 		　　	<h:inputText value="#{secretaria.Clase.horaFin}" id="horaFin"/>
 			<f:facet name="footer">
 					<h:commandButton value="Crear" action ="#{secretaria.crearClase}"/>
+					<h:button value="Volver a panel de control" outcome="panelControl.xhtml" />
 			</f:facet>	
 		</h:panelGrid>
-		<h:commandButton value="Volver a panel de control" action = "panelControl.xhtml"/>
 	</h:form>
 </h:body>
 </html>

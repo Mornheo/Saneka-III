@@ -11,40 +11,36 @@
 
 <h1>Titulación</h1>
 
-<h:form>
+<form>
 
   
-  <label for="idC">ID de centro:</label>
-  <h:inputText value="#{secretaria.titulacion.centro.id}" id="idC"/>
-  <h:message for="idC" style="color: red" />
+  <label for="idC">ID de centro:</label> 
+  <input type="text" id="idC" name="idC"/>
   <br/>
   <br/>
   
-  <label for="codTitu">Código titulación:</label>
-  <h:inputText value="#{secretaria.titulacion.codigo}" id="codTitu"/>
-  <h:message for="codTitu" style="color: red" />
+  <label for="cod">Código:</label>
+  <input type="text" id="cod" name="cod"/>
   <br/>
   <br/>
   
   <label for="nombre">Nombre:</label>
-  <h:inputText value="#{secretaria.titulacion.nombre}" id="nombre"/>
-  <h:message for="nombre" style="color: red" />
+  <input type="text" id="nombre" name="nombre"/>
   <br/>
   <br/>
   
-  <label for="cred">Creditos:</label>
-  <h:inputText value="#{secretaria.titulacion.creditos}" id="cred"/>
-  <h:message for="cred" style="color: red" />
+  <label for="cred">Créditos:</label>
+  <input type="text" id="cred" name="cred"/>
   <br/>
   <br/>
   
   <p>
-  <h:commandButton value="Modificar" action ="#{secretaria.modificarTitulacion}"/>
+  <input type="button" value="Modificar" id="modificar"/>
   
   <h:commandButton value="Volver a panel de control" action = "panelControl.xhtml"/>
   </p>
   
-</h:form>
+</form>
 
 </body>
 </html>

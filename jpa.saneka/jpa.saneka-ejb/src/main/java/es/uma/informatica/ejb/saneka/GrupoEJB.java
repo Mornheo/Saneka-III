@@ -42,13 +42,13 @@ public class GrupoEJB implements GestionGrupo{
 	}
 
 	@Override
-	public void actualizarGrupo(Integer titu, Grupo grupo) throws TitulacionNoEncontradoException, GrupoNoEncontradoException {
+	public void actualizarGrupo(Integer titu,Integer grupoid,Grupo grupo) throws TitulacionNoEncontradoException, GrupoNoEncontradoException {
 		// Actualiza curso, letra,turno,ingles,plaza
 		Titulacion titulacion = em.find(Titulacion.class,titu);
 		if(titulacion == null) {
 			throw new TitulacionNoEncontradoException();
 		}
-		Grupo grupoExistente = em.find(Grupo.class,grupo.getId());
+		Grupo grupoExistente = em.find(Grupo.class,grupoid);
 		if(grupoExistente == null) {
 			throw new GrupoNoEncontradoException();
 		}

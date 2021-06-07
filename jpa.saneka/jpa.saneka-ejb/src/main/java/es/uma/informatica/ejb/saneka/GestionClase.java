@@ -12,8 +12,8 @@ import es.uma.informatica.jpa.saneka.Clase.ClaseId;
 public interface GestionClase {
 	public void insertarClase(Integer grupo,Clase clase) throws GrupoNoEncontradoException, ClaseExistenteException ;
 	public List<Clase> obtenerClasesDeGrupo(Integer grupo) throws GrupoNoEncontradoException;
-	public void actualizarClase(Integer grupo,Clase clase) throws GrupoNoEncontradoException, ClaseNoEncontradoException;
-	public void eliminarClase(Integer grupo,ClaseId clase) throws GrupoNoEncontradoException, ClaseNoEncontradoException;
+	public void actualizarClase(Integer grupo,Integer idClase,Clase clase) throws GrupoNoEncontradoException, ClaseNoEncontradoException;
+	public void eliminarClase(Integer grupo,Integer clase) throws GrupoNoEncontradoException, ClaseNoEncontradoException;
 	public void eliminarTodosClases(Integer grupo) throws GrupoNoEncontradoException;
 	
 }

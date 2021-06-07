@@ -13,6 +13,10 @@ import es.uma.informatica.jpa.saneka.Usuario;
 @Named(value = "encuesta")
 @RequestScoped
 public class Encuesta implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Inject
 	private InfoSesion sesion;
 	private String turnoPreferente;

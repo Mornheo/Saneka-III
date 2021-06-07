@@ -1,10 +1,12 @@
 package es.uma.informatica.ejb.saneka;
 
+import java.util.List;
 import java.util.Random;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import es.uma.informatica.ejb.exceptions.ContraseniaInvalidaException;
 import es.uma.informatica.ejb.exceptions.OptativaNoEncontradoException;
@@ -13,6 +15,8 @@ import es.uma.informatica.ejb.exceptions.UsuarioExistenteException;
 import es.uma.informatica.ejb.exceptions.UsuarioInactivoException;
 import es.uma.informatica.ejb.exceptions.UsuarioNoEncontradoException;
 import es.uma.informatica.jpa.saneka.Usuario;
+import es.uma.informatica.jpa.saneka.UsuarioAlumno;
+import es.uma.informatica.jpa.saneka.UsuarioSecretaria;
 import es.uma.informatica.ejb.exceptions.ValidacionIncorrectaException;
 
 @Stateless
@@ -20,6 +24,7 @@ public class UsuarioEJB implements GestionUsuario{
 	private static final int TAM_CADENA_VALIDACION = 20;
 	@PersistenceContext(name="jpa.saneka")
 	private EntityManager em;
+	private boolean esAlumno;
 	@Override
 	public String mostrarUsuario(String email) throws SanekaException {
 		Usuario existente = em.find(Usuario.class, email);
@@ -65,41 +70,21 @@ public class UsuarioEJB implements GestionUsuario{
 		return u;
 	}
 
-	@Override
-	public void validarCuenta(String email, String validacion) throws SanekaException {
-		// TODO Auto-generated method stub
-		Usuario u = em.find(Usuario.class, email);
-        if (u == null) {
-            throw new UsuarioNoEncontradoException();
-        }
-
-        if (u.getCadenaValidacion() == null) {
-            // la cuenta ya está activa
-            return;
-        }
-
-        if (!u.getCadenaValidacion().equals(validacion)) {
-            throw new ValidacionIncorrectaException();
-        }
-        // else
-        // Eliminamos la cadena de validación, indicando que ya está activa la cuenta
-        u.setCadenaValidacion(null);
-	}
 
 	@Override
 	public void compruebaLogin(Usuario u) throws SanekaException {
 		// TODO Auto-generated method stub
     	Usuario user = em.find(Usuario.class, u.getEmailInstitucional());
+    	List<UsuarioAlumno> alumnos = devolverUsuarioAlumnos();
         if (user == null) {
             throw new UsuarioNoEncontradoException();
         }
-
-        if (user.getCadenaValidacion() != null) {
-            throw new UsuarioInactivoException();
-        }
-
         if (!user.getContrasenia().equals(u.getContrasenia())) {
             throw new ContraseniaInvalidaException();
+        }
+        esAlumno= false;
+        if(alumnos.contains(u)) {
+        	esAlumno = true;
         }
 	}
 
@@ -112,23 +97,33 @@ public class UsuarioEJB implements GestionUsuario{
         return user;
 	}
 	
-	 private String generarCadenaAleatoria() {
-	        Random rnd = new Random(System.currentTimeMillis());
-	        StringBuilder sb = new StringBuilder();
 
-	        for (int i = 0; i < TAM_CADENA_VALIDACION; i++) {
-	            int v = rnd.nextInt(62);
-	            if (v < 26) {
-	                sb.append((char) ('a' + v));
-	            } else if (v < 52) {
-	                sb.append((char) ('A' + v - 26));
-	            } else {
-	                sb.append((char) ('0' + v - 52));
-	            }
-	        }
+	@Override
+	public List<UsuarioAlumno> devolverUsuarioAlumnos() throws SanekaException {
+		TypedQuery<UsuarioAlumno> query =
+			      em.createNamedQuery("UsuarioAlumno.findAll",UsuarioAlumno.class);
+		List<UsuarioAlumno> results = query.getResultList();
+		return results;
+	}
 
-	        return sb.toString();
+	@Override
+	public List<UsuarioSecretaria> devolverUsuarioSecretarias() throws SanekaException {
+		TypedQuery<UsuarioSecretaria> query =
+			      em.createNamedQuery("UsuarioSecretaria.findAll",UsuarioSecretaria.class);
+		List<UsuarioSecretaria> results = query.getResultList();
+		return results;
+	}
 
-	    }
-
+	@Override
+	public List<Usuario> devolverUsuarios() throws SanekaException {
+		TypedQuery<Usuario> query =
+			      em.createNamedQuery("Usuario.findAll",Usuario.class);
+		List<Usuario> results = query.getResultList();
+		return results;
+	}
+	@Override
+	public boolean isEsAlumno() {
+		return esAlumno;
+	}
+	
 }
