@@ -13,32 +13,38 @@
 
 <h:form>
   <label for="dni">DNI:</label>
-  <input type="text" id="dni" name="dni"/>
+  <h:inputText value="#{alumno.dni}" id="dni" required="true" />
+  <h:message for="dni" style="color: red" />
   <br/>
   <br/>
   
   <label for="nombre">Nombre:</label>
-  <input type="text" id="nombre" name="nombre"/>
+  <h:inputText value="#{alumno.nombre}" id="nombre" required="true" />
+  <h:message for="nombre" style="color: red" />
   <br/>
   <br/>
   
   <label for="apellido1">Apellido 1:</label>
-  <input type="text" id="apellido1" name="apellido1"/>
+  <h:inputText value="#{alumno.apellido1}" id="apellido1" required="true" />
+  <h:message for="apellido1" style="color: red" />
   <br/>
   <br/>
   
   <label for="apellido1">Apellido 2:</label>
-  <input type="text" id="apellido2" name="apellido2"/>
+  <h:inputText value="#{alumno.apellido2}" id="apellido2"/>
+  <h:message for="apellido2" style="color: red" />
   <br/>
   <br/>
   
-  <label for="apellido1">E-mail institucional:</label>
-  <input type="text" id="email" name="email"/>
+  <label for="email">E-mail institucional:</label>
+  <h:inputText value="#{alumno.emailInstitucional}" id="email"/>
+  <h:message for="email" style="color: red" />
   <br/>
   <br/>
   
-  <label for="apellido1">Grupos Asignados:</label>
-  <input type="text" id="grupos" name="grupos"/>
+  <label for="grupos">Grupos Asignados:</label>
+  <h:inputText value="#{alumno.gruposAsignados}" id="grupos"/>
+  <h:message for="grupos" style="color: red" />
   <br/>
   <br/>
   
