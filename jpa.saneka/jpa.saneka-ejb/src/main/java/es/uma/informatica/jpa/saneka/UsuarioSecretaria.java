@@ -6,4 +6,7 @@ public class UsuarioSecretaria extends Usuario{
 	public UsuarioSecretaria() {
 		super();
 	}
+	public UsuarioSecretaria(String email, String pass, String cval) {  
+    	super();
+	}
 }

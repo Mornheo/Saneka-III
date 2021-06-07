@@ -21,6 +21,9 @@ import es.uma.informatica.jpa.saneka.GruposPorAsignatura;
 import es.uma.informatica.jpa.saneka.Matricula;
 import es.uma.informatica.jpa.saneka.Optativa;
 import es.uma.informatica.jpa.saneka.Titulacion;
+import es.uma.informatica.jpa.saneka.Usuario;
+import es.uma.informatica.jpa.saneka.UsuarioAlumno;
+import es.uma.informatica.jpa.saneka.UsuarioSecretaria;
 
 public class BaseDatos {
 	
@@ -37,15 +40,34 @@ public class BaseDatos {
 		em.persist(centro);
 		
 		//Titulacion
-		
 		List<Centro> centros = new ArrayList<Centro>();
 		centros.add(centro);
 		Titulacion titu = new Titulacion(1234,"infor",6, centros);
 		em.persist(titu);
 		
 		//Alumno
-		Alumno alumnoA = new Alumno("090", "Diego", "Centeno", "07143291@uma.es");
-		em.persist(alumnoA);
+		Alumno alumno1 = new Alumno("446753A", "Diego", "Centeno", "07143291@uma.es");
+		em.persist(alumno1);
+		Alumno alumno2 = new Alumno("770341P", "Alvaro", "Moreno", "07198655@uma.es");
+		em.persist(alumno2);
+		Alumno alumno3 = new Alumno("872339Z", "Lin", "Ye", "65712347@uma.es");
+		em.persist(alumno3);
+		Alumno alumno4 = new Alumno("374147G", "Rafael", "Martin", "07182345@uma.es");
+		em.persist(alumno4);
+		
+		//Usuarios Alumnos
+		Usuario userA1 = new UsuarioAlumno("07143291@uma.es", "123", "saneka");
+		em.persist(userA1);
+		Usuario userA2 = new UsuarioAlumno("07198655@uma.es", "123", "saneka");
+		em.persist(userA2);
+		Usuario userA3 = new UsuarioAlumno("65712347@uma.es", "3333", "saneka");
+		em.persist(userA3);
+		Usuario userA4 = new UsuarioAlumno("07182345@uma.es", "123", "saneka");
+		em.persist(userA4);
+		
+		//Usuarios Secretaria
+		Usuario userS1 = new UsuarioSecretaria("sec1@uma.es", "1235", "malaga");
+		em.persist(userS1);
 		
 		//Expediente
 		Expediente exp = new Expediente(12345, titu, alumnoA);

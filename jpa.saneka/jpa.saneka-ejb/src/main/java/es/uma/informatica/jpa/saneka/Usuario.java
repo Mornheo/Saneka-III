@@ -27,6 +27,11 @@ public abstract class Usuario implements Serializable {
     public Usuario() {
     	super();
     }
+    public Usuario(String email, String pass, String cval) {
+    	emailInstitucional = email;
+    	contrasenia = pass;
+    	cadenaValidacion = cval;
+    }
 	public String getEmailInstitucional() {
 		return emailInstitucional;
 	}
