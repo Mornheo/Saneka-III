@@ -25,11 +25,11 @@ public class AlumnoEJB implements GestionAlumno{
 	}
 
 	@Override
-	public void modificarAlumno(Alumno alumno) throws AlumnoNoEncontrado{
+	public void modificarAlumno(String dni,Alumno alumno) throws AlumnoNoEncontrado{
 		// De alumno se puede cambiar el nombre, los apellidos,email-personal,
 		// telefono,direccion notificacion, localidad notificacion, provincia
 		// notificacion, cp.
-		Alumno al=em.find(Alumno.class,alumno.getDni());
+		Alumno al=em.find(Alumno.class,dni);
 		if(al==null) {
 			throw new AlumnoNoEncontrado();
 		}

@@ -28,10 +28,10 @@ public class CentroEJB implements GestionCentro{
 	}
 
 	@Override
-	public void actualizarCentro(Centro centro) throws CentroNoEncontradoException {
+	public void actualizarCentro(Integer id,Centro centro) throws CentroNoEncontradoException {
 		// Que información podemos actualizar
 		// Actualizamos Nombre,direccion,telefono y lista de titulacion
-		Centro centroExistente = em.find(Centro.class,centro.getId());
+		Centro centroExistente = em.find(Centro.class,id);
 		if(centroExistente == null) {
 			throw new CentroNoEncontradoException();
 		}

@@ -10,7 +10,7 @@ public interface GestionAlumno {
 
 	void insertarAlumno(Alumno alumno) throws AlumnoYaExistente;
 
-	void modificarAlumno(Alumno alumno) throws AlumnoNoEncontrado;
+	void modificarAlumno(String dni,Alumno alumno) throws AlumnoNoEncontrado;
 
 	String mostrarAlumno(String dni) throws AlumnoNoEncontrado;
 

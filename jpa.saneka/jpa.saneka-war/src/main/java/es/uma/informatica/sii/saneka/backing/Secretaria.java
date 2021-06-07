@@ -9,6 +9,17 @@ import javax.inject.Named;
 
 import es.uma.informatica.ejb.exceptions.AlumnoNoEncontrado;
 import es.uma.informatica.ejb.exceptions.AlumnoYaExistente;
+import es.uma.informatica.ejb.exceptions.CentroExistenteException;
+import es.uma.informatica.ejb.exceptions.CentroNoEncontradoException;
+import es.uma.informatica.ejb.exceptions.ClaseExistenteException;
+import es.uma.informatica.ejb.exceptions.ClaseNoEncontradoException;
+import es.uma.informatica.ejb.exceptions.ExpedienteNoEncontradoException;
+import es.uma.informatica.ejb.exceptions.GrupoExistenteException;
+import es.uma.informatica.ejb.exceptions.GrupoNoEncontradoException;
+import es.uma.informatica.ejb.exceptions.MatriculaExistente;
+import es.uma.informatica.ejb.exceptions.MatriculaNoExistente;
+import es.uma.informatica.ejb.exceptions.SanekaException;
+import es.uma.informatica.ejb.exceptions.TitulacionNoEncontradoException;
 import es.uma.informatica.ejb.saneka.GestionAlumno;
 import es.uma.informatica.ejb.saneka.GestionAsignatura;
 import es.uma.informatica.ejb.saneka.GestionCentro;
@@ -16,6 +27,7 @@ import es.uma.informatica.ejb.saneka.GestionClase;
 import es.uma.informatica.ejb.saneka.GestionExpediente;
 import es.uma.informatica.ejb.saneka.GestionGrupo;
 import es.uma.informatica.ejb.saneka.GestionMatricula;
+import es.uma.informatica.ejb.saneka.GestionOptativa;
 import es.uma.informatica.ejb.saneka.GestionTitulacion;
 import es.uma.informatica.ejb.saneka.GestionUsuario;
 import es.uma.informatica.jpa.saneka.Alumno;
@@ -25,6 +37,7 @@ import es.uma.informatica.jpa.saneka.Clase;
 import es.uma.informatica.jpa.saneka.Expediente;
 import es.uma.informatica.jpa.saneka.Grupo;
 import es.uma.informatica.jpa.saneka.Matricula;
+import es.uma.informatica.jpa.saneka.Optativa;
 import es.uma.informatica.jpa.saneka.Titulacion;
 
 @Named(value = "secretaria")
@@ -49,15 +62,27 @@ public class Secretaria{
 	private GestionMatricula gestionMatricula;
 	@Inject
 	private GestionTitulacion gestionTitu;
+	@Inject
+	private GestionOptativa gestionOpt;
 	
 	private Alumno alumno;
-	private Asignatura asig;
+	private String dni;
+	private Asignatura asignatura;
+	private Integer refAsig;
 	private Centro centro;
+	private Integer idCentro;
 	private Clase clase;
-	private Expediente exp;
+	private Integer idClase;
+	private Expediente expediente;
+	private Integer exp;
 	private Grupo grupo;
-	private Matricula mat;
-	private Titulacion titu;
+	private Integer idGrupo;
+	private Matricula matricula;
+	private String matr;
+	private Titulacion titulacion;
+	private Integer titu;
+	private Optativa optativa;
+	private Integer refOpt;
 	
     private Map<String, String> availableItems; // +getter
     public Secretaria() {
@@ -160,10 +185,81 @@ public class Secretaria{
 			gestionAlumno.insertarAlumno(alumno);
 	}
 	public void modificarAlumno() throws AlumnoNoEncontrado {
-			gestionAlumno.modificarAlumno(alumno);
+			gestionAlumno.modificarAlumno(dni,alumno);
 	}
 	public void EliminarAlumno() throws AlumnoNoEncontrado{
-			gestionAlumno.eliminarAlumno(alumno.getDni());
+			gestionAlumno.eliminarAlumno(dni);
 	}
-		
+	public void crearAsignatura() throws SanekaException {
+		gestionAsig.insertarAsignatura(asignatura.getReferencia(), asignatura);
+	}
+	public void modificarAsignatura() throws SanekaException {
+		gestionAsig.modificarAsignatura(refAsig, asignatura);
+	}
+	public void eliminarAsignatura() throws SanekaException {
+		gestionAsig.eliminarAsignatura(refAsig);
+	}
+	public void crearCentro () throws CentroExistenteException {
+		gestionCentro.insertarCentro(centro);
+	}
+	public void modificarCentro() throws CentroNoEncontradoException {
+		gestionCentro.actualizarCentro(idCentro,centro);
+	}
+	public void eliminarCentro() throws CentroNoEncontradoException {
+		gestionCentro.eliminarCentro(idCentro);
+	}
+	public void crearClase() throws GrupoNoEncontradoException, ClaseExistenteException {
+		gestionClase.insertarClase(idGrupo, clase);
+	}
+	public void modificarClase() throws GrupoNoEncontradoException, ClaseNoEncontradoException {
+		gestionClase.actualizarClase(idGrupo,idClase, clase);
+	}
+	public void eliminarClase() throws GrupoNoEncontradoException, ClaseNoEncontradoException {
+		gestionClase.eliminarClase(idGrupo,idClase);
+	}
+	public void crearExpediente() throws SanekaException {
+		gestionExp.insertarExpediente(expediente.getNumExpediente(), expediente);
+	}
+	public void modificarExpediente() throws SanekaException {
+		gestionExp.modificarExpediente(exp, expediente);
+	}
+	public void eliminarExpediente() throws SanekaException {
+		gestionExp.eliminarExpediente(exp);
+	}
+	public void crearGrupo() throws TitulacionNoEncontradoException, GrupoExistenteException {
+		gestionGrupo.insertarGrupo(titu, grupo);
+	}
+	public void modificarGrupo() throws TitulacionNoEncontradoException, GrupoNoEncontradoException {
+		gestionGrupo.actualizarGrupo(titu,idGrupo, grupo);
+	}
+	public void eliminarGrupo() throws TitulacionNoEncontradoException, GrupoNoEncontradoException {
+		gestionGrupo.eliminarGrupo(titu, idGrupo);
+	}
+	public void crearMatricula() throws ExpedienteNoEncontradoException, MatriculaExistente {
+		gestionMatricula.insertarMatricula(exp, matricula);
+	}
+	public void modificarMatricula() throws MatriculaNoExistente, ExpedienteNoEncontradoException {
+		gestionMatricula.modificarMatricula(exp,matr, matricula);
+	}
+	public void eliminarMatricula() throws MatriculaNoExistente, ExpedienteNoEncontradoException {
+		gestionMatricula.eliminarMatricula(exp,matr);
+	}
+	public void crearTitulacion() throws SanekaException {
+		gestionTitu.insertarTitulacion(titulacion.getCodigo(), titulacion);
+	}
+	public void modificarTitulacion() throws SanekaException{
+		gestionTitu.modificarTitulacion(titu, titulacion);
+	}
+	public void eliminarTitulacion() throws SanekaException {
+		gestionTitu.eliminarTitulacion(titu);
+	}
+	public void crearOptativa() throws SanekaException {
+		gestionOpt.insertarOptativa(optativa.getReferencia(),optativa);
+	}
+	public void modificarOptativa() throws SanekaException {
+		gestionOpt.modificarOptativa(refOpt, optativa);
+	}
+	public void eliminarOptativa() throws SanekaException {
+		gestionOpt.eliminarOptativa(refOpt);
+	}
 }

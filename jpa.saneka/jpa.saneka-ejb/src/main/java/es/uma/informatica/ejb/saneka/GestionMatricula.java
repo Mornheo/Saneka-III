@@ -9,7 +9,7 @@ import es.uma.informatica.jpa.saneka.Matricula;
 
 public interface GestionMatricula {
 
-	void modificarMatricula (Integer exp,Matricula matricula) throws MatriculaNoExistente,ExpedienteNoEncontradoException;
+	void modificarMatricula (Integer exp,String mat,Matricula matricula) throws MatriculaNoExistente,ExpedienteNoEncontradoException;
 
 	void eliminarMatricula (Integer exp,String curso) throws MatriculaNoExistente,ExpedienteNoEncontradoException;
 
