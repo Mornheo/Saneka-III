@@ -41,9 +41,9 @@
 		　　	<h:inputText value="#{secretaria.grupo.asignar}" id="asignar" />
 			<f:facet name="footer">
 					<h:commandButton value="Crear" id="btonCrear" action ="#{secretaria.crearGrupo}"/>
+					<h:button value="Volver a panel de control" id="btonVolver" outcome="panelControl.xhtml" />
 			</f:facet>	
 		</h:panelGrid>
-        <h:commandButton value="Volver a panel de control" id="btonVolver" action = "panelControl.xhtml"/>
 	</h:form>
 </h:body>
 </html>
