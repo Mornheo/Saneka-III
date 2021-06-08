@@ -14,13 +14,13 @@
 <h:form>
   
   <label for="idC">ID de centro:</label>
-  <h:inputText value="#{secretaria.idCentro}" id="idC"/>
+  <h:inputText value="#{secretaria.idCentro}" id="idC" required="true"/>
   <h:message for="idC" style="color: red" />
   <br/>
   <br/>
   
   <label for="codTitu">Código titulación:</label>
-  <h:inputText value="#{secretaria.asignatura.titulacion.codigo}" id="codTitu"/>
+  <h:inputText value="#{secretaria.asignatura.titulacion.codigo}" id="codTitu" required="true"/>
   <h:message for="codTitu" style="color: red" />
   <br/>
   <br/>
@@ -32,13 +32,13 @@
   <br/>
   
   <label for="cod">Código:</label>
-  <h:inputText value="#{secretaria.asignatura.codigo}" id="cod" required="true" />
+  <h:inputText value="#{secretaria.asignatura.codigo}" id="cod"/>
   <h:message for="cod" style="color: red" />
   <br/>
   <br/>
   
   <label for="ofer">Ofertada:</label>
-  <h:inputText value="#{asignatura.ofertada}" id="ofer" required="true" />
+  <h:inputText value="#{asignatura.ofertada}" id="ofer"/>
   <h:message for="ofer" style="color: red" />
   <br/>
   <br/>
