@@ -10,17 +10,21 @@
 	<h:form>
 		<h:panelGrid id="panel" columns="3" cellpadding="10" cellspacing="1">
 			<f:facet name="header"><h:outputText value="Creación de centro" /></f:facet>
+			
 			<h:outputText value="Id:" />
 		　　	<h:inputText value="#{secretaria.idCentro}" id="id" required="true" />
 			<h:message for="id" style="color: red" id="errorId"/>
+
 			<h:outputText value="Nombre:" />
 		　　	<h:inputText value="#{secretaria.centro.nombre}" id="nombre" required="true" />
 		　　	<h:message for="nombre" style="color: red" />
+		
 			<h:outputText value="Direccion:" />
 		　　	<h:inputText value="#{secretaria.centro.direccion}" id="direccion" required="true" />
 		　　	<h:message for="curso" style="color: red" />
+		
 			<h:outputText value="Telefono Consejeria:" />
-		　　	<h:inputText value="#{secretaria.centro.teleConsejeria}" id="telefono" required="true" />
+		　　	<h:inputText value="#{secretaria.centro.teleConsejeria}" id="telefono"/>
 		　　	<h:message for="telefono" style="color: red" />
 			<f:facet name="footer">
 					<h:commandButton value="Crear" id="btonCrear" action ="#{secretaria.crearCentro}"/>
