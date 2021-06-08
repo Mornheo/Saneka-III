@@ -8,12 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 @Entity
+@NamedQuery(name="Usuario.findAll", query="select u from Usuario u")
 public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id

@@ -20,14 +20,15 @@ public class Encuesta implements Serializable{
 	@Inject
 	private InfoSesion sesion;
 	private String turnoPreferente;
-	private List<Asignatura> listaAsignatura;
-	private List<String> turnoPosible = Arrays.asList("Tarde","Mañana"); 
-	public Encuesta() {};
+	private List<Asignatura> listaAsignatura; 
+	
+	public Encuesta() {	
+	}
 	public Usuario getUsuario() {
 		return sesion.getUsuario();
 	}
 	public String enviar() {
-			return "encuetaExito.xhtml";
+			return "encuestaExito.xhtml";
 		
 	}
 	public String getTurnoPreferente() {
@@ -41,11 +42,5 @@ public class Encuesta implements Serializable{
 	}
 	public void setListaAsignatura(List<Asignatura> listaAsignatura) {
 		this.listaAsignatura = listaAsignatura;
-	}
-	public List<String> getTurnoPosible() {
-		return turnoPosible;
-	}
-	public void setTurnoPosible(List<String> turnoPosible) {
-		this.turnoPosible = turnoPosible;
-	}
+	}	
 }

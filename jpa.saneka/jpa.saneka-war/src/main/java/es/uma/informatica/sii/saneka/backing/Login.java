@@ -2,16 +2,10 @@ package es.uma.informatica.sii.saneka.backing;
 
 
 import es.uma.informatica.ejb.exceptions.ContraseniaInvalidaException;
-
-
-
 import es.uma.informatica.ejb.exceptions.SanekaException;
-import es.uma.informatica.ejb.exceptions.UsuarioInactivoException;
 import es.uma.informatica.ejb.exceptions.UsuarioNoEncontradoException;
 import es.uma.informatica.ejb.saneka.GestionUsuario;
 import es.uma.informatica.jpa.saneka.Usuario;
-import javax.ejb.EJB;
-
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
@@ -62,9 +56,6 @@ public class Login {
         } catch (ContraseniaInvalidaException e) {
             FacesMessage fm = new FacesMessage("La contraseña no es correcta");
             FacesContext.getCurrentInstance().addMessage("login:pass", fm);
-        } catch (UsuarioInactivoException e) {
-            FacesMessage fm = new FacesMessage("La cuenta existe pero no está activa");
-            FacesContext.getCurrentInstance().addMessage("login:user", fm);
         } catch (SanekaException e) {
             FacesMessage fm = new FacesMessage("Error: " + e);
             FacesContext.getCurrentInstance().addMessage(null, fm);
