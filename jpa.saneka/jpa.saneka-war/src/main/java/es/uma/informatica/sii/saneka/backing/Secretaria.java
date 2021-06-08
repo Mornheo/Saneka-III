@@ -4,6 +4,8 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import javax.enterprise.context.RequestScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -20,6 +22,7 @@ import es.uma.informatica.ejb.exceptions.MatriculaExistente;
 import es.uma.informatica.ejb.exceptions.MatriculaNoExistente;
 import es.uma.informatica.ejb.exceptions.SanekaException;
 import es.uma.informatica.ejb.exceptions.TitulacionNoEncontradoException;
+import es.uma.informatica.ejb.exceptions.UsuarioNoEncontradoException;
 import es.uma.informatica.ejb.saneka.GestionAlumno;
 import es.uma.informatica.ejb.saneka.GestionAsignatura;
 import es.uma.informatica.ejb.saneka.GestionCentro;
@@ -296,25 +299,50 @@ public class Secretaria{
 	}
 	// Metodos de insertar,modificar y eliminar
 	public void crearAlumno() throws AlumnoYaExistente {
-			gestionAlumno.insertarAlumno(alumno);
+			try{
+				gestionAlumno.insertarAlumno(alumno);
+			} catch (AlumnoYaExistente e) {
+	            FacesMessage fm = new FacesMessage("El alumno ya existe");
+	            FacesContext.getCurrentInstance().addMessage("crearAlumno:errorDni", fm);
+	        }
 	}
 	public void modificarAlumno() throws AlumnoNoEncontrado {
 			gestionAlumno.modificarAlumno(dni,alumno);
 	}
 	public void eliminarAlumno() throws AlumnoNoEncontrado{
-			gestionAlumno.eliminarAlumno(dni);
+			try{
+				gestionAlumno.eliminarAlumno(dni);
+			} catch (AlumnoNoEncontrado e) {
+	            FacesMessage fm = new FacesMessage("El alumno no se ha podido encontrar");
+	            FacesContext.getCurrentInstance().addMessage("eliminarAlumno:errorDni", fm);
+	        }
 	}
 	public void crearAsignatura() throws SanekaException {
-		gestionAsig.insertarAsignatura(asignatura.getReferencia(), asignatura);
+		try{
+			gestionAsig.insertarAsignatura(asignatura.getReferencia(), asignatura);
+		} catch (SanekaException e) {
+            FacesMessage fm = new FacesMessage("La asignatura ya existe");
+            FacesContext.getCurrentInstance().addMessage("crearAsignatura:errorRef", fm);
+        }
 	}
 	public void modificarAsignatura() throws SanekaException {
 		gestionAsig.modificarAsignatura(refAsig, asignatura);
 	}
 	public void eliminarAsignatura() throws SanekaException {
-		gestionAsig.eliminarAsignatura(refAsig);
+		try{
+			gestionAsig.eliminarAsignatura(refAsig);
+		} catch (SanekaException e) {
+            FacesMessage fm = new FacesMessage("La asignatura no se ha podido encontrar");
+            FacesContext.getCurrentInstance().addMessage("crearAsignatura:errorRef", fm);
+        }
 	}
 	public void crearCentro () throws CentroExistenteException {
-		gestionCentro.insertarCentro(centro);
+		try{
+			gestionCentro.insertarCentro(centro);
+		} catch (CentroExistenteException e) {
+            FacesMessage fm = new FacesMessage("El centro ya existe");
+            FacesContext.getCurrentInstance().addMessage("crearAsignatura:errorRef", fm);
+        }
 	}
 	public void modificarCentro() throws CentroNoEncontradoException {
 		gestionCentro.actualizarCentro(idCentro,centro);
