@@ -6,13 +6,12 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 	
-<head><title>Modificar Asignatura</title></head>
+<head><title>Modificar Optativa</title></head>
 <body>
 
-<h1>Asignatura</h1>
+<h1>Optativa</h1>
 
 <h:form>
-
   
   <label for="idC">ID de centro:</label>
   <h:inputText value="#{secretaria.idCentro}" id="idC"/>
@@ -21,7 +20,7 @@
   <br/>
   
   <label for="codTitu">Código titulación:</label>
-  <h:inputText value="#{secretaria.titu}" id="codTitu"/>
+  <h:inputText value="#{secretaria.asignatura.titulacion.codigo}" id="codTitu"/>
   <h:message for="codTitu" style="color: red" />
   <br/>
   <br/>
@@ -33,7 +32,7 @@
   <br/>
   
   <label for="codTitu">Código titulación:</label>
-  <h:inputText value="#{secretaria.titulacion.codigo}" id="codTitu" required="true" />
+  <h:inputText value="#{secretaria.asignatura.titulacion.codigo}" id="codTitu" required="true" />
   <h:message for="codTitu" style="color: red" />
   <br/>
   <br/>
@@ -45,7 +44,7 @@
   <br/>
   
   <label for="ofer">Ofertada:</label>
-  <h:inputText value="#{secretaria.asignatura.ofertada}" id="ofer" required="true" />
+  <h:inputText value="#{asignatura.ofertada}" id="ofer" required="true" />
   <h:message for="ofer" style="color: red" />
   <br/>
   <br/>
@@ -69,16 +68,22 @@
   <br/>
   
   <label for="cTeoria">Créditos práctica:</label>
-  <h:inputText value="#{secretaria.asignatura.creditosPractica}" id="cPractica"/>
+  <h:inputText value="#{asignatura.creditosPractica}" id="cPractica"/>
   <h:message for="cPractica" style="color: red" />
   <br/>
   <br/>
   
-  <p>
-  <h:commandButton value="Modificar" id="btonModificar" action ="#{secretaria.modificarAsignatura}"/>
+  <label for="mencion">Mención:</label>
+  <h:inputText value="#{secretaria.optativa.mencion}" id="mencion"/>
+  <h:message for="mencion" style="color: red" />
+  <br/>
+  <br/>
   
+  <p>
+  <h:commandButton value="Modificar" id="btonModificar" action ="#{secretaria.modificarOptativa}"/>
   <h:commandButton value="Volver a panel de control" id="btonVolver" action = "panelControl.xhtml"/>
   </p>
+  
   
 </h:form>
 

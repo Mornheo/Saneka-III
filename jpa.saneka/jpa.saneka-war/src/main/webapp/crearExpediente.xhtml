@@ -14,13 +14,13 @@
 		<h:panelGrid id="panel" columns="3" cellpadding="10" cellspacing="1">
 			<f:facet name="header"><h:outputText value="Creación de expediente" /></f:facet>
 			<h:outputText value="Titulacion:" />
-		　　	<h:inputText value="#{Expediente.titulacion.codigo}" id="titulacion" required="true" converterMessage="Please enter digits only."/>
+		　　	<h:inputText value="#{secretaria.titu}" id="titulacion" required="true" converterMessage="Please enter digits only."/>
 		　　	<h:message for="titulacion" style="color: red" />
 			<h:outputText value="Numero de expediente:" />
-		　　	<h:inputText value="#{Expediente.numExpediente}" id="numExpediente" required="true" converterMessage="Please enter digits only." />
+		　　	<h:inputText value="#{secretaria.expediente.numExpediente}" id="numExpediente" required="true" converterMessage="Please enter digits only." />
 		　　	<h:message for="curso" style="color: red" />
 			<h:outputText value="Alumno DNI:" />
-		　　	<h:inputText value="#{Expediente.alumno.dni}" id="dni" required="true"  />
+		　　	<h:inputText value="#{secretaria.dni}" id="dni" required="true"  />
 		　　	<h:message for="dni" style="color: red" />
 			<h:outputText value="Activo:" />
 			<h:selectOneRadio id="activo" values="#{Expediente.activo}" >
@@ -28,8 +28,9 @@
 	   				<f:selectItem itemValue = "No" itemLabel = "No" />
 			</h:selectOneRadio>
 			<f:facet name="footer">
-					<h:commandButton value="Envia"/>
-					<h:button value="Volver a panel de control" outcome="panelControl.xhtml" />
+					<h:commandButton value="Crear" id="crea" action ="#{secretaria.crearExpediente}"/>
+					<h:commandButton value="Volver a panel de control" id="btonVolver" action = "panelControl.xhtml"/>
+
 			</f:facet>	
 		</h:panelGrid>
 	</h:form>

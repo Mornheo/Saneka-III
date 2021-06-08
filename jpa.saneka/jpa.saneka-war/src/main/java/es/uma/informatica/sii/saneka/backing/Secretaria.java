@@ -37,6 +37,7 @@ import es.uma.informatica.jpa.saneka.Clase;
 import es.uma.informatica.jpa.saneka.Expediente;
 import es.uma.informatica.jpa.saneka.Grupo;
 import es.uma.informatica.jpa.saneka.Matricula;
+import es.uma.informatica.jpa.saneka.Matricula.MatriculaId;
 import es.uma.informatica.jpa.saneka.Optativa;
 import es.uma.informatica.jpa.saneka.Titulacion;
 
@@ -72,7 +73,7 @@ public class Secretaria{
 	private Centro centro;
 	private Integer idCentro;
 	private Clase clase;
-	private Integer idClase;
+	private Clase.ClaseId idClase;
 	private Expediente expediente;
 	private Integer exp;
 	private Grupo grupo;
@@ -83,8 +84,117 @@ public class Secretaria{
 	private Integer titu;
 	private Optativa optativa;
 	private Integer refOpt;
-	
-    private Map<String, String> availableItems; // +getter
+	public Alumno getAlumno() {
+		return alumno;
+	}
+	public void setAlumno(Alumno alumno) {
+		this.alumno = alumno;
+	}
+	public Asignatura getAsignatura() {
+		return asignatura;
+	}
+	public void setAsignatura(Asignatura asignatura) {
+		this.asignatura = asignatura;
+	}
+	public Centro getCentro() {
+		return centro;
+	}
+	public void setCentro(Centro centro) {
+		this.centro = centro;
+	}
+	public Clase getClase() {
+		return clase;
+	}
+	public void setClase(Clase clase) {
+		this.clase = clase;
+	}
+	public Expediente getExpediente() {
+		return expediente;
+	}
+	public void setExpediente(Expediente expediente) {
+		this.expediente = expediente;
+	}
+	public Grupo getGrupo() {
+		return grupo;
+	}
+	public void setGrupo(Grupo grupo) {
+		this.grupo = grupo;
+	}
+	public Matricula getMatricula() {
+		return matricula;
+	}
+	public void setMatricula(Matricula matricula) {
+		this.matricula = matricula;
+	}
+	public Titulacion getTitulacion() {
+		return titulacion;
+	}
+	public void setTitulacion(Titulacion titulacion) {
+		this.titulacion = titulacion;
+	}
+	public Optativa getOptativa() {
+		return optativa;
+	}
+	public void setOptativa(Optativa optativa) {
+		this.optativa = optativa;
+	}
+    public String getDni() {
+		return dni;
+	}
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
+	public Integer getRefAsig() {
+		return refAsig;
+	}
+	public void setRefAsig(Integer refAsig) {
+		this.refAsig = refAsig;
+	}
+	public Integer getIdCentro() {
+		return idCentro;
+	}
+	public void setIdCentro(Integer idCentro) {
+		this.idCentro = idCentro;
+	}
+	public Clase.ClaseId getIdClase() {
+		return idClase;
+	}
+	public void setIdClase(Clase.ClaseId idClase) {
+		this.idClase = idClase;
+	}
+	public Integer getExp() {
+		return exp;
+	}
+	public void setExp(Integer exp) {
+		this.exp = exp;
+	}
+	public Integer getIdGrupo() {
+		return idGrupo;
+	}
+	public void setIdGrupo(Integer idGrupo) {
+		this.idGrupo = idGrupo;
+	}
+	public String getMatr() {
+		return matr;
+	}
+	public void setMatr(String matr) {
+		this.matr = matr;
+	}
+	public Integer getTitu() {
+		return titu;
+	}
+	public void setTitu(Integer titu) {
+		this.titu = titu;
+	}
+	public Integer getRefOpt() {
+		return refOpt;
+	}
+	public void setRefOpt(Integer refOpt) {
+		this.refOpt = refOpt;
+	}
+
+
+	private Map<String, String> availableItems; // +getter
     public Secretaria() {
         availableItems = new LinkedHashMap<String, String>();
         availableItems.put("Alumno", "Alumno");
@@ -95,6 +205,7 @@ public class Secretaria{
         availableItems.put("Grupo", "Grupo");
         availableItems.put("Matrícula", "Matrícula");
         availableItems.put("Titulacion", "Titulaicon");
+        availableItems.put("Optativa", "Optativa");
         
     }
 	public String getSelectedItem1() {
@@ -139,6 +250,7 @@ public class Secretaria{
 			case "Grupo": enlace = "crearGrupo.xhtml";break;
 			case "Matrícula": enlace = "crearMatricula.xhtml"; break;
 			case "Titulacion": enlace = "crearTitulacion.xhtml"; break;
+			case "Optativa": enlace= "crearOptativa.xhtml"; break;
 		}
 		return enlace;
 
@@ -155,6 +267,7 @@ public class Secretaria{
 			case "Grupo": enlace = "modificarGrupo.xhtml";break;
 			case "Matrícula": enlace = "modificarMatricula.xhtml"; break;
 			case "Titulacion": enlace = "modificarTitulacion.xhtml"; break;
+			case "Optativa": enlace = "modificarOptativa.xhtml"; break;
 		}
 		return enlace;
 
@@ -170,6 +283,7 @@ public class Secretaria{
 			case "Grupo": enlace = "eliminarGrupo.xhtml";break;
 			case "Matrícula": enlace = "eliminarMatricula.xhtml"; break;
 			case "Titulacion": enlace = "eliminarTitulacion.xhtml"; break;
+			case "Optativa": enlace = "eliminarOptativa.xhtml"; break;
 		}
 		return enlace;
 
@@ -187,7 +301,7 @@ public class Secretaria{
 	public void modificarAlumno() throws AlumnoNoEncontrado {
 			gestionAlumno.modificarAlumno(dni,alumno);
 	}
-	public void EliminarAlumno() throws AlumnoNoEncontrado{
+	public void eliminarAlumno() throws AlumnoNoEncontrado{
 			gestionAlumno.eliminarAlumno(dni);
 	}
 	public void crearAsignatura() throws SanekaException {
@@ -239,7 +353,7 @@ public class Secretaria{
 		gestionMatricula.insertarMatricula(exp, matricula);
 	}
 	public void modificarMatricula() throws MatriculaNoExistente, ExpedienteNoEncontradoException {
-		gestionMatricula.modificarMatricula(exp,matr, matricula);
+		gestionMatricula.modificarMatricula(exp, matricula);
 	}
 	public void eliminarMatricula() throws MatriculaNoExistente, ExpedienteNoEncontradoException {
 		gestionMatricula.eliminarMatricula(exp,matr);

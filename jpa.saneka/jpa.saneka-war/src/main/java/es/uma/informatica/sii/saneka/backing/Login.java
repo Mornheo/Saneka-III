@@ -4,14 +4,12 @@ package es.uma.informatica.sii.saneka.backing;
 import es.uma.informatica.ejb.exceptions.ContraseniaInvalidaException;
 
 
+
 import es.uma.informatica.ejb.exceptions.SanekaException;
 import es.uma.informatica.ejb.exceptions.UsuarioInactivoException;
 import es.uma.informatica.ejb.exceptions.UsuarioNoEncontradoException;
 import es.uma.informatica.ejb.saneka.GestionUsuario;
 import es.uma.informatica.jpa.saneka.Usuario;
-import es.uma.informatica.jpa.saneka.UsuarioSecretaria;
-
-
 import javax.ejb.EJB;
 
 import javax.inject.Named;
@@ -35,7 +33,7 @@ public class Login {
      * Creates a new instance of login
      */
     public Login() {
-        usuario = new UsuarioSecretaria();
+        usuario = new Usuario();
     }
 
     public Usuario getUsuario() {
@@ -51,10 +49,11 @@ public class Login {
             gestion.compruebaLogin(usuario);
             sesion.setUsuario(gestion.refrescarUsuario(usuario));
             //System.out.println(usuario.getContrasenia()+usuario.getEmailInstitucional());
-            if(gestion.isEsAlumno()) {
-            	return "encuesta.xhtml";
-            }else {
+            Usuario u = gestion.devolverUsuario(usuario.getEmailInstitucional());
+            if(u.getSecretaria()) {
             	return "panelControl.xhtml";
+            }else {
+            	return "alumnoVista.xhtml";
             }
             
         } catch (UsuarioNoEncontradoException e) {

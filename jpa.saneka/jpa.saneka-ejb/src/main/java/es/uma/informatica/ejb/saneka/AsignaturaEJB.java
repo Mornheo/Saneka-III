@@ -50,9 +50,9 @@ public class AsignaturaEJB implements GestionAsignatura{
 		if (existente==null) {
 			throw new AsignaturaNoEncontradoException();
 		}
-		existente.setAsignatura(asignatura.getAsignatura());
+		existente.setNombre(asignatura.getNombre());
 		existente.setCaracter(asignatura.getCaracter());
-		existente.setCodigo_1(asignatura.getCodigo_1());
+		existente.setCodigo(asignatura.getCodigo());
 		existente.setCreditos_practica(asignatura.getCreditos_practica());
 		existente.setCreditos_teoria(asignatura.getCreditos_teoria());
 		existente.setCurso(asignatura.getCurso());

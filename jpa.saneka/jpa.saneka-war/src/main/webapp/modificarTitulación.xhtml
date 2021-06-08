@@ -35,8 +35,9 @@
   <br/>
   
   <p>
-  <input type="button" value="Modificar" id="modificar"/>
-  <h:button value="Volver a panel de control" outcome="panelControl.xhtml" />
+  <h:commandButton value="Modificar" id="btonModificar" action ="#{secretaria.modificarTitulacion"/>
+  
+  <h:commandButton value="Volver a panel de control" id="btonVolver" action = "panelControl.xhtml"/>
   </p>
   
 </form>

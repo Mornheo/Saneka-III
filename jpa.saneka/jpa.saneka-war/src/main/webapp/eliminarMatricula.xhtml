@@ -11,30 +11,50 @@
 
 <h1>Matrícula</h1>
 
-<form>
+<h:form>
  
-  <label for="curso">Curso:</label>
-  <input type="text" id="dni" name="dni"/>
+  <label for="dni">DNI de Alumno:</label>
+  <h:inputText value="#{secretaria.matricula.alumno.dni}" id="dni"/>
+  <h:message for="dni" style="color: red" />
   <br/>
   <br/>
   
-  <label for="curso">Número de expediente:</label>
-  <input type="text" id="numExp" name="numExp"/>
+  <label for="codTitu">Codigo de titulación:</label>
+  <h:inputText value="#{secretaria.matricula.titulacion.codigo}" id="codTitu"/>
+  <h:message for="codTitu" style="color: red" />
   <br/>
   <br/>
   
-  <label for="curso">Número de archivo</label>
-  <input type="text" id="numArch" name="numArch"/>
+  <label for="idC">Id de centro:</label>
+  <h:inputText value="#{secretaria.matricula.centro.id}" id="idC"/>
+  <h:message for="idC" style="color: red" />
+  <br/>
+  <br/>
+  
+  <label for="nExp">Numero de expediente</label>
+  <h:inputText value="#{secretaria.matricula.expediente.numExpediente}" id="nExp"/>
+  <h:message for="nExp" style="color: red" />
+  <br/>
+  <br/>
+  
+  <label for="cursoA">Curso de matrícula</label>
+  <h:inputText value="#{secretaria.matricula.cursoAcademico}" id="cursoA"/>
+  <h:message for="cursoA" style="color: red" />
+  <br/>
+  <br/>
+  
+  <label for="numArc">Numero de archivo de matrícula</label>
+  <h:inputText value="#{secretaria.matricula.numArchivo}" id="numArc"/>
+  <h:message for="numArc" style="color: red" />
   <br/>
   <br/>
   
   <p>
-  <input type="button" value="Eliminar" id="eliminar"/>
-  <h:button value="Volver a panel de control" outcome="panelControl.xhtml" />
-  
+  <h:commandButton value="Eliminar" id="btonEliminar" action ="#{secretaria.eliminarMatricula}"/>
+    <h:commandButton value="Volver a panel de control" id="btonVolver" action = "panelControl.xhtml"/>
   </p>
   
-</form>
+</h:form>
 
 </body>
 </html>

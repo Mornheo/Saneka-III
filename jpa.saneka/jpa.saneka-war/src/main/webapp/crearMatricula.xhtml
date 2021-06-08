@@ -11,74 +11,61 @@
 
 <h1>Matrícula</h1>
 
-<form>
+<h:form>
   <label for="dni">DNI de Alumno:</label>
-  <input type="text" id="dni" name="dni"/>
+  <h:inputText value="#{secretaria.dni}" id="dni"/>
+  <h:message for="dni" style="color: red" />
   <br/>
   <br/>
   
-  <label for="nombre">Nombre de alumno:</label>
-  <input type="text" id="nombre" name="nombre"/>
+  <label for="codTitu">Codigo de titulación:</label>
+  <h:inputText value="#{secretaria.titu}" id="codTitu"/>
+  <h:message for="codTitu" style="color: red" />
   <br/>
   <br/>
   
-  <label for="apellido1">Apellido 1 de Alumno:</label>
-  <input type="text" id="apellido1" name="apellido1"/>
+  <label for="idC">Id de centro:</label>
+  <h:inputText value="#{secretaria.idCentro}" id="idC"/>
+  <h:message for="idC" style="color: red" />
   <br/>
   <br/>
   
-  <label for="apellido1">Codigo de titulación:</label>
-  <input type="text" id="codTitu" name="codTitu"/>
+  <label for="nExp">Numero de expediente</label>
+  <h:inputText value="#{secretaria.matricula.expediente.numExpediente}" id="nExp"/>
+  <h:message for="nExp" style="color: red" />
   <br/>
   <br/>
   
-  <label for="apellido1">Id de centro:</label>
-  <input type="text" id="idCentro" name="idCentro"/>
+  <label for="cursoA">Curso de matrícula</label>
+  <h:inputText value="#{secretaria.matricula.cursoAcademico}" id="cursoA"/>
+  <h:message for="cursoA" style="color: red" />
   <br/>
   <br/>
   
-  <label for="apellido1">Nombre de centro</label>
-  <input type="text" id="nombreCentro" name="nombreCentro"/>
+  <label for="fechaMatrícula">Fecha de matriculación</label>
+  <h:inputText value="#{secretaria.matricula.fechaMatricula}" id="fechaMatrícula"/>
+  <h:message for="fechaMatrícula" style="color: red" />
   <br/>
   <br/>
   
-  <label for="apellido1">Dirección de centro</label>
-  <input type="text" id="dCentro" name="dCentro"/>
+  <label for="numArc">Numero de archivo de matrícula</label>
+  <h:inputText value="#{secretaria.matricula.numArchivo}" id="numArc"/>
+  <h:message for="numArc" style="color: red" />
   <br/>
   <br/>
   
-  <label for="apellido1">Numero de expediente</label>
-  <input type="text" id="nExp" name="nExp"/>
-  <br/>
-  <br/>
-  
-  <label for="apellido1">Curso de matrícula</label>
-  <input type="text" id="cMatr" name="cMatr"/>
-  <br/>
-  <br/>
-  
-  <label for="apellido1">Fecha de matriculación</label>
-  <input type="text" id="fechaMatr" name="fechaMatr"/>
-  <br/>
-  <br/>
-  
-  <label for="apellido1">Numero de archivo de matrícula</label>
-  <input type="text" id="archMatr" name="archMatr"/>
-  <br/>
-  <br/>
-  
-  <label for="apellido1">Listado asignaturas de matrícula</label>
-  <input type="text" id="asigMatr" name="asigMatr"/>
+  <label for="listadoAsignaturas">Listado asignaturas de matrícula</label>
+  <h:inputText value="#{secretaria.matricula.listadoAsignaturas}" id="listadoAsignaturas"/>
+  <h:message for="listadoAsignaturas" style="color: red" />
   <br/>
   <br/>
   
   <p>
-  <input type="button" value="Crear"/>
-  <h:button value="Volver a panel de control" outcome="panelControl.xhtml" />
-  
+  <h:commandButton value="Crear" id="btonCrear" action ="#{secretaria.crearMatricula}"/>
+   <h:commandButton value="Volver a panel de control" id="btonVolver" action = "panelControl.xhtml"/>
   </p>
   
-</form>
+</h:form>
 
 </body>
 </html>

@@ -160,7 +160,7 @@ public class GrupoT {
 			id = grupo1.getId();
 			grupo1.setCurso(ncurso); grupo1.setTurno(nturno);
 			grupo1.setLetra(nletra); grupo1.setIngles(ningle);
-			gestionGrupo.actualizarGrupo(idTitu, grupo1);
+			gestionGrupo.actualizarGrupo(idTitu,id, grupo1);
 		} catch (TitulacionNoEncontradoException | GrupoNoEncontradoException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -196,7 +196,7 @@ public class GrupoT {
 			Grupo grupo = grupos.get(0);
 			grupo.setCurso(ncurso); grupo.setTurno(nturno);
 			grupo.setLetra(nletra); grupo.setIngles(ningle);
-			gestionGrupo.actualizarGrupo(otroTitu, grupo);
+			gestionGrupo.actualizarGrupo(otroTitu,grupo.getId(), grupo);
 			fail("Debería lanzar excepción de titulaicon no encontrado");
 		} catch (TitulacionNoEncontradoException | GrupoNoEncontradoException e) {
 			// TODO Auto-generated catch block
@@ -214,7 +214,7 @@ public class GrupoT {
 			List<Grupo> grupos = gestionGrupo.obtenerGruposDeTitulacion(idTitu);
 			Grupo grupo = grupos.get(0);
 			grupo.setId(nId);
-			gestionGrupo.actualizarGrupo(idTitu, grupo);
+			gestionGrupo.actualizarGrupo(idTitu,12, grupo);
 			fail("Debería lanzar excepción de grupo no encontrado");
 		} catch (TitulacionNoEncontradoException | GrupoNoEncontradoException e) {
 			// TODO Auto-generated catch block

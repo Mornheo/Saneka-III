@@ -11,18 +11,19 @@
 		<h:panelGrid id="panel" columns="3" cellpadding="10" cellspacing="1">
 			<f:facet name="header"><h:outputText value="Creación de centro" /></f:facet>
 			<h:outputText value="Nombre:" />
-		　　	<h:inputText value="#{Centro.nombre}" id="nombre" required="true" />
+		　　	<h:inputText value="#{secretaria.centro.nombre}" id="nombre" required="true" />
 		　　	<h:message for="nombre" style="color: red" />
 			<h:outputText value="Direccion:" />
-		　　	<h:inputText value="#{Centro.direccion}" id="direccion" required="true" />
+		　　	<h:inputText value="#{secretaria.centro.direccion}" id="direccion" required="true" />
 		　　	<h:message for="curso" style="color: red" />
 			<h:outputText value="Telefono Consejeria:" />
-		　　	<h:inputText value="#{Centro.teleConsejeria}" id="telefono" required="true" />
+		　　	<h:inputText value="#{secretaria.centro.teleConsejeria}" id="telefono" required="true" />
 		　　	<h:message for="telefono" style="color: red" />
 			
-			<h:commandButton value="Envia" id = "envia"/>
+			<h:commandButton value="Crear" id="btonCrear" action ="#{secretaria.crearCentro}"/>
 		</h:panelGrid>
-		<h:button value="Volver a panel de control" outcome="panelControl.xhtml" />
+		
+		<h:commandButton value="Volver a panel de control" id="btonVolver" action="panelControl.xhtml"/>
 	</h:form>
 </h:body>
 </html>

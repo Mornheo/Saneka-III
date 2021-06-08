@@ -27,7 +27,6 @@ public class Titulacion implements Serializable {
 	private List<Expediente> expedientes;
 	
 	@ManyToMany(mappedBy = "titulaciones")
-	@Column(nullable = false)
 	private List<Centro> centros;
 	
 	@ManyToMany(mappedBy = "titulaciones")

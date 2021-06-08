@@ -77,11 +77,12 @@ public class CentroT {
 	public void testModificarCentro() {
 		List<Titulacion> titu= new ArrayList<>();
 		try {
-			Centro centro = new Centro(11,"computadores","Calle Miguel ","0894343",titu);
+			Integer centroId=123;
+			Centro centro = new Centro(centroId,"computadores","Calle Miguel ","0894343",titu);
 			centro.setDireccion("direccion");
 			centro.setTeleConsejeria("789");
 			centro.setNombre("informatica");
-			gestionCentro.actualizarCentro(centro);
+			gestionCentro.actualizarCentro(centroId,centro);
 			assertTrue(gestionCentro.obtenerCentro(123).getNombre() == "informatica");
 			assertTrue(gestionCentro.obtenerCentro(123).getDireccion() == "direccion");
 			assertTrue(gestionCentro.obtenerCentro(123).getTeleConsejeria() == "789");
@@ -97,7 +98,7 @@ public class CentroT {
 	public void testModificarCentroNoEncontrado() throws CentroNoEncontradoException{
 		List<Titulacion> titu= new ArrayList<>();
 			Centro centro = new Centro(4657,"informatica","Calle Miguel ","789",titu);
-			gestionCentro.actualizarCentro(centro);
+			gestionCentro.actualizarCentro(45,centro);
 		
 			fail("Debería lanzar excepción de centro no encontrado");
 		

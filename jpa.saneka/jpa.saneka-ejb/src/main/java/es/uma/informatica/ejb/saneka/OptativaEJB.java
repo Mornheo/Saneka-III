@@ -51,9 +51,9 @@ public class OptativaEJB implements GestionOptativa{
 		if (existente==null) {
 			throw new OptativaNoEncontradoException();
 		}
-		existente.setAsignatura(optativa.getAsignatura());
+		existente.setNombre(optativa.getNombre());
 		existente.setCaracter(optativa.getCaracter());
-		existente.setCodigo_1(optativa.getCodigo_1());
+		existente.setCodigo(optativa.getCodigo());
 		existente.setCreditos_practica(optativa.getCreditos_practica());
 		existente.setCreditos_teoria(optativa.getCreditos_teoria());
 		existente.setCurso(optativa.getCurso());

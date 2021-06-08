@@ -1,6 +1,7 @@
 package es.uma.informatica.ejb.saneka;
 
 import java.util.List;
+
 import java.util.Random;
 
 import javax.ejb.Stateless;
@@ -15,13 +16,10 @@ import es.uma.informatica.ejb.exceptions.UsuarioExistenteException;
 import es.uma.informatica.ejb.exceptions.UsuarioInactivoException;
 import es.uma.informatica.ejb.exceptions.UsuarioNoEncontradoException;
 import es.uma.informatica.jpa.saneka.Usuario;
-import es.uma.informatica.jpa.saneka.UsuarioAlumno;
-import es.uma.informatica.jpa.saneka.UsuarioSecretaria;
 import es.uma.informatica.ejb.exceptions.ValidacionIncorrectaException;
 
 @Stateless
 public class UsuarioEJB implements GestionUsuario{
-	private static final int TAM_CADENA_VALIDACION = 20;
 	@PersistenceContext(name="jpa.saneka")
 	private EntityManager em;
 	private boolean esAlumno;
@@ -75,16 +73,11 @@ public class UsuarioEJB implements GestionUsuario{
 	public void compruebaLogin(Usuario u) throws SanekaException {
 		// TODO Auto-generated method stub
     	Usuario user = em.find(Usuario.class, u.getEmailInstitucional());
-    	List<UsuarioAlumno> alumnos = devolverUsuarioAlumnos();
         if (user == null) {
             throw new UsuarioNoEncontradoException();
         }
         if (!user.getContrasenia().equals(u.getContrasenia())) {
             throw new ContraseniaInvalidaException();
-        }
-        esAlumno= false;
-        if(alumnos.contains(u)) {
-        	esAlumno = true;
         }
 	}
 
@@ -97,23 +90,6 @@ public class UsuarioEJB implements GestionUsuario{
         return user;
 	}
 	
-
-	@Override
-	public List<UsuarioAlumno> devolverUsuarioAlumnos() throws SanekaException {
-		TypedQuery<UsuarioAlumno> query =
-			      em.createNamedQuery("UsuarioAlumno.findAll",UsuarioAlumno.class);
-		List<UsuarioAlumno> results = query.getResultList();
-		return results;
-	}
-
-	@Override
-	public List<UsuarioSecretaria> devolverUsuarioSecretarias() throws SanekaException {
-		TypedQuery<UsuarioSecretaria> query =
-			      em.createNamedQuery("UsuarioSecretaria.findAll",UsuarioSecretaria.class);
-		List<UsuarioSecretaria> results = query.getResultList();
-		return results;
-	}
-
 	@Override
 	public List<Usuario> devolverUsuarios() throws SanekaException {
 		TypedQuery<Usuario> query =
@@ -121,9 +97,6 @@ public class UsuarioEJB implements GestionUsuario{
 		List<Usuario> results = query.getResultList();
 		return results;
 	}
-	@Override
-	public boolean isEsAlumno() {
-		return esAlumno;
-	}
+
 	
 }

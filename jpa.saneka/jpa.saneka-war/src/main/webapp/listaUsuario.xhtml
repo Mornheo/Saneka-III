@@ -10,8 +10,9 @@
 	<h:form>
 			 <h:dataTable value = "#{usuarioVista.listaUsuarios}" var = "usuario">
 			  <h:column>    				
-               <f:facet name = "header">Correo</f:facet>    				
-               #{usuario.emailInstitucional}
+               <f:facet name = "header">Correo</f:facet>    	
+               			
+            <h:outputText value="#{usuario.emailInstitucional}"></h:outputText>
             </h:column>
             </h:dataTable>
           
