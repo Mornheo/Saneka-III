@@ -12,6 +12,7 @@
 			<f:facet name="header"><h:outputText value="Modificación de centro" /></f:facet>
 			<h:outputText value="Id:" />
 		　　	<h:inputText value="#{secretaria.idCentro}" id="id" required="true" />
+			<h:message for="id" style="color: red" />
 			<h:outputText value="Nombre:" />
 		　　	<h:inputText value="#{secretaria.centro.nombre}" id="nombre" required="true" />
 		　　	<h:message for="nombre" style="color: red" />
