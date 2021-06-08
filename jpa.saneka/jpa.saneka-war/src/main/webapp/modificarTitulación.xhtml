@@ -14,23 +14,27 @@
 <form>
 
   
-  <label for="idC">ID de centro:</label> 
-  <input type="text" id="idC" name="idC"/>
+<label for="idC">ID de centro:</label>
+  <h:inputText value="#{secretaria.idCentro}" id="idC"/>
+  <h:message for="idC" style="color: red" />
   <br/>
   <br/>
   
-  <label for="cod">Código:</label>
-  <input type="text" id="cod" name="cod"/>
+  <label for="codTitu">Código titulación:</label>
+  <h:inputText value="#{secretaria.titulacion.codigo}" id="codTitu"/>
+  <h:message for="codTitu" style="color: red" />
   <br/>
   <br/>
   
   <label for="nombre">Nombre:</label>
-  <input type="text" id="nombre" name="nombre"/>
+  <h:inputText value="#{secretaria.titulacion.nombre}" id="nombre"/>
+  <h:message for="nombre" style="color: red" />
   <br/>
   <br/>
   
-  <label for="cred">Créditos:</label>
-  <input type="text" id="cred" name="cred"/>
+  <label for="cred">Creditos:</label>
+  <h:inputText value="#{secretaria.titulacion.creditos}" id="cred"/>
+  <h:message for="cred" style="color: red" />
   <br/>
   <br/>
   
