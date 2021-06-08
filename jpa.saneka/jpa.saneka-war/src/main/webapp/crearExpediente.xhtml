@@ -19,8 +19,8 @@
 		
 			<h:outputText value="Numero de expediente:" />
 		　　	<h:inputText value="#{secretaria.expediente.numExpediente}" id="numExpediente" required="true" converterMessage="Please enter digits only." />
-		　　	<h:message for="curso" style="color: red" />
-		
+		　　	<h:message for="curso" style="color: red" id="errorExp"/>
+
 			<h:outputText value="Alumno DNI:" />
 		　　	<h:inputText value="#{secretaria.dni}" id="dni" required="true"  />
 		　　	<h:message for="dni" style="color: red" />

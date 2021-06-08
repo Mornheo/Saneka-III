@@ -12,7 +12,7 @@
 			<f:facet name="header"><h:outputText value="Eliminación de centro" /></f:facet>
 			<h:outputText value="CentroId:" />
 		　　	<h:inputText value="#{secretaria.idCentro}" id="centroId" required="true"><f:convertNumber type= "currency" /></h:inputText>
-		　　	<h:message for="id" style="color: red" />
+		　　	<h:message for="id" style="color: red" id="errorId"/>
 			<f:facet name="footer">
 					<h:commandButton value="Eliminar" id="btonEliminar" action ="#{secretaria.eliminarCentro}"/>
 					<h:button value="Volver a panel de control" id="btonVolver" outcome="panelControl.xhtml" />

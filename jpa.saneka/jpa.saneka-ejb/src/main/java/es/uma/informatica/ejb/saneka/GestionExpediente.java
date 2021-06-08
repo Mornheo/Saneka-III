@@ -4,7 +4,6 @@ import javax.ejb.Local;
 
 import es.uma.informatica.ejb.exceptions.ExpedienteExistenteException;
 import es.uma.informatica.ejb.exceptions.ExpedienteNoEncontradoException;
-import es.uma.informatica.ejb.exceptions.SanekaException;
 import es.uma.informatica.jpa.saneka.Expediente;
 
 @Local
@@ -17,13 +16,13 @@ public interface GestionExpediente {
 	 * lanzará una excepción ExpedienteExistenteException si 
 	 * ya se encuentra dentro.
 	 */
-	public void insertarExpediente(Integer num, Expediente exp) throws SanekaException;
+	public void insertarExpediente(Integer num, Expediente exp) throws ExpedienteExistenteException;
 	
 	/*
 	 * Eliminara el expediente de la base de datos.
 	 * @Param num PK del expediente a eliminar.
 	 */
-	public void eliminarExpediente(Integer num) throws SanekaException;
+	public void eliminarExpediente(Integer num) throws ExpedienteNoEncontradoException;
 	
 	/*
 	 * Se modificará su estado Activo y la nota_media.
@@ -31,17 +30,17 @@ public interface GestionExpediente {
 	 * @Param exp es el expediente de origen, contiene los nuevos
 	 * datos.
 	 */
-	public void modificarExpediente(Integer num, Expediente exp) throws SanekaException;
+	public void modificarExpediente(Integer num, Expediente exp) throws ExpedienteNoEncontradoException;
 	
 	/*
 	 * Muestra un toString() el expediente.
 	 * @Param num PK del expediente a mostrar.
 	 */
-	public String mostrarExpediente(Integer num) throws SanekaException;
+	public String mostrarExpediente(Integer num) throws ExpedienteNoEncontradoException;
 	
 	/*
 	 * Devuelve el expediente relacionado con el parametro.
 	 * @Param num PK del expediente a devolver.
 	 */
-	public Expediente devolverExpediente(Integer num) throws SanekaException;
+	public Expediente devolverExpediente(Integer num) throws ExpedienteNoEncontradoException;
 }
