@@ -11,10 +11,13 @@ import javax.inject.Named;
 
 import es.uma.informatica.ejb.exceptions.AlumnoNoEncontrado;
 import es.uma.informatica.ejb.exceptions.AlumnoYaExistente;
+import es.uma.informatica.ejb.exceptions.AsignaturaExistenteException;
+import es.uma.informatica.ejb.exceptions.AsignaturaNoEncontradoException;
 import es.uma.informatica.ejb.exceptions.CentroExistenteException;
 import es.uma.informatica.ejb.exceptions.CentroNoEncontradoException;
 import es.uma.informatica.ejb.exceptions.ClaseExistenteException;
 import es.uma.informatica.ejb.exceptions.ClaseNoEncontradoException;
+import es.uma.informatica.ejb.exceptions.ExpedienteExistenteException;
 import es.uma.informatica.ejb.exceptions.ExpedienteNoEncontradoException;
 import es.uma.informatica.ejb.exceptions.GrupoExistenteException;
 import es.uma.informatica.ejb.exceptions.GrupoNoEncontradoException;
@@ -298,7 +301,7 @@ public class Secretaria{
 		return "login.xhtml";
 	}
 	// Metodos de insertar,modificar y eliminar
-	public void crearAlumno() throws AlumnoYaExistente {
+	public void crearAlumno(){
 			try{
 				gestionAlumno.insertarAlumno(alumno);
 			} catch (AlumnoYaExistente e) {
@@ -309,7 +312,7 @@ public class Secretaria{
 	public void modificarAlumno() throws AlumnoNoEncontrado {
 			gestionAlumno.modificarAlumno(dni,alumno);
 	}
-	public void eliminarAlumno() throws AlumnoNoEncontrado{
+	public void eliminarAlumno(){
 			try{
 				gestionAlumno.eliminarAlumno(dni);
 			} catch (AlumnoNoEncontrado e) {
@@ -317,10 +320,10 @@ public class Secretaria{
 	            FacesContext.getCurrentInstance().addMessage("eliminarAlumno:errorDni", fm);
 	        }
 	}
-	public void crearAsignatura() throws SanekaException {
+	public void crearAsignatura(){
 		try{
 			gestionAsig.insertarAsignatura(asignatura.getReferencia(), asignatura);
-		} catch (SanekaException e) {
+		} catch (AsignaturaExistenteException e) {
             FacesMessage fm = new FacesMessage("La asignatura ya existe");
             FacesContext.getCurrentInstance().addMessage("crearAsignatura:errorRef", fm);
         }
@@ -328,48 +331,87 @@ public class Secretaria{
 	public void modificarAsignatura() throws SanekaException {
 		gestionAsig.modificarAsignatura(refAsig, asignatura);
 	}
-	public void eliminarAsignatura() throws SanekaException {
+	public void eliminarAsignatura(){
 		try{
 			gestionAsig.eliminarAsignatura(refAsig);
-		} catch (SanekaException e) {
+		} catch (AsignaturaNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("La asignatura no se ha podido encontrar");
-            FacesContext.getCurrentInstance().addMessage("crearAsignatura:errorRef", fm);
+            FacesContext.getCurrentInstance().addMessage("eliminarAsignatura:errorRef", fm);
         }
 	}
-	public void crearCentro () throws CentroExistenteException {
+	public void crearCentro (){
 		try{
 			gestionCentro.insertarCentro(centro);
 		} catch (CentroExistenteException e) {
             FacesMessage fm = new FacesMessage("El centro ya existe");
-            FacesContext.getCurrentInstance().addMessage("crearAsignatura:errorRef", fm);
+            FacesContext.getCurrentInstance().addMessage("crearCentro:errorId", fm);
         }
 	}
 	public void modificarCentro() throws CentroNoEncontradoException {
 		gestionCentro.actualizarCentro(idCentro,centro);
 	}
-	public void eliminarCentro() throws CentroNoEncontradoException {
-		gestionCentro.eliminarCentro(idCentro);
+	public void eliminarCentro() {
+		try{
+			gestionCentro.eliminarCentro(idCentro);
+		} catch (CentroNoEncontradoException e) {
+            FacesMessage fm = new FacesMessage("El centro no se ha podido encontrar");
+            FacesContext.getCurrentInstance().addMessage("eliminarCentro:errorId", fm);
+        }
 	}
-	public void crearClase() throws GrupoNoEncontradoException, ClaseExistenteException {
-		gestionClase.insertarClase(idGrupo, clase);
+	public void crearClase() {
+		try{
+			gestionClase.insertarClase(idGrupo, clase);
+		} catch (GrupoNoEncontradoException e) {
+            FacesMessage fm = new FacesMessage("El grupo no se ha podido encontrar");
+            FacesContext.getCurrentInstance().addMessage("crearClase:errorGrupo", fm);
+        } catch (ClaseExistenteException e) {
+            FacesMessage fm = new FacesMessage("La clase ya existe");
+            FacesContext.getCurrentInstance().addMessage("crearClase:errorClase", fm);
+        }
 	}
 	public void modificarClase() throws GrupoNoEncontradoException, ClaseNoEncontradoException {
 		gestionClase.actualizarClase(idGrupo,idClase, clase);
 	}
-	public void eliminarClase() throws GrupoNoEncontradoException, ClaseNoEncontradoException {
-		gestionClase.eliminarClase(idGrupo,idClase);
+	public void eliminarClase() {
+		try{
+			gestionClase.eliminarClase(idGrupo,idClase);
+		} catch (GrupoNoEncontradoException e) {
+            FacesMessage fm = new FacesMessage("El grupo no se ha podido encontrar");
+            FacesContext.getCurrentInstance().addMessage("eliminarClase:errorGrupo", fm);
+        } catch (ClaseNoEncontradoException e) {
+            FacesMessage fm = new FacesMessage("La clase no se ha podido encontrar");
+            FacesContext.getCurrentInstance().addMessage("eliminarClase:errorClase", fm);
+        }
 	}
-	public void crearExpediente() throws SanekaException {
-		gestionExp.insertarExpediente(expediente.getNumExpediente(), expediente);
+	public void crearExpediente() {
+		try{
+			gestionExp.insertarExpediente(expediente.getNumExpediente(), expediente);
+		} catch (ExpedienteExistenteException e) {
+            FacesMessage fm = new FacesMessage("El expediente ya existe");
+            FacesContext.getCurrentInstance().addMessage("crearExpediente:errorExp", fm);
+        }
 	}
 	public void modificarExpediente() throws SanekaException {
 		gestionExp.modificarExpediente(exp, expediente);
 	}
-	public void eliminarExpediente() throws SanekaException {
-		gestionExp.eliminarExpediente(exp);
+	public void eliminarExpediente() {
+		try{
+			gestionExp.eliminarExpediente(exp);
+		} catch (ExpedienteNoEncontradoException e) {
+            FacesMessage fm = new FacesMessage("El expediente no se ha podido encontrar");
+            FacesContext.getCurrentInstance().addMessage("eliminarExpediente:errorExp", fm);
+        }
 	}
 	public void crearGrupo() throws TitulacionNoEncontradoException, GrupoExistenteException {
-		gestionGrupo.insertarGrupo(titu, grupo);
+		try{
+			gestionGrupo.insertarGrupo(titu, grupo);
+		} catch (TitulacionNoEncontradoException e) {
+            FacesMessage fm = new FacesMessage("La titulacion no se ha podido encontrar");
+            FacesContext.getCurrentInstance().addMessage("eliminarExpediente:errorExp", fm);
+        } catch (ExpedienteNoEncontradoException e) {
+            FacesMessage fm = new FacesMessage("El expediente no se ha podido encontrar");
+            FacesContext.getCurrentInstance().addMessage("eliminarExpediente:errorExp", fm);
+        }
 	}
 	public void modificarGrupo() throws TitulacionNoEncontradoException, GrupoNoEncontradoException {
 		gestionGrupo.actualizarGrupo(titu,idGrupo, grupo);

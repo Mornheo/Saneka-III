@@ -13,10 +13,10 @@
 			<f:facet name="header"><h:outputText value="Eliminación de clase" /></f:facet>
 			<h:outputText value="Grupo id:" />
 		　　	<h:inputText value="#{secretaria.idGrupo}" id="grupoId" required="true" />
-		　　	<h:message for="grupoId" style="color: red" />
+		　　	<h:message for="grupoId" style="color: red" id="errorGrupo"/>
 			<h:outputText value="Clase id:" />
 		　　	<h:inputText value="#{secretaria.idClase}" id="claseId" required="true"/>
-			<h:message for="claseId" style="color: red" />
+			<h:message for="claseId" style="color: red" id="errorClase"/>
 			<f:facet name="footer">
 					<h:commandButton value="Eliminar" id="btonEliminar" action ="#{secretaria.eliminarClase}"/>
 					<h:button value="Volver a panel de control" id="btonVolver" outcome="panelControl.xhtml" />
