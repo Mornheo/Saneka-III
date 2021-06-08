@@ -14,13 +14,13 @@
 <h:form>
   
   <label for="idC">ID de centro:</label>
-  <h:inputText value="#{secretaria.idCentro}" id="idC"/>
+  <h:inputText value="#{secretaria.idCentro}" id="idC" required="true"/>
   <h:message for="idC" style="color: red" />
   <br/>
   <br/>
   
   <label for="codTitu">Código titulación:</label>
-  <h:inputText value="#{secretaria.asignatura.titulacion.codigo}" id="codTitu"/>
+  <h:inputText value="#{secretaria.asignatura.titulacion.codigo}" id="codTitu" required="true"/>
   <h:message for="codTitu" style="color: red" />
   <br/>
   <br/>
@@ -38,10 +38,10 @@
   <br/>
   
   <label for="ofer">Ofertada:</label>
-  <h:inputText value="#{secretaria.asignatura.ofertada}" id="ofer" required="true" />
-  <h:message for="ofer" style="color: red" />
-  <br/>
-  <br/>
+  <h:selectOneRadio id="ofer" values="#{secretaria.asignatura.ofertada}" required="true">
+	<f:selectItem itemValue = "Si" itemLabel = "Si" /> 
+	<f:selectItem itemValue = "No" itemLabel = "No" />
+  </h:selectOneRadio>
   
   <label for="nombre">Nombre:</label>
   <h:inputText value="#{secretaria.asignatura.nombre}" id="nombre"/>
@@ -56,7 +56,7 @@
   <br/>
   
   <label for="cTeoria">Créditos teoría:</label>
-  <h:inputText value="#{secretaria.asignatura.creditosTeoria}" id="cTeoria"/>
+  <h:inputText value="#{secretaria.asignatura.creditosTeoria}" id="cTeoria" required="true"/>
   <h:message for="cTeoria" style="color: red" />
   <br/>
   <br/>
