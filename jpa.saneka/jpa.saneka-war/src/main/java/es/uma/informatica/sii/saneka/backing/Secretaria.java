@@ -204,7 +204,7 @@ public class Secretaria{
         availableItems.put("Expediente", "Expediente");
         availableItems.put("Grupo", "Grupo");
         availableItems.put("Matrícula", "Matrícula");
-        availableItems.put("Titulacion", "Titulaicon");
+        availableItems.put("Titulacion", "Titulacion");
         availableItems.put("Optativa", "Optativa");
         
     }

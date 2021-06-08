@@ -2,27 +2,22 @@ package es.uma.informatica.ejb.saneka;
 
 import java.util.List;
 
-import java.util.Random;
-
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
 import es.uma.informatica.ejb.exceptions.ContraseniaInvalidaException;
-import es.uma.informatica.ejb.exceptions.OptativaNoEncontradoException;
 import es.uma.informatica.ejb.exceptions.SanekaException;
 import es.uma.informatica.ejb.exceptions.UsuarioExistenteException;
-import es.uma.informatica.ejb.exceptions.UsuarioInactivoException;
 import es.uma.informatica.ejb.exceptions.UsuarioNoEncontradoException;
 import es.uma.informatica.jpa.saneka.Usuario;
-import es.uma.informatica.ejb.exceptions.ValidacionIncorrectaException;
 
 @Stateless
 public class UsuarioEJB implements GestionUsuario{
 	@PersistenceContext(name="jpa.saneka")
 	private EntityManager em;
-	private boolean esAlumno;
+
 	@Override
 	public String mostrarUsuario(String email) throws SanekaException {
 		Usuario existente = em.find(Usuario.class, email);
