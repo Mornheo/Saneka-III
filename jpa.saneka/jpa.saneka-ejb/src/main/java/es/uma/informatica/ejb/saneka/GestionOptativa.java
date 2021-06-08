@@ -2,6 +2,7 @@ package es.uma.informatica.ejb.saneka;
 
 import javax.ejb.Local;
 
+import es.uma.informatica.ejb.exceptions.OptativaNoEncontradoException;
 import es.uma.informatica.ejb.exceptions.SanekaException;
 import es.uma.informatica.jpa.saneka.Optativa;
 
@@ -14,7 +15,7 @@ public interface GestionOptativa {
 	
 	public void insertarOptativa(Integer ref, Optativa optativa) throws SanekaException;
 	
-	public void modificarOptativa(Integer ref, Optativa optativa) throws SanekaException;
+	public void modificarOptativa(Integer ref, Optativa optativa) throws OptativaNoEncontradoException;
 	
 	public Optativa devolverOptativa(Integer ref) throws SanekaException;
 	

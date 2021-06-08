@@ -16,13 +16,13 @@
 	    <h:outputText value="Login" /></f:facet>
 	　　<h:outputText value="Correo:" />
 	　　<h:inputText value="#{login.usuario.emailInstitucional}" id="correo" required="true" />
-	　　<h:message for="correo" style="color: red" />
+	　　<h:message for="correo" style="color: red" id="errorCorreo"/>
 	
 	　　<h:outputText value="Contraseña:" />
 	　　<h:inputSecret value="#{login.usuario.contrasenia}" id="password" required="true" />
-	　　<h:message for="password" style="color: red" />
+	　　<h:message for="password" style="color: red" id="errorPassword"/>
 	</h:panelGrid>
-	<h:commandButton value="Entrar" action="#{login.entrar()}"/>
+	<h:commandButton value="Entrar" action="#{login.entrar()}" id="btonEntrar"/>
 </h:form>
 </h:body>
 </html>
