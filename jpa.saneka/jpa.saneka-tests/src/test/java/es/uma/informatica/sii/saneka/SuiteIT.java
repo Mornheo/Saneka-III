@@ -43,6 +43,7 @@ public class SuiteIT {
   public void tearDown() {
     driver.quit();
   }
+/*
   @Test
   public void loginContraseniaIncorrecta() {
     driver.get("http://localhost:8080/jpa.saneka-war/");
@@ -101,7 +102,7 @@ public class SuiteIT {
     driver.get("http://localhost:8080/jpa.saneka-war/");
     driver.manage().window().setSize(new Dimension(1086, 670));
     assertThat(driver.getTitle(), is("Login"));
-  }
+  }*/
   @Test
   public void modificarTitulacionExitoso() {
   }
@@ -181,7 +182,10 @@ public class SuiteIT {
   public void panelControlCrearMatricula() {
     driver.get("http://localhost:8080/jpa.saneka-war/faces/panelControl.xhtml");
     driver.manage().window().setSize(new Dimension(1186, 726));
-    driver.findElement(By.id("panel:selectCrear")).click();
+    {
+      WebElement dropdown = driver.findElement(By.id("panel:selectCrear"));
+      dropdown.findElement(By.xpath("//option[. = 'Matrícula']")).click();
+    }
     driver.findElement(By.cssSelector("#panel\\3AselectCrear > option:nth-child(7)")).click();
     driver.findElement(By.id("panel:btonCrear")).click();
     assertThat(driver.getTitle(), is("Insertar Matrícula"));
@@ -298,7 +302,10 @@ public class SuiteIT {
   @Test
   public void panelControlEliminarMatricula() {
     driver.get("http://localhost:8080/jpa.saneka-war/faces/panelControl.xhtml");
-    driver.manage().window().setSize(new Dimension(1186, 726));
+    {
+      WebElement dropdown = driver.findElement(By.id("panel:selectEliminar"));
+      dropdown.findElement(By.xpath("//option[. = 'Matrícula']")).click();
+    }
     driver.findElement(By.cssSelector("#panel\\3AselectEliminar > option:nth-child(7)")).click();
     driver.findElement(By.id("panel:btonELiminar")).click();
     assertThat(driver.getTitle(), is("Eliminar Matrícula"));
@@ -371,6 +378,10 @@ public class SuiteIT {
   public void panelControlModificarMatricula() {
     driver.get("http://localhost:8080/jpa.saneka-war/faces/panelControl.xhtml");
     driver.manage().window().setSize(new Dimension(1186, 726));
+    {
+      WebElement dropdown = driver.findElement(By.id("panel:selectModificar"));
+      dropdown.findElement(By.xpath("//option[. = 'Matrícula']")).click();
+    }
     driver.findElement(By.cssSelector("#panel\\3AselectModificar > option:nth-child(7)")).click();
     driver.findElement(By.id("panel:btonModificar")).click();
     assertThat(driver.getTitle(), is("Modificar Matrícula"));
@@ -407,7 +418,7 @@ public class SuiteIT {
     driver.findElement(By.id("modificarAlumno:emailP")).sendKeys("sonic@gmail.com");
     driver.findElement(By.id("modificarAlumno:grupos")).sendKeys("103-,204-B,301-A");
     driver.findElement(By.id("modificarAlumno:btonModificar")).click();
-    assertThat(driver.findElement(By.id("modificarAlumno:errorDni")).getText(), is("tbd"));
+    assertThat(driver.getTitle(), is("Exito"));
   }
   @Test
   public void modificarAlumnoNoEncontrado() {
@@ -435,7 +446,7 @@ public class SuiteIT {
     driver.findElement(By.id("modificarAsignatura:cTeoria")).sendKeys("3");
     driver.findElement(By.id("modificarAsignatura:cPractica")).sendKeys("3");
     driver.findElement(By.id("modificarAsignatura:btonModificar")).click();
-    assertThat(driver.findElement(By.id("modificarAsignatura:errorRef")).getText(), is("tbd"));
+    assertThat(driver.getTitle(), is("Exito"));
   }
   @Test
   public void modificarAsignaturaNoEncontrado() {
@@ -460,7 +471,7 @@ public class SuiteIT {
     driver.findElement(By.id("modificarCentro:telefono")).sendKeys("000111222");
     driver.findElement(By.id("modificarCentro:nombre")).sendKeys("Inf0rm4T1C4");
     driver.findElement(By.id("modificarCentro:btonModificar")).click();
-    assertThat(driver.findElement(By.id("modificarCentro:nombre")).getText(), is("Correcto"));
+    assertThat(driver.getTitle(), is("Exito"));
   }
   @Test
   public void modificarClaseExitoso() {
@@ -499,10 +510,11 @@ public class SuiteIT {
     driver.manage().window().setSize(new Dimension(1186, 724));
     driver.findElement(By.id("modificarExpediente:titulacion")).sendKeys("1234");
     driver.findElement(By.id("modificarExpediente:numExpediente")).sendKeys("12345");
+    driver.findElement(By.id("modificarExpediente:notaMedia")).sendKeys("7");
     driver.findElement(By.id("modificarExpediente:dni")).sendKeys("446753A");
     driver.findElement(By.id("modificarExpediente:activo:0")).click();
     driver.findElement(By.id("modificarExpediente:btonModificar")).click();
-    assertThat(driver.findElement(By.id("modificarExpediente:titulacion")).getText(), is("tal"));
+    assertThat(driver.getTitle(), is("Exito"));
   }
   @Test
   public void modificarExpedienteNoEncontrado() {
@@ -527,7 +539,7 @@ public class SuiteIT {
     driver.findElement(By.id("modificarGrupo:ingles:0")).click();
     driver.findElement(By.id("modificarGrupo:visible:0")).click();
     driver.findElement(By.id("modificarGrupo:btonModificar")).click();
-    assertThat(driver.findElement(By.id("modificarGrupo:turno")).getText(), is("tal"));
+    assertThat(driver.getTitle(), is("Exito"));
   }
   @Test
   public void modificarMatriculaExitoso() {
@@ -542,7 +554,7 @@ public class SuiteIT {
     driver.findElement(By.id("modificarMatricula:numArc")).sendKeys("12345678");
     driver.findElement(By.id("modificarMatricula:listadoAsignaturas")).sendKeys("103,104,105");
     driver.findElement(By.id("modificarMatricula:btonModificar")).click();
-    assertThat(driver.findElement(By.id("modificarMatricula:dni")).getText(), is("tal"));
+    assertThat(driver.getTitle(), is("Exito"));
   }
   @Test
   public void modificarMatriculaExpedienteNoEncontrado() {
@@ -616,7 +628,7 @@ public class SuiteIT {
     driver.findElement(By.id("modificarOptativa:curso")).sendKeys("3");
     driver.findElement(By.id("modificarOptativa:nombre")).sendKeys("Economia");
     driver.findElement(By.id("modificarOptativa:btonModificar")).click();
-    assertThat(driver.findElement(By.id("modificarOptativa:nombre")).getText(), is("si"));
+    assertThat(driver.getTitle(), is("Exito"));
   }
   @Test
   public void modificarOptativaNoEncontrado() {
@@ -656,4 +668,5 @@ public class SuiteIT {
     driver.findElement(By.id("encuesta:btonEnvia")).click();
     assertThat(driver.getTitle(), is("Encuesta se ha realizado con exito"));
   }
+
 }

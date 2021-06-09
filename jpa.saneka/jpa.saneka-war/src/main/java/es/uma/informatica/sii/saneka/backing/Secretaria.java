@@ -426,7 +426,7 @@ public class Secretaria{
 	}
 	public void modificarAsignatura() {
 		try {
-			gestionAsig.modificarAsignatura(refAsig, asignatura);
+			gestionAsig.modificarAsignatura(asignatura.getReferencia(), asignatura);
 		} catch (AsignaturaNoEncontradoException e) {
 			FacesMessage fm = new FacesMessage("La asignatura no se ha podido encontrar");
             FacesContext.getCurrentInstance().addMessage("modificarAsignatura:referencia", fm);
