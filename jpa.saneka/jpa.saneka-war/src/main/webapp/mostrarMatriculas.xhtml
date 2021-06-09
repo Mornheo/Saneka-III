@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+<h:head>
+        <title>Lista de Matriculas</title>
+    </h:head>
+    <h:body>
+                <h:form id="mostrarMatriculas">
+                    <h:dataTable value="#{secretaria.listaMatriculas}" var="c">
+                        <h:column>
+                            <f:facet name="header">Curso</f:facet>
+                            <h:outputText value="#{c.cursoAcademico}"/>
+                        </h:column>
+                        
+                        <h:column>
+                            <f:facet name="header">numArchivo</f:facet>
+                            <h:outputText value="#{c.numArchivo}"/>
+                        </h:column>
+                        
+                        <h:column>
+                            <f:facet name="header">Turno</f:facet>
+                            <h:outputText value="#{c.turnoPreferente}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">FechaMatricula</f:facet>
+                            <h:outputText value="#{c.fechaMatricula}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Asignaturas</f:facet>
+                            <h:outputText value="#{c.listadoAsignaturas}"/>
+                        </h:column>
+                    </h:dataTable>
+               <h:button value="Volver a panel de control" id="btonVolver" outcome="panelControl.xhtml" />
+                </h:form>
+
+    </h:body>
+</html>

@@ -9,6 +9,7 @@ import es.uma.informatica.ejb.exceptions.GrupoNoEncontradoException;
 import es.uma.informatica.ejb.exceptions.SanekaException;
 import es.uma.informatica.ejb.exceptions.TitulacionNoEncontradoException;
 import es.uma.informatica.jpa.saneka.Grupo;
+import es.uma.informatica.jpa.saneka.Optativa;
 
 @Local
 public interface GestionGrupo {
@@ -19,5 +20,6 @@ public interface GestionGrupo {
 	public void eliminarTodosGrupos(Integer titu) throws TitulacionNoEncontradoException;
 	public Grupo obtenerGrupo(Integer id) throws GrupoNoEncontradoException;
 	public String mostrarGrupo(Grupo grupo);
+	public List<Grupo> devolverGrupos() ;
 
 }

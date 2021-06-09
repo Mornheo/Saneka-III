@@ -1,11 +1,14 @@
 package es.uma.informatica.ejb.saneka;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import es.uma.informatica.ejb.exceptions.TitulacionExistenteException;
 import es.uma.informatica.ejb.exceptions.TitulacionNoEncontradoException;
+import es.uma.informatica.jpa.saneka.Alumno;
 import es.uma.informatica.jpa.saneka.Titulacion;
 
 @Stateless
@@ -66,6 +69,12 @@ public class TitulacionEJB implements GestionTitulacion{
 		}
 		
 		return existente;
+	}
+
+	@Override
+	public List<Titulacion> devolverTitulaciones() {
+		// TODO Auto-generated method stub
+		return em.createNamedQuery("Titulacion.findAll", Titulacion.class).getResultList();
 	}
 
 }

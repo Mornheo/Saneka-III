@@ -38,6 +38,7 @@ public class SuiteIT {
   
   @Before
   public void setUp() {
+	 System.setProperty("webdriver.gecko.driver","/home/geckodriver.exe");
     driver = new FirefoxDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
@@ -47,6 +48,7 @@ public class SuiteIT {
   public void tearDown() {
     driver.quit();
   }
+  /*
   @Test
   public void loginContraseniaIncorrecta() {
     driver.get("http://localhost:8080/jpa.saneka-war/");
@@ -55,6 +57,7 @@ public class SuiteIT {
     driver.findElement(By.id("j_idt5:password")).sendKeys("123");
     driver.findElement(By.name("j_idt5:j_idt11")).click();
   }
+  
   @Test
   public void loginExitosoAlumno() {
     driver.get("http://localhost:8080/jpa.saneka-war/");
@@ -64,6 +67,7 @@ public class SuiteIT {
     driver.findElement(By.name("j_idt5:j_idt11")).click();
     assertThat(driver.getTitle(), is("Encuesta"));
   }
+  */
   @Test
   public void loginExitosoSecretaria() {
     driver.get("http://localhost:8080/jpa.saneka-war/");
@@ -73,6 +77,7 @@ public class SuiteIT {
     driver.findElement(By.name("j_idt5:j_idt11")).click();
     assertThat(driver.getTitle(), is("Panel de control de Secretaria"));
   }
+  /*
   @Test
   public void loginUsuarioNoEncontrado() {
     driver.get("http://localhost:8080/jpa.saneka-war/");
@@ -87,4 +92,5 @@ public class SuiteIT {
     driver.manage().window().setSize(new Dimension(1086, 665));
     assertThat(driver.getTitle(), is("Login"));
   }
+  */
 }

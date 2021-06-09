@@ -9,7 +9,9 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQuery;
 @Entity
+@NamedQuery(name = "Centro.findAll", query = "select cen from Centro cen")
 public class Centro implements Serializable{
 
 	private static final long serialVersionUID = 1L;

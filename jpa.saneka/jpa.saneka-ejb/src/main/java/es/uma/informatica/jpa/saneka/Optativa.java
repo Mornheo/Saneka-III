@@ -12,7 +12,7 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@NamedQuery(name = "Optativa.findAll", query = "select o from Optativa o")
 public class Optativa extends Asignatura implements Serializable {
 
 	
