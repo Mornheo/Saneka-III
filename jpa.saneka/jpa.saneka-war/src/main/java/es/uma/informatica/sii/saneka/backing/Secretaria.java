@@ -135,6 +135,8 @@ public class Secretaria{
         clase.setAsignatura(asignatura);
         
         matricula.setExpediente(expediente);
+        
+        optativa.setTitulacion(titulacion);
     }
 	public Usuario getUsuario() {
 		return usuario;

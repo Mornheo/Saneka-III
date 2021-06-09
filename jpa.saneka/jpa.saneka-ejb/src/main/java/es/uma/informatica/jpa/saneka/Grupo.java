@@ -19,7 +19,6 @@ public class Grupo implements Serializable{
 	private String letra;
 	@Column(nullable=false)
 	private String turno;
-	@Column(nullable=false)
 	private Boolean ingles;
 	private Boolean visible;
 	private String asignar;

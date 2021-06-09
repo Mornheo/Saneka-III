@@ -19,7 +19,6 @@ public class Asignatura implements Serializable {
 	   
 	@Id @Column(unique=true,nullable=false)
 	private Integer referencia;
-	@Column(nullable = false)
 	private Boolean ofertada;
 	@Column(nullable = false)
 	private Integer codigo;
