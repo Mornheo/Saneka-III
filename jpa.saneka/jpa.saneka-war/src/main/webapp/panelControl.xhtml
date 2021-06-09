@@ -11,14 +11,14 @@
 
 <h1>Secretaria</h1>
 
-<h:form>
+<h:form id="panel">
 	<h:panelGrid id="panel" columns="3" cellpadding="10" cellspacing="1">
 		<h:outputText value = "Insertar"></h:outputText>
 		<h:selectOneMenu value="#{secretaria.selectedItem1}" id = "selectCrear">
 	    <f:selectItems value="#{secretaria.availableItems.entrySet()}" var="entry"
 	        itemValue="#{entry.key}" itemLabel="#{entry.value}" />
 		</h:selectOneMenu>
-		<h:commandButton value="Crear" action= "#{secretaria.crear}"/>
+		<h:commandButton value="Crear" action= "#{secretaria.crear}" id="btonCrear"/>
 		
 		
 		
@@ -27,7 +27,7 @@
 	    <f:selectItems value="#{secretaria.availableItems.entrySet()}" var="entry"
 	        itemValue="#{entry.key}" itemLabel="#{entry.value}" />
 		</h:selectOneMenu>
-		<h:commandButton value="Modificar" action= "#{secretaria.modificar}"/>
+		<h:commandButton value="Modificar" action= "#{secretaria.modificar}" id="btonModificar"/>
 		
 		<h:outputText value = "Eliminar"></h:outputText>
 		<h:selectOneMenu value="#{secretaria.selectedItem3}" id = "selectEliminar">

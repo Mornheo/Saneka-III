@@ -19,7 +19,7 @@ public class UsuarioEJB implements GestionUsuario{
 	private EntityManager em;
 
 	@Override
-	public String mostrarUsuario(String email) throws SanekaException {
+	public String mostrarUsuario(String email) throws UsuarioNoEncontradoException  {
 		Usuario existente = em.find(Usuario.class, email);
 		if (existente==null) {
 			throw new UsuarioNoEncontradoException();
@@ -30,14 +30,15 @@ public class UsuarioEJB implements GestionUsuario{
 	}
 
 	@Override
-	public void eliminarUsuario(String email) throws SanekaException {
+	public void eliminarUsuario(String email) throws UsuarioNoEncontradoException  {
 		// TODO Auto-generated method stub
-		Usuario u = devolverUsuario(email);
+		Usuario u;
+		u = devolverUsuario(email);
 		em.remove(u);
 	}
 
 	@Override
-	public void insertarUsuario(Usuario user) throws SanekaException {
+	public void insertarUsuario(Usuario user) throws UsuarioExistenteException  {
 		// TODO Auto-generated method stub
 		Usuario u = em.find(Usuario.class,user.getEmailInstitucional());
 		if(u!= null) {
@@ -47,7 +48,7 @@ public class UsuarioEJB implements GestionUsuario{
 	}
 
 	@Override
-	public void modificarUsuario(String email,String cons) throws SanekaException {
+	public void modificarUsuario(String email,String cons) throws UsuarioNoEncontradoException  {
 		// TODO Auto-generated method stub
 		Usuario u = em.find(Usuario.class,email);
 		if(u== null) {
@@ -58,14 +59,17 @@ public class UsuarioEJB implements GestionUsuario{
 	}
 
 	@Override
-	public Usuario devolverUsuario(String email) throws SanekaException {
+	public Usuario devolverUsuario(String email) throws UsuarioNoEncontradoException  {
 		Usuario u = em.find(Usuario.class, email);
+		if(u== null) {
+			throw new UsuarioNoEncontradoException();
+		}
 		return u;
 	}
 
 
 	@Override
-	public void compruebaLogin(Usuario u) throws SanekaException {
+	public void compruebaLogin(Usuario u) throws UsuarioNoEncontradoException, ContraseniaInvalidaException {
 		// TODO Auto-generated method stub
     	Usuario user = em.find(Usuario.class, u.getEmailInstitucional());
         if (user == null) {
