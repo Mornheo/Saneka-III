@@ -21,7 +21,10 @@
 		　　	<h:message for="contrasenia" style="color: red" />
 		
 			<h:outputText value="Secretaria" />
-		　　	<h:inputText value="#{secretaria.usuario.secretaria}" id="secretaria" required="true" />
+		　　	<h:selectOneRadio id="secretaria" values="#{secretaria.usuario.secretaria}" required="true">
+				<f:selectItem itemValue = "Si" itemLabel = "Si" /> 
+				<f:selectItem itemValue = "No" itemLabel = "No" />
+  			</h:selectOneRadio>
 		　　	<h:message for="secretaria" style="color: red" />
 		
 			<f:facet name="footer">
