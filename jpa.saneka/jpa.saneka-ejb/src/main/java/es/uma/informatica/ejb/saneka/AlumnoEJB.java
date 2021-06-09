@@ -1,5 +1,7 @@
 package es.uma.informatica.ejb.saneka;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -74,6 +76,13 @@ public class AlumnoEJB implements GestionAlumno{
 		}
 		return al;
 	}
+
+	@Override
+	public List<Alumno> devolverAlumnos() {
+		
+		return em.createNamedQuery("Alumno.findAll", Alumno.class).getResultList();
+	}
+	
 	
 }
 

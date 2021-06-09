@@ -1,11 +1,14 @@
 package es.uma.informatica.ejb.saneka;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import es.uma.informatica.ejb.exceptions.AsignaturaExistenteException;
 import es.uma.informatica.ejb.exceptions.AsignaturaNoEncontradoException;
+import es.uma.informatica.jpa.saneka.Alumno;
 import es.uma.informatica.jpa.saneka.Asignatura;
 
 @Stateless
@@ -70,6 +73,12 @@ public class AsignaturaEJB implements GestionAsignatura{
 			throw new AsignaturaNoEncontradoException();
 		}
 		return existente;
+	}
+
+	@Override
+	public List<Asignatura> devolverAsignaturas() {
+		// TODO Auto-generated method stub
+		return em.createNamedQuery("Asignatura.findAll", Asignatura.class).getResultList();
 	}
 	
 	

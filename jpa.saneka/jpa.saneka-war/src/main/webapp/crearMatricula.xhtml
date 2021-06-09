@@ -9,17 +9,17 @@
 <h:head><title>Insertar Matrícula</title></h:head>
 <h:body>
 
-<h:h1>Matrícula</h:h1>
+<h1>Matrícula</h1>
 
-<h:form>
+<h:form id="crearMatricula">
   <label for="dni">DNI de Alumno:</label>
-  <h:inputText value="#{secretaria.dni}" id="dni" required="true"/>
+  <h:inputText value="#{secretaria.matricula.dni}" id="dni" required="true"/>
   <h:message for="dni" style="color: red" />
   <br/>
   <br/>
   
   <label for="codTitu">Codigo de titulación:</label>
-  <h:inputText value="#{secretaria.titu}" id="codTitu" required="true"/>
+  <h:inputText value="#{secretaria.matricula.titulacion.codigo}" id="codTitu" required="true"/>
   <h:message for="codTitu" style="color: red" />
   <br/>
   <br/>

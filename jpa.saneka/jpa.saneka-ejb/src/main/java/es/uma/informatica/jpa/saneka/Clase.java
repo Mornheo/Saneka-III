@@ -4,6 +4,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
+@NamedQuery(name = "Clase.findAll", query = "select c from Clase c")
 @IdClass(Clase.ClaseId.class)
 public class Clase implements Serializable {
 	public static class ClaseId implements Serializable {

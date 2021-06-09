@@ -9,9 +9,9 @@
 <h:head><title>Insertar Alumno</title></h:head>
 <h:body>
 
-<h:h1>Alumno</h:h1>
+<h1>Alumno</h1>
 
-<h:form>
+<h:form id="crearAlumno">
   <label for="dni">DNI:</label>
   <h:inputText value="#{secretaria.alumno.dni}" id="dni" required="true" />
   <h:message for="dni" style="color: red" id="errorDni" />

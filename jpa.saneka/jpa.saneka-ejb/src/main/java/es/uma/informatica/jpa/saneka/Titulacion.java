@@ -12,7 +12,7 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@NamedQuery(name = "Titulacion.findAll", query = "select t from Titulacion t")
 public class Titulacion implements Serializable {
 
 	   

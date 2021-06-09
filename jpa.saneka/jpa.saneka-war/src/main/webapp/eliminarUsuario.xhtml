@@ -5,19 +5,20 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
-<h:head> <title>Eliminar centro</title></h:head>
+<h:head> <title>Eliminar usuario</title></h:head>
 <h:body>
-	<h:form id="eliminarCentro">
+	<h:form id="eliminarUsuario">
 		<h:panelGrid id="panel" columns="3" cellpadding="10" cellspacing="1">
-			<f:facet name="header"><h:outputText value="Eliminación de centro" /></f:facet>
-			<h:outputText value="CentroId:" />
-		　　	<h:inputText value="#{secretaria.idCentro}" id="centroId" required="true"></h:inputText>
-		　　	<h:message for="id" style="color: red" id="errorId"/>
+			<f:facet name="header"><h:outputText value="Eliminacion de usuario" /></f:facet>
+			<h:outputText value="Email:" />
+		　　	<h:inputText value="#{secretaria.usuario.emailInstitucional}" id="correo" required="true"></h:inputText>
+		　　	<h:message for="correo" style="color: red" id="errorCorreo"/>
 			<f:facet name="footer">
-					<h:commandButton value="Eliminar" id="btonEliminar" action ="#{secretaria.eliminarCentro}"/>
+					<h:commandButton value="Modificar" id="btonModificar" action ="#{secretaria.eliminarUsuario}"/>
 					<h:button value="Volver a panel de control" id="btonVolver" outcome="panelControl.xhtml" />
 			</f:facet>	
 		</h:panelGrid>
 	</h:form>
 </h:body>
+
 </html>

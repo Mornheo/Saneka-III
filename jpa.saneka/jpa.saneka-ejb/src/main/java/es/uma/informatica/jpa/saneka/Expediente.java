@@ -11,7 +11,7 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@NamedQuery(name = "Expediente.findAll", query = "select e from Expediente e")
 public class Expediente implements Serializable {
 
 	   

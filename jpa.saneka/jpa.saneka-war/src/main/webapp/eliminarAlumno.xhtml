@@ -9,9 +9,9 @@
 <h:head><title>Eliminar Alumno</title></h:head>
 <h:body>
 
-<h:h1>Alumno</h:h1>
+<h1>Alumno</h1>
 
-<h:form>
+<h:form id="eliminarAlumno">
  
   <label for="dni">DNI:</label>
 
@@ -24,9 +24,7 @@
   <h:commandButton value="Eliminar" id="btonEliminar" action ="#{secretaria.eliminarAlumno}"/>
   <h:button value="Volver a panel de control" id="btonVolver" outcome="panelControl.xhtml" />
   </p>
-  
-  
-  
+  <h:outputText value= "Eliminado con exito" id = "exito" visible = "#{secretaria.visible}"></h:outputText>
 </h:form>
 
 </h:body>

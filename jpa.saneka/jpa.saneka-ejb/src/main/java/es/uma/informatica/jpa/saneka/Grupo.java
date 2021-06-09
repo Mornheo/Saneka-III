@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
+@NamedQuery(name = "Grupo.findAll", query = "select g from Grupo g")
 public class Grupo implements Serializable{
 
 	private static final long serialVersionUID = 1L;

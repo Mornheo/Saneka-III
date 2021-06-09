@@ -11,12 +11,12 @@ import es.uma.informatica.ejb.exceptions.SanekaException;
 import es.uma.informatica.ejb.saneka.GestionUsuario;
 import es.uma.informatica.jpa.saneka.Usuario;
 
-@Named(value = "usuarioVista")
+@Named(value = "usuarioV")
 @RequestScoped
 public class UsuarioVista {
 	@Inject 
 	private  GestionUsuario gestion;
-	public List<Usuario> listaUsuarios() throws SanekaException {
+	public List<Usuario> getListaUsuarios() throws SanekaException {
 		return gestion.devolverUsuarios();
 	}
 	
