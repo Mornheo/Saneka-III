@@ -28,6 +28,8 @@ import es.uma.informatica.ejb.exceptions.OptativaExistenteException;
 import es.uma.informatica.ejb.exceptions.OptativaNoEncontradoException;
 import es.uma.informatica.ejb.exceptions.TitulacionExistenteException;
 import es.uma.informatica.ejb.exceptions.TitulacionNoEncontradoException;
+import es.uma.informatica.ejb.exceptions.UsuarioExistenteException;
+import es.uma.informatica.ejb.exceptions.UsuarioNoEncontradoException;
 import es.uma.informatica.ejb.saneka.GestionAlumno;
 import es.uma.informatica.ejb.saneka.GestionAsignatura;
 import es.uma.informatica.ejb.saneka.GestionCentro;
@@ -387,7 +389,31 @@ public class Secretaria{
 		return "login.xhtml";
 	}
 	// Metodos de insertar,modificar y eliminar
-	public String crearAlumno(){
+	public void crearUsuario() {
+		try {
+			gestion.insertarUsuario(usuario);
+		} catch (UsuarioExistenteException e) {
+			FacesMessage fm = new FacesMessage("El usuario ya existe");
+            FacesContext.getCurrentInstance().addMessage("crearUsuario:errorCorreo", fm);
+		}
+	}
+	public void modificarUsuario() {
+		try {
+			gestion.modificarUsuario(usuario.getEmailInstitucional(), usuario.getContrasenia());
+		} catch (UsuarioNoEncontradoException e) {
+			FacesMessage fm = new FacesMessage("El usuario no encontrado");
+            FacesContext.getCurrentInstance().addMessage("modificarUsuario:errorCorreo", fm);
+		}
+	}
+	public void eliminarUsuario(){
+		try {
+			gestion.eliminarUsuario(usuario.getEmailInstitucional());
+		} catch (UsuarioNoEncontradoException e) {
+			FacesMessage fm = new FacesMessage("El usuario no encontrado");
+            FacesContext.getCurrentInstance().addMessage("eliminarUsuario:errorCorreo", fm);
+		}
+	}
+	public void crearAlumno(){
 			try{
 				gestionAlumno.insertarAlumno(alumno);			
 			} catch (AlumnoYaExistente e) {
@@ -449,7 +475,6 @@ public class Secretaria{
 	public String crearCentro (){
 		try{
 			gestionCentro.insertarCentro(centro);
-			
 		} catch (CentroExistenteException e) {
             FacesMessage fm = new FacesMessage("El centro ya existe");
             FacesContext.getCurrentInstance().addMessage("crearCentro:errorId", fm);
@@ -458,7 +483,7 @@ public class Secretaria{
 	}
 	public String modificarCentro() {
 		try {
-			gestionCentro.actualizarCentro(idCentro,centro);
+			gestionCentro.actualizarCentro(centro.getId(),centro);
 		} catch (CentroNoEncontradoException e) {
 			FacesMessage fm = new FacesMessage("El centro no se ha podido encontrar");
             FacesContext.getCurrentInstance().addMessage("modificarCentro:id", fm);
