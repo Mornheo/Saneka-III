@@ -1,0 +1,12 @@
+++Hemos añadido una clase Usuario -> 
+para distinguir entre alumno y secretaria
+
+++Hemos añadido también setters que nos faltaban en algunas clases ->
+No podiamos insertar, modificar y eliminar correctamente
+
+==Hemos cambiado de nombre algunas excepciones (SanekaException -> Respestiva Excepción) ->
+Nos daba problemas a la hora de hacer los test, nos dimos cuenta que 
+no teniamos bien las excepciones
+
+==Hemos cambiado en algunas entidades la obligatoriedad de algunos atributos ->
+Nos dimos que no necesitabamos que algunos atributos eran iguales
