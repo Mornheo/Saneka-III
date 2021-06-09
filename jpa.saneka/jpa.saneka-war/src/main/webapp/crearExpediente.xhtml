@@ -14,21 +14,21 @@
 		<h:panelGrid id="panel" columns="3" cellpadding="10" cellspacing="1">
 			<f:facet name="header"><h:outputText value="Creación de expediente" /></f:facet>
 			<h:outputText value="Titulacion:" />
-		　　	<h:inputText value="#{secretaria.titu}" id="titulacion" required="true" converterMessage="Please enter digits only."/>
+		　　	<h:inputText value="#{secretaria.expediente.titulacion.codigo}" id="titulacion" required="true" converterMessage="Please enter digits only."/>
 		　　	<h:message for="titulacion" style="color: red" />
 		
 			<h:outputText value="Numero de expediente:" />
 		　　	<h:inputText value="#{secretaria.expediente.numExpediente}" id="numExpediente" required="true" converterMessage="Please enter digits only." />
-		　　	<h:message for="curso" style="color: red" id="errorExp"/>
+		　　	<h:message for="numExpediente" style="color: red" id="errorExp"/>
 
 			<h:outputText value="Alumno DNI:" />
-		　　	<h:inputText value="#{secretaria.dni}" id="dni" required="true"  />
+		　　	<h:inputText value="#{secretaria.expediente.alumno.dni}" id="dni" required="true"  />
 		　　	<h:message for="dni" style="color: red" />
 		
 			<h:outputText value="Activo:" />
 			<h:selectOneRadio id="activo" values="#{secretaria.expediente.activo}" >
-					<f:selectItem itemValue = "Si" itemLabel = "Si" /> 
-	   				<f:selectItem itemValue = "No" itemLabel = "No" />
+					<f:selectItem itemValue = "#{true}" itemLabel = "Si" /> 
+	   				<f:selectItem itemValue = "#{false}" itemLabel = "No" />
 			</h:selectOneRadio>
 			<f:facet name="footer">
 					<h:commandButton value="Crear" id="crea" action ="#{secretaria.crearExpediente}"/>

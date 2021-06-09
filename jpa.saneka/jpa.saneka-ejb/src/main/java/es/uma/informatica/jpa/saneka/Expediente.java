@@ -65,6 +65,21 @@ public class Expediente implements Serializable {
 	public void setNotaMediaProvisional(long nota) {
 		this.notaMediaProvisional = nota;
 	}
+	
+	public Alumno getAlumno() {
+		return alumno;
+	}
+	public void setAlumno(Alumno alumno) {
+		this.alumno = alumno;
+	}
+	
+	
+	public Titulacion getTitulacion() {
+		return titulacion;
+	}
+	public void setTitulacion(Titulacion titulacion) {
+		this.titulacion = titulacion;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
