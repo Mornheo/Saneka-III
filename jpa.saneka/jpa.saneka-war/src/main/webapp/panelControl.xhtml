@@ -34,9 +34,9 @@
 	    <f:selectItems value="#{secretaria.availableItems.entrySet()}" var="entry"
 	        itemValue="#{entry.key}" itemLabel="#{entry.value}" />
 		</h:selectOneMenu>
-		<h:commandButton value="Eliminar" action= "#{secretaria.eliminar}"/>
+		<h:commandButton value="Eliminar" action= "#{secretaria.eliminar}" id="btonELiminar"/>
 		
-		<h:commandButton value="Volver a iniciar sesión" action = "#{secretaria.volver}"/>
+		<h:commandButton value="Volver a iniciar sesión" action = "#{secretaria.volver}" id="btonVolver"/>
 			
 	</h:panelGrid>
 	

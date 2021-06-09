@@ -20,9 +20,9 @@
 				<f:selectItem itemValue = "Tarde" itemLabel = "Tarde" /> 
    				<f:selectItem itemValue = "Mañana" itemLabel = "Mañana" />
 			</h:selectOneRadio>
-			<h:message for="turno" style="color: red" />
+			<h:message for="turno" style="color: red" id="errorTurno"/>
 			<f:facet name="footer">
-				<h:commandButton value="Envia" action= "encuesta.Entrar"/>
+				<h:commandButton value="Envia" action= "encuesta.Entrar" id="btonEnvia"/>
 			</f:facet>
 	</h:panelGrid>
 	</h:form>

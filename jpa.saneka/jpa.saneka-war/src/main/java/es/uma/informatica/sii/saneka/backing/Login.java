@@ -52,10 +52,10 @@ public class Login {
             
         } catch (UsuarioNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("La cuenta no existe");
-            FacesContext.getCurrentInstance().addMessage("login:user", fm);
+            FacesContext.getCurrentInstance().addMessage("login:correo", fm);
         } catch (ContraseniaInvalidaException e) {
             FacesMessage fm = new FacesMessage("La contraseña no es correcta");
-            FacesContext.getCurrentInstance().addMessage("login:pass", fm);
+            FacesContext.getCurrentInstance().addMessage("login:password", fm);
         } catch (SanekaException e) {
             FacesMessage fm = new FacesMessage("Error: " + e);
             FacesContext.getCurrentInstance().addMessage(null, fm);

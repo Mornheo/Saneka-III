@@ -415,8 +415,16 @@ public class Secretaria{
             FacesContext.getCurrentInstance().addMessage("crearGrupo:errorGrupo", fm);
         }
 	}
-	public void modificarGrupo() throws TitulacionNoEncontradoException, GrupoNoEncontradoException {
-		gestionGrupo.actualizarGrupo(titu,idGrupo, grupo);
+	public void modificarGrupo() {
+		try {
+			gestionGrupo.actualizarGrupo(titu,idGrupo, grupo);
+		} catch (TitulacionNoEncontradoException e) {
+			FacesMessage fm = new FacesMessage("Titulacion no encontrada");
+            FacesContext.getCurrentInstance().addMessage("modificarGrupo:titulacion", fm);
+		} catch (GrupoNoEncontradoException e) {
+			FacesMessage fm = new FacesMessage("Grupo no encontrado");
+            FacesContext.getCurrentInstance().addMessage("modificarGrupo:id", fm);
+		}
 	}
 	public void eliminarGrupo() {
 		try{
@@ -440,8 +448,16 @@ public class Secretaria{
             FacesContext.getCurrentInstance().addMessage("crearMatricula:errorMatricula", fm);
         }
 	}
-	public void modificarMatricula() throws MatriculaNoExistente, ExpedienteNoEncontradoException {
-		gestionMatricula.modificarMatricula(exp, matricula);
+	public void modificarMatricula() {
+		try {
+			gestionMatricula.modificarMatricula(exp, matricula);
+		} catch (MatriculaNoExistente e) {
+			FacesMessage fm = new FacesMessage("La matricula no se encuentra");
+            FacesContext.getCurrentInstance().addMessage("modificarMatricula:dni", fm);
+		} catch (ExpedienteNoEncontradoException e) {
+			FacesMessage fm = new FacesMessage("El expediente no se encuentra");
+            FacesContext.getCurrentInstance().addMessage("modificarMatricula:nExp", fm);
+		}
 	}
 	public void eliminarMatricula() {
 		try{
