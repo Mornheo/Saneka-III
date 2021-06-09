@@ -10,17 +10,17 @@
 	<title>Login</title>
 </h:head>
 <h:body>
-<h:form>
+<h:form id="login">
 　	<h:panelGrid id="panel" columns="3" cellpadding="10" cellspacing="1">
 		<f:facet name="header">
 	    <h:outputText value="Login" /></f:facet>
 	　　<h:outputText value="Correo:" />
 	　　<h:inputText value="#{login.usuario.emailInstitucional}" id="correo" required="true" />
-	　　<h:message for="correo" style="color: red" id="errorCorreo"/>
+	　　<h:message for="correo" style="color:red" id="errorCorreo"/>
 	
 	　　<h:outputText value="Contraseña:" />
 	　　<h:inputSecret value="#{login.usuario.contrasenia}" id="password" required="true" />
-	　　<h:message for="password" style="color: red" id="errorPassword"/>
+	　　<h:message for="password" style="color:red" id="errorPassword"/>
 	</h:panelGrid>
 	<h:commandButton value="Entrar" action="#{login.entrar()}" id="btonEntrar"/>
 </h:form>

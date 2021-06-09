@@ -16,7 +16,7 @@
 		
 		<h:outputText value="Id:" />
 	　　	<h:inputText value="#{secretaria.idGrupo}" id="id" required="true"/>
-	　　	<h:message for="id" style="color: red" />
+	　　	<h:message for="id" style="color: red" id="errorId"/>
 		
 		<h:outputText value="Titulacion:" />
 	　　	<h:inputText value="#{secretaria.grupo.titulacion.codigo}" id="titulacion" required="true" converterMessage="Please enter digits only."/>
