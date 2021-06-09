@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,45 +6,25 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
-	
-<h:head><title>Modificar Titulacion</title></h:head>
+<h:head> <title>Modificar Titulacion</title></h:head>
 <h:body>
-
-<h1>Titulacion</h1>
-
-<h:form id="modificarTitulacion">
-
-  
-<label for="idC">ID de centro:</label>
-  <h:inputText value="#{secretaria.idCentro}" id="idC" required="true"/>
-  <h:message for="idC" style="color: red" />
-  <br/>
-  <br/>
-  
-  <label for="codTitu">Código titulación:</label>
-  <h:inputText value="#{secretaria.titulacion.codigo}" id="codTitu" required="true"/>
-  <h:message for="codTitu" style="color: red" id="errorCodTitu"/>
-  <br/>
-  <br/>
-  
-  <label for="nombre">Nombre:</label>
-  <h:inputText value="#{secretaria.titulacion.nombre}" id="nombre"/>
-  <h:message for="nombre" style="color: red" />
-  <br/>
-  <br/>
-  
-  <label for="cred">Creditos:</label>
-  <h:inputText value="#{secretaria.titulacion.creditos}" id="cred"/>
-  <h:message for="cred" style="color: red" />
-  <br/>
-  <br/>
-  
-  <p>
-  <h:commandButton value="Modificar" id="btonModificar" action ="#{secretaria.modificarTitulacion"/>
-  <h:button value="Volver a panel de control" id="btonVolver" outcome="panelControl.xhtml" />>
-  </p>
-  
-</h:form>
-
+	<h:form id="modificarTitulacion">
+		<h:panelGrid id="panel" columns="3" cellpadding="10" cellspacing="1">
+			<f:facet name="header"><h:outputText value="Modificación de titulacion" /></f:facet>
+			<h:outputText value="Codigo titulacion:" />
+		　　	<h:inputText value="#{secretaria.titulacion.codigo}"  id="codTitu" required="true" />
+			<h:message for="codTitu" style="color: red" id="errorId"/>
+			<h:outputText value="Nombre:" />
+		　　	<h:inputText value="#{secretaria.titulacion.nombre}" id="nombre"/>
+		　　	<h:message for="nombre" style="color: red" />
+			<h:outputText value="Creditos:" />
+		　　	<h:inputText value="#{secretaria.titulaicion.creditos}" id="creditos"/>
+			<f:facet name="footer">
+					<h:commandButton value="Modificar" id="btonModificar" action ="#{secretaria.modificarTitulacion}"/>
+					<h:button value="Volver a panel de control" id="btonVolver" outcome="panelControl.xhtml" />
+			</f:facet>	
+		</h:panelGrid>
+	</h:form>
 </h:body>
 </html>
+
