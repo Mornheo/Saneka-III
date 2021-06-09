@@ -397,7 +397,7 @@ public class Secretaria{
 	}
 	public void modificarAlumno() {
 			try {
-				gestionAlumno.modificarAlumno(dni,alumno);
+				gestionAlumno.modificarAlumno(alumno.getDni(),alumno);
 			} catch (AlumnoNoEncontrado e) {
 				FacesMessage fm = new FacesMessage("El alumno no se ha podido encontrar");
 	            FacesContext.getCurrentInstance().addMessage("modificarAlumno:dni", fm);
