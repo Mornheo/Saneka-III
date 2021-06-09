@@ -43,7 +43,7 @@ public class SuiteIT {
   public void tearDown() {
     driver.quit();
   }
-/*
+
   @Test
   public void loginContraseniaIncorrecta() {
     driver.get("http://localhost:8080/jpa.saneka-war/");
@@ -52,7 +52,7 @@ public class SuiteIT {
     driver.findElement(By.id("login:password")).sendKeys("321");
     driver.findElement(By.id("login:btonEntrar")).click();
     assertThat(driver.findElement(By.id("login:errorPassword")).getText(), is("La contraseña no es correcta"));
-  }
+  }/*
   @Test
   public void loginContraseniaRequerida() {
     driver.get("http://localhost:8080/jpa.saneka-war/");

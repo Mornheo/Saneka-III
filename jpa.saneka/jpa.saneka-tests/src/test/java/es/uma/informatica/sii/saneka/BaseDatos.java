@@ -30,8 +30,6 @@ public class BaseDatos {
 		EntityManager em = emf.createEntityManager();
 		
 		em.getTransaction().begin();
-		//Rellenar con la base de datos para los test
-	
 		//Centro
 		List<Titulacion> titulaciones = new ArrayList<Titulacion>();
 		
@@ -165,7 +163,6 @@ public class BaseDatos {
 		em.persist(am1);
 		em.persist(am2);
 		em.persist(am3);
-		
 		
 		em.getTransaction().commit();
 		em.close();

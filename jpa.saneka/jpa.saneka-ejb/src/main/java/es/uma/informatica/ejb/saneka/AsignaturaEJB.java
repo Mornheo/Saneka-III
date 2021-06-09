@@ -64,6 +64,7 @@ public class AsignaturaEJB implements GestionAsignatura{
 		existente.setOtro_idioma(asignatura.getOtro_idioma());
 		existente.setPlazas(asignatura.getPlazas());
 		existente.setTotal_creditos(asignatura.getTotal_creditos());
+		em.persist(existente);
 	}
 
 	@Override
