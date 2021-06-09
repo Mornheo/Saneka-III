@@ -214,7 +214,15 @@ public class Secretaria{
         availableItems.put("Matrícula", "Matrícula");
         availableItems.put("Titulacion", "Titulacion");
         availableItems.put("Optativa", "Optativa");
-        
+        alumno = new Alumno();
+        asignatura = new Asignatura();
+        centro = new Centro();
+        clase = new Clase();
+        expediente = new Expediente();
+        grupo = new Grupo();
+        matricula = new Matricula();
+        titulacion = new Titulacion();
+        optativa = new Optativa();
     }
 	public String getSelectedItem1() {
 		return selectedItem1;
@@ -305,7 +313,7 @@ public class Secretaria{
 	// Metodos de insertar,modificar y eliminar
 	public void crearAlumno(){
 			try{
-				gestionAlumno.insertarAlumno(alumno);
+				gestionAlumno.insertarAlumno(alumno);			
 			} catch (AlumnoYaExistente e) {
 	            FacesMessage fm = new FacesMessage("El alumno ya existe");
 	            FacesContext.getCurrentInstance().addMessage("crearAlumno:errorDni", fm);
