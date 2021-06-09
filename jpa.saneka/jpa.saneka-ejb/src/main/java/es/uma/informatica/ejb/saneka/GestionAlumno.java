@@ -1,4 +1,6 @@
 package es.uma.informatica.ejb.saneka;
+import java.util.List;
+
 import javax.ejb.Local;
 
 import es.uma.informatica.ejb.exceptions.AlumnoNoEncontrado;
@@ -17,5 +19,6 @@ public interface GestionAlumno {
 	void eliminarAlumno(String dni) throws AlumnoNoEncontrado;
 
 	Alumno devolverAlumno(String dni) throws AlumnoNoEncontrado;
+	List<Alumno> devolverAlumnos();
 
 }

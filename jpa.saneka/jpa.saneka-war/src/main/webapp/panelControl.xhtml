@@ -6,8 +6,8 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 	
-<head><title>Panel de control de Secretaria</title></head>
-<body>
+<h:head><title>Panel de control de Secretaria</title></h:head>
+<h:body>
 
 <h1>Secretaria</h1>
 
@@ -36,6 +36,13 @@
 		</h:selectOneMenu>
 		<h:commandButton value="Eliminar" action= "#{secretaria.eliminar}" id="btonELiminar"/>
 		
+		<h:outputText value = "Mostrar"></h:outputText>
+		<h:selectOneMenu value="#{secretaria.selectedItem4}" id = "selectMostrar">
+	    <f:selectItems value="#{secretaria.availableItems.entrySet()}" var="entry"
+	        itemValue="#{entry.key}" itemLabel="#{entry.value}" />
+		</h:selectOneMenu>
+		<h:commandButton value="Mostrar" action= "#{secretaria.mostrar}" id="btonMostrar"/>
+		
 		<h:commandButton value="Volver a iniciar sesión" action = "#{secretaria.volver}" id="btonVolver"/>
 			
 	</h:panelGrid>
@@ -44,5 +51,5 @@
 
 
 
-</body>
+</h:body>
 </html>

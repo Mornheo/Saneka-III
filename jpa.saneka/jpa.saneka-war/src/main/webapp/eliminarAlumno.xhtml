@@ -24,9 +24,7 @@
   <h:commandButton value="Eliminar" id="btonEliminar" action ="#{secretaria.eliminarAlumno}"/>
   <h:button value="Volver a panel de control" id="btonVolver" outcome="panelControl.xhtml" />
   </p>
-  
-  
-  
+  <h:outputText value= "Eliminado con exito" id = "exito" visible = "#{secretaria.visible}"></h:outputText>
 </h:form>
 
 </h:body>

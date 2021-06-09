@@ -12,7 +12,7 @@ import es.uma.informatica.ejb.exceptions.GrupoNoEncontradoException;
 import es.uma.informatica.ejb.exceptions.ClaseExistenteException;
 import es.uma.informatica.ejb.exceptions.ClaseNoEncontradoException;
 import es.uma.informatica.jpa.saneka.Grupo;
-
+import es.uma.informatica.jpa.saneka.Alumno;
 import es.uma.informatica.jpa.saneka.Clase;
 import es.uma.informatica.jpa.saneka.Clase.ClaseId;
 
@@ -90,6 +90,12 @@ public class ClaseEJB implements GestionClase{
 		GrupoEntity.setClases(clases);
 		em.persist(GrupoEntity);
 		
+	}
+
+	@Override
+	public List<Clase> devolverClases() {
+		// TODO Auto-generated method stub
+		return em.createNamedQuery("Clase.findAll", Clase.class).getResultList();
 	}
 
 

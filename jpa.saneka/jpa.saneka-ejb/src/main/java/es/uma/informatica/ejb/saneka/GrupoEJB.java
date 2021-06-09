@@ -11,6 +11,7 @@ import javax.persistence.PersistenceContext;
 import es.uma.informatica.ejb.exceptions.GrupoExistenteException;
 import es.uma.informatica.ejb.exceptions.GrupoNoEncontradoException;
 import es.uma.informatica.ejb.exceptions.TitulacionNoEncontradoException;
+import es.uma.informatica.jpa.saneka.Alumno;
 import es.uma.informatica.jpa.saneka.Grupo;
 import es.uma.informatica.jpa.saneka.Titulacion;
 @Stateless
@@ -98,6 +99,12 @@ public class GrupoEJB implements GestionGrupo{
 		}
 		return grupo;
 		
+	}
+
+	@Override
+	public List<Grupo> devolverGrupos() {
+		// TODO Auto-generated method stub
+		return em.createNamedQuery("Grupo.findAll", Grupo.class).getResultList();
 	}
 
 }

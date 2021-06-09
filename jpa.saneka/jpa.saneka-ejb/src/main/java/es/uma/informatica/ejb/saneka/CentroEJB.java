@@ -1,6 +1,7 @@
 package es.uma.informatica.ejb.saneka;
 
 
+import java.util.List;
 import java.util.logging.Logger;
 
 import javax.ejb.Stateless;
@@ -9,6 +10,7 @@ import javax.persistence.PersistenceContext;
 
 import es.uma.informatica.ejb.exceptions.CentroExistenteException;
 import es.uma.informatica.ejb.exceptions.CentroNoEncontradoException;
+import es.uma.informatica.jpa.saneka.Alumno;
 import es.uma.informatica.jpa.saneka.Centro;
 
 @Stateless
@@ -63,6 +65,12 @@ public class CentroEJB implements GestionCentro{
 			throw new CentroNoEncontradoException();
 		}
 		return centroExistente;
+	}
+
+	@Override
+	public List<Centro> devolverCentros() {
+		// TODO Auto-generated method stub
+		return em.createNamedQuery("Centro.findAll", Centro.class).getResultList();
 	}
 	
 

@@ -1,5 +1,7 @@
 package es.uma.informatica.ejb.saneka;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 
 import javax.persistence.EntityManager;
@@ -8,6 +10,7 @@ import javax.persistence.PersistenceContext;
 import es.uma.informatica.ejb.exceptions.ExpedienteNoEncontradoException;
 import es.uma.informatica.ejb.exceptions.MatriculaExistente;
 import es.uma.informatica.ejb.exceptions.MatriculaNoExistente;
+import es.uma.informatica.jpa.saneka.Alumno;
 import es.uma.informatica.jpa.saneka.Expediente;
 import es.uma.informatica.jpa.saneka.Matricula;
 
@@ -91,6 +94,12 @@ public class MatriculaEJB implements GestionMatricula{
 		}
 		return mat;
 		
+	}
+
+	@Override
+	public List<Matricula> devolverMatriculas() {
+		// TODO Auto-generated method stub
+		return em.createNamedQuery("Matricula.findAll", Matricula.class).getResultList();
 	}
 	
 	

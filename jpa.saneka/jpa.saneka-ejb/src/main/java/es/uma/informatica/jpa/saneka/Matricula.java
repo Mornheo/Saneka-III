@@ -11,6 +11,7 @@ import javax.persistence.*;
  *
  */
 @Entity
+@NamedQuery(name = "Matricula.findAll", query = "select m from Matricula m")
 @IdClass(Matricula.MatriculaId.class)
 public class Matricula implements Serializable {
 	   

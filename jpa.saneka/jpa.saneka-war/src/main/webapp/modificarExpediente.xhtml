@@ -22,8 +22,11 @@
 			<h:outputText value="Alumno DNI:" />
 		　　	<h:inputText value="#{secretaria.dni}" id="dni" required="true"  />
 		　　	<h:message for="dni" style="color: red" />
+			<h:outputText value="Nota Media:" />
+		　　	<h:inputText value="#{secretaria.expediente.notaMediaProvisional}" id="notaMedia" required="true"  />
+		　　	<h:message for="notaMedia" style="color: red" />
 			<h:outputText value="Activo:" />
-			<h:selectOneRadio id="activo" values="#{Expediente.activo}" >
+			<h:selectOneRadio id="activo" values="#{Expediente.expediente.activo}" >
 					<f:selectItem itemValue = "Si" itemLabel = "Si" /> 
 	   				<f:selectItem itemValue = "No" itemLabel = "No" />
 			</h:selectOneRadio>
