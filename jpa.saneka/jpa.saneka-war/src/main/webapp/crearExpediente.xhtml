@@ -14,7 +14,7 @@
 		<h:panelGrid id="panel" columns="3" cellpadding="10" cellspacing="1">
 			<f:facet name="header"><h:outputText value="Creación de expediente" /></f:facet>
 			<h:outputText value="Titulacion:" />
-		　　	<h:inputText value="#{secretaria.titu}" id="titulacion" required="true" converterMessage="Please enter digits only."/>
+		　　	<h:inputText value="#{secretaria.expediente.titulacion.codigo}" id="titulacion" required="true" converterMessage="Please enter digits only."/>
 		　　	<h:message for="titulacion" style="color: red" />
 		
 			<h:outputText value="Numero de expediente:" />
@@ -22,7 +22,7 @@
 		　　	<h:message for="numExpediente" style="color: red" id="errorExp"/>
 
 			<h:outputText value="Alumno DNI:" />
-		　　	<h:inputText value="#{secretaria.dni}" id="dni" required="true"  />
+		　　	<h:inputText value="#{secretaria.expediente.alumno.dni}" id="dni" required="true"  />
 		　　	<h:message for="dni" style="color: red" />
 		
 			<h:outputText value="Activo:" />

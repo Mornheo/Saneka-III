@@ -116,14 +116,18 @@ public class Secretaria{
         seleccion = new LinkedHashMap<String,Boolean>();
         seleccion.put("Si",true);
         seleccion.put("No",false);
+        titulacion = new Titulacion();
+
         alumno = new Alumno();
         asignatura = new Asignatura();
         centro = new Centro();
-        clase = new Clase();
-        expediente = new Expediente();
         grupo = new Grupo();
+        clase = new Clase();
+        clase.setGrupo(grupo);
+        expediente = new Expediente();
+        expediente.setAlumno(alumno);
+        expediente.setTitulacion(titulacion);
         matricula = new Matricula();
-        titulacion = new Titulacion();
         optativa = new Optativa();
         usuario = new Usuario();
     }
@@ -433,7 +437,6 @@ public class Secretaria{
 	public String crearAlumno(){
 			try{
 				gestionAlumno.insertarAlumno(alumno);
-				return "accionCompletada.xhtml";
 			} catch (AlumnoYaExistente e) {
 	            FacesMessage fm = new FacesMessage("El alumno ya existe");
 	            FacesContext.getCurrentInstance().addMessage("crearAlumno:errorDni", fm);
@@ -515,7 +518,7 @@ public class Secretaria{
 		try{
 			gestionCentro.eliminarCentro(idCentro);
 			FacesMessage fm = new FacesMessage("Eliminado con exito");
-            FacesContext.getCurrentInstance().addMessage("eliminarAlumno:todoCorrecto", fm);
+            FacesContext.getCurrentInstance().addMessage("eliminarCentro:centroId", fm);
             return "accionCompletada.xhtml";
 		} catch (CentroNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("El centro no se ha podido encontrar");
@@ -525,7 +528,7 @@ public class Secretaria{
 	}
 	public String crearClase() {
 		try{
-			gestionClase.insertarClase(idGrupo, clase);
+			gestionClase.insertarClase(clase.getGrupo().getId(), clase);
 			return "accionCompletada.xhtml";
 		} catch (GrupoNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("El grupo no se ha podido encontrar");

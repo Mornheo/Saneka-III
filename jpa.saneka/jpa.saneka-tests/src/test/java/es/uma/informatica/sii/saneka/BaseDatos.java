@@ -132,9 +132,9 @@ public class BaseDatos {
 		
 		//Grupo
 		Grupo grupo1 = new Grupo(420, 3, "B", "tarde", false, titu1);
-		Grupo grupo2 = new Grupo(421, 3, "B", "tarde", false, titu1);
-		Grupo grupo3 = new Grupo(422, 3, "B", "tarde", false, titu1);
-		Grupo grupo4 = new Grupo(423, 3, "B", "tarde", false, titu1);
+		Grupo grupo2 = new Grupo(421, 4, "B", "tarde", false, titu1);
+		Grupo grupo3 = new Grupo(422, 1, "B", "tarde", false, titu1);
+		Grupo grupo4 = new Grupo(423, 2, "B", "tarde", false, titu1);
 		em.persist(grupo1);
 		em.persist(grupo2);
 		em.persist(grupo3);
