@@ -14,7 +14,7 @@
 <h:form>
   <label for="dni">DNI de Alumno:</label>
   <h:inputText value="#{secretaria.dni}" id="dni" required="true"/>
-  <h:message for="dni" style="color: red" />
+  <h:message for="dni" style="color: red" id="errorMatricula"/>
   <br/>
   <br/>
   
@@ -38,7 +38,7 @@
   
   <label for="cursoA">Curso de matrícula</label>
   <h:inputText value="#{secretaria.matricula.cursoAcademico}" id="cursoA" required="true"/>
-  <h:message for="cursoA" style="color: red" id="errorMatricula"/>
+  <h:message for="cursoA" style="color: red"/>
   <br/>
   <br/>
   
