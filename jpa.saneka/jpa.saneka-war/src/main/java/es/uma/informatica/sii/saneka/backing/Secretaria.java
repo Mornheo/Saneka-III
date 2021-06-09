@@ -586,7 +586,7 @@ public class Secretaria{
 	}
 	public String modificarExpediente() {
 		try {
-			gestionExp.modificarExpediente(exp, expediente);
+			gestionExp.modificarExpediente(expediente.getNumExpediente(), expediente);
 			return "accionCompletada.xhtml";
 		} catch (ExpedienteNoEncontradoException e) {
 			FacesMessage fm = new FacesMessage("El expediente no se ha podido encontrar");
