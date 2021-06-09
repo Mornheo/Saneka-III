@@ -49,7 +49,6 @@ public class Login {
             }else {
             	return "alumnoVista.xhtml";
             }
-            
         } catch (UsuarioNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("La cuenta no existe");
             FacesContext.getCurrentInstance().addMessage("login:user", fm);

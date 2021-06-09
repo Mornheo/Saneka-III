@@ -15,7 +15,6 @@
   		<version>0.0.1-SNAPSHOT</version>
   		<type>war</type>
   	</dependency>
-  	
   	<dependency>
   		<groupId>es.uma.informatica.sii</groupId>
   		<artifactId>jpa.saneka-ejb</artifactId>
@@ -28,6 +27,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.7</version>
 				<configuration>
 					<defaultLibBundleDir>lib</defaultLibBundleDir>
 				</configuration>
