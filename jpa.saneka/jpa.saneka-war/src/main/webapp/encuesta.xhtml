@@ -16,13 +16,13 @@
 					<h:outputText value="Encuesta" />
 			</f:facet>
 			<h:outputText value="Turno Preferente:" />
-			<h:selectOneRadio id="turno" values="#{encuesta.turnoPosible}" required="true">
+			<h:selectOneRadio id="turno" values="#{encuesta.turnoPreferente}" required="true">
 				<f:selectItem itemValue = "Tarde" itemLabel = "Tarde" /> 
    				<f:selectItem itemValue = "Mañana" itemLabel = "Mañana" />
 			</h:selectOneRadio>
 			<h:message for="turno" style="color: red" id="errorTurno"/>
 			<f:facet name="footer">
-				<h:commandButton value="Envia" action= "encuesta.Entrar" id="btonEnvia"/>
+				<h:commandButton value="Envia" action= "#{encuesta.enviar()}" id="btonEnvia"/>
 			</f:facet>
 	</h:panelGrid>
 	</h:form>
