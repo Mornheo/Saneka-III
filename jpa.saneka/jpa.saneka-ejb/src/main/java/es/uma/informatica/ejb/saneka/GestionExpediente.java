@@ -1,10 +1,13 @@
 package es.uma.informatica.ejb.saneka;
 
+import java.util.List;
+
 import javax.ejb.Local;
 
 import es.uma.informatica.ejb.exceptions.ExpedienteExistenteException;
 import es.uma.informatica.ejb.exceptions.ExpedienteNoEncontradoException;
 import es.uma.informatica.jpa.saneka.Expediente;
+import es.uma.informatica.jpa.saneka.Optativa;
 
 @Local
 public interface GestionExpediente {
@@ -43,4 +46,5 @@ public interface GestionExpediente {
 	 * @Param num PK del expediente a devolver.
 	 */
 	public Expediente devolverExpediente(Integer num) throws ExpedienteNoEncontradoException;
+	public List<Expediente> devolverExpedientes() ;
 }

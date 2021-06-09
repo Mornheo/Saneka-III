@@ -1,6 +1,7 @@
 package es.uma.informatica.sii.saneka.backing;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.enterprise.context.RequestScoped;
@@ -27,7 +28,6 @@ import es.uma.informatica.ejb.exceptions.OptativaExistenteException;
 import es.uma.informatica.ejb.exceptions.OptativaNoEncontradoException;
 import es.uma.informatica.ejb.exceptions.TitulacionExistenteException;
 import es.uma.informatica.ejb.exceptions.TitulacionNoEncontradoException;
-import es.uma.informatica.ejb.exceptions.UsuarioNoEncontradoException;
 import es.uma.informatica.ejb.saneka.GestionAlumno;
 import es.uma.informatica.ejb.saneka.GestionAsignatura;
 import es.uma.informatica.ejb.saneka.GestionCentro;
@@ -45,9 +45,9 @@ import es.uma.informatica.jpa.saneka.Clase;
 import es.uma.informatica.jpa.saneka.Expediente;
 import es.uma.informatica.jpa.saneka.Grupo;
 import es.uma.informatica.jpa.saneka.Matricula;
-import es.uma.informatica.jpa.saneka.Matricula.MatriculaId;
 import es.uma.informatica.jpa.saneka.Optativa;
 import es.uma.informatica.jpa.saneka.Titulacion;
+import es.uma.informatica.jpa.saneka.Usuario;
 
 @Named(value = "secretaria")
 @RequestScoped
@@ -55,6 +55,8 @@ public class Secretaria{
 	private String selectedItem1; // +getter +setter
 	private String selectedItem2;
 	private String selectedItem3;
+	private String selectedItem4; // mostrar
+	private boolean visible = false;
 	@Inject
 	private GestionAlumno gestionAlumno;
 	@Inject 
@@ -73,7 +75,7 @@ public class Secretaria{
 	private GestionTitulacion gestionTitu;
 	@Inject
 	private GestionOptativa gestionOpt;
-	
+	@Inject GestionUsuario gestion;
 	private Alumno alumno;
 	private String dni;
 	private Asignatura asignatura;
@@ -92,6 +94,41 @@ public class Secretaria{
 	private Integer titu;
 	private Optativa optativa;
 	private Integer refOpt;
+	private Usuario usuario;
+
+	private Map<String, String> availableItems; // +getter
+    public Secretaria() {
+        availableItems = new LinkedHashMap<String, String>();
+        availableItems.put("Alumno", "Alumno");
+        availableItems.put("Asignatura", "Asignatura");
+        availableItems.put("Centro", "Centro");
+        availableItems.put("Clase", "Clase");
+        availableItems.put("Expediente", "Expediente");
+        availableItems.put("Grupo", "Grupo");
+        availableItems.put("Matrícula", "Matrícula");
+        availableItems.put("Titulacion", "Titulacion");
+        availableItems.put("Optativa", "Optativa");
+        availableItems.put("Usuario","Usuario");
+        alumno = new Alumno();
+        asignatura = new Asignatura();
+        centro = new Centro();
+        clase = new Clase();
+        expediente = new Expediente();
+        grupo = new Grupo();
+        matricula = new Matricula();
+        titulacion = new Titulacion();
+        optativa = new Optativa();
+        usuario = new Usuario();
+    }
+    
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
 	public Alumno getAlumno() {
 		return alumno;
 	}
@@ -200,30 +237,6 @@ public class Secretaria{
 	public void setRefOpt(Integer refOpt) {
 		this.refOpt = refOpt;
 	}
-
-
-	private Map<String, String> availableItems; // +getter
-    public Secretaria() {
-        availableItems = new LinkedHashMap<String, String>();
-        availableItems.put("Alumno", "Alumno");
-        availableItems.put("Asignatura", "Asignatura");
-        availableItems.put("Centro", "Centro");
-        availableItems.put("Clase", "Clase");
-        availableItems.put("Expediente", "Expediente");
-        availableItems.put("Grupo", "Grupo");
-        availableItems.put("Matrícula", "Matrícula");
-        availableItems.put("Titulacion", "Titulacion");
-        availableItems.put("Optativa", "Optativa");
-        alumno = new Alumno();
-        asignatura = new Asignatura();
-        centro = new Centro();
-        clase = new Clase();
-        expediente = new Expediente();
-        grupo = new Grupo();
-        matricula = new Matricula();
-        titulacion = new Titulacion();
-        optativa = new Optativa();
-    }
 	public String getSelectedItem1() {
 		return selectedItem1;
 	}
@@ -251,8 +264,51 @@ public class Secretaria{
 	public Map<String, String> getAvailableItems() {
 		return availableItems;
 	}
+	
+	public String getSelectedItem4() {
+		return selectedItem4;
+	}
+
+	public void setSelectedItem4(String selectedItem4) {
+		this.selectedItem4 = selectedItem4;
+	}
+
 	public void setAvailableItems(Map<String, String> availableItems) {
 		this.availableItems = availableItems;
+	}
+	
+	public boolean isVisible() {
+		return visible;
+	}
+	public void setVisible(boolean visible) {
+		this.visible = visible;
+	}
+	public List<Alumno> getListaAlumnos(){
+		return gestionAlumno.devolverAlumnos();
+	}
+	public List<Asignatura> getListaAsignaturas(){
+		return gestionAsig.devolverAsignaturas();
+	}
+	public List<Centro> getListaCentros(){
+		return gestionCentro.devolverCentros();
+	}
+	public List<Clase> getListaClases(){
+		return gestionClase.devolverClases();
+	}
+	public List<Expediente> getListaExpedientes(){
+		return gestionExp.devolverExpedientes();
+	}
+	public List<Grupo> getListaGrupos(){
+		return gestionGrupo.devolverGrupos();
+	}
+	public List<Matricula> getListaMatriculas(){
+		return gestionMatricula.devolverMatriculas();
+	}
+	public List<Titulacion> getListaTitulaciones(){
+		return gestionTitu.devolverTitulaciones();
+	}
+	public List<Optativa> getListaOpatativas(){
+		return gestionOpt.devolverOptativas();
 	}
 	// Seleccion 
 	public String crear() {
@@ -267,6 +323,7 @@ public class Secretaria{
 			case "Matrícula": enlace = "crearMatricula.xhtml"; break;
 			case "Titulacion": enlace = "crearTitulacion.xhtml"; break;
 			case "Optativa": enlace= "crearOptativa.xhtml"; break;
+			case "Usuario": enlace= "crearUsuario.xhtml"; break;
 		}
 		return enlace;
 
@@ -284,6 +341,7 @@ public class Secretaria{
 			case "Matrícula": enlace = "modificarMatricula.xhtml"; break;
 			case "Titulacion": enlace = "modificarTitulacion.xhtml"; break;
 			case "Optativa": enlace = "modificarOptativa.xhtml"; break;
+			case "Usuario": enlace= "modificarUsuario.xhtml"; break;
 		}
 		return enlace;
 
@@ -300,6 +358,24 @@ public class Secretaria{
 			case "Matrícula": enlace = "eliminarMatricula.xhtml"; break;
 			case "Titulacion": enlace = "eliminarTitulacion.xhtml"; break;
 			case "Optativa": enlace = "eliminarOptativa.xhtml"; break;
+			case "Usuario": enlace= "eliminarUsuario.xhtml"; break;
+		}
+		return enlace;
+
+	}
+	public String mostrar() {
+		String enlace = null;
+		switch(selectedItem4) {
+			case "Alumno": enlace = "mostrarAlumnos.xhtml"; break;
+			case "Asignatura": enlace = "mostrarAsignaturas.xhtml";break;
+			case "Centro": enlace = "mostrarCentros.xhtml";break;
+			case "Clase": enlace = "mostrarClases.xhtml";break;
+			case "Expediente": enlace = "mostrarExpedientes.xhtml";break;
+			case "Grupo": enlace = "mostrarGrupos.xhtml";break;
+			case "Matrícula": enlace = "mostrarMatriculas.xhtml"; break;
+			case "Titulacion": enlace = "mostrarTitulaciones.xhtml"; break;
+			case "Optativa": enlace = "mostrarOptativas.xhtml"; break;
+			case "Usuario": enlace= "mostrarUsuarios.xhtml"; break;
 		}
 		return enlace;
 
@@ -330,6 +406,11 @@ public class Secretaria{
 	public void eliminarAlumno(){
 			try{
 				gestionAlumno.eliminarAlumno(dni);
+				visible = true;
+				/*
+				FacesMessage fm = new FacesMessage("Eliminado con exito");
+	            FacesContext.getCurrentInstance().addMessage("eliminarAlumno:todoCorrecto", fm);
+	            */
 			} catch (AlumnoNoEncontrado e) {
 	            FacesMessage fm = new FacesMessage("El alumno no se ha podido encontrar");
 	            FacesContext.getCurrentInstance().addMessage("eliminarAlumno:errorDni", fm);
@@ -362,6 +443,7 @@ public class Secretaria{
 	public void crearCentro (){
 		try{
 			gestionCentro.insertarCentro(centro);
+			
 		} catch (CentroExistenteException e) {
             FacesMessage fm = new FacesMessage("El centro ya existe");
             FacesContext.getCurrentInstance().addMessage("crearCentro:errorId", fm);
@@ -378,6 +460,8 @@ public class Secretaria{
 	public void eliminarCentro() {
 		try{
 			gestionCentro.eliminarCentro(idCentro);
+			FacesMessage fm = new FacesMessage("Eliminado con exito");
+            FacesContext.getCurrentInstance().addMessage("eliminarAlumno:todoCorrecto", fm);
 		} catch (CentroNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("El centro no se ha podido encontrar");
             FacesContext.getCurrentInstance().addMessage("eliminarCentro:errorId", fm);

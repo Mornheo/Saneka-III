@@ -1,5 +1,7 @@
 package es.uma.informatica.ejb.saneka;
 
+import java.util.List;
+
 import javax.ejb.Local;
 
 import es.uma.informatica.ejb.exceptions.TitulacionExistenteException;
@@ -19,5 +21,7 @@ public interface GestionTitulacion {
 	public void modificarTitulacion(Integer code, Titulacion titulacion) throws TitulacionNoEncontradoException;
 	
 	public Titulacion devolverTitulacion(Integer code) throws TitulacionNoEncontradoException;
+	public List<Titulacion> devolverTitulaciones() ;
+	
 	
 }

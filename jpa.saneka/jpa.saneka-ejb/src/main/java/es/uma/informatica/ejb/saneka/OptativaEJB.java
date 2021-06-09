@@ -1,11 +1,14 @@
 package es.uma.informatica.ejb.saneka;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import es.uma.informatica.ejb.exceptions.OptativaExistenteException;
 import es.uma.informatica.ejb.exceptions.OptativaNoEncontradoException;
+import es.uma.informatica.jpa.saneka.Alumno;
 import es.uma.informatica.jpa.saneka.Optativa;
 
 @Stateless
@@ -74,6 +77,12 @@ public class OptativaEJB implements GestionOptativa{
 		return existente;
 		
 		
+	}
+
+	@Override
+	public List<Optativa> devolverOptativas() {
+		// TODO Auto-generated method stub
+		return em.createNamedQuery("Optativa.findAll", Optativa.class).getResultList();
 	}
 
 	
