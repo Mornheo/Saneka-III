@@ -98,6 +98,7 @@ public class Secretaria{
 	private Optativa optativa;
 	private Integer refOpt;
 	private Usuario usuario;
+	private List<Centro> centros;
 	
 	private Map<String, String> availableItems; // +getter
 	private Map<String,Boolean> seleccion;
@@ -135,6 +136,14 @@ public class Secretaria{
         clase.setAsignatura(asignatura);
         
         matricula.setExpediente(expediente);
+        
+        asignatura.setTitulacion(titulacion);
+        
+        optativa.setTitulacion(titulacion);
+        
+      //  centros.add(centro);
+        
+       // titulacion.setCentros(centros);
     }
 	public Usuario getUsuario() {
 		return usuario;
@@ -497,7 +506,7 @@ public class Secretaria{
 			return "accionCompletada.xhtml";
 		} catch (AsignaturaNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("La asignatura no se ha podido encontrar");
-            FacesContext.getCurrentInstance().addMessage("eliminarAsignatura:referencia", fm);
+            FacesContext.getCurrentInstance().addMessage("eliminarAsignatura:ref", fm);
           		}
           		return null;
 	}
@@ -524,8 +533,6 @@ public class Secretaria{
 	public String eliminarCentro() {
 		try{
 			gestionCentro.eliminarCentro(idCentro);
-			FacesMessage fm = new FacesMessage("Eliminado con exito");
-            FacesContext.getCurrentInstance().addMessage("eliminarCentro:centroId", fm);
             return "accionCompletada.xhtml";
 		} catch (CentroNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("El centro no se ha podido encontrar");
