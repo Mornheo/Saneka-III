@@ -44,6 +44,7 @@ import es.uma.informatica.jpa.saneka.Alumno;
 import es.uma.informatica.jpa.saneka.Asignatura;
 import es.uma.informatica.jpa.saneka.Centro;
 import es.uma.informatica.jpa.saneka.Clase;
+import es.uma.informatica.jpa.saneka.Clase.ClaseId;
 import es.uma.informatica.jpa.saneka.Expediente;
 import es.uma.informatica.jpa.saneka.Grupo;
 import es.uma.informatica.jpa.saneka.Matricula;
@@ -97,11 +98,9 @@ public class Secretaria{
 	private Optativa optativa;
 	private Integer refOpt;
 	private Usuario usuario;
-	private boolean correcto=true;
-	private String exito="accionCompletada.xhtml";
-	private String vacio="";
 	
 	private Map<String, String> availableItems; // +getter
+	private Map<String,Boolean> seleccion;
     public Secretaria() {
         availableItems = new LinkedHashMap<String, String>();
         availableItems.put("Alumno", "Alumno");
@@ -114,18 +113,29 @@ public class Secretaria{
         availableItems.put("Titulacion", "Titulacion");
         availableItems.put("Optativa", "Optativa");
         availableItems.put("Usuario","Usuario");
+        seleccion = new LinkedHashMap<String,Boolean>();
+        seleccion.put("Si",true);
+        seleccion.put("No",false);
+        titulacion = new Titulacion();
+
         alumno = new Alumno();
         asignatura = new Asignatura();
         centro = new Centro();
+        grupo = new Grupo();
         clase = new Clase();
         expediente = new Expediente();
-        grupo = new Grupo();
         matricula = new Matricula();
-        titulacion = new Titulacion();
         optativa = new Optativa();
         usuario = new Usuario();
+        
+        expediente.setAlumno(alumno);
+        expediente.setTitulacion(titulacion);
+        
+        clase.setGrupo(grupo);
+        clase.setAsignatura(asignatura);
+        
+        matricula.setExpediente(expediente);
     }
-    
 	public Usuario getUsuario() {
 		return usuario;
 	}
@@ -282,6 +292,13 @@ public class Secretaria{
 		this.availableItems = availableItems;
 	}
 	
+	
+	public Map<String, Boolean> getSeleccion() {
+		return seleccion;
+	}
+	public void setSeleccion(Map<String, Boolean> seleccion) {
+		this.seleccion = seleccion;
+	}
 	public boolean isVisible() {
 		return visible;
 	}
@@ -398,8 +415,7 @@ public class Secretaria{
 			return "accionCompletada.xhtml";
 		} catch (UsuarioExistenteException e) {
 			FacesMessage fm = new FacesMessage("El usuario ya existe");
-            FacesContext.getCurrentInstance().addMessage("crearUsuario:errorCorreo", fm);
-            correcto=false;
+            FacesContext.getCurrentInstance().addMessage("crearUsuario:correo", fm);
 		}
 		return null;
 		
@@ -409,8 +425,7 @@ public class Secretaria{
 			gestion.modificarUsuario(usuario.getEmailInstitucional(), usuario.getContrasenia());
 		} catch (UsuarioNoEncontradoException e) {
 			FacesMessage fm = new FacesMessage("El usuario no encontrado");
-            FacesContext.getCurrentInstance().addMessage("modificarUsuario:errorCorreo", fm);
-		correcto=false;
+            FacesContext.getCurrentInstance().addMessage("modificarUsuario:correo", fm);
           		}
           		return null;
 	}
@@ -420,8 +435,7 @@ public class Secretaria{
 			return "accionCompletada.xhtml";
 		} catch (UsuarioNoEncontradoException e) {
 			FacesMessage fm = new FacesMessage("El usuario no encontrado");
-            FacesContext.getCurrentInstance().addMessage("eliminarUsuario:errorCorreo", fm);
-            correcto=false;
+            FacesContext.getCurrentInstance().addMessage("eliminarUsuario:correo", fm);
           		}
 		return null;
 	}
@@ -431,10 +445,9 @@ public class Secretaria{
 				return "accionCompletada.xhtml";
 			} catch (AlumnoYaExistente e) {
 	            FacesMessage fm = new FacesMessage("El alumno ya existe");
-	            FacesContext.getCurrentInstance().addMessage("crearAlumno:errorDni", fm);
-	        correcto=false;
+	            FacesContext.getCurrentInstance().addMessage("crearAlumno:dni", fm);
           		}
-          		return null;
+			return null;
 	}
 	public String modificarAlumno() {
 			try {
@@ -443,7 +456,6 @@ public class Secretaria{
 			} catch (AlumnoNoEncontrado e) {
 				FacesMessage fm = new FacesMessage("El alumno no se ha podido encontrar");
 	            FacesContext.getCurrentInstance().addMessage("modificarAlumno:dni", fm);
-			correcto=false;
           		}
           		return null;
 	}
@@ -452,15 +464,10 @@ public class Secretaria{
 				gestionAlumno.eliminarAlumno(dni);
 				visible = true;
 				
-				/*
-				FacesMessage fm = new FacesMessage("Eliminado con exito");
-	            FacesContext.getCurrentInstance().addMessage("eliminarAlumno:todoCorrecto", fm);
-	            */
 				return "accionCompletada.xhtml";
 			} catch (AlumnoNoEncontrado e) {
 	            FacesMessage fm = new FacesMessage("El alumno no se ha podido encontrar");
-	            FacesContext.getCurrentInstance().addMessage("eliminarAlumno:errorDni", fm);
-	        correcto=false;
+	            FacesContext.getCurrentInstance().addMessage("eliminarAlumno:dni", fm);
           		}
           		return null;
 	}
@@ -470,8 +477,7 @@ public class Secretaria{
 			return "accionCompletada.xhtml";
 		} catch (AsignaturaExistenteException e) {
             FacesMessage fm = new FacesMessage("La asignatura ya existe");
-            FacesContext.getCurrentInstance().addMessage("crearAsignatura:errorRef", fm);
-        correcto=false;
+            FacesContext.getCurrentInstance().addMessage("crearAsignatura:referencia", fm);
           		}
           		return null;
 	}
@@ -482,7 +488,6 @@ public class Secretaria{
 		} catch (AsignaturaNoEncontradoException e) {
 			FacesMessage fm = new FacesMessage("La asignatura no se ha podido encontrar");
             FacesContext.getCurrentInstance().addMessage("modificarAsignatura:referencia", fm);
-		correcto=false;
           		}
           		return null;
 	}
@@ -492,8 +497,7 @@ public class Secretaria{
 			return "accionCompletada.xhtml";
 		} catch (AsignaturaNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("La asignatura no se ha podido encontrar");
-            FacesContext.getCurrentInstance().addMessage("eliminarAsignatura:errorRef", fm);
-        correcto=false;
+            FacesContext.getCurrentInstance().addMessage("eliminarAsignatura:referencia", fm);
           		}
           		return null;
 	}
@@ -503,8 +507,7 @@ public class Secretaria{
 			return "accionCompletada.xhtml";
 		} catch (CentroExistenteException e) {
             FacesMessage fm = new FacesMessage("El centro ya existe");
-            FacesContext.getCurrentInstance().addMessage("crearCentro:errorId", fm);
-        correcto=false;
+            FacesContext.getCurrentInstance().addMessage("crearCentro:id", fm);
           		}
           		return null;
 	}
@@ -515,7 +518,6 @@ public class Secretaria{
 		} catch (CentroNoEncontradoException e) {
 			FacesMessage fm = new FacesMessage("El centro no se ha podido encontrar");
             FacesContext.getCurrentInstance().addMessage("modificarCentro:id", fm);
-		correcto=false;
           		}
           		return null;
 	}
@@ -523,31 +525,30 @@ public class Secretaria{
 		try{
 			gestionCentro.eliminarCentro(idCentro);
 			FacesMessage fm = new FacesMessage("Eliminado con exito");
-            FacesContext.getCurrentInstance().addMessage("eliminarAlumno:todoCorrecto", fm);
+            FacesContext.getCurrentInstance().addMessage("eliminarCentro:centroId", fm);
             return "accionCompletada.xhtml";
 		} catch (CentroNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("El centro no se ha podido encontrar");
-            FacesContext.getCurrentInstance().addMessage("eliminarCentro:errorId", fm);
-        correcto=false;
+            FacesContext.getCurrentInstance().addMessage("eliminarCentro:centroId", fm);
           		}
           		return null;
 	}
 	public String crearClase() {
 		try{
-			gestionClase.insertarClase(idGrupo, clase);
+			gestionClase.insertarClase(clase.getGrupo().getId(), clase);
 			return "accionCompletada.xhtml";
 		} catch (GrupoNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("El grupo no se ha podido encontrar");
-            FacesContext.getCurrentInstance().addMessage("crearClase:errorGrupo", fm);
+            FacesContext.getCurrentInstance().addMessage("crearClase:grupoId", fm);
         } catch (ClaseExistenteException e) {
             FacesMessage fm = new FacesMessage("La clase ya existe");
-            FacesContext.getCurrentInstance().addMessage("crearClase:errorClase", fm);
-        correcto=false;
+            FacesContext.getCurrentInstance().addMessage("crearClase:dia", fm);
           		}
           		return null;
 	}
 	public String modificarClase() {
 		try {
+			idClase = new ClaseId(clase.getDia(),clase.getHoraInicio(),idGrupo);
 			gestionClase.actualizarClase(idGrupo,idClase, clase);
 			return "accionCompletada.xhtml";
 		} catch (GrupoNoEncontradoException e) {
@@ -556,7 +557,6 @@ public class Secretaria{
         } catch (ClaseNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("La clase no se ha podido encontrar");
             FacesContext.getCurrentInstance().addMessage("modificarClase:dia", fm);
-        correcto=false;
           		}
           		return null;
 	}
@@ -566,11 +566,11 @@ public class Secretaria{
 			return "accionCompletada.xhtml";
 		} catch (GrupoNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("El grupo no se ha podido encontrar");
-            FacesContext.getCurrentInstance().addMessage("eliminarClase:errorGrupo", fm);
+            FacesContext.getCurrentInstance().addMessage("eliminarClase:grupoId", fm);
         } catch (ClaseNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("La clase no se ha podido encontrar");
-            FacesContext.getCurrentInstance().addMessage("eliminarClase:errorClase", fm);
-        correcto=false;
+            FacesContext.getCurrentInstance().addMessage("eliminarClase:dia", fm);
+       
           		}
           		return null;
 	}
@@ -580,8 +580,8 @@ public class Secretaria{
 			return "accionCompletada.xhtml";
 		} catch (ExpedienteExistenteException e) {
             FacesMessage fm = new FacesMessage("El expediente ya existe");
-            FacesContext.getCurrentInstance().addMessage("crearExpediente:errorExp", fm);
-        correcto=false;
+            FacesContext.getCurrentInstance().addMessage("crearExpediente:numExpediente", fm);
+       
           		}
           		return null;
 	}
@@ -592,7 +592,7 @@ public class Secretaria{
 		} catch (ExpedienteNoEncontradoException e) {
 			FacesMessage fm = new FacesMessage("El expediente no se ha podido encontrar");
             FacesContext.getCurrentInstance().addMessage("modificarExpediente:numExpediente", fm);
-		correcto=false;
+		
           		}
           		return null;
 	}
@@ -602,8 +602,8 @@ public class Secretaria{
 			return "accionCompletada.xhtml";
 		} catch (ExpedienteNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("El expediente no se ha podido encontrar");
-            FacesContext.getCurrentInstance().addMessage("eliminarExpediente:errorExp", fm);
-        correcto=false;
+            FacesContext.getCurrentInstance().addMessage("eliminarExpediente:numExpediente", fm);
+       
           		}
           		return null;
 	}
@@ -613,11 +613,11 @@ public class Secretaria{
 			return "accionCompletada.xhtml";
 		} catch (TitulacionNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("La titulacion no se ha podido encontrar");
-            FacesContext.getCurrentInstance().addMessage("crearGrupo:errorTitulacion", fm);
+            FacesContext.getCurrentInstance().addMessage("crearGrupo:titulacion", fm);
         } catch (GrupoExistenteException e) {
             FacesMessage fm = new FacesMessage("El grupo ya existe");
-            FacesContext.getCurrentInstance().addMessage("crearGrupo:errorGrupo", fm);
-        correcto=false;
+            FacesContext.getCurrentInstance().addMessage("crearGrupo:id", fm);
+       
           		}
           		return null;
 	}
@@ -631,7 +631,7 @@ public class Secretaria{
 		} catch (GrupoNoEncontradoException e) {
 			FacesMessage fm = new FacesMessage("Grupo no encontrado");
             FacesContext.getCurrentInstance().addMessage("modificarGrupo:id", fm);
-		correcto=false;
+		
           		}
           		return null;
 	}
@@ -641,11 +641,11 @@ public class Secretaria{
 			return "accionCompletada.xhtml";
 		} catch (TitulacionNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("La titulacion no se ha podido encontrar");
-            FacesContext.getCurrentInstance().addMessage("eliminarGrupo:errorTitulacion", fm);
+            FacesContext.getCurrentInstance().addMessage("eliminarGrupo:titulacion", fm);
         } catch (GrupoNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("El grupo no se ha podido encontrar");
-            FacesContext.getCurrentInstance().addMessage("eliminarGrupo:errorGrupo", fm);
-        correcto=false;
+            FacesContext.getCurrentInstance().addMessage("eliminarGrupo:id", fm);
+       
           		}
           		return null;
 	}
@@ -655,11 +655,11 @@ public class Secretaria{
 			return "accionCompletada.xhtml";
 		} catch (ExpedienteNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("El expediente no se ha podido encontrar");
-            FacesContext.getCurrentInstance().addMessage("crearMatricula:errorExpediente", fm);
+            FacesContext.getCurrentInstance().addMessage("crearMatricula:nExp", fm);
         } catch (MatriculaExistente e) {
             FacesMessage fm = new FacesMessage("La matricula ya existe");
-            FacesContext.getCurrentInstance().addMessage("crearMatricula:errorMatricula", fm);
-        correcto=false;
+            FacesContext.getCurrentInstance().addMessage("crearMatricula:dni", fm);
+       
           		}
           		return null;
 	}
@@ -673,7 +673,7 @@ public class Secretaria{
 		} catch (ExpedienteNoEncontradoException e) {
 			FacesMessage fm = new FacesMessage("El expediente no se encuentra");
             FacesContext.getCurrentInstance().addMessage("modificarMatricula:nExp", fm);
-		correcto=false;
+		
           		}
           		return null;
 	}
@@ -683,11 +683,11 @@ public class Secretaria{
 			return "accionCompletada.xhtml";
 		} catch (MatriculaNoExistente e) {
             FacesMessage fm = new FacesMessage("La matricula no se ha podido encontrar");
-            FacesContext.getCurrentInstance().addMessage("eliminarMatricula:errorMatricula", fm);
+            FacesContext.getCurrentInstance().addMessage("eliminarMatricula:dni", fm);
         } catch (ExpedienteNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("El expediente no se ha podido encontrar");
-            FacesContext.getCurrentInstance().addMessage("eliminarMatricula:errorExpediente", fm);
-        correcto=false;
+            FacesContext.getCurrentInstance().addMessage("eliminarMatricula:nExp", fm);
+       
           		}
           		return null;
 	}
@@ -697,8 +697,8 @@ public class Secretaria{
 			return "accionCompletada.xhtml";
 		} catch (TitulacionExistenteException e) {
             FacesMessage fm = new FacesMessage("La titulacion ya existe");
-            FacesContext.getCurrentInstance().addMessage("crearTitulacion:errorId", fm);
-        correcto=false;
+            FacesContext.getCurrentInstance().addMessage("crearTitulacion:codTitu", fm);
+       
           		}
           		return null;
 	}
@@ -709,7 +709,7 @@ public class Secretaria{
 		} catch (TitulacionNoEncontradoException e) {
 			FacesMessage fm = new FacesMessage("La titulacion no se ha podido encontrar");
             FacesContext.getCurrentInstance().addMessage("modificarTitulacion:codTitu", fm);
-		correcto=false;
+		
           		}
           		return null;
 	}
@@ -719,8 +719,8 @@ public class Secretaria{
 			return "accionCompletada.xhtml";
 		} catch (TitulacionNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("La titulacion no se ha podido encontrar");
-            FacesContext.getCurrentInstance().addMessage("eliminarTitulacion:errorId", fm);
-        correcto=false;
+            FacesContext.getCurrentInstance().addMessage("eliminarTitulacion:codTitu", fm);
+       
           		}
           		return null;
 	}
@@ -730,8 +730,8 @@ public class Secretaria{
 			return "accionCompletada.xhtml";
 		} catch (OptativaExistenteException e) {
             FacesMessage fm = new FacesMessage("La optativa ya existe");
-            FacesContext.getCurrentInstance().addMessage("crearOptativa:errorId", fm);
-        correcto=false;
+            FacesContext.getCurrentInstance().addMessage("crearOptativa:referencia", fm);
+       
           		}
           		return null;
 	}
@@ -742,7 +742,7 @@ public class Secretaria{
 		} catch (OptativaNoEncontradoException e) {
 			FacesMessage fm = new FacesMessage("La optativa no se ha podido encontrar");
             FacesContext.getCurrentInstance().addMessage("modificarOptativa:idC", fm);
-		correcto=false;
+		
           		}
           		return null;
 	}
@@ -752,8 +752,8 @@ public class Secretaria{
 			return "accionCompletada.xhtml";
 		} catch (OptativaNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("La optativa no se ha podido encontrar");
-            FacesContext.getCurrentInstance().addMessage("eliminarOptativa:errorId", fm);
-        correcto=false;
+            FacesContext.getCurrentInstance().addMessage("eliminarOptativa:referencia", fm);
+       
           		}
           		return null;
 	}

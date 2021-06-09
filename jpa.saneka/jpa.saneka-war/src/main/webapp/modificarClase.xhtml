@@ -14,13 +14,13 @@
 		　　	<h:inputText value="#{secretaria.clase.dia}" id="dia" required="true" />
 		　　	<h:message for="dia" style="color: red" id="errorDia"/>
 			<h:outputText value="Hora de inicio:" />
-		　　	<h:inputText value="#{secretaria.clase.horaInicio}" id="horaInicio" required="true" />
-		　　	<h:message for="hora" style="color: red" />
+		　　	<h:inputText  value = "#{secretaria.clase.horaInicio}" id="horaInicio" required="true" />
+		　　	<h:message for="horaInicio" style="color: red" />
 			<h:outputText value="Grupo id:" />
-		　　	<h:inputText value="#{secretaria.clase.grupo.id}" id="grupoId" required="true" />
-		　　	<h:message for="grupoId" style="color: red" id="errorGrupoId")/>
+			<h:inputText  value = "#{secretaria.idGrupo}" id="grupoId" required="true" />
+		　　	<h:message for="grupoId" style="color: red" id="errorGrupoId"/>
 			<h:outputText value="Hora de fin:" />
-		　　	<h:inputText value="#{secretaria.clase.horaFin}" id="horaFin"/>
+		　　	<h:inputText value = "#{secretaria.clase.horaFin}" id="horaFin"/>
 			<f:facet name="footer">
 					<h:commandButton value="Modificar" id="btonModificar" action ="#{secretaria.modificarClase}"/>
 					<h:button value="Volver a panel de control" id="btonVolver" outcome="panelControl.xhtml" />

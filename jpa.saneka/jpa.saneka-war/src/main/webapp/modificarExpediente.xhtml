@@ -27,8 +27,7 @@
 		　　	<h:message for="notaMedia" style="color: red" />
 			<h:outputText value="Activo:" />
 			<h:selectOneRadio id="activo" values="#{Expediente.expediente.activo}" >
-					<f:selectItem itemValue = "Si" itemLabel = "Si" /> 
-	   				<f:selectItem itemValue = "No" itemLabel = "No" />
+					<f:selectItems value="#{secretaria.seleccion}" />
 			</h:selectOneRadio>
 			<f:facet name="footer">
 					<h:commandButton value="Modificar" id="btonModificar" action ="#{secretaria.modificarExpediente}"/>

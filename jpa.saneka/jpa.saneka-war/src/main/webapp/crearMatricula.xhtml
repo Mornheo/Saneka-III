@@ -13,19 +13,19 @@
 
 <h:form id="crearMatricula">
   <label for="dni">DNI de Alumno:</label>
-  <h:inputText value="#{secretaria.matricula.dni}" id="dni" required="true"/>
-  <h:message for="dni" style="color: red" />
+  <h:inputText value="#{secretaria.matricula.expediente.alumno.dni}" id="dni" required="true"/>
+  <h:message for="dni" style="color: red" id="errorMatricula"/>
   <br/>
   <br/>
   
   <label for="codTitu">Codigo de titulación:</label>
-  <h:inputText value="#{secretaria.matricula.titulacion.codigo}" id="codTitu" required="true"/>
+  <h:inputText value="#{secretaria.matricula.expediente.titulacion.codigo}" id="codTitu" required="true"/>
   <h:message for="codTitu" style="color: red" />
   <br/>
   <br/>
   
   <label for="idC">Id de centro:</label>
-  <h:inputText value="#{secretaria.idCentro}" id="idC" required="true"/>
+  <h:inputText value="#{secretaria.matricula.expediente.titulacion.centros.id}" id="idC" required="true"/>
   <h:message for="idC" style="color: red" />
   <br/>
   <br/>
@@ -38,7 +38,7 @@
   
   <label for="cursoA">Curso de matrícula</label>
   <h:inputText value="#{secretaria.matricula.cursoAcademico}" id="cursoA" required="true"/>
-  <h:message for="cursoA" style="color: red" id="errorMatricula"/>
+  <h:message for="cursoA" style="color: red"/>
   <br/>
   <br/>
   
@@ -64,7 +64,6 @@
   <h:commandButton value="Crear" id="btonCrear" action ="#{secretaria.crearMatricula}"/>
   <h:button value="Volver a panel de control" id="btonVolver" outcome="panelControl.xhtml" />
   </p>
-  
 </h:form>
 
 </h:body>

@@ -35,14 +35,12 @@
 		
 			<h:outputText value="Grupo ingles:" />
 			<h:selectOneRadio id="ingles" values="#{secretaria.grupo.ingles}" required="true">
-					<f:selectItem itemValue = "Si" itemLabel = "Si" /> 
-	   				<f:selectItem itemValue = "No" itemLabel = "No" />
+				<f:selectItems value="#{secretaria.seleccion}" />
 			</h:selectOneRadio>
 		　　	<h:message for="ingles" style="color: red" />
 			<h:outputText value="visible" />
 		　　	<h:selectOneRadio id="visible" values="#{secretaria.grupo.visible}" >
-					<f:selectItem itemValue = "Si" itemLabel = "Si" /> 
-	   				<f:selectItem itemValue = "No" itemLabel = "No" />
+					<f:selectItems value="#{secretaria.seleccion}" />
 			</h:selectOneRadio>
 			<f:verbatim><br></br></f:verbatim>
 			<h:outputText value="Asignar" />
