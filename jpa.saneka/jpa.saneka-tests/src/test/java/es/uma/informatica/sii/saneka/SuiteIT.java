@@ -104,10 +104,22 @@ public class SuiteIT {
     assertThat(driver.getTitle(), is("Login"));
   }*/
   @Test
-  public void modificarTitulacionExitoso() {
+  public void crearClaseSatisfactorio() {
+    driver.get("http://localhost:8080/jpa.saneka-war/faces/crearClase.xhtml");
+    driver.findElement(By.id("crearClase:dia")).sendKeys("6");
+    driver.findElement(By.id("crearClase:horaInicio")).sendKeys("08");
+    driver.findElement(By.id("crearClase:grupoId")).sendKeys("420");
+    driver.findElement(By.id("crearClase:horaFin")).sendKeys("14");
+    driver.findElement(By.id("crearClase:btonCrear")).click();
   }
   @Test
-  public void modificarTitulacionNoEncontrada() {
+  public void crearClaseSinGrupo() {
+    driver.get("http://localhost:8080/jpa.saneka-war/faces/crearClase.xhtml");
+    driver.findElement(By.id("crearClase:dia")).sendKeys("3");
+    driver.findElement(By.id("crearClase:horaInicio")).sendKeys("15");
+    driver.findElement(By.id("crearClase:grupoId")).sendKeys("111111");
+    driver.findElement(By.id("crearClase:btonCrear")).click();
+    assertThat(driver.findElement(By.id("crearClase:errorGrupo")).getText(), is("El grupo no se ha podido encontrar"));
   }
   @Test
   public void panelControlCrearAlumno() {
@@ -243,6 +255,7 @@ public class SuiteIT {
     driver.findElement(By.id("panel:btonELiminar")).click();
     assertThat(driver.getTitle(), is("Eliminar centro"));
   }
+  
   @Test
   public void panelControlEliminarClase() {
     driver.get("http://localhost:8080/jpa.saneka-war/faces/panelControl.xhtml");
@@ -474,7 +487,11 @@ public class SuiteIT {
     assertThat(driver.getTitle(), is("Exito"));
   }
   @Test
-  public void modificarClaseExitoso() {
+  public void eliminarTitulacionSatisfactorio() {
+    driver.get("http://localhost:8080/jpa.saneka-war/faces/eliminarTitulacion.xhtml");
+    driver.findElement(By.id("eliminarTitulacion:idC")).sendKeys("123");
+    driver.findElement(By.id("eliminarTitulacion:codTitu")).sendKeys("1234");
+    driver.findElement(By.id("eliminarTitulacion:btonEliminar")).click();
   }
   @Test
   public void modificarCentroNoEncontrado() {
