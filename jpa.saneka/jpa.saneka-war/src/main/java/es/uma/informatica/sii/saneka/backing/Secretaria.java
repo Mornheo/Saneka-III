@@ -44,6 +44,7 @@ import es.uma.informatica.jpa.saneka.Alumno;
 import es.uma.informatica.jpa.saneka.Asignatura;
 import es.uma.informatica.jpa.saneka.Centro;
 import es.uma.informatica.jpa.saneka.Clase;
+import es.uma.informatica.jpa.saneka.Clase.ClaseId;
 import es.uma.informatica.jpa.saneka.Expediente;
 import es.uma.informatica.jpa.saneka.Grupo;
 import es.uma.informatica.jpa.saneka.Matricula;
@@ -99,6 +100,7 @@ public class Secretaria{
 	private Usuario usuario;
 	
 	private Map<String, String> availableItems; // +getter
+	private Map<String,Boolean> seleccion;
     public Secretaria() {
         availableItems = new LinkedHashMap<String, String>();
         availableItems.put("Alumno", "Alumno");
@@ -111,6 +113,9 @@ public class Secretaria{
         availableItems.put("Titulacion", "Titulacion");
         availableItems.put("Optativa", "Optativa");
         availableItems.put("Usuario","Usuario");
+        seleccion = new LinkedHashMap<String,Boolean>();
+        seleccion.put("Si",true);
+        seleccion.put("No",false);
         alumno = new Alumno();
         asignatura = new Asignatura();
         centro = new Centro();
@@ -122,7 +127,6 @@ public class Secretaria{
         optativa = new Optativa();
         usuario = new Usuario();
     }
-    
 	public Usuario getUsuario() {
 		return usuario;
 	}
@@ -279,6 +283,13 @@ public class Secretaria{
 		this.availableItems = availableItems;
 	}
 	
+	
+	public Map<String, Boolean> getSeleccion() {
+		return seleccion;
+	}
+	public void setSeleccion(Map<String, Boolean> seleccion) {
+		this.seleccion = seleccion;
+	}
 	public boolean isVisible() {
 		return visible;
 	}
@@ -527,6 +538,7 @@ public class Secretaria{
 	}
 	public String modificarClase() {
 		try {
+			idClase = new ClaseId(clase.getDia(),clase.getHoraInicio(),idGrupo);
 			gestionClase.actualizarClase(idGrupo,idClase, clase);
 			return "accionCompletada.xhtml";
 		} catch (GrupoNoEncontradoException e) {
