@@ -135,10 +135,12 @@ public class BaseDatos {
 		Grupo grupo2 = new Grupo(421, 4, "B", "tarde", false, titu1);
 		Grupo grupo3 = new Grupo(422, 1, "B", "tarde", false, titu1);
 		Grupo grupo4 = new Grupo(423, 2, "B", "tarde", false, titu1);
+		Grupo grupo5 = new Grupo(424, 5, "B", "tarde", false, titu1);
 		em.persist(grupo1);
 		em.persist(grupo2);
 		em.persist(grupo3);
 		em.persist(grupo4);
+		em.persist(grupo5);
 		
 		//Grupos Por Asignatura
 		GruposPorAsignatura gpa1 = new GruposPorAsignatura(3, asig1, grupo1);
