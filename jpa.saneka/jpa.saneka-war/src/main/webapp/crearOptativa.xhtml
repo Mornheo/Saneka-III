@@ -39,8 +39,8 @@
   
   <label for="ofer">Ofertada:</label>
   <h:selectOneRadio id="ofer" values="#{secretaria.asignatura.ofertada}" required="true">
-	<f:selectItem itemValue = "Si" itemLabel = "Si" /> 
-	<f:selectItem itemValue = "No" itemLabel = "No" />
+	<f:selectItem itemValue = "#{true}" itemLabel = "Si" /> 
+	<f:selectItem itemValue = "#{false}" itemLabel = "No" />
   </h:selectOneRadio>
   
   <label for="nombre">Nombre:</label>

@@ -27,8 +27,8 @@
 		
 			<h:outputText value="Activo:" />
 			<h:selectOneRadio id="activo" values="#{secretaria.expediente.activo}" >
-					<f:selectItem itemValue = "Si" itemLabel = "Si" /> 
-	   				<f:selectItem itemValue = "No" itemLabel = "No" />
+					<f:selectItem itemValue = "#{true}" itemLabel = "Si" /> 
+	   				<f:selectItem itemValue = "#{false}" itemLabel = "No" />
 			</h:selectOneRadio>
 			<f:facet name="footer">
 					<h:commandButton value="Crear" id="crea" action ="#{secretaria.crearExpediente}"/>

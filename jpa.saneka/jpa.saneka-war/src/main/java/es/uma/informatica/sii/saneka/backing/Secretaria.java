@@ -413,7 +413,7 @@ public class Secretaria{
             FacesContext.getCurrentInstance().addMessage("eliminarUsuario:errorCorreo", fm);
 		}
 	}
-	public void crearAlumno(){
+	public String crearAlumno(){
 			try{
 				gestionAlumno.insertarAlumno(alumno);			
 			} catch (AlumnoYaExistente e) {

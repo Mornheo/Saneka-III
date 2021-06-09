@@ -22,8 +22,8 @@
 		
 			<h:outputText value="Secretaria" />
 		　　	<h:selectOneRadio id="secretaria" values="#{secretaria.usuario.secretaria}" required="true">
-				<f:selectItem itemValue = "Si" itemLabel = "Si" /> 
-				<f:selectItem itemValue = "No" itemLabel = "No" />
+				<f:selectItem itemValue = "#{true}" itemLabel = "Si" /> 
+				<f:selectItem itemValue = "#{false}" itemLabel = "No" />
   			</h:selectOneRadio>
 		　　	<h:message for="secretaria" style="color: red" />
 		

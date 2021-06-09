@@ -39,8 +39,10 @@
   <br/>
   
   <label for="ofer">Ofertada:</label>
-  <h:inputText value="#{secretaria.asignatura.ofertada}" id="ofer"/>
-  <h:message for="ofer" style="color: red" />
+  <h:selectOneRadio id="ofer" values="#{secretaria.asignatura.ofertada}" required="true">
+	<f:selectItem itemValue = "#{true}" itemLabel = "Si" /> 
+	<f:selectItem itemValue = "#{false}" itemLabel = "No" />
+  </h:selectOneRadio>
   <br/>
   <br/>
   
