@@ -553,7 +553,7 @@ public class Secretaria{
 	}
 	public String modificarGrupo() {
 		try {
-			gestionGrupo.actualizarGrupo(titu,idGrupo, grupo);
+			gestionGrupo.actualizarGrupo(titu,grupo.getId(),grupo);
 		} catch (TitulacionNoEncontradoException e) {
 			FacesMessage fm = new FacesMessage("Titulacion no encontrada");
             FacesContext.getCurrentInstance().addMessage("modificarGrupo:titulacion", fm);
@@ -577,7 +577,7 @@ public class Secretaria{
 	}
 	public String crearMatricula() {
 		try{
-			gestionMatricula.insertarMatricula(exp, matricula);
+			gestionMatricula.insertarMatricula(matricula.getExpediente().getNumExpediente(), matricula);
 		} catch (ExpedienteNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("El expediente no se ha podido encontrar");
             FacesContext.getCurrentInstance().addMessage("crearMatricula:errorExpediente", fm);
@@ -589,7 +589,7 @@ public class Secretaria{
 	}
 	public void modificarMatricula() {
 		try {
-			gestionMatricula.modificarMatricula(exp, matricula);
+			gestionMatricula.modificarMatricula(matricula.getExpediente().getNumExpediente(), matricula);
 		} catch (MatriculaNoExistente e) {
 			FacesMessage fm = new FacesMessage("La matricula no se encuentra");
             FacesContext.getCurrentInstance().addMessage("modificarMatricula:dni", fm);
