@@ -11,7 +11,7 @@
 
 <h1>Asignatura</h1>
 
-<h:form>
+<h:form id="modificarAsignatura">
 
   
   <label for="idC">ID de centro:</label>
@@ -28,7 +28,7 @@
 
   <label for="ref">Referencia:</label>
   <h:inputText value="#{secretaria.asignatura.referencia}" id="referencia" required="true" />
-  <h:message for="referencia" style="color: red" />
+  <h:message for="referencia" style="color: red" id="errorRef"/>
   <br/>
   <br/>
   

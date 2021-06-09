@@ -11,16 +11,16 @@
 
 <h1>Titulación</h1>
 
-<h:form>
+<h:form id="eliminarTitulacion">
  
 <label for="idC">ID de centro:</label>
-  <h:inputText value="#{secretaria.titulacion.centro.id}" id="idC" required="true"/>
+  <h:inputText value="#{secretaria.idCentro}" id="idC" required="true"/>
   <h:message for="idC" style="color: red" />
   <br/>
   <br/>
   
   <label for="codTitu">Código titulación:</label>
-  <h:inputText value="#{secretaria.titulacion.codigo}" id="codTitu" required="true"/>
+  <h:inputText value="#{secretaria.titu}" id="codTitu" required="true"/>
   <h:message for="codTitu" style="color: red" id="errorId"/>
   <br/>
   <br/>

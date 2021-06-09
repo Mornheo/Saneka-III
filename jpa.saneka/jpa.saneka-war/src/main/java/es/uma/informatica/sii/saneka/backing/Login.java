@@ -42,7 +42,6 @@ public class Login {
         try {
             gestion.compruebaLogin(usuario);
             sesion.setUsuario(gestion.refrescarUsuario(usuario));
-            //System.out.println(usuario.getContrasenia()+usuario.getEmailInstitucional());
             Usuario u = gestion.devolverUsuario(usuario.getEmailInstitucional());
             if(u.getSecretaria()) {
             	return "panelControl.xhtml";

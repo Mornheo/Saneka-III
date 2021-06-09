@@ -11,12 +11,12 @@
 
 <h1>Matrícula</h1>
 
-<h:form>
+<h:form id="modificarMatricula">
 
   
   <label for="dni">DNI de Alumno:</label>
   <h:inputText value="#{secretaria.dni}" id="dni"/>
-  <h:message for="dni" style="color: red" id="errorDni"/>
+  <h:message for="dni" style="color: red"/>
   <br/>
   <br/>
   
@@ -40,7 +40,7 @@
   
   <label for="cursoA">Curso de matrícula</label>
   <h:inputText value="#{secretaria.matricula.cursoAcademico}" id="cursoA" required="true"/>
-  <h:message for="cursoA" style="color: red" />
+  <h:message for="cursoA" style="color: red" id="errorMatricula"/>
   <br/>
   <br/>
   

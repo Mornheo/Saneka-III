@@ -214,7 +214,15 @@ public class Secretaria{
         availableItems.put("Matrícula", "Matrícula");
         availableItems.put("Titulacion", "Titulacion");
         availableItems.put("Optativa", "Optativa");
-        
+        alumno = new Alumno();
+        asignatura = new Asignatura();
+        centro = new Centro();
+        clase = new Clase();
+        expediente = new Expediente();
+        grupo = new Grupo();
+        matricula = new Matricula();
+        titulacion = new Titulacion();
+        optativa = new Optativa();
     }
 	public String getSelectedItem1() {
 		return selectedItem1;
@@ -305,14 +313,19 @@ public class Secretaria{
 	// Metodos de insertar,modificar y eliminar
 	public void crearAlumno(){
 			try{
-				gestionAlumno.insertarAlumno(alumno);
+				gestionAlumno.insertarAlumno(alumno);			
 			} catch (AlumnoYaExistente e) {
 	            FacesMessage fm = new FacesMessage("El alumno ya existe");
 	            FacesContext.getCurrentInstance().addMessage("crearAlumno:dni", fm);
 	        }
 	}
-	public void modificarAlumno() throws AlumnoNoEncontrado {
-			gestionAlumno.modificarAlumno(dni,alumno);
+	public void modificarAlumno() {
+			try {
+				gestionAlumno.modificarAlumno(dni,alumno);
+			} catch (AlumnoNoEncontrado e) {
+				FacesMessage fm = new FacesMessage("El alumno no se ha podido encontrar");
+	            FacesContext.getCurrentInstance().addMessage("modificarAlumno:dni", fm);
+			}
 	}
 	public void eliminarAlumno(){
 			try{
@@ -330,8 +343,13 @@ public class Secretaria{
             FacesContext.getCurrentInstance().addMessage("crearAsignatura:referencia", fm);
         }
 	}
-	public void modificarAsignatura() throws AsignaturaNoEncontradoException {
-		gestionAsig.modificarAsignatura(refAsig, asignatura);
+	public void modificarAsignatura() {
+		try {
+			gestionAsig.modificarAsignatura(refAsig, asignatura);
+		} catch (AsignaturaNoEncontradoException e) {
+			FacesMessage fm = new FacesMessage("La asignatura no se ha podido encontrar");
+            FacesContext.getCurrentInstance().addMessage("modificarAsignatura:referencia", fm);
+		}
 	}
 	public void eliminarAsignatura(){
 		try{
@@ -349,8 +367,13 @@ public class Secretaria{
             FacesContext.getCurrentInstance().addMessage("crearCentro:id", fm);
         }
 	}
-	public void modificarCentro() throws CentroNoEncontradoException {
-		gestionCentro.actualizarCentro(idCentro,centro);
+	public void modificarCentro() {
+		try {
+			gestionCentro.actualizarCentro(idCentro,centro);
+		} catch (CentroNoEncontradoException e) {
+			FacesMessage fm = new FacesMessage("El centro no se ha podido encontrar");
+            FacesContext.getCurrentInstance().addMessage("modificarCentro:id", fm);
+		}
 	}
 	public void eliminarCentro() {
 		try{
@@ -371,8 +394,16 @@ public class Secretaria{
             FacesContext.getCurrentInstance().addMessage("crearClase:dia", fm);
         }
 	}
-	public void modificarClase() throws GrupoNoEncontradoException, ClaseNoEncontradoException {
-		gestionClase.actualizarClase(idGrupo,idClase, clase);
+	public void modificarClase() {
+		try {
+			gestionClase.actualizarClase(idGrupo,idClase, clase);
+		} catch (GrupoNoEncontradoException e) {
+		 FacesMessage fm = new FacesMessage("El grupo no se ha podido encontrar");
+            FacesContext.getCurrentInstance().addMessage("modificarClase:grupoId", fm);
+        } catch (ClaseNoEncontradoException e) {
+            FacesMessage fm = new FacesMessage("La clase no se ha podido encontrar");
+            FacesContext.getCurrentInstance().addMessage("modificarClase:dia", fm);
+        }
 	}
 	public void eliminarClase() {
 		try{
@@ -393,8 +424,13 @@ public class Secretaria{
             FacesContext.getCurrentInstance().addMessage("crearExpediente:numExpediente", fm);
         }
 	}
-	public void modificarExpediente() throws ExpedienteNoEncontradoException {
-		gestionExp.modificarExpediente(exp, expediente);
+	public void modificarExpediente() {
+		try {
+			gestionExp.modificarExpediente(exp, expediente);
+		} catch (ExpedienteNoEncontradoException e) {
+			FacesMessage fm = new FacesMessage("El expediente no se ha podido encontrar");
+            FacesContext.getCurrentInstance().addMessage("modificarExpediente:numExpediente", fm);
+		}
 	}
 	public void eliminarExpediente() {
 		try{
@@ -478,8 +514,13 @@ public class Secretaria{
             FacesContext.getCurrentInstance().addMessage("crearTitulacion:codTitu", fm);
         }
 	}
-	public void modificarTitulacion() throws TitulacionNoEncontradoException {
-		gestionTitu.modificarTitulacion(titu, titulacion);
+	public void modificarTitulacion() {
+		try {
+			gestionTitu.modificarTitulacion(titu, titulacion);
+		} catch (TitulacionNoEncontradoException e) {
+			FacesMessage fm = new FacesMessage("La titulacion no se ha podido encontrar");
+            FacesContext.getCurrentInstance().addMessage("modificarTitulacion:codTitu", fm);
+		}
 	}
 	public void eliminarTitulacion() {
 		try{
@@ -497,8 +538,13 @@ public class Secretaria{
             FacesContext.getCurrentInstance().addMessage("crearOptativa:referencia", fm);
         }
 	}
-	public void modificarOptativa() throws OptativaNoEncontradoException {
-		gestionOpt.modificarOptativa(refOpt, optativa);
+	public void modificarOptativa() {
+		try {
+			gestionOpt.modificarOptativa(refOpt, optativa);
+		} catch (OptativaNoEncontradoException e) {
+			FacesMessage fm = new FacesMessage("La optativa no se ha podido encontrar");
+            FacesContext.getCurrentInstance().addMessage("modificarOptativa:idC", fm);
+		}
 	}
 	public void eliminarOptativa() {
 		try{
