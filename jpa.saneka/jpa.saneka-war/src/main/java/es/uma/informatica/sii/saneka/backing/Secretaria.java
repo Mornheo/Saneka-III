@@ -120,13 +120,17 @@ public class Secretaria{
         centro = new Centro();
         grupo = new Grupo();
         clase = new Clase();
+        
+        matricula = new Matricula();
+        optativa = new Optativa();
+        usuario = new Usuario();
+        
         clase.setGrupo(grupo);
         expediente = new Expediente();
         expediente.setAlumno(alumno);
         expediente.setTitulacion(titulacion);
-        matricula = new Matricula();
-        optativa = new Optativa();
-        usuario = new Usuario();
+        matricula.setExpediente(expediente);
+        
     }
     
 	public Usuario getUsuario() {
