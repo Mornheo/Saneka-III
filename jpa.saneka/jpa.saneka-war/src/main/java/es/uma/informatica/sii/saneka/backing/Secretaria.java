@@ -28,6 +28,8 @@ import es.uma.informatica.ejb.exceptions.OptativaExistenteException;
 import es.uma.informatica.ejb.exceptions.OptativaNoEncontradoException;
 import es.uma.informatica.ejb.exceptions.TitulacionExistenteException;
 import es.uma.informatica.ejb.exceptions.TitulacionNoEncontradoException;
+import es.uma.informatica.ejb.exceptions.UsuarioExistenteException;
+import es.uma.informatica.ejb.exceptions.UsuarioNoEncontradoException;
 import es.uma.informatica.ejb.saneka.GestionAlumno;
 import es.uma.informatica.ejb.saneka.GestionAsignatura;
 import es.uma.informatica.ejb.saneka.GestionCentro;
@@ -95,7 +97,10 @@ public class Secretaria{
 	private Optativa optativa;
 	private Integer refOpt;
 	private Usuario usuario;
-
+	private boolean correcto=true;
+	private String exito="accionCompletada.xhtml";
+	private String vacio="";
+	
 	private Map<String, String> availableItems; // +getter
     public Secretaria() {
         availableItems = new LinkedHashMap<String, String>();
@@ -387,255 +392,369 @@ public class Secretaria{
 		return "login.xhtml";
 	}
 	// Metodos de insertar,modificar y eliminar
-	public void crearAlumno(){
+	public String crearUsuario() {
+		try {
+			gestion.insertarUsuario(usuario);
+			return "accionCompletada.xhtml";
+		} catch (UsuarioExistenteException e) {
+			FacesMessage fm = new FacesMessage("El usuario ya existe");
+            FacesContext.getCurrentInstance().addMessage("crearUsuario:errorCorreo", fm);
+            correcto=false;
+		}
+		return null;
+		
+	}
+	public String modificarUsuario() {
+		try {
+			gestion.modificarUsuario(usuario.getEmailInstitucional(), usuario.getContrasenia());
+		} catch (UsuarioNoEncontradoException e) {
+			FacesMessage fm = new FacesMessage("El usuario no encontrado");
+            FacesContext.getCurrentInstance().addMessage("modificarUsuario:errorCorreo", fm);
+		correcto=false;
+          		}
+          		return null;
+	}
+	public String eliminarUsuario(){
+		try {
+			gestion.eliminarUsuario(usuario.getEmailInstitucional());
+			return "accionCompletada.xhtml";
+		} catch (UsuarioNoEncontradoException e) {
+			FacesMessage fm = new FacesMessage("El usuario no encontrado");
+            FacesContext.getCurrentInstance().addMessage("eliminarUsuario:errorCorreo", fm);
+            correcto=false;
+          		}
+		return null;
+	}
+	public String crearAlumno(){
 			try{
-				gestionAlumno.insertarAlumno(alumno);			
+				gestionAlumno.insertarAlumno(alumno);
+				return "accionCompletada.xhtml";
 			} catch (AlumnoYaExistente e) {
 	            FacesMessage fm = new FacesMessage("El alumno ya existe");
 	            FacesContext.getCurrentInstance().addMessage("crearAlumno:errorDni", fm);
-	        }
+	        correcto=false;
+          		}
+          		return null;
 	}
-	public void modificarAlumno() {
+	public String modificarAlumno() {
 			try {
 				gestionAlumno.modificarAlumno(alumno.getDni(),alumno);
+				return "accionCompletada.xhtml";
 			} catch (AlumnoNoEncontrado e) {
 				FacesMessage fm = new FacesMessage("El alumno no se ha podido encontrar");
 	            FacesContext.getCurrentInstance().addMessage("modificarAlumno:dni", fm);
-			}
+			correcto=false;
+          		}
+          		return null;
 	}
-	public void eliminarAlumno(){
+	public String eliminarAlumno(){
 			try{
 				gestionAlumno.eliminarAlumno(dni);
 				visible = true;
+				
 				/*
 				FacesMessage fm = new FacesMessage("Eliminado con exito");
 	            FacesContext.getCurrentInstance().addMessage("eliminarAlumno:todoCorrecto", fm);
 	            */
+				return "accionCompletada.xhtml";
 			} catch (AlumnoNoEncontrado e) {
 	            FacesMessage fm = new FacesMessage("El alumno no se ha podido encontrar");
 	            FacesContext.getCurrentInstance().addMessage("eliminarAlumno:errorDni", fm);
-	        }
+	        correcto=false;
+          		}
+          		return null;
 	}
-	public void crearAsignatura(){
+	public String crearAsignatura(){
 		try{
 			gestionAsig.insertarAsignatura(asignatura.getReferencia(), asignatura);
+			return "accionCompletada.xhtml";
 		} catch (AsignaturaExistenteException e) {
             FacesMessage fm = new FacesMessage("La asignatura ya existe");
             FacesContext.getCurrentInstance().addMessage("crearAsignatura:errorRef", fm);
-        }
+        correcto=false;
+          		}
+          		return null;
 	}
-	public void modificarAsignatura() {
+	public String modificarAsignatura() {
 		try {
-			gestionAsig.modificarAsignatura(refAsig, asignatura);
+			gestionAsig.modificarAsignatura(asignatura.getReferencia(), asignatura);
+			return "accionCompletada.xhtml";
 		} catch (AsignaturaNoEncontradoException e) {
 			FacesMessage fm = new FacesMessage("La asignatura no se ha podido encontrar");
             FacesContext.getCurrentInstance().addMessage("modificarAsignatura:referencia", fm);
-		}
+		correcto=false;
+          		}
+          		return null;
 	}
-	public void eliminarAsignatura(){
+	public String eliminarAsignatura(){
 		try{
 			gestionAsig.eliminarAsignatura(refAsig);
+			return "accionCompletada.xhtml";
 		} catch (AsignaturaNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("La asignatura no se ha podido encontrar");
             FacesContext.getCurrentInstance().addMessage("eliminarAsignatura:errorRef", fm);
-        }
+        correcto=false;
+          		}
+          		return null;
 	}
-	public void crearCentro (){
+	public String crearCentro (){
 		try{
 			gestionCentro.insertarCentro(centro);
-			
+			return "accionCompletada.xhtml";
 		} catch (CentroExistenteException e) {
             FacesMessage fm = new FacesMessage("El centro ya existe");
             FacesContext.getCurrentInstance().addMessage("crearCentro:errorId", fm);
-        }
+        correcto=false;
+          		}
+          		return null;
 	}
-	public void modificarCentro() {
+	public String modificarCentro() {
 		try {
-			gestionCentro.actualizarCentro(idCentro,centro);
+			gestionCentro.actualizarCentro(centro.getId(),centro);
+			return "accionCompletada.xhtml";
 		} catch (CentroNoEncontradoException e) {
 			FacesMessage fm = new FacesMessage("El centro no se ha podido encontrar");
             FacesContext.getCurrentInstance().addMessage("modificarCentro:id", fm);
-		}
+		correcto=false;
+          		}
+          		return null;
 	}
-	public void eliminarCentro() {
+	public String eliminarCentro() {
 		try{
 			gestionCentro.eliminarCentro(idCentro);
 			FacesMessage fm = new FacesMessage("Eliminado con exito");
             FacesContext.getCurrentInstance().addMessage("eliminarAlumno:todoCorrecto", fm);
+            return "accionCompletada.xhtml";
 		} catch (CentroNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("El centro no se ha podido encontrar");
             FacesContext.getCurrentInstance().addMessage("eliminarCentro:errorId", fm);
-        }
+        correcto=false;
+          		}
+          		return null;
 	}
-	public void crearClase() {
+	public String crearClase() {
 		try{
 			gestionClase.insertarClase(idGrupo, clase);
+			return "accionCompletada.xhtml";
 		} catch (GrupoNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("El grupo no se ha podido encontrar");
             FacesContext.getCurrentInstance().addMessage("crearClase:errorGrupo", fm);
         } catch (ClaseExistenteException e) {
             FacesMessage fm = new FacesMessage("La clase ya existe");
             FacesContext.getCurrentInstance().addMessage("crearClase:errorClase", fm);
-        }
+        correcto=false;
+          		}
+          		return null;
 	}
-	public void modificarClase() {
+	public String modificarClase() {
 		try {
 			gestionClase.actualizarClase(idGrupo,idClase, clase);
+			return "accionCompletada.xhtml";
 		} catch (GrupoNoEncontradoException e) {
 		 FacesMessage fm = new FacesMessage("El grupo no se ha podido encontrar");
             FacesContext.getCurrentInstance().addMessage("modificarClase:grupoId", fm);
         } catch (ClaseNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("La clase no se ha podido encontrar");
             FacesContext.getCurrentInstance().addMessage("modificarClase:dia", fm);
-        }
+        correcto=false;
+          		}
+          		return null;
 	}
-	public void eliminarClase() {
+	public String eliminarClase() {
 		try{
 			gestionClase.eliminarClase(idGrupo,idClase);
+			return "accionCompletada.xhtml";
 		} catch (GrupoNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("El grupo no se ha podido encontrar");
             FacesContext.getCurrentInstance().addMessage("eliminarClase:errorGrupo", fm);
         } catch (ClaseNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("La clase no se ha podido encontrar");
             FacesContext.getCurrentInstance().addMessage("eliminarClase:errorClase", fm);
-        }
+        correcto=false;
+          		}
+          		return null;
 	}
-	public void crearExpediente() {
+	public String crearExpediente() {
 		try{
 			gestionExp.insertarExpediente(expediente.getNumExpediente(), expediente);
+			return "accionCompletada.xhtml";
 		} catch (ExpedienteExistenteException e) {
             FacesMessage fm = new FacesMessage("El expediente ya existe");
             FacesContext.getCurrentInstance().addMessage("crearExpediente:errorExp", fm);
-        }
+        correcto=false;
+          		}
+          		return null;
 	}
-	public void modificarExpediente() {
+	public String modificarExpediente() {
 		try {
 			gestionExp.modificarExpediente(exp, expediente);
+			return "accionCompletada.xhtml";
 		} catch (ExpedienteNoEncontradoException e) {
 			FacesMessage fm = new FacesMessage("El expediente no se ha podido encontrar");
             FacesContext.getCurrentInstance().addMessage("modificarExpediente:numExpediente", fm);
-		}
+		correcto=false;
+          		}
+          		return null;
 	}
-	public void eliminarExpediente() {
+	public String eliminarExpediente() {
 		try{
 			gestionExp.eliminarExpediente(exp);
+			return "accionCompletada.xhtml";
 		} catch (ExpedienteNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("El expediente no se ha podido encontrar");
             FacesContext.getCurrentInstance().addMessage("eliminarExpediente:errorExp", fm);
-        }
+        correcto=false;
+          		}
+          		return null;
 	}
-	public void crearGrupo() {
+	public String crearGrupo() {
 		try{
 			gestionGrupo.insertarGrupo(titu, grupo);
+			return "accionCompletada.xhtml";
 		} catch (TitulacionNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("La titulacion no se ha podido encontrar");
             FacesContext.getCurrentInstance().addMessage("crearGrupo:errorTitulacion", fm);
         } catch (GrupoExistenteException e) {
             FacesMessage fm = new FacesMessage("El grupo ya existe");
             FacesContext.getCurrentInstance().addMessage("crearGrupo:errorGrupo", fm);
-        }
+        correcto=false;
+          		}
+          		return null;
 	}
-	public void modificarGrupo() {
+	public String modificarGrupo() {
 		try {
-			gestionGrupo.actualizarGrupo(titu,idGrupo, grupo);
+			gestionGrupo.actualizarGrupo(titu,grupo.getId(),grupo);
+			return "accionCompletada.xhtml";
 		} catch (TitulacionNoEncontradoException e) {
 			FacesMessage fm = new FacesMessage("Titulacion no encontrada");
             FacesContext.getCurrentInstance().addMessage("modificarGrupo:titulacion", fm);
 		} catch (GrupoNoEncontradoException e) {
 			FacesMessage fm = new FacesMessage("Grupo no encontrado");
             FacesContext.getCurrentInstance().addMessage("modificarGrupo:id", fm);
-		}
+		correcto=false;
+          		}
+          		return null;
 	}
-	public void eliminarGrupo() {
+	public String eliminarGrupo() {
 		try{
 			gestionGrupo.eliminarGrupo(titu, idGrupo);
+			return "accionCompletada.xhtml";
 		} catch (TitulacionNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("La titulacion no se ha podido encontrar");
             FacesContext.getCurrentInstance().addMessage("eliminarGrupo:errorTitulacion", fm);
         } catch (GrupoNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("El grupo no se ha podido encontrar");
             FacesContext.getCurrentInstance().addMessage("eliminarGrupo:errorGrupo", fm);
-        }
+        correcto=false;
+          		}
+          		return null;
 	}
-	public void crearMatricula() {
+	public String crearMatricula() {
 		try{
-			gestionMatricula.insertarMatricula(exp, matricula);
+			gestionMatricula.insertarMatricula(matricula.getExpediente().getNumExpediente(), matricula);
+			return "accionCompletada.xhtml";
 		} catch (ExpedienteNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("El expediente no se ha podido encontrar");
             FacesContext.getCurrentInstance().addMessage("crearMatricula:errorExpediente", fm);
         } catch (MatriculaExistente e) {
             FacesMessage fm = new FacesMessage("La matricula ya existe");
             FacesContext.getCurrentInstance().addMessage("crearMatricula:errorMatricula", fm);
-        }
+        correcto=false;
+          		}
+          		return null;
 	}
-	public void modificarMatricula() {
+	public String modificarMatricula() {
 		try {
-			gestionMatricula.modificarMatricula(exp, matricula);
+			gestionMatricula.modificarMatricula(matricula.getExpediente().getNumExpediente(), matricula);
+			return "accionCompletada.xhtml";
 		} catch (MatriculaNoExistente e) {
 			FacesMessage fm = new FacesMessage("La matricula no se encuentra");
             FacesContext.getCurrentInstance().addMessage("modificarMatricula:dni", fm);
 		} catch (ExpedienteNoEncontradoException e) {
 			FacesMessage fm = new FacesMessage("El expediente no se encuentra");
             FacesContext.getCurrentInstance().addMessage("modificarMatricula:nExp", fm);
-		}
+		correcto=false;
+          		}
+          		return null;
 	}
-	public void eliminarMatricula() {
+	public String eliminarMatricula() {
 		try{
 			gestionMatricula.eliminarMatricula(exp,matr);
+			return "accionCompletada.xhtml";
 		} catch (MatriculaNoExistente e) {
             FacesMessage fm = new FacesMessage("La matricula no se ha podido encontrar");
             FacesContext.getCurrentInstance().addMessage("eliminarMatricula:errorMatricula", fm);
         } catch (ExpedienteNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("El expediente no se ha podido encontrar");
             FacesContext.getCurrentInstance().addMessage("eliminarMatricula:errorExpediente", fm);
-        }
+        correcto=false;
+          		}
+          		return null;
 	}
-	public void crearTitulacion() {
+	public String crearTitulacion() {
 		try{
 			gestionTitu.insertarTitulacion(titulacion.getCodigo(), titulacion);
+			return "accionCompletada.xhtml";
 		} catch (TitulacionExistenteException e) {
             FacesMessage fm = new FacesMessage("La titulacion ya existe");
             FacesContext.getCurrentInstance().addMessage("crearTitulacion:errorId", fm);
-        }
+        correcto=false;
+          		}
+          		return null;
 	}
-	public void modificarTitulacion() {
+	public String modificarTitulacion() {
 		try {
 			gestionTitu.modificarTitulacion(titu, titulacion);
+			return "accionCompletada.xhtml";
 		} catch (TitulacionNoEncontradoException e) {
 			FacesMessage fm = new FacesMessage("La titulacion no se ha podido encontrar");
             FacesContext.getCurrentInstance().addMessage("modificarTitulacion:codTitu", fm);
-		}
+		correcto=false;
+          		}
+          		return null;
 	}
-	public void eliminarTitulacion() {
+	public String eliminarTitulacion() {
 		try{
 			gestionTitu.eliminarTitulacion(titu);
+			return "accionCompletada.xhtml";
 		} catch (TitulacionNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("La titulacion no se ha podido encontrar");
             FacesContext.getCurrentInstance().addMessage("eliminarTitulacion:errorId", fm);
-        }
+        correcto=false;
+          		}
+          		return null;
 	}
-	public void crearOptativa() {
+	public String crearOptativa() {
 		try{
 			gestionOpt.insertarOptativa(optativa.getReferencia(),optativa);
+			return "accionCompletada.xhtml";
 		} catch (OptativaExistenteException e) {
             FacesMessage fm = new FacesMessage("La optativa ya existe");
             FacesContext.getCurrentInstance().addMessage("crearOptativa:errorId", fm);
-        }
+        correcto=false;
+          		}
+          		return null;
 	}
-	public void modificarOptativa() {
+	public String modificarOptativa() {
 		try {
 			gestionOpt.modificarOptativa(refOpt, optativa);
+			return "accionCompletada.xhtml";
 		} catch (OptativaNoEncontradoException e) {
 			FacesMessage fm = new FacesMessage("La optativa no se ha podido encontrar");
             FacesContext.getCurrentInstance().addMessage("modificarOptativa:idC", fm);
-		}
+		correcto=false;
+          		}
+          		return null;
 	}
-	public void eliminarOptativa() {
+	public String eliminarOptativa() {
 		try{
 			gestionOpt.eliminarOptativa(refOpt);
+			return "accionCompletada.xhtml";
 		} catch (OptativaNoEncontradoException e) {
             FacesMessage fm = new FacesMessage("La optativa no se ha podido encontrar");
             FacesContext.getCurrentInstance().addMessage("eliminarOptativa:errorId", fm);
-        }
+        correcto=false;
+          		}
+          		return null;
 	}
 }
